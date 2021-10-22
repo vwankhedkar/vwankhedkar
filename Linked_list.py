@@ -1,5 +1,3 @@
-from typing import Counter
-
 
 class Node:
     def __init__(self, data=None, next=None, pos=None):
@@ -88,6 +86,20 @@ class linked_list:
 
         return count
         
+    def insert_data_after(self, data_after, data_to_insert):
+        if self.head is None:
+            return
+        if self.head.data == data_after:
+            self.head.next = Node(data_to_insert, self.head.next)
+            return
+
+        itr = self.head
+        while itr:
+            if itr.data == data_after:
+                itr.next = Node(data_to_insert, itr.next)
+                break
+            itr = itr.next
+
 if __name__ == '__main__':
     ll = linked_list()
     ll.insert_at_beginning(5)
@@ -98,6 +110,8 @@ if __name__ == '__main__':
     ll.print()
     ll.insert_values(["Banana", "Mango", "Grapes", "Orange", "Jackfruit", "Mosambi"])
     ll.print()
+    ll.insert_data_after("Mango","apple")
+    ll.print()    
     ll.insert_at(1,"blueberry")
     ll.print()
     ll.get_length()
