@@ -6,7 +6,23 @@
 # Each time you can either climb 1 or 2 steps. 
 # In how many distinct ways can you climb to the top?
 
+class Solution(object):
+    def minCostClimbingStairs(self, cost):
+        n = len(cost)
+        return min(self.minCost(n-1, cost), self.minCost(n-2, cost))
 
+    def minCost(self, i, cost):
+        if (i < 0):
+            return 0
+        if (i == 0 or i == 1):
+            return cost[i]
+        return cost[i] + min(self.minCost(i - 1, cost), self.minCost(i - 2, cost))
+
+
+if __name__ == "__main__":
+    result = Solution().minCostClimbingStairs([10, 15, 30])
+    print(result)
+*****************************************************************************
 class Solution:
     """
     :type n: int
