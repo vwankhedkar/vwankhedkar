@@ -135,3 +135,51 @@ if __name__ == "__main__":
     s = Solution().rightSideView(root)
     print("Binary tree right side view BFS traversal is -")
     print(s)
+***********************************************************************************
+                 2
+            8        9
+          1  3     4   5
+Should return following list:
+
+[2,8,9,1,3,4,5]
+
+def tree_by_levels(node):
+    # create a return list, and a queue to loop
+    p, q = [], [node]
+    # loop
+    while q:
+        # take the first item from the queue
+        v = q.pop(0)
+        # if it is not empty
+        if v is not None:
+            # add it's value to the return list
+            p.append(v.value)
+            # add the left and right nodes to the queue
+            q += [v.left,v.right]
+    # return the final list, otherwise return [] is empty
+    return p if not node is None else []
+       
+    from collections import deque
+
+
+def tree_by_levels(node):
+    if not node:
+        return []
+    res, queue = [], deque([node,])
+    while queue:
+        n = queue.popleft()
+        res.append(n.value)
+        if n.left is not None:
+            queue.append(n.left)
+        if n.right is not None:
+            queue.append(n.right)
+    return res
+
+def tree_by_levels(node):
+    r = []
+    nodes = [node]
+    while nodes:
+        r += [n.value for n in nodes if n]
+        nodes = [e for n in [(n.left, n.right) for n in nodes if n] for e in n if e]
+        
+    return r
