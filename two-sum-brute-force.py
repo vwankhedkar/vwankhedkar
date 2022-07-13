@@ -11,6 +11,22 @@ target = 14
 print(findTwoSum(arr, target))
 
 OUTPUT : (0, 8)
+******************************************
+lst = []
+def sum(l, target):
+    for i in range(len(l)):
+        for j in range(i+1, len(l)-1):
+            if target == l[i] + l[j]:
+                lst.append([i,j]) 
+    return lst
+l = [1,3,7,9,2]
+target = 10
+l1, l2 = sum(l, target)
+print(sum(l, target))
+print(l1, l2)
+print("sum of numbers: {} = {} and {} location ".format(target, l1, l2))
+
+
 ****************************************
 
 def find_sum_twonum(nums, target):    
