@@ -55,3 +55,22 @@ if __name__ == '__main__':
     print(countWays(nums, len(nums) - 1, target), 'ways')
 	
 OUTPUT : 4 ways
+*************************************************************************
+efficient way
+--------
+dir = {}
+def sum(l, target):
+    for i in range(len(l)):
+        # dir1.setdefault(i,[]).append(l[i])
+        lst = dir.get(l[i],0)
+        if (lst > 0):
+            return (lst, i)
+        else:
+            num_find = target - l[i]
+            dir[num_find] = i
+
+l = [1,3,7,9,2]
+target = 11
+l1, l2 = sum(l, target)
+print("sum of numbers: {} = {} + {} at location l[{}] and l[{}]]".format(target, l[l1], l[l2], l1, l2))
+
