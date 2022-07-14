@@ -99,3 +99,41 @@ def lengthOfLongestSubstring(s):
 if __name__ == '__main__':
     s = "abcdabcbb"
     print(lengthOfLongestSubstring(s))
+--------------------------------------------------------------------
+class Solution:
+   def lengthOfLongestSubstring(self, s):
+      strlen = len(s)
+      seenChar = {}
+      substr= ""
+      longest = 0
+      finalList = []
+      if (strlen <= 0):
+         return strlen
+
+      for L in range(strlen):
+         if len(substr) > 0:
+               finalList.append(substr)                  
+         currLongest = 0
+         substr =""
+         for R in range(L, strlen):
+            currChar = s[R]
+            if currChar not in seenChar:
+               seenChar[currChar] = 1
+               substr += currChar
+               currLongest += 1
+               longest = max(currLongest, longest)              
+            else:       
+               break 
+      return finalList, longest
+b = Solution()
+string = "abccabbdrew"
+substring, length = b.lengthOfLongestSubstring(string)
+print("Substring '{}' is having maximum length as : {}".format(substring[-1], length))
+
+string = "abcdtabcbbuesmnk"
+substring, length = b.lengthOfLongestSubstring(string)
+print("Substring '{}' is having maximum length as : {}".format(substring[-1], length))
+
+OUTPUT :
+Substring 'drew' is having maximum length as : 4
+Substring 'uesmnk' is having maximum length as : 6    
