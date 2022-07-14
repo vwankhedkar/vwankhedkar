@@ -16,6 +16,29 @@ b = Solution()
 strg = "pwwkew"
 print(b.lengthOfLongestSubstring(strg))
 ********************************************************************
+def areDistinct(strg, i, j):
+   visited = [0] * 26
+   for k in range(i, j+1):
+      if (visited[ord(strg[k]) - ord('a')] == True):
+         return False
+
+      visited[ord(strg[k]) - ord('a')] = True
+   return True 
+def longestUniqueSubsttr(strg):
+   n  = len(strg)
+   res = 0
+   for i in range(n):
+      for j in range(i, n):
+         if areDistinct(strg, i, j):
+            res = max(res, j-i+1)
+   return res
+
+strg = "geeksforgeeks"
+print("The input is ", strg)
+len = longestUniqueSubsttr(strg)
+print("The length of the longest "
+      "non-repeating character substring is ", len)
+********************************************************************************
 # Here, we are planning to implement a simple sliding window methodology
   
 def longestUniqueSubsttr(string):
