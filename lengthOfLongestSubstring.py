@@ -1,5 +1,5 @@
+Not efficient solution :
 class Solution:
-
     def lengthOfLongestSubstring(self, s):
         last_idx = {}
         max_len = 0
@@ -137,3 +137,44 @@ print("Substring '{}' is having maximum length as : {}".format(substring[-1], le
 OUTPUT :
 Substring 'drew' is having maximum length as : 4
 Substring 'uesmnk' is having maximum length as : 6    
+--------------------------------------------------------------------------------------
+class Solution:
+   def lengthOfLongestSubstring(self, s):
+      strlen = len(s)
+      seenChar = {}
+      substr= ""
+      longest = 0
+      finalList = []
+      if (strlen <= 0):
+         return strlen
+
+      for L in range(strlen):
+         if len(substr) > 0:
+               finalList.append(substr)                  
+         currLongest = 0
+         substr =""
+         seenChar = {}
+         for R in range(L, strlen):
+            currChar = s[R]
+            if currChar not in seenChar:
+               seenChar[currChar] = 1
+               substr += currChar
+               currLongest += 1
+               longest = max(currLongest, longest)              
+            else:       
+               break 
+      return longest, finalList                     
+
+b = Solution()
+strg = "abdtdaaoprnq"
+length, substr = b.lengthOfLongestSubstring(strg)
+maxlen = 0
+max = ""
+for ele in substr:
+    if len(ele) > maxlen:
+      max = ele
+      maxlen = len(ele)
+print("Inside string '{}' Substring '{}' is having maximum length as : {}".format(strg, max, maxlen)) 
+OUTPUT :
+Inside string 'abdtdaaoprnq' Substring 'aoprnq' is having maximum length as : 6
+Inside string 'pwwkew' Substring 'wke' is having maximum length as : 3
