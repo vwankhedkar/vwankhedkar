@@ -131,3 +131,105 @@ if __name__ == '__main__':
     ll.print_forward()
     ll.insert_at(2,"kiwi")
     ll.print_forward()
+------------------------------------------------------------------------------------------
+Not working 
+class Node:
+   def __init__(self, val=None, prev=None, next=None, child=None):
+      self.val = val
+      self.prev = prev
+      self.next = next
+      self.child = child
+   null = None
+   def makeLists(lists):
+      head = None
+      prev = None
+      i = 0
+      while i < len(lists):
+         if lists[i] != None:
+            node = Node(val=lists[i], prev=prev)
+            if prev is None:
+               head = prev = node
+            else:
+               prev.next = node
+               prev = node
+            i += 1
+         else:
+            node = head
+            end = False
+            while lists[i] == null:
+               if node.next is None:
+                  end = True
+               else:
+                  node = node.next
+               i += 1
+            if end:
+               node.child = makeLists(lists[i:])
+            else:
+               node.prev.child = makeLists(lists[i:])
+         break
+      return head
+
+   def strLists(head, lsts):
+      if head is None:
+         return
+      nodes = []
+      while head:
+         nodes.append(str(head.val))
+         if head.child is not None:
+            nodes.append('|')
+            strLists(head.child, lsts)
+         head = head.next
+      lsts.append(nodes)
+
+   def printList(head):
+      lists = []
+      Node.strLists(head, lists)
+      if lists == []:
+         print(None)
+         return
+      previndent = 0
+      for j, l in enumerate(lists[::-1]):
+         count = -1
+         indent = 0
+         s = []
+         for i in range(len(l)):
+            if l[i] != '|':
+               s.append(l[i])
+               count += 1
+            else:
+               indent = count * 4
+               child = count
+            print('---'.join(s))
+            if len(lists) > 1 and j < len(lists)-1:
+               previndent += indent
+               indentation = ''.join([' ']*previndent)
+               if len(l[0]) > 1:
+                  indentation += ''.join('' * child)
+               print(indentation + '|')
+               print(indentation, end='')
+
+   def checkLinks(head, lists=None):
+      if head is None:
+         return True
+      if lists is None:
+         lists = []
+      stack = []
+      result = True
+      node = head
+      while node is not None:
+         if node.child is not None:
+            checkLinks(node.child, lists)
+         stack.append(node)
+         prev = node
+         node = node.next
+      while prev is not None:
+         if len(stack) == 0 or stack.pop() != prev:
+            result = False
+         prev = prev.prev
+      lists.append(result)
+      return all(lists) 
+
+lists = [1,2,3,4,5,6,None,None,None,7,8,9,10,None,None,11,12]
+head = Node.makeLists(lists)
+Node.printList(head)
+print(Node.checkLinks(head))
