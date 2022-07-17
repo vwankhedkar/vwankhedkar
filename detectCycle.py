@@ -3,17 +3,14 @@ class Node:
     def __init__(self, data=None, next=None):
         self.data = data
         self.next = next
- 
- 
+        
 # Function to detect a cycle in a linked list using hashing
 def detectCycle(head):
  
     curr = head
     s = set()
- 
     # traverse the list
     while curr:
- 
         # return false if we already have seen this node before
         if curr in s:
             return True
@@ -26,8 +23,6 @@ def detectCycle(head):
  
     # we reach here if the list does not contain any cycle
     return False
- 
- 
 if __name__ == '__main__':
  
     head = None
