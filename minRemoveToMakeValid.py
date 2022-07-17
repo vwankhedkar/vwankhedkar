@@ -177,3 +177,33 @@ PS D:\ESH_AUTOMATION> & C:/Programs/Python/Python39/python.exe d:/ESH_AUTOMATION
 lee(t(c)o)de
 PS D:\ESH_AUTOMATION> & C:/Programs/Python/Python39/python.exe d:/ESH_AUTOMATION/webUI/try.py
 acb
+============================================================================================
+class Solution:
+   def minRemoveToMakeValid(self, s):
+      stack = []
+      res = list(s)
+      output = ''
+      for i in range(len(s)):
+         if s[i] == '(' and len(s)>=0:
+            stack.append(i)
+         elif s[i] == ')' and len(stack)>0:
+            stack.pop()
+         elif s[i] == ')':
+            res[i] = ""
+            output = "".join(res)
+         elif s[i] != '(' or s[i] != ')':
+            output = "".join(res)
+      while len(stack):
+         curIndx = stack.pop()
+         res[curIndx] = ""
+         output = "".join(res)
+      return output 
+
+string1 = "abc"
+# string1 = "a)b(c)d"
+# string1 = "a))c((b"
+# string1 = "a)b(c)d"    
+# string1 = "lee(t(c)o)de)"
+# string1 = "))(("
+# print(string1.replace(')', ""))
+print(Solution().minRemoveToMakeValid(string1))
