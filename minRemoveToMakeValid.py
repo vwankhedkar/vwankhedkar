@@ -93,10 +93,19 @@ class Solution(object):
             output += char
         return output
 
-# s = "lee(t(c)o)de)"
-s = "a)b(c)d"
-l = Solution()
-print(l.minRemoveToMakeValid(s))
+string1 = "abc"
+print(Solution().minRemoveToMakeValid(string1))
+string1 = "a)b(c)d"
+print(Solution().minRemoveToMakeValid(string1))
+string1 = "a))c((b"
+print(Solution().minRemoveToMakeValid(string1))
+string1 = "a)b(c)d"    
+print(Solution().minRemoveToMakeValid(string1))
+string1 = "lee(t(c)o)de)"
+print(Solution().minRemoveToMakeValid(string1))
+string1 = "))(("
+print(Solution().minRemoveToMakeValid(string1))
+
 
 ****************************************************
 class Solution(object):
