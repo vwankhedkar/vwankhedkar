@@ -32,7 +32,8 @@
 # Explanation:
 # "bbaA" is also a valid answer, but "Aabb" is incorrect.
 # Note that 'A' and 'a' are treated as two different characters.
-
+*** https://leetcode.com/problems/sort-characters-by-frequency/submissions/
+    
 import collections
 class Solution(object):
     def frequencySort(s):
@@ -47,7 +48,7 @@ class Solution(object):
         for c in freq:
             counts[freq[c]] += c
         result = ""
-        for count in reversed(range(len(counts)-1)):
+        for count in reversed(range(len(counts))):
             for c in counts[count]:
                 result += c * count
         return result
