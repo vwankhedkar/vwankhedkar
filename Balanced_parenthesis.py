@@ -194,3 +194,7 @@ print(string,"-", check(string))
 string = "((()"
 print(string,"-",check(string))
 
+OUTPUT:
+{[]{()}} - Balanced
+[{}{})(] - Unbalanced
+((() - Unbalanced
