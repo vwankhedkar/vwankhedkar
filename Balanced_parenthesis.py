@@ -23,6 +23,13 @@ elements = ["(())", "()[}", "()", ")(()))", "(", "(())((()())())"]
 for ele in elements:
     s = balance_parenthe(ele)
     print(s.isValid(ele))
+OUTPUT:
+True
+False
+True
+False
+False
+True
 ******************************************************************************
 
 def matchClosing(X, start, end,
