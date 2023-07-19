@@ -1,0 +1,22 @@
+configparser.py
+
+from configparser import ConfigParser
+import pytest
+
+config = ConfigParser()
+config.read("setting.ini")
+print(config["Log"]["log_filename"])
+print(config["Database"]["server"])
+
+
+setting.ini
+
+[Log]
+log_filename=log.txt
+logging_on=TRUE
+
+[Database]
+server=192.0.2.62
+port=3306
+username=admin
+password=test123
