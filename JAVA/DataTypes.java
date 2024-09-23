@@ -48,3 +48,58 @@ class Test {
         System.out.println(c);
     }
 }
+
+// Octal
+class Test {
+    public static void main(String[] args) {
+        int x = 0XBeef;
+        System.out.println(x);
+    }
+}
+OUTPUT : 48879
+
+class Test {
+    public static void main(String[] args) {
+        int x = 0XBeer;
+        System.out.println(x);
+    }
+}
+
+ERROR!
+/tmp/KVCn4XbXlT/Test.java:6: error: ';' expected
+        int x = 0XBeer;
+
+// Decimal, Octal, Hexadecimal
+class Test {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 010;
+        int z = 0x10;
+        System.out.println(x+"..."+y+"..."+z);
+    }
+}
+OUTPUT : 10...8...16
+
+// Double
+class Test {
+    public static void main(String[] args) {
+        double d = 123.456;
+        System.out.println(d);
+    }
+}
+
+double d = 0786 // interger number too large as decimal takes only 0-7
+double d = 0xFace // valid
+double d = 0786.0 // valid
+double d = 0xFace.0 //invalid
+double d = 10 // valid
+double d = 0777 //valid
+
+class Test {
+    public static void main(String[] args) {
+        double d = 1.2e3;
+        System.out.println(d);
+    }
+}
+OUTPUT - 1200.0
+
