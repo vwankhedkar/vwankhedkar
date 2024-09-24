@@ -103,3 +103,26 @@ class Test {
 }
 OUTPUT - 1200.0
 
+class Test {
+    public static void main(String[] args) {
+       // char ch = 97; // valid
+       // char ch = 0XFace; // valid
+      //  char ch = 0777 //invalid
+     //   char ch = 65535; // valid
+      //  char ch = 65536; // invalid
+        char ch = '\u0061'; // valid - ?
+     char ch = '\ubeef'; // valid
+        System.out.println(ch);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+      // double d = 1_2_3.4_5_6;//valid
+     //  double d = _1_2_3.4_5_6;//invalid
+     //  double d = 1_2_3.4_5_6_;//invalid
+       double d = 1_2_3.4__5_6;//valid   
+        System.out.println(d);
+    }
+}
+
