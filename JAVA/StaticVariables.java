@@ -86,6 +86,46 @@ class Test {
 }
 OUTPUT - 888--20
 
+class Test {
+    public static void main(String[] args) {
+        int i = 0;
+        for (int j=0; j<3; j++)
+        {
+            i = i + j;
+        }
+        System.out.println(i + " -- " + j);
+    }
+}
+OUTPUT - /tmp/ZSZpUy8QQI/Test.java:11: error: cannot find symbol
+        System.out.println(i + " -- " +j)                 ^
+  symbol:   variable j
+
+class Test {
+    public static void main(String[] args) {
+        try {
+            j = Integer.parseInt("ten");  // This will cause a NumberFormatException
+        } 
+        catch (NumberFormatException e) {  // Corrected exception name
+            j = 10;  // Initialize j with a default value
+        }
+        System.out.println(j);  // Print the value of j
+    }
+}
+
+OUTPUT - /tmp/FJgzjRcLLX/Test.java:7: error: cannot find symbol
+            j = Integer.parseInt("ten");  // This will cause a NumberFormatException
+            ^
+  symbol:   variable j
+  location: class Test
+ERROR!
+/tmp/FJgzjRcLLX/Test.java:10: error: cannot find symbol
+            j = 10;  // Initialize j with a default value
+            ^
+  symbol:   variable j
+  location: class Test
+ERROR!
+/tmp/FJgzjRcLLX/Test.java:12: error: cannot find symbol
+        System.out.println(j);  // Print the value of j
 
 
   
