@@ -139,3 +139,33 @@ class Test {
 OUTPUT - Exception in thread "main" ERROR!
 java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 	at Test.main(Test.java:7)
+
+class Test {
+    public static void main(String[] args)
+    {
+        int[][] a = new int[2][];
+        System.out.println(a);
+        System.out.println(a[0]);
+        System.out.println(a[0][0]);
+    }
+}
+OUTPUT - [[I@379619aa
+null
+ERROR!
+Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "<local1>[0]" is null
+	at Test.main(Test.java:10)
+
+class Test {
+    public static void main(String[] args)
+    {
+        int[] a = {10, 20, 30, 40, 50};
+        int[] b = {70, 80};
+        a = b;
+        System.out.println(a);
+        b = a;
+        System.out.println(b);
+    }
+}
+OUTPUT -[I@379619aa
+[I@379619aa
+
