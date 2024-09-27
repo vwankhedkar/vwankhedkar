@@ -128,4 +128,92 @@ ERROR!
         System.out.println(j);  // Print the value of j
 
 
+class Test {
+    public static void main(String[] args) {
+        int x;
+        if (args.length > 0){
+            x = 10;
+        }
+        else {
+            x = 20;
+        }
+        System.out.println(x);
+    }
+}
+OUTPUT -
+    java Test.java A B -> 10
+    java Test.java -> 20
+
+class Test {
+    public static void main(String[] args) {
+        public int x = 10;
+        protected int x = 10;
+        private int x = 10;
+        static int x = 10;
+        transient int x = 10;
+        volatile int x = 10;
+        final int x = 10;
+    }
+}
+OUTPUT -
+    ERROR!
+/tmp/GyR0XAzlca/Test.java:6: error: illegal start of expression
+        public int x = 10;
+        ^
+ERROR!
+/tmp/GyR0XAzlca/Test.java:14: error: class, interface, or enum expected
+}
+^
+2 errors
+// Instance level
+class Test {
+    int[] x;
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.x);
+        System.out.println(t.x[0]);
+    }
+}
+OUTPUT -
+null
+ERROR!
+Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "<local1>.x" is null
+	at Test.main(Test.java:9)
+
+class Test {
+    int[] x = new int[3];
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.x);
+        System.out.println(t.x[0]);
+    }
+}
+OUTPUT - [I@379619aa
+0
+// Static level
+class Test {
+    static int[] x;
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.x);
+        System.out.println(t.x[0]);
+    }
+}
+OUTPUT - null
+ERROR!
+Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "Test.x" is null
+	at Test.main(Test.java:9)
+//local
+class Test {
+    int[] x = new int[3];
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.x);
+        System.out.println(t.x[0]);
+    }
+}
+OUTOUT - [I@379619aa
+0
+    
+
   
