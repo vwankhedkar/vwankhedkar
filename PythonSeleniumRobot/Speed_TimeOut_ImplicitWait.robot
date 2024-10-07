@@ -54,5 +54,28 @@ RegTest
     Input Text    name:Password    ABCPQR
     Input Text    name:ConfirmPassword    ABCPQR
     close browser
+---------------------------------------*************************--------------------------
 
+*** Settings ***
+Library    SeleniumLibrary
 
+*** Test Cases ***
+RegTest
+    Open Browser    https://demowebshop.tricentis.com/register    firefox
+    Maximize Browser Window
+
+    ${implicittime}=    get selenium implicit wait
+    log to console     ${implicittime}
+
+    set selenium implicit wait  10 seconds
+
+    ${implicittime}=    get selenium implicit wait
+    log to console     ${implicittime}
+
+    Select Radio Button    Gender   M
+    Input Text    name:FirstName    ABC
+    Input Text    name:LastName    PQR
+    Input Text    name:Email    ABC@gmail.com
+    Input Text    name:Password    ABCPQR
+    Input Text    name:ConfirmPassword    ABCPQR
+    close browser
