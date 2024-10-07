@@ -79,3 +79,16 @@ RegTest
     Input Text    name:Password    ABCPQR
     Input Text    name:ConfirmPassword    ABCPQR
     close browser
+------------------------------   Multiple Browsers ------------------------
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Test Cases ***
+MyTestCase
+    Open Browser    https://demowebshop.tricentis.com/register    firefox
+    Maximize Browser Window
+
+    Open Browser    https://automationpractice.com/index.php    firefox
+    Maximize Browser Window
+
+    Close All Browsers
