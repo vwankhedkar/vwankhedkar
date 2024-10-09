@@ -21,4 +21,6 @@ TC4 Logout Test
 
 >>>    robot --include=sanity  TestCases\Tagging.robot
 >>>    robot --include=regression  TestCases\Tagging.robot
+>>>    robot -i sanity -i regression TestCases\Tagging.robot
+
 **************************************************************************
