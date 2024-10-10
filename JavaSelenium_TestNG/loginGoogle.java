@@ -26,20 +26,20 @@ public class GoodTest {
 	}
 	
 	// 2
-	@Test
+	@Test (priority=1)
 	public void googleTitleTest() {
 		String title = driver.getTitle();
 		System.out.println(title);	
 	}
 	
 	// 8
-	@Test
+	@Test (priority=2)
 	public static void googleLogoTest() {
 		boolean b = driver.findElement(By.xpath("//*[@id='hplogo']")).isDisplayed();
 	}
 	
 	// 5
-	@Test
+	@Test (priority=3)
 	public void mailLickTest() {
 		boolean b = driver.findElement(By.linkText("Mail")).isDisplayed();
 	}
