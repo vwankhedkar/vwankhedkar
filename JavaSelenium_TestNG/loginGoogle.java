@@ -51,3 +51,45 @@ public class GoodTest {
 	}
 }
 
+****************************************************************************************
+
+package com.test;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testing.annotations.AfterMethod;
+import org.testing.annotations.BeforeMethod;
+import org.testing.annotations.Test;
+
+public class GoodTest {
+	
+	WebDriver driver;
+	
+	@BeforeMethod
+	public void SetUp() {
+		System.setProperty("webdriver.chrome.driver", "c:/Downloads/chromedriver");
+		driver = new ChromeDriver(); // launch chrome
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		drive.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("https://www.google.com");
+	}
+	
+	@Test
+	public void googleTitleTest() {
+		String title = driver.getTitle();
+		System.out.println(title);	
+		Assert.assertEquals(title, "Google123", "title is not matched")
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit()
+	}
+}
+
+
