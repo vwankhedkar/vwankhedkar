@@ -262,4 +262,27 @@ class Test {
     }
 }
 
+class MyJavaClass {
+	public static void main(String args[]) {
+		Thread t = new Thread();
+		System.out.println(t instanceof Runnable);
+		System.out.println(t instanceof Object);
+	}
+
+}
+OUTPUT : tue
+    true
+
+class MyJavaClass {
+	public static void main(String args[]) throws Exception {
+		Thread t = new Thread();
+		System.out.println(Class.forName(args[0]).isInstance(t));
+	}
+
+}
+OUTPUT : C:\Users\VWankhedkar\eclipse-workspace\JavaProject\src>java MyJavaClass java.lang.String
+false
+
+C:\Users\VWankhedkar\eclipse-workspace\JavaProject\src>java MyJavaClass java.lang.Runnable
+true
 
