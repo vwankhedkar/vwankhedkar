@@ -91,3 +91,91 @@ OUTPUT - 10
     }
 }
 OUTPUT - no error
+
+class Test {
+    public static void main(String[] args) {
+        byte b = 10;
+        switch (b+1) {
+            case 10:
+            case 100:
+            case 1000:
+        }
+    }
+}
+class Test {
+    public static void main(String[] args) {
+        byte b = 10;
+        switch (b+1) {
+            case 10:
+                System.out.println(10);
+                break;
+            case 100:
+                System.out.println(100);
+                break;
+            case 1000:
+                System.out.println(1000);
+                break;
+        }
+    }
+}
+OUTPUT - no error with switch (b) 
+error is - Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+        Case constant of type int is incompatible with switch selector type byte
+Same error for below code
+class Test {
+    public static void main(String[] args) {
+        byte b = 10;
+        switch (b) {
+            case 10:
+                System.out.println(10);
+                break;
+            case 100:
+                System.out.println(100);
+                break;
+            case 1000:
+                System.out.println(1000);
+                break;
+        }
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        byte b = 10;
+        switch (b+1) {
+            case 97:
+                System.out.println(10);
+                break;
+            case 98:
+                System.out.println(100);
+                break;
+            case 'a':
+                System.out.println(1000);
+                break;
+        }
+    }
+}
+OUTPUT  Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+        Duplicate case
+        Duplicate case
+
+Default case can be written anywhere in switch 
+class Test {
+    public static void main(String[] args) {
+        byte b = 98;
+        switch (b+1) {
+            case 97:
+                System.out.println(97);
+                break;
+            default:
+                System.out.println("default");
+            case 98:
+                System.out.println(98);
+                break;
+        }
+    }
+}
+OUTPUT - 98
+
+  
+
