@@ -1,0 +1,46 @@
+let data = 6 < 6
+console.log(data)
+let data1 = 6 <= 6
+console.log(data1)
+let data2 = 6 >= 6
+console.log(data2)
+let x = "Pen"
+let y = "Book"
+let data3 = x > y
+console.log(data3)
+let x1 = "2"
+let y1 = 3
+let data4 = x1 > y1
+console.log(data4)
+let x2 = "3"
+let y2 = 3
+let data5 = x2 == y2   // loosly coupled
+console.log(data5)
+let x3 = "3"
+let y3 = 3
+let data6 = x3 === y3   // strongly coupled
+console.log(data6)
+let x4 = ''
+let y4 = false
+let data7 = x4 === y4   // strongly coupled
+console.log(data6)
+OUTPUT -
+PS C:\Users\VWankhedkar\PycharmProjects\Robot\TestCase> node first.js
+false
+true
+true
+true
+false
+true
+false
+false
+***************************************************************
+let x = 7, y = 2, z = 5
+let result = x < y || x < z
+let n = !result
+console.log(result, n)
+
+OUTPUT -  false true
+******************************************************************
+
+
