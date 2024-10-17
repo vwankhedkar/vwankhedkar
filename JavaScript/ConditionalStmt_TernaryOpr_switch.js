@@ -84,3 +84,20 @@ console.log("Bye...");
 OUTPUT -
 7am
 Bye...
+***************************************************
+let num1 = 3
+let num2 = 4
+let result = num1 + num2 
+console.log(`The addition of ${num1} and ${num2} is ${result}`)
+console.log("The addition of " + num1 + " and " + num2 + " is " + result)
+console.log(`Vaishali
+    Wankhedkar`)
+console.log(`Vaishali \n Wankhedkar`)
+OUTPUT -
+PS C:\Users\VWankhedkar\PycharmProjects\Robot\TestCase> node first.js
+The addition of 3 and 4 is 7
+The addition of 3 and 4 is 7
+Vaishali
+    Wankhedkar
+Vaishali
+ Wankhedkar
