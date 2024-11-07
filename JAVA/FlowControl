@@ -1,0 +1,85 @@
+class Test {
+    public static void main(String[] args)
+    {
+        int x = 10;
+        if (x == 10)
+            break;    // break not allowed inside if loop but continue is allowed as below
+        System.out.println("Hello");
+    }
+}
+ERROR!
+/tmp/kpvS3DFQ7S/Test.java:9: error: break outside switch or loop
+
+class Test {
+    public static void main(String[] args)
+    {
+        int x = 10;
+        if(x == 10)
+            continue;
+        System.out.println("Hello");
+    }
+}
+/tmp/82WTNXHqov/Test.java:9: error: continue outside of loop
+**********************************************************************
+class Test {
+    public static void main(String[] args)
+    {
+        for (int i=0; i<10; i++)
+        {
+            if (i % 2 == 0)
+                continue;
+            System.out.println(i);
+        }
+    }
+}
+java -cp /tmp/oYdSmUnJqZ/Test
+1
+3
+5
+7
+9
+*************************************************************************************
+class Test {
+    public static void main(String[] args)
+    {
+        for (int i=0; i<3; i++)
+        {
+            for (int j=0; j<3; j++)
+            {
+                if (i == j)
+                    continue;
+                    System.out.println(i+"..."+j);
+            }
+        }
+    }
+}
+java -cp /tmp/4VcRYgj96B/Test
+0...1
+0...2
+1...0
+1...2
+2...0
+2...1
+************************************************************************************
+class Test {
+    public static void main(String[] args)
+    {
+        int x = 0;
+        do
+        {
+            x ++;
+            System.out.println(x);
+            if (++x < 5)
+                continue;
+            x++;
+            System.out.println(x);
+        }while (++x < 10);
+    }
+}
+java -cp /tmp/zxmAfKc6o8/Test
+1
+4
+6
+8
+10
+********************************************************************************
