@@ -1,0 +1,14 @@
+import java.util.Date;
+import java.sql.*;
+class Tests 
+{
+    public static void main(String[] args)
+    {
+        Date d = new Date();
+        System.out.println(d.getClass().getName());
+    }
+}
+PS C:\Users\VWankhedkar\PycharmProjects\Robot\TestCase\Test> javac Tests.java
+PS C:\Users\VWankhedkar\PycharmProjects\Robot\TestCase\Test> java Tests.java 
+java.util.Date
+*************************************************************************
