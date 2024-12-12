@@ -1,0 +1,120 @@
+package com.WebTesting;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class BrowserTest {
+
+	public static void main(String[] args) {
+		// Create a drivers session
+
+		WebDriver driver1=new EdgeDriver();
+		WebDriver driver2=new FirefoxDriver();
+		WebDriver driver3=new ChromeDriver();
+		
+	}
+
+}
+
+************************************************
+
+package com.WebTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class GoogleTitleValidation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver=new EdgeDriver();
+		driver.get("https://www.google.com");
+		String actTitle=driver.getTitle();
+		System.out.println("Actual Title : "+actTitle);
+		String expTitle="Google";
+		if(actTitle.equals(expTitle))
+		{
+			System.out.println("Title Matched ... Test Passed ...");
+		}
+		else
+		{
+			System.out.println("Title Not matched ... Test Failed ...");
+		}
+	}
+
+}
+
+Actual Title : Google
+Title Matched ... Test Passed ...
+
+package com.WebTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrowserCommands {
+
+	public static void main(String[] args) 
+	{
+		// Create a driver session
+		
+		WebDriver driver=new ChromeDriver();
+		
+		//get()
+		driver.get("https://automationplayground.com/crm/");
+		
+		//getTitle()
+		System.out.println("Title is: "+driver.getTitle());
+		
+		//getCurrentUrl()
+		System.out.println("Current url is: "+driver.getCurrentUrl());
+		
+		//getPageSource()
+		System.out.println(driver.getPageSource());
+		
+		//close the browser
+		driver.quit();
+	}
+}
+*************************************************************************
+package com.WebTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NavigationCommands {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		// Create a driver session
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.google.com");
+		
+		//navigate to Facebook 
+		driver.navigate().to("https://www.facebook.com");
+		
+		//static wait-Java
+		Thread.sleep(2000);
+		
+		//navigate to back()
+		driver.navigate().back();
+		
+		//static wait-Java
+		Thread.sleep(2000);
+		
+		//navigate to forward()
+		
+		driver.navigate().forward();
+		
+		//static wait-Java
+		Thread.sleep(2000);
+		
+		//refresh the page
+		driver.navigate().refresh();
+
+	}
+
+}
+
