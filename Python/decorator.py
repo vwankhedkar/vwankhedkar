@@ -29,3 +29,18 @@ div1 = smart(div)
 div1(2,4)
 
 OUTPUT - 2.0
+
+def my_decor(func):
+    def wrapper():
+        print("Inside before wrapper")
+        func()
+        print("Inside after wrapper")
+    return wrapper
+@my_decor
+def hello():
+    print("Hello")
+hello()
+OUTPUT -
+Inside before wrapper
+Hello
+Inside after wrapper
