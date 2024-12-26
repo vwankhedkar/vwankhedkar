@@ -107,5 +107,50 @@ let x = Math.pow(num, 4) // = 4 ** 4
 console.log(x)
 
 OUTPUT - 256
-
-
+************************************************
+ let nums = new Set('Bookkeeper');
+console.log(nums)
+OUTPUT - Set(6) { 'B', 'o', 'k', 'e', 'p', 'r' }
+***********************************************
+ let nums = new Set();
+nums.add(3);
+nums.add(4);
+nums.add(3);
+nums.add(3);
+nums.add("Vaishali");
+nums.add("Wankhedkar");
+console.log(nums);
+console.log(nums.has("Vaishali"));
+OUTPUT
+Set(4) { 3, 4, 'Vaishali', 'Wankhedkar' }
+true
+****************************************
+ let map = new Map();
+map.set("Vaishali", "Wankhedkar");
+map.set("Education", "Msc");
+map.set("Address", "Bangalore")
+console.log(map.get("Vaishali"))
+console.log(map.keys())
+console.log(map.values())
+for (let [k,v] of map) {
+    console.log(k, " ", v)
+OUTPUT :
+Wankhedkar
+[Map Iterator] { 'Vaishali', 'Education', 'Address' }
+[Map Iterator] { 'Wankhedkar', 'Msc', 'Bangalore' }
+Vaishali   Wankhedkar
+Education   Msc
+Address   Bangalore
+************************************************
+let map = new Map();
+map.set("Vaishali", "Wankhedkar");
+map.set("Education", "Msc");
+map.set("Address", "Bangalore")
+map.set("Vaishali", "Python");
+map.forEach((v,k) => {
+    console.log(k, " : ", v);
+});
+ OUTPUT
+ Vaishali  :  Python
+Education  :  Msc
+Address  :  Bangalore
