@@ -125,3 +125,50 @@ OUTPUT - [0, 2, 4, 6, 8, 10, 12, 14]
 list1 = [i*i for i in range(15) if i%2==0]
 print(list1)
 OUTPUT - [0, 4, 16, 36, 64, 100, 144, 196]
+********************************************
+dict = {}
+for i in range(10):
+    if i%2==0:
+        dict[i]=i*i
+print(dict)
+OUTPUT -{0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+****************************************
+dict1={i:i*i for i in range(10) if i%2==0}
+print(dict1)
+OUTPUT - {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+****************************************
+s=set([1,2,3,2,6,7,2,8,9,5])
+print(s)
+****************************************
+Cities = ["Mumbai", "New York", "Paris"]
+Countries = ["India", "USA", "France"]
+z = zip(Cities, Countries)
+for a in z:
+    print(a)
+('Mumbai', 'India')
+('New York', 'USA')
+('Paris', 'France')
+********************************************
+Cities = ["Mumbai", "New York", "Paris"]
+Countries = ["India", "USA", "France"]
+z = zip(Cities, Countries)
+for a in z:
+    print(a)
+d = {Cities:Countries for Cities, Countries in zip(Cities, Countries)}
+print(d)
+***********************************************************************
+numbers = [1,4,5,6,7,2,8,9,0]
+uniq = set(numbers)
+print(uniq)
+uniq.add(3)
+print(uniq)
+fs = frozenset(numbers)
+print(fs)
+fs.add(3)
+print(fs)
+OUTPUT
+    fs.add(3)
+AttributeError: 'frozenset' object has no attribute 'add'
+{0, 1, 2, 4, 5, 6, 7, 8, 9}
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+frozenset({0, 1, 2, 4, 5, 6, 7, 8, 9})
