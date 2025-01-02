@@ -172,3 +172,22 @@ AttributeError: 'frozenset' object has no attribute 'add'
 {0, 1, 2, 4, 5, 6, 7, 8, 9}
 {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 frozenset({0, 1, 2, 4, 5, 6, 7, 8, 9})
+**************************************************************************
+set1 = {1,4,5,6,7,True,8,'abc',0}
+set2 = {}
+set3 = set()
+print(set1)
+set1.add(10)
+set1.discard(7)
+set1.pop()
+print(set1)
+print(type(set1))
+print(type(set2))
+print(type(set3))
+OUTPUT
+{0, 1, 4, 5, 6, 7, 8, 'abc'}
+{1, 4, 5, 6, 8, 10, 'abc'}
+<class 'set'>
+<class 'dict'>
+<class 'set'>
+************************************************************************
