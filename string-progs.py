@@ -74,6 +74,19 @@ ymedaca ,gnitset ,erawtfos ot emocleW
 19
 Welcome to software
 ********************************************************************************************************************************
+x = "Python Class"
+y = "RCV Academy"
+print("Welcome to"+x+" from "+y)
+print("Welcome to %s from %s" %("Java Class",y))
+print("Welcome to {0} from {1}".format(x,y))
+print("Welcome to {classname} from {academyname}".format(classname="Perl",academyname=y))
+
+C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\venv\Scripts\python.exe C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\sel.py 
+Welcome toPython Class from RCV Academy
+Welcome to Java Class from RCV Academy
+Welcome to Python Class from RCV Academy
+Welcome to Perl from RCV Academy
+********************************************************************************************************************
 Digits to word conversion:
 --------------------------
 words_upto_19 = ['','ONE','TWO','THREE','FOUR','FIVE','SIX','SEVEN','EIGHT',
