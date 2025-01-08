@@ -44,6 +44,36 @@ I am an Bangaloriann, I stay in Bangalore Bangalorian
 26
 26
 ************************************************************************************************************************************
+s = "Welcome to software, testing, academy"
+print(s[0])
+print(s[-1])
+print(s[0:9])
+print(s[6:10])
+print(s[3:9:1])
+print(s[3:20:2])
+print(s[5:])
+print(s[:8])
+print(s[:-1])
+print(s[:])
+print(s[::-1])
+print(s.index(','))
+print(s[0:s.index(',')])
+
+C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\venv\Scripts\python.exe C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\sel.py 
+W
+y
+Welcome t
+e to
+come t
+cm osfwr,
+me to software, testing, academy
+Welcome 
+Welcome to software, testing, academ
+Welcome to software, testing, academy
+ymedaca ,gnitset ,erawtfos ot emocleW
+19
+Welcome to software
+********************************************************************************************************************************
 Digits to word conversion:
 --------------------------
 words_upto_19 = ['','ONE','TWO','THREE','FOUR','FIVE','SIX','SEVEN','EIGHT',
