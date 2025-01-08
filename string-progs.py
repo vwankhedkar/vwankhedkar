@@ -1,3 +1,49 @@
+x = "I am an indian, I stay in Bangalore india"
+y = 869456439
+p = "       ';';';909I am an indian, I stay in Bangalore    999   "
+print(len(x))
+print(str(y))
+# print(y.find("64"))   AttributeError: 'int' object has no attribute 'find'
+z = str(y)
+print(z.find("64"))
+a = x.upper()
+b = x.lower()
+print(a)
+print(b)
+print(x.count("india"))
+print(x.count("india",15,41))
+print(a.isupper())
+print(b.islower())
+print(x.split())
+print(p.strip())
+print(p.strip(';9 \''))
+print(p.lstrip(';9 \''))
+print(p.rstrip(';9 \''))
+print(x.replace("india","Bangalorian"))
+print(x.replace("india","Bangalorian",2))
+print(x.find("Bangalore"))
+print(x.index("Bangalore"))
+
+C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\venv\Scripts\python.exe C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\sel.py 
+41
+869456439
+5
+I AM AN INDIAN, I STAY IN BANGALORE INDIA
+i am an indian, i stay in bangalore india
+2
+1
+True
+True
+['I', 'am', 'an', 'indian,', 'I', 'stay', 'in', 'Bangalore', 'india']
+';';';909I am an indian, I stay in Bangalore    999
+09I am an indian, I stay in Bangalore
+09I am an indian, I stay in Bangalore    999   
+       ';';';909I am an indian, I stay in Bangalore
+I am an Bangaloriann, I stay in Bangalore Bangalorian
+I am an Bangaloriann, I stay in Bangalore Bangalorian
+26
+26
+************************************************************************************************************************************
 Digits to word conversion:
 --------------------------
 words_upto_19 = ['','ONE','TWO','THREE','FOUR','FIVE','SIX','SEVEN','EIGHT',
