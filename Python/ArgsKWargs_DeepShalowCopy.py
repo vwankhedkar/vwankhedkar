@@ -41,3 +41,32 @@ OUTPUT
 [1, 2, [3, 5, 6], 4]
 [1, 2, [3, 5, 6, 7], 8]
 [1, 2, [3, 5, 6], 4]
+************************************************************************
+# Function to modify mutable object -> list
+def modify_list(l):
+    l.append(4)
+    print("Inside modify list: ", l)
+
+# Function to modify immutable object -> integer
+def modify_number(num):
+    num += 10
+    print("Inside modify number: ", num)
+
+# Passing mutable object
+l = [1, 2, 3]
+print("Before modify list : ", l)
+modify_list(l)
+print("After modify list : ", l)
+
+# Passing immutable object
+num = 5
+print("Before modify number : ", num)
+modify_number(num)
+print("After modify number : ", num)
+OUTPUT
+Before modify list :  [1, 2, 3]
+Inside modify list:  [1, 2, 3, 4]
+After modify list :  [1, 2, 3, 4]
+Before modify number :  5
+Inside modify number:  15
+After modify number :  5
