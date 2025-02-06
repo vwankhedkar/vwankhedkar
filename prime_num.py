@@ -34,3 +34,21 @@ while (n1 <= n):
  Enter Input: 5
  2 3 5 
 ************************************************************************************************************
+def is_prime(num):
+    # check is number is less than 2
+    if num<2:
+        return False
+    # check for factors from 2 to the square root of the number
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
+            return False
+    # if no factors are found number is prime
+    return True
+num = int(input("Enter a number: "))
+if is_prime(num):
+    print(f"{num} Number is prime")
+else:
+    print(f"{num} Number is not prime")
+
+OUTPUT - Enter a number: 5
+5 Number is prime
