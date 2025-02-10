@@ -154,3 +154,69 @@ lap1 = student.Laptop()
 Vais 2
 HP i5 8
 ********************************************************************************************
+Instance Method
+class student:
+    school = "Modern"
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+    def avg(self): # instance
+        return (self.m1 + self.m2 + self.m3) / 3
+    def get_m1(self):       # Accessor Methods
+        return self.m1
+    def set_m1(self, value):       # Mutator method
+        self.m1 = value
+
+s1 = student(45, 60, 30)
+s2 = student(30, 40, 50)
+print(s1.avg())
+print(s2.avg())
+OUTPUT - 45.0
+40.0
+*************************************************************************************************
+ClassMethod
+class student:
+    school = "Modern"
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+    def avg(self): # instance
+        return (self.m1 + self.m2 + self.m3) / 3
+    @classmethod
+    def getschool(cls):
+        return cls.school
+
+s1 = student(45, 60, 30)
+s2 = student(30, 40, 50)
+print(s1.avg())
+print(student.getschool())
+OUTPUT - 45.0
+Modern
+*********************************************************************************************
+Static Method
+class student:
+    school = "Modern"
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+    def avg(self): # instance
+        return (self.m1 + self.m2 + self.m3) / 3
+    @classmethod
+    def getschool(cls):
+        return cls.school
+
+    @staticmethod
+    def info():
+        print("This is student class in info module")
+
+s1 = student(45, 60, 30)
+s2 = student(30, 40, 50)
+print(s1.avg())
+print(student.getschool())
+student.info()
+OUTPUT	45.0
+Modern
+This is student class in info module
