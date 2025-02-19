@@ -12,6 +12,28 @@ animal.make_sound()
 OUTPUT
 Barking
 **************************************************
+from abc import ABC, abstractmethod
+class Computer(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+class Laptop(Computer):
+    def process(self):
+        print("It's running")
+class programmr:
+    def work(self, com):
+        print("Solving bugs")
+        com.process()
+
+com1 = Laptop()
+com1.process()
+prog1 = programmr()
+prog1.work(com1)
+OUTPUT
+It's running
+Solving bugs
+It's running
+****************************************************
 class Car:
     def __init__(self):
         self.__speed = 0  # Private attribute
