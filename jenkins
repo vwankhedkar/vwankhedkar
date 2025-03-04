@@ -1,0 +1,8 @@
+Jenkins setup
+
+
+Jenkins password -4fb141c9c39e4ba59a39deb2457d3da2
+
+First start Jenkins with command - C:\Java-Selenium-Train>java war jenkins.war
+
+login to http://localhost:8080/ (vwankhed / vaishali123)
