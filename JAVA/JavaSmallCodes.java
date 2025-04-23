@@ -422,3 +422,701 @@ public class MaxMinElement {
 Max element in array: 100
 Min element in array: 5
 ********************************************************
+package com.basic;
+
+public class DayOfWeek {
+
+	public static void main(String[] args) {
+		int day = 5;
+		if (day == 1)
+		{
+			System.out.println("Sunday");
+		} else if (day == 2)
+		{
+			System.out.println("Monday");
+		} else if (day == 3)
+		{
+			System.out.println("Tuesday");
+		} else if (day == 4)
+		{
+			System.out.println("Wednesday");
+		} else if (day == 5)
+		{
+			System.out.println("Thursday");
+		}else if (day == 6)
+		{
+			System.out.println("Friday");
+		}else if (day == 7)
+		{
+			System.out.println("Saturdayday");
+		}else 
+		{
+			System.out.println("Invalid week number");
+		}
+	}
+}
+Thursday
+*************************************************************************************
+package com.basic;
+
+public class CountDigits {
+
+	public static void main(String[] args) {
+		int count = 0;
+		int num = 123456;
+		while (num != 0)
+		{
+			num /= 10;
+			++ count;
+		}
+		System.out.println("Number of digits: " +count);
+	}
+}
+Number of digits: 6
+************************************************************************************
+package com.basic;
+
+public class NumberisPalindrome {
+
+	public static void main(String[] args) {
+		int lastDigit, sum=0, a;
+		int inputNumber = 171;
+		a = inputNumber;
+		
+		while (a > 0)
+		{
+			System.out.println("Inpput Number : " +a);
+			lastDigit = a % 10;
+			System.out.println("Last Digit: " +lastDigit);
+			System.out.println("Digit: " + lastDigit + " was added to sum " + (sum * 10));
+			sum = (sum * 10) + lastDigit;
+			a = a / 10;
+		}
+		if (sum == inputNumber)
+			System.out.println("Number is palindrome ");
+		else 
+			System.out.println("Number is not palindrome ");
+	}
+}
+Inpput Number : 171
+Last Digit: 1
+Digit: 1 was added to sum 0
+Inpput Number : 17
+Last Digit: 7
+Digit: 7 was added to sum 10
+Inpput Number : 1
+Last Digit: 1
+Digit: 1 was added to sum 170
+Number is palindrome 
+*********************************************************************************
+package com.basic;
+
+public class StringPalindrome {
+
+	public static void main(String[] args) {
+		String s = "dad";
+		int len = s.length();
+		String rev = "";
+		for (int i=len-1; i>=0; i--)
+		{
+			rev = rev + s.charAt(i);
+		}
+		System.out.println(rev);
+		if (s.equals(rev))
+		{
+			System.out.println("Palindrone string");
+		} else
+		{
+			System.out.println("Not palindrome string");
+		}
+	}
+}
+dad
+Palindrone string
+********************************************************************
+package com.basic;
+
+public class GreatestOfThreeNumbers {
+
+	public static void main(String[] args) {
+		int num = 10;
+		if (num > 0)
+		{
+			System.out.println("Number is positive");
+		} else
+		{
+			System.out.println("Number is Negative");
+		}	
+	}
+}
+Number is positive
+************************************************************
+package com.basic;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class RemoveDuplicateEle {
+
+    public static void main(String[] args) {
+        ArrayList<String> listWtDuplicateEle = new ArrayList<>();
+        listWtDuplicateEle.add("JAVA");
+        listWtDuplicateEle.add("J2EE");
+        listWtDuplicateEle.add("JSP");
+        listWtDuplicateEle.add("SERVLETS");
+        listWtDuplicateEle.add("JAVA");
+        listWtDuplicateEle.add("STRUTS");
+        listWtDuplicateEle.add("JSP");
+
+        System.out.println("ArrayList with duplicate elements:");
+        System.out.println(listWtDuplicateEle);
+
+        // Remove duplicates using HashSet
+        HashSet<String> set = new HashSet<>(listWtDuplicateEle);
+
+        // Convert back to ArrayList
+        ArrayList<String> listWODuplicateEle = new ArrayList<>(set);
+
+        System.out.println("ArrayList after removing duplicate elements:");
+        System.out.println(listWODuplicateEle);
+    }
+}
+ArrayList with duplicate elements:
+[JAVA, J2EE, JSP, SERVLETS, JAVA, STRUTS, JSP]
+ArrayList after removing duplicate elements:
+[JAVA, SERVLETS, JSP, J2EE, STRUTS]
+***************************************************************************
+package com.basic;
+
+public class RemoveJunk {
+
+    public static void main(String[] args) {
+    	String s = "å°?ç±³ä½“éªŒç‰ˆ latin string 01234567890";
+    	String s1 = "@#$@#$@ testing #@$@#$@#$ Selenium !@#$@#$@# &&&& Java";
+    	// Regular Expression: [^a-zA-Z0-9]
+    	s = s.replaceAll("[^a-zA-Z0-9]", "");
+    	System.out.println(s);
+    	s1 = s1.replaceAll("[^a-zA-Z0-9]", "");
+    	System.out.println(s1);
+    	// s.replaceAll("[^a-zA-Z0-9\\s]", "")   \\s allows whitespace (spaces, tabs, newlines).
+    	// s.replaceAll("[^\\p{L}\\p{N}]", "") \\p{L} = any kind of letter from any language \\p{N} = any kind of numeric digit
+    }
+}
+latinstring01234567890
+testingSeleniumJava
+*****************************************************************************
+package com.basic;
+
+public class StrWithoutSpace {
+
+    public static void main(String[] args) {
+    	String str = " Core Java selenium automation oops   			programming ";
+    	String strWOSpace = str.replaceAll("\\s", "");
+    	System.out.println(strWOSpace);
+    }
+}
+CoreJavaseleniumautomationoopsprogramming
+*************************************************************************
+package com.basic;
+
+import java.util.Scanner;
+
+public class ReverseChars {
+
+    public static void main(String[] args) {
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Please enter the string: ");
+    	String original = scan.nextLine();
+    	while (original.isEmpty() || original == null)
+    	{
+    		System.out.println("Please enter valid string which is not null empty");
+    		original = scan.nextLine();
+    	}
+    	scan.close();
+    	ReverseChars output = new ReverseChars();
+    	String reverseChars = output.reverseCharacters(original);
+    	System.out.println(reverseChars);
+    }
+    private String reverseCharacters(String originalString)
+    {
+    	String reverse = "";
+    	for (int i = originalString.length() - 1; i >= 0; i--)
+    	{
+    		reverse = reverse + originalString.charAt(i);
+    	}
+    	return reverse;
+    }
+}
+Please enter the string: 
+GreatestOfThreeNumbers
+srebmuNeerhTfOtsetaerG
+**************************************************************
+package com.basic;
+
+import java.util.Scanner;
+
+public class reverseEachWord {
+
+    public static void main(String[] args) {
+    	reverseEachWordOfString("Java Concept Of The Day");
+    	reverseEachWordOfString("Java J2EE JSP Servlets Hibernate Struts");
+    	reverseEachWordOfString("I am string not reversed");
+    	reverseEachWordOfString("Reverse Me");
+
+    }
+    static void reverseEachWordOfString(String inputString)
+    {
+    	String[] words = inputString.split(" ");
+    	String reverseString = "";
+    	for (int i=0; i<words.length; i++)
+    	{
+    		String word = words[i];
+    		String reverseWord = "";
+    		for (int j=word.length() - 1; j >= 0; j--)
+    		{
+    			reverseWord = reverseWord + word.charAt(j);
+    		}
+    		reverseString = reverseString + reverseWord + " ";
+    	}
+    	System.out.println(inputString);
+    	System.out.println(reverseString);
+    	System.out.println("------------------------------------");
+    }
+}
+Java Concept Of The Day
+avaJ tpecnoC fO ehT yaD 
+------------------------------------
+Java J2EE JSP Servlets Hibernate Struts
+avaJ EE2J PSJ stelvreS etanrebiH sturtS 
+------------------------------------
+I am string not reversed
+I ma gnirts ton desrever 
+------------------------------------
+Reverse Me
+esreveR eM 
+------------------------------------
+*********************************************************************************
+public class ReverseNumbers {
+
+    public static void main(String[] args) {
+    	long num = 12345;
+    	long rev = 0;
+    	
+    	while (num != 0)
+    	{
+    		rev = rev * 10 + num % 10;
+    		num = num / 10;
+    	}
+    	System.out.println("Reversed num is: " +rev);
+    	// With StringBuffer method
+    	long num1 = 12345;
+    	System.out.println(new StringBuffer(String.valueOf(num1)).reverse());
+    	
+    }
+}
+Reversed num is: 54321
+54321
+***********************************************************
+package com.basic;
+
+import java.util.Scanner;
+
+public class StringReverse {
+
+    public static void main(String[] args) {
+    	System.out.println("Enter the string: ");
+    	Scanner sc = new Scanner(System.in);
+    	String s = sc.nextLine();
+    	int len = s.length();
+    	String rev = "";
+    	
+    	for (int i=len-1; i >= 0; i--)
+    	{
+    		rev = rev + s.charAt(i);
+    	}
+    	System.out.println(rev);
+    	StringBuffer sf = new StringBuffer(s);
+    	System.out.println(sf.reverse());
+    }
+}
+Enter the string: 
+StringBuffer
+reffuBgnirtS
+reffuBgnirtS
+*********************************************************
+package com.basic;
+
+import java.util.Scanner;
+
+public class SearchNumInArray {
+
+    public static void main(String[] args) {
+    	int a[] = { 10, 20, 30, 40, 50 };
+    	int num = 30;
+    	boolean flag = false;
+    	for (int i : a)
+    	{
+    		if (num == i)
+    		{
+    			System.out.println("Element Found");
+    			flag = true;
+    			break;
+    		}
+    	}
+    	if (flag == false)
+    	{
+    		System.out.println("Element Not Found");
+    	}
+    }
+}
+Element Found
+*************************************************************
+package com.basic;
+
+import java.util.Scanner;
+
+public class StrSearchInArray {
+
+    public static void main(String[] args) {
+    	String a[] = { "abc", "xyz", "pqr", "mno"};
+    	String search_str = "xyz";
+    	boolean flag = false;
+    	for (String s : a)
+    	{
+    		if (search_str == s)
+    		{
+    			System.out.println("Element Found");
+    			flag = true;
+    			break;
+    		}
+    	}
+    	if (flag == false)
+    		System.out.println("Element Not Found");
+    }
+}
+Element Found
+*************************************************************
+package com.basic;
+import java.util.Arrays;
+
+public class SearchNumArrayMethod {
+
+    public static void main(String[] args) {
+    	int array[] = { 10, 20, 30, 40, 50, 60 };
+    	System.out.println(Arrays.binarySearch(array, 50));
+    }
+}
+4
+*******************************************************
+package com.basic;
+
+public class SingleDimensionArray {
+
+    public static void main(String[] args) {
+    	int array[] = { 100, 200, 300, 400, 500, 600 };
+    	System.out.println(array.length);
+    	for (int i : array)
+    	{
+    		System.out.print(i + " ");
+    	}
+    	System.out.println("\nPrint except 400");
+    	for (int i : array)
+    	{
+    		if (i == 400)
+    		{
+    			break;
+    		}
+    		System.out.print(i + " ");
+    	}
+    }
+}
+6
+100 200 300 400 500 600 
+Print except 400
+100 200 300 
+*******************************************************
+package com.basic;
+
+import java.util.Arrays;
+
+public class SortArray {
+
+    public static void main(String[] args) {
+    	int data[] = { 4, 10, 2, 6, 1 };
+    	Arrays.sort(data);
+    	for (int c : data)
+    	{
+    		System.out.print(c + " ");
+    	}
+    	
+    	// String array sorting
+    	String data2[] = {"z", "a", "x"};
+    	Arrays.sort(data2);
+    	System.out.print("\n");
+    	for (String c : data2)
+    	{
+    		System.out.print(c + " ");
+    	}
+    }
+}
+1 2 4 6 10 
+a x z 
+******************************************
+package com.basic;
+
+import java.util.Arrays;
+
+public class StringOps {
+
+    public static void main(String[] args) {
+    	String s = "welcome";
+    	System.out.println(s.length()); // length
+    	String s1 = "welcome";
+    	String s2 = " to java";
+    	System.out.println(s1.concat(s2));
+    	System.out.println("welcome".concat(" to java"));
+    	
+    	s = "       welcome      ";
+    	System.out.print(s);
+    	System.out.println(s.trim());
+    	System.out.println(s.charAt(4));
+    	
+    	s = "welcome to java";
+    	System.out.println(s.contains("java"));
+    	System.out.println(s.contains("Java"));
+    	
+    	s = "Selenium";
+    	System.out.println(s.equals("SELENIUM"));
+    	System.out.println(s.equalsIgnoreCase("SELENIUM"));   
+    	
+    	s = "welcome to java";
+    	System.out.println(s.replace('e', 'a'));
+    	System.out.println(s.replace("java", "selenium"));
+    	
+    	s = "Welcome";
+    	System.out.println(s.substring(2, 4));
+    	System.out.println(s.substring(4, 7));
+    	
+    	s = "WelCome";
+    	System.out.println(s.toLowerCase());
+    	System.out.println(s.toUpperCase());
+    }
+}
+7
+welcome to java
+welcome to java
+       welcome      welcome
+ 
+true
+false
+false
+true
+walcoma to java
+welcome to selenium
+lc
+ome
+welcome
+WELCOME
+*************************************************************
+package com.basic;
+
+import java.util.Arrays;
+
+public class GreatestOfThreeNumbers {
+
+    public static void main(String[] args) {
+    	String a = "Hello";
+    	String b = "World";
+    	
+    	System.out.println("Before swapping");
+    	System.out.println("The value of a is: " +a);
+    	System.out.println("The value of b is: " +b);
+    	
+    	a = a + b;
+    	b = a.substring(0, a.length() - b.length());
+    	a = a.substring(b.length());
+    	
+    	System.out.println("The value of a and b after swapping is: ");
+    	System.out.println("The value of a is: " +a);
+    	System.out.println("The value of a is: " +b);
+    }
+}
+Before swapping
+The value of a is: Hello
+The value of b is: World
+The value of a and b after swapping is: 
+The value of a is: World
+The value of a is: Hello
+******************************************************************************
+package com.basic;
+import java.util.Arrays;
+
+public class ArrayEleSum {
+
+    public static void main(String[] args) {
+    	int[] array = { 10, 20, 30, 40, 50, 10 };
+    	int sum = 0;
+    	for (int num : array)
+    	{
+    		sum = sum + num;
+    	}
+    	System.out.println("Sum of array elements is: " + sum);
+    }
+}
+Sum of array elements is: 160
+*********************************************************************
+package com.basic;
+import java.util.Arrays;
+
+public class SwapValues {
+
+    public static void main(String[] args) {
+    	int x = 5;
+    	int y = 10;
+    	int t;
+    	t = x;
+    	x = y;
+    	y = t;
+    	System.out.println("x = " + x + " and y = " +y);
+    	// using + operator
+    	x = x + y;
+    	y = x - y;
+    	x = x - y;
+    	System.out.println("x = " + x + " and y = " +y);
+    	// using * operator
+    	x = x * y;
+    	y = x / y;
+    	x = x / y;
+    	System.out.println("x = " + x + " and y = " +y);
+    }
+}
+x = 10 and y = 5
+x = 5 and y = 10
+x = 10 and y = 5
+****************************************************
+package com.basic;
+import java.util.Arrays;
+
+public class SwitchStmt {
+
+    public static void main(String[] args) {
+    	int day = 10;
+    	
+    	switch (day)
+    	{
+    	case 1:
+    		System.out.println("Sunday");
+    		break;
+    	case 2:
+    		System.out.println("Monday");
+    		break;
+    	case 3:
+    		System.out.println("Tuesday");
+    		break;
+    	case 4:
+    		System.out.println("Wedday");
+    		break;
+    	case 5:
+    		System.out.println("Thursday");
+    		break;
+    	case 6:
+    		System.out.println("Friday");
+    		break;
+    	case 7:
+    		System.out.println("Saturday");
+    		break;
+    	default:
+    		System.out.println("Invalid week number");
+    	}
+    	
+    }
+}
+Invalid week number
+********************************************************************
+package com.basic;
+import java.util.Arrays;
+
+public class TwoDimArray {
+
+    public static void main(String[] args) {
+    	int a[][] = new int[3][2];
+    	a[0][0] = 100;
+    	a[0][1] = 200;
+    	a[1][0] = 300;
+    	a[1][1] = 400;
+    	a[2][0] = 500;
+    	a[2][1] = 600;
+    	System.out.println(a.length);
+    	System.out.println(a[0].length);
+    	
+    	for (int r[] : a)
+    	{
+    		for (int c : r)
+    		{
+    			System.out.println(c);
+    		}
+    	}
+    }
+}
+3
+2
+100
+200
+300
+400
+500
+600
+************************************************************
+package com.basic;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class WordCharLineCount {
+
+    public static void main(String[] args) {
+    	BufferedReader reader = null;
+    	int charCount = 0;
+    	int wordCount = 0;
+    	int lineCount = 0;
+    	try
+    	{
+    		reader = new BufferedReader(new FileReader("C:\\Java-Selenium-Train\\eclipse-workspace\\MyJavaProgs\\src\\com\\basic\\BubbleSort.java"));
+    		String currentLine = reader.readLine();
+    		while (currentLine != null)
+    		{
+    			lineCount++;
+    			String[] words = currentLine.split(" ");
+    			wordCount = wordCount + words.length;
+    			for (String word : words)
+    			{
+    				charCount = charCount + word.length();
+    			}
+    			currentLine = reader.readLine();
+    		}
+    		System.out.println("Number of Chars in A file: " + charCount);
+    		System.out.println("Number of Words in A file: " + wordCount);
+    		System.out.println("Number of Lines in A file: " + lineCount);
+    	}
+    	catch (IOException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	finally
+    	{
+    		try
+    		{
+    			reader.close();
+    		}
+    		catch (IOException e)
+    		{
+    			e.printStackTrace();
+    		}
+    	}
+    }
+}
+Number of Chars in A file: 576
+Number of Words in A file: 100
+Number of Lines in A file: 37
+	
