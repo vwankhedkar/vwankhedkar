@@ -1119,4 +1119,218 @@ public class WordCharLineCount {
 Number of Chars in A file: 576
 Number of Words in A file: 100
 Number of Lines in A file: 37
-	
+********************************************************************
+package com.basic;
+public class ArrayProgs {
+
+	public static void main(String[] args) {
+		int[] arr = {1,2,3,4,5,6,7,8,2,1,2};
+		int target = 6;
+		for (int i=0; i<arr.length-2; i++)
+		{
+			if (arr[i] + arr[i+1] + arr[i+2] == target)
+			{
+				System.out.println("Variable with values are: " + arr[i]+" "+arr[i+1]+" "+arr[i+2]);
+			}
+		}
+	}
+
+}
+Variable with values are: 1 2 3
+**************************************************************************
+package com.basic;
+
+public class ArrayProgs {
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 2, 5, 6, 7, 8, 2, 1, 2};
+        int start = 0;
+        int max_start = 0;
+        int max_end = 0;
+        int sum = arr[0];
+        int max_sum = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] - arr[i - 1] == 1) {
+                sum += arr[i];
+            } else {
+                if (sum > max_sum) {
+                    max_sum = sum;
+                    max_start = start;
+                    max_end = i - 1;
+                }
+                // reset start and sum
+                start = i;
+                sum = arr[i];
+            }
+        }
+
+        // Final check after loop ends
+        if (sum > max_sum) {
+            max_sum = sum;
+            max_start = start;
+            max_end = arr.length - 1;
+        }
+
+        System.out.println("Maximum sum consecutive sequence is from index " + max_start + " to " + max_end);
+        System.out.print("Elements are: ");
+        for (int i = max_start; i <= max_end; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("\nMaximum Sum: " + max_sum);
+    }
+}
+Maximum sum consecutive sequence is from index 5 to 8
+Elements are: 5 6 7 8 
+Maximum Sum: 26
+****************************************************************
+package com.basic;
+
+public class ArrayProgs {
+
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3, 4, 2, 5, 6, 7, 8, 2,1,2};  
+        int start=0;  
+        int max_start=0;  
+        int max_end=0; 
+        int sum=0;  
+        int max_sum=arr[0];  
+
+        for(int i=1;i<arr.length-1;i++)  
+        {  
+            if(arr[i]-arr[i-1]==1)  
+            {  
+               sum=sum+arr[i];  
+            }  
+            else {  
+                if(sum>max_sum)  
+                {  
+                    max_sum=sum;  
+                    max_start=start;  
+                    max_end=i-1;  
+                }  
+                start=i; // reset i as consecutive sequence not found  
+                sum = arr[i]; // reset sum to current element
+            }
+        }
+
+        // Check after loop ends
+        if (sum > max_sum) {
+            max_sum = sum;
+            max_start = start;
+            max_end = arr.length - 1;
+        }
+
+        System.out.print("Max consecutive increasing sequence with max sum: ");
+        for (int i = max_start; i <= max_end; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("\nMax Sum: " + max_sum);
+	}
+}
+Max consecutive increasing sequence with max sum: 5 6 7 8 
+Max Sum: 26
+**********************************************************
+package com.basic;
+
+import java.util.ArrayList;
+
+public class ArrayProgs {
+	    public static void main(String[] args) {
+	        int[] arr = {1, 2, 3, 4, 2, 5, 6, 7, 8, 2, 1, 3};
+	        int target = 6;
+
+	        ArrayList<ArrayList<Integer>> output = new ArrayList<>();
+	        ArrayList<Integer> current = new ArrayList<>();
+
+	        findSequences(arr, 0, 0, target, output, current);
+
+	        System.out.println("Subsequences that sum to " + target + ":");
+	        for (ArrayList<Integer> seq : output) {
+	            System.out.println(seq);
+	        }
+	    }
+
+	    static void findSequences(int[] arr, int index, int sum, int target,
+	                              ArrayList<ArrayList<Integer>> output,
+	                              ArrayList<Integer> current) {
+	        if (sum == target) {
+	            output.add(new ArrayList<>(current));
+	            return;
+	        }
+
+	        if (index >= arr.length || sum > target) {
+	            return;
+	        }
+
+	        // Include current element
+	        current.add(arr[index]);
+	        findSequences(arr, index + 1, sum + arr[index], target, output, current);
+
+	        // Backtrack and exclude current element
+	        current.remove(current.size() - 1);
+	        findSequences(arr, index + 1, sum, target, output, current);
+	    }
+	}
+Subsequences that sum to 6:
+[1, 2, 3]
+[1, 2, 2, 1]
+[1, 2, 2, 1]
+[1, 2, 3]
+[1, 3, 2]
+[1, 3, 2]
+[1, 4, 1]
+[1, 2, 2, 1]
+[1, 2, 3]
+[1, 5]
+[1, 2, 3]
+[2, 3, 1]
+[2, 4]
+[2, 2, 2]
+[2, 1, 3]
+[3, 2, 1]
+[3, 2, 1]
+[3, 3]
+[4, 2]
+[4, 2]
+[2, 1, 3]
+[5, 1]
+[6]
+[2, 1, 3]
+***********************************************************
+package com.basic;
+
+import java.util.*;
+
+public class ArrayProgs {
+	    public static void main(String[] args) {
+	        int[] arr = {1, 2, 3, 4, 2, 5, 6, 7, 8, 2, 1, 3};
+	        int target = 6;
+
+	        for (int i = 0; i < arr.length; i++) {
+	            int sum = 0;
+
+	            for (int j = i; j < arr.length; j++) {
+	                sum += arr[j];
+
+	                if (sum == target) {
+	                    printSubarray(arr, i, j);
+	                } else if (sum > target) {
+	                    break;
+	                }
+	            }
+	        }
+	    }
+
+	    private static void printSubarray(int[] arr, int start, int end) {
+	        for (int k = start; k <= end; k++) {
+	            System.out.print(arr[k]);
+	            if (k < end) System.out.print(", ");
+	        }
+	        System.out.println();
+	    }
+	}
+1, 2, 3
+4, 2
+6
+2, 1, 3
