@@ -35,4 +35,23 @@ Testing Radio Buttons and Check Boxes
 
     unselect checkbox BlackTea
     close browser
+*******************************************************************
+*** Settings ***
+Library           SeleniumLibrary
 
+*** Variables ***
+${browser}      chrome
+${url}          https://demoqa.com/automation-practice-form
+
+*** Test Cases ***
+TestingInputBox
+    Open Browser    ${url}      ${browser}
+    Maximize Browser Window
+   # Click Element    xpath://*[@id="close-button-id"]
+    #Scroll Element Into View    id:gender-radio-2
+    #Click Element               id:gender-radio-2
+    Scroll Element Into View    id:gender-radio-2
+    Execute JavaScript    document.getElementById("gender-radio-2").click()
+    Scroll Element Into View    id:hobbies-checkbox-1
+    Execute JavaScript    document.getElementById("hobbies-checkbox-1").click()
+    Execute JavaScript    document.getElementById("hobbies-checkbox-1").checked = false
