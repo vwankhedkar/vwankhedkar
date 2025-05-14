@@ -1,0 +1,40 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${browser}      chrome
+${url}          https://techbeamers.com/selenium-practice-test-page/
+
+*** Test Cases ***
+Testing DropBox and ListBox
+    open browser    ${url}      ${browser}
+    maximize browser window
+    Execute JavaScript    document.querySelectorAll('iframe').forEach(el => el.remove())
+    scroll element into view    xpath://label[contains(text(),'Languages')]/following-sibling::select
+    sleep    3
+    select from list by label    id:country    Japan
+    select from list by index    id:country    2
+    sleep    3
+    select from list by index    id:languages   1
+    select from list by label    id:languages   German
+    select from list by label    id:languages   French
+    sleep    3
+*****************************************************************
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${browser}      chrome
+${url}          https://www.softwaretestingmaterial.com/sample-webpage-to-automate/
+
+*** Test Cases ***
+Testing DropBox and ListBox
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Scroll Element Into View    name:dropdown
+    Sleep    3
+    Select From List By Index    xpath://select[@name='multipleselect[]']    1
+    Select From List By Index    xpath://select[@name='multipleselect[]']    3
+    Sleep    3
+    # Close Browser
+*****************************************************************************************
