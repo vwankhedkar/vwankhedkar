@@ -145,3 +145,32 @@ RegTest
     ${speed}=   get selenium speed
     log to console    ${speed}
     sleep    3
+**********************************************************************
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${browser}      chrome
+${url}          https://demowebshop.tricentis.com/register
+
+*** Test Cases ***
+RegTest
+    open browser    ${url}      ${browser}
+    maximize browser window
+    ${time}=   get selenium timeout
+    log to console    ${time}
+   # set selenium speed    2 seconds
+   # set selenium timeout    10 seconds
+   # wait until page contains    Register     # default 5 sec
+    set selenium implicit wait    10 seconds
+    ${implicittime}=    get selenium implicit wait
+    log to console    ${implicittime}
+    select radio button    Gender   M
+    input text    name:FirstName1    David
+    input text    name:LastName    John
+    input text    name:Email        anch@gmail.com
+    input text    name:Password     davidjohn
+    input text    name:ConfirmPassword    davidjohn
+    ${speed}=   get selenium speed
+    log to console    ${speed}
+    sleep    3
