@@ -1,0 +1,113 @@
+import json
+from datetime import datetime, timedelta
+
+# Sample JSON data
+data = {
+    "order_id": "ORD-2024-0001",
+    "customer": {
+        "customer_id": 101,
+        "name": "Alice Johnson",
+        "email": "alice.j@example.com",
+        "addresses": [
+            {
+                "type": "billing",
+                "line1": "123 Maple Street",
+                "city": "New York",
+                "state": "NY",
+                "postal_code": "10001",
+                "country": "USA"
+            },
+            {
+                "type": "shipping",
+                "line1": "456 Oak Avenue",
+                "city": "Brooklyn",
+                "state": "NY",
+                "postal_code": "11201",
+                "country": "USA"
+            }
+        ]
+    },
+    "order_date": "2024-04-25T14:32:00Z",
+    "status": "shipped",
+    "payment": {
+        "method": "credit_card",
+        "transaction_id": "TXN-789654",
+        "amount": 329.75,
+        "currency": "USD",
+        "paid_at": "2024-04-25T14:35:00Z"
+    },
+    "items": [
+        {
+            "product_id": "P1001",
+            "name": "Wireless Headphones",
+            "quantity": 1,
+            "unit_price": 199.99,
+            "attributes": {
+                "color": "black",
+                "warranty": "2 years"
+            }
+        },
+        {
+            "product_id": "P2045",
+            "name": "Phone Case",
+            "quantity": 2,
+            "unit_price": 24.88,
+            "attributes": {
+                "color": "blue",
+                "material": "leather"
+            }
+        }
+    ],
+    "delivery": {
+        "carrier": "UPS",
+        "tracking_number": "1Z999AA10123456784",
+        "estimated_delivery": "2024-04-29",
+        "delivered_at": None
+    },
+    "notes": None
+}
+
+data1 = json.dumps(data)
+print(type(data1))
+print(data1)
+print(data['customer']['addresses'])
+
+<class 'str'>
+{"order_id": "ORD-2024-0001", "customer": {"customer_id": 101, "name": "Alice Johnson", "email": "alice.j@example.com", "addresses": [{"type": "billing", "line1": "123 Maple Street", "city": "New York", "state": "NY", "postal_code": "10001", "country": "USA"}, {"type": "shipping", "line1": "456 Oak Avenue", "city": "Brooklyn", "state": "NY", "postal_code": "11201", "country": "USA"}]}, "order_date": "2024-04-25T14:32:00Z", "status": "shipped", "payment": {"method": "credit_card", "transaction_id": "TXN-789654", "amount": 329.75, "currency": "USD", "paid_at": "2024-04-25T14:35:00Z"}, "items": [{"product_id": "P1001", "name": "Wireless Headphones", "quantity": 1, "unit_price": 199.99, "attributes": {"color": "black", "warranty": "2 years"}}, {"product_id": "P2045", "name": "Phone Case", "quantity": 2, "unit_price": 24.88, "attributes": {"color": "blue", "material": "leather"}}], "delivery": {"carrier": "UPS", "tracking_number": "1Z999AA10123456784", "estimated_delivery": "2024-04-29", "delivered_at": null}, "notes": null}
+[{'type': 'billing', 'line1': '123 Maple Street', 'city': 'New York', 'state': 'NY', 'postal_code': '10001', 'country': 'USA'}, {'type': 'shipping', 'line1': '456 Oak Avenue', 'city': 'Brooklyn', 'state': 'NY', 'postal_code': '11201', 'country': 'USA'}]
+****************************************************************************************************************
+
+import json
+people_string = '''
+{
+    "people" : [
+       {
+         "name": "John Smith",
+         "phone": "615-555-7164",
+         "emails": ["johnsmith@bogusemail.com", "john.smith@work-place.com"],
+         "has_license": false         
+       },
+       {
+         "name": "Jane Doe",
+         "phone": "560-555-5153",
+         "emails": null,
+         "has_license": true         
+       }
+    ]
+}
+'''
+data = json.loads(people_string)
+print(type(data))
+print(data)
+for person in data['people']:
+    print(person['name'])
+    del person['phone']
+new_string = json.dumps(data)
+print(new_string)
+
+<class 'dict'>
+{'people': [{'name': 'John Smith', 'phone': '615-555-7164', 'emails': ['johnsmith@bogusemail.com', 'john.smith@work-place.com'], 'has_license': False}, {'name': 'Jane Doe', 'phone': '560-555-5153', 'emails': None, 'has_license': True}]}
+John Smith
+Jane Doe
+{"people": [{"name": "John Smith", "emails": ["johnsmith@bogusemail.com", "john.smith@work-place.com"], "has_license": false}, {"name": "Jane Doe", "emails": null, "has_license": true}]}
+
