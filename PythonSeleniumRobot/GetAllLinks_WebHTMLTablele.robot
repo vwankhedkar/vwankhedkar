@@ -57,4 +57,19 @@ TableValidation
     table header should contain     xpath://table[@name='BookTable']    BookName
 
     close browser
+***************************************************************************
+*** Settings ***
+Library           SeleniumLibrary
 
+*** Test Cases ***
+MyTestCase
+    Open Browser    https://www.naukri.com/    chrome
+    Maximize Browser Window
+    ${AllLinksCount}=    Get Element Count    xpath://a
+    Log To Console    Total Links Found: ${AllLinksCount}
+
+    FOR    ${i}    IN RANGE    1    ${AllLinksCount}+1
+        ${linkText}=    Get Text    xpath:(//a)[${i}]
+        Log To Console    ${i}. ${linkText}
+    END
+    Close Browser
