@@ -119,3 +119,8 @@ Iam an indian And in Bangalore
 Enter filename: abc
 File doesnot exist abc
 ***************************************************************************************
+Copy image file
+f = open('Me1.JPG','rb')
+f1 = open('Me2.JPG','wb')
+for i in f:
+    f1.write(i)
