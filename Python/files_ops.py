@@ -124,3 +124,54 @@ f = open('Me1.JPG','rb')
 f1 = open('Me2.JPG','wb')
 for i in f:
     f1.write(i)
+***************************************************************
+try:
+    f = open('myfile.txt','r')
+    print(f.read())
+    print(f.readline())
+    print(f.readlines())
+finally:
+    f.close()
+f.read()        #read total file
+user        city        email
+jake        Lucas       jake@mymail.com
+lucas       London      lucas@mymail.com
+Barcelona   Doha        Barcelona@mymail.com
+f.readline() # read line by line
+user        city        email
+(f.readlines()        # read whole file and return list
+['user        city        email\n', 'jake        Lucas       jake@mymail.com\n', 'lucas       London      lucas@mymail.com\n', 'Barcelona   Doha        Barcelona@mymail.com']
+*************************************************
+try:
+    f = open('myfile.txt','r')
+    line = f.readline()
+    while (line):
+        print(line)
+        line = f.readline()
+finally:
+    f.close()
+user        city        email
+
+jake        Lucas       jake@mymail.com
+
+lucas       London      lucas@mymail.com
+
+Barcelona   Doha        Barcelona@mymail.com
+**********************************************
+with open("myfile.txt",'r') as f:
+    print(f.readline())
+    list2 = f.read().split("\n")
+    print(list2)
+user        city        email
+
+['jake        Lucas       jake@mymail.com', 'lucas       London      lucas@mymail.com', 'Barcelona   Doha        Barcelona@mymail.com']
+
+**************************************************
+with open("myfile.txt",'r') as f:
+    for line in f:
+        print(line.strip())
+user        city        email
+jake        Lucas       jake@mymail.com
+lucas       London      lucas@mymail.com
+Barcelona   Doha        Barcelona@mymail.com
+***************************************************
