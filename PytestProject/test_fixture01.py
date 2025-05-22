@@ -109,3 +109,43 @@ def test_checkrequest(setup04):
 def test_fact_fixture(setup05):
     assert type(setup05('list')) == list
     assert type(setup05('tuple')) == tuple
+**************************************************************************
+import pytest
+
+@pytest.fixture()
+def setup_list():
+    print("\n In Fixture \n")
+    city = ['NewYork', 'London', 'Mumbai', 'Riyadh', 'Singapore', ]
+    return city
+def test_getitem(setup_list):
+    print(setup_list[1::3])
+    assert setup_list[2] == 'Mumbai'
+    assert setup_list[0] == 'NewYork'
+def myreverse(lst):
+    lst.reverse()
+    return lst
+def test_reverslist(setup_list):
+    print(setup_list[::2])
+    assert setup_list[::2] == ['NewYork', 'Mumbai', 'Singapore']
+    assert setup_list[::-1] == myreverse(setup_list)
+(.venv) PS C:\Users\vwank\PycharmProjects\PythonProject4\pytest_topics> pytest -v -k fixture -s
+=============================================================== test session starts ===============================================================
+platform win32 -- Python 3.13.1, pytest-8.3.5, pluggy-1.5.0 -- C:\Trainings\RobotFramework\RobotFramework\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vwank\PycharmProjects\PythonProject4
+configfile: pytest.ini
+collected 12 items / 10 deselected / 2 selected                                                                                                    
+
+test_fixture.py::test_getitem 
+ In Fixture
+
+['London', 'Singapore']
+PASSED
+test_fixture.py::test_reverslist
+ In Fixture
+
+['NewYork', 'Mumbai', 'Singapore']
+PASSED
+
+======================================================== 2 passed, 10 deselected in 0.06s ========================================================= 
+(.venv) PS C:\Users\vwank\PycharmProjects\PythonProject4\pytest_topics> 
