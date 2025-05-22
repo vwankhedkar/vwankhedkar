@@ -142,3 +142,37 @@ def test_len(setup01, setup02):
 
 def test_filetest(setup03):
     assert (setup03.readline()) == 'Pytest is good'
+**********************************************************************
+import pytest
+@pytest.mark.parametrize('test_input', [82,78,45,90])
+def test_param01(test_input):
+    assert test_input > 50
+(.venv) PS C:\Users\vwank\PycharmProjects\PythonProject4\pytest_topics> pytest -v .\pytest_parameterize.py
+=============================================================== test session starts ===============================================================
+platform win32 -- Python 3.13.1, pytest-8.3.5, pluggy-1.5.0 -- C:\Trainings\RobotFramework\RobotFramework\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vwank\PycharmProjects\PythonProject4
+configfile: pytest.ini
+collected 4 items                                                                                                                                  
+
+pytest_parameterize.py::test_param01[82] PASSED                                                                                              [ 25%]
+pytest_parameterize.py::test_param01[78] PASSED                                                                                              [ 50%] 
+pytest_parameterize.py::test_param01[45] FAILED                                                                                              [ 75%]
+pytest_parameterize.py::test_param01[90] PASSED                                                                                              [100%] 
+
+==================================================================== FAILURES ===================================================================== 
+________________________________________________________________ test_param01[45] _________________________________________________________________ 
+
+test_input = 45
+
+    @pytest.mark.parametrize('test_input', [82,78,45,90])
+    def test_param01(test_input):
+>       assert test_input > 50
+E       assert 45 > 50
+
+pytest_parameterize.py:4: AssertionError
+============================================================= short test summary info =============================================================
+FAILED pytest_parameterize.py::test_param01[45] - assert 45 > 50
+=========================================================== 1 failed, 3 passed in 0.18s =========================================================== 
+(.venv) PS C:\Users\vwank\PycharmProjects\PythonProject4\pytest_topics> 
+
