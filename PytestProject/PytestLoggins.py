@@ -1,9 +1,12 @@
 test_loggins.py
 
 import logging
+LOGGER = logging.getLogger(__name__)
 def test_myloggings():
-    logging.warning("Warning Logs")
-    logging.error("Error Logs")
+    LOGGER.info("Info logs")
+    LOGGER.warning("Warning Logs")
+    LOGGER.error("Error Logs")
+    LOGGER.critical("Critical Logs")
     assert True
 
 pytest.ini
