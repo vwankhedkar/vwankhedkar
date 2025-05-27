@@ -1,0 +1,23 @@
+C:\Users\vwank>curl -X POST "https://petstore.swagger.io/v2/pet" -d "{\"id\": 123,\"name\":\"doggie\",\"status\":\"available\"}" -H "Content-Type: application/json"
+{"id":123,"name":"doggie","photoUrls":[],"tags":[],"status":"available"}
+C:\Users\vwank>
+C:\Users\vwank>curl "https://petstore.swagger.io/v2/pet/123"
+{"id":123,"name":"doggie","photoUrls":[],"tags":[],"status":"available"}
+C:\Users\vwank>curl -x DELETE "https://petstore.swagger.io/v2/pet/123"
+curl: (5) Could not resolve proxy: DELETE
+
+C:\Users\vwank>curl "https://petstore.swagger.io/v2/pet/123"
+{"id":123,"name":"doggie","photoUrls":[],"tags":[],"status":"available"}
+C:\Users\vwank>curl -X DELETE "https://petstore.swagger.io/v2/pet/123"
+{"code":200,"type":"unknown","message":"123"}
+C:\Users\vwank>
+
+C:\Users\vwank>curl -X POST "https://petstore.swagger.io/v2/pet" -d "{\"id\": 123,\"name\":\"doggie\",\"status\":\"available\"}" -H "Content-Type: application/json"
+{"id":123,"name":"doggie","photoUrls":[],"tags":[],"status":"available"}
+C:\Users\vwank>curl "https://petstore.swagger.io/v2/pet/123"
+{"id":123,"name":"doggie","photoUrls":[],"tags":[],"status":"available"}
+C:\Users\vwank>curl -X DELETE "https://petstore.swagger.io/v2/pet/123"
+{"code":200,"type":"unknown","message":"123"}
+C:\Users\vwank>curl "https://petstore.swagger.io/v2/pet/123"
+{"code":1,"type":"error","message":"Pet not found"}
+C:\Users\vwank>
