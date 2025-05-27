@@ -21,3 +21,63 @@ C:\Users\vwank>curl -X DELETE "https://petstore.swagger.io/v2/pet/123"
 C:\Users\vwank>curl "https://petstore.swagger.io/v2/pet/123"
 {"code":1,"type":"error","message":"Pet not found"}
 C:\Users\vwank>
+
+C:\Users\vwank>curl -X GET "https://httpbin.org/basic-auth/123/123" -H "accept: application/json"
+
+C:\Users\vwank>curl -u 123:123 https://httpbin.org/basic-auth/123/123
+{
+  "authenticated": true,
+  "user": "123"
+}
+
+C:\Users\vwank>curl -u 123:1234 https://httpbin.org/basic-auth/123/123
+
+C:\Users\vwank>curl -u 123:123 https://httpbin.org/basic-auth/123/123 -i
+HTTP/1.1 200 OK
+Date: Tue, 27 May 2025 05:33:26 GMT
+Content-Type: application/json
+Content-Length: 46
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+{
+  "authenticated": true,
+  "user": "123"
+}
+
+C:\Users\vwank>curl -u 123:1234 https://httpbin.org/basic-auth/123/123 -i
+HTTP/1.1 401 UNAUTHORIZED
+Date: Tue, 27 May 2025 05:33:54 GMT
+Content-Length: 0
+Connection: keep-alive
+Server: gunicorn/19.9.0
+WWW-Authenticate: Basic realm="Fake Realm"
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+
+C:\Users\vwank>curl -X GET "https://httpbin.org/basic-auth/123/123" -H "accept: application/json"
+
+C:\Users\vwank>curl -X GET "https://httpbin.org/basic-auth/123/1234" -H "accept: application/json"
+C:\Users\vwank>curl -u 123:123 https://httpbin.org/basic-auth/123/1234 -i -m 1
+curl: (28) Operation timed out after 1015 milliseconds with 0 bytes received
+
+C:\Users\vwank>curl -u 123:123 https://httpbin.org/basic-auth/123/1234 -i -o file.txt
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+
+
+C:\Users\vwank>notepad file.txt
+
+HTTP/1.1 401 UNAUTHORIZED
+Date: Tue, 27 May 2025 05:36:19 GMT
+Content-Length: 0
+Connection: keep-alive
+Server: gunicorn/19.9.0
+WWW-Authenticate: Basic realm="Fake Realm"
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
