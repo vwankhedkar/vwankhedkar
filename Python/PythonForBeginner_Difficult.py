@@ -145,9 +145,74 @@ Name: name, dtype: object
       name  age
 2  Charlie   35
 *******************************************************************************
+Working with CSV Files
+data.csv
+['name', 'age']
+['Alice', '25']
+['Bob', '30']
+
+csv.py
+import csv
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+["['name'", " 'age']"]
+["['Alice'", " '25']"]
+["['Bob'", " '30']"]
+---------------------------------------------------
+import csv
+data = [["name", "age"],["Vais", 30],["Sumit", 20]]
+with open('output.csv','w',newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+    file.close()
+with open('output.csv','r') as file:
+    reader = csv.reader(file)
+    for rows in reader:
+        print(rows)
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+['name', 'age']
+['Vais', '30']
+['Sumit', '20']
 *******************************************************************************
+Handling JSON Data
+#Convert Python objects to JSON
+import json
+person = {"name":"Vais", "age":30}
+json_data = json.dumps(person)
+print(json_data)
+
+# Convert JSON to Python objects
+json_data1 = '{"name":"Vais", "age":30}'
+json_string = json.loads(json_data1)
+print(json_string)
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+{"name": "Vais", "age": 30}
+{'name': 'Vais', 'age': 30}
 *******************************************************************************
+Multi-threading
+import threading
+def print_num():
+    for i in range(5):
+        print(i, end=' ')
+# Create two threads
+thread1 = threading.Thread(target=print_num())
+print("\n")
+thread2 = threading.Thread(target=print_num())
+# Start the threads
+thread1.start()
+thread2.start()
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+0 1 2 3 4 
+
+0 1 2 3 4 
 *******************************************************************************
+
 *******************************************************************************
 *******************************************************************************
 
