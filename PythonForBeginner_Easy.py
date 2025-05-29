@@ -327,6 +327,78 @@ print(formatted)
 2025-05-29 22:59:22.244404
 2025-05-29 22:59:22                        
 *******************************************************************************
-
+with open("example.txt", "w") as file:
+    file.write("Hello World! \n")
+    file.write("Hello India! \n")
+with open("example.txt", "a") as file:
+    file.write("New log entry \n")
+with open("example.txt", "r") as file:
+    content = file.read()
+print(content)
+Hello World! 
+Hello India! 
+New log entry 
 *******************************************************************************
+from functools import reduce
+numbers = [1, 2, 3, 4]
+square = list(map(lambda x:x**2, numbers))
+print(square)
+even_nums = list(filter(lambda x:x%2==0, numbers))
+print(even_nums)
+product = reduce(lambda x,y:x*y, numbers)
+print(product)
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+[1, 4, 9, 16]
+[2, 4]
+24
 *******************************************************************************
+try:
+    x = 10 / 2
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+else:
+    print("Division successful!")
+finally:
+    print("This always runs!")
+Division successful!
+This always runs!
+*******************************************************************************
+def fib(n):
+    a, b = 0, 1
+    sequence = []
+    while a<n:
+        sequence.append(a)
+        a, b = b, a+b
+    return sequence
+max_price = 1000
+retracement_levels = fib(max_price)
+print("Fibbonacci series is: ", retracement_levels)
+Fibbonacci series is:  [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
+*******************************************************************************
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def greet(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old"
+person1 = Person("Alice", 25)
+print(person1.greet())
+OUTPUT    ------    Hello, my name is Alice and I am 25 years old
+*******************************************************************************
+numbers = [4, 7, 3, 5, 8, 9]
+square = [x**2 for x in numbers]
+print(square)
+numbers.sort()
+print(numbers)
+numbers.reverse()
+print(numbers)
+[16, 49, 9, 25, 64, 81]
+[3, 4, 5, 7, 8, 9]
+[9, 8, 7, 5, 4, 3]
+*******************************************************************************
+def factorial(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n * factorial(n-1)
+print(factorial(5))        ====>    120
