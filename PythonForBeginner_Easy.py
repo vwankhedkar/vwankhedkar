@@ -162,6 +162,11 @@ dog = Dog()
 dog.speak()
 OUTPUT     --    Woof
 *******************************************************************************
+re.search(): Searches for the pattern anywhere in the string.
+ re.match(): Checks for a match at the beginning.
+ re.findall(): Returns all matching substrings.
+ re.sub(): Replaces substrings matching the pattern.
+
 Regular Expressions (Regex):
 import re
 stmt = "Python is interpreted language. I love learning python"
