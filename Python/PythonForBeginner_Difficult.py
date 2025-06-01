@@ -212,8 +212,95 @@ C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\
 
 0 1 2 3 4 
 *******************************************************************************
+monkey patching
+import math
+math.sqrt = lambda x: "Patched!"
+print(math.sqrt(4))        ---->         Patched!
 
+Python data classes
+
+from dataclasses import dataclass
+@dataclass()
+class Employee:
+    name: str
+    age: int
+    role: str = "Analyst"
+emp = Employee
+print(emp.role)        ------>    Analyst
+
+Magic methods (or dunder methods) 
+class Book:
+    def __init__(self, title):
+        self.title = title
+    def __str__(self):
+        return f"Book: {self.title}"
+b = Book("Python Basics")
+print(b)    ------>        Book: Python Basics
+
+super() function
+class Parent:
+    def greet(self):
+        print("Hello from Parent")
+class Child(Parent):
+    def greet(self):
+        super().greet()
+        print("Hello from Child")
+Child().greet()
+Hello from Parent
+Hello from Child
+*******************************************************************************
+Method Overloading
+class Math:
+    def add(self,a,b=0):
+        return a+b
+m = Math()
+print(m.add(5))
+print(m.add(5,10))
+5
+15
+
+Method Overriding
+class Parent:
+    def greet(self):
+        print("Hello from Parent")
+class Child(Parent):
+    def greet(self):
+        print("Hello from Child")
+c = Child()
+c.greet()        -------->    Hello from Child
+
+generator expression and a list comprehension
+gen = (x**2 for x in range(10))
+lst = [x**2 for x in range(10)]
+print("gen : ", list(gen))
+print("lst : ", lst)
+gen :  [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+lst :  [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+*******************************************************************************
+weak references - allows one object to refer to another object without increasing its reference count. When the original object
+is no longer needed elsewhere, it can be garbage collected—even if a weak reference to it still exists.
+
+import weakref
+class MyClass:
+    pass
+obj = MyClass()
+weak_obj = weakref.ref(obj)
+print(weak_obj())
+del obj
+print(weak_obj())
+<__main__.MyClass object at 0x0000019251329E20>
+None
 *******************************************************************************
 *******************************************************************************
-
-
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
