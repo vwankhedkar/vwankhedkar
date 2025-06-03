@@ -262,7 +262,57 @@ public class Sample {
 	}  
 }
 ***************************************************************************************
+package com.WebTesting;
+import java.awt.AWTException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws AWTException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		WebElement txtEmail = driver.findElement(By.id("email"));
+		js.executeScript("arguments[0].setAttribute('value','azerara321@gmail.com')", txtEmail);
+		Object object = js.executeScript("return arguments[0].getAttribute('value')", txtEmail);
+		String s1 = (String)object;
+		System.out.println(s1);
+		WebElement txtPass = driver.findElement(By.id("pass"));
+		js.executeScript("arguments[0].setAttribute('value','12345')", txtPass);
+		WebElement btnLogin = driver.findElement(By.name("login"));
+		js.executeScript("arguments[0].click", btnLogin);
+	}  
+}
+***************************************************************************************
+package com.WebTesting;
+import java.awt.AWTException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws AWTException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		driver.get("http://toolsqa.com");
+		WebElement txtScroll = driver.findElement(By.xpath("//div[text()='Selenium Online Trainings']"));
+		// Scroll up
+		js.executeScript("arguments[0].scrollIntoView(false)", txtScroll);
+		// scroll down
+		js.executeScript("arguments[0].scrollIntoView(true)", txtScroll);
+	}  
+}
+***************************************************************************************
 
+***************************************************************************************
+***************************************************************************************
+
+***************************************************************************************
 ***************************************************************************************
 ***************************************************************************************
 
