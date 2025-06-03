@@ -378,7 +378,96 @@ public class Sample {
 	}  
 }
 ***************************************************************************************
+package com.WebTesting;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://snapdeal.com/");
+		WebElement txtSearch = driver.findElement(By.id("inputValEnter"));
+		txtSearch.sendKeys("Hand sanitizer");
+		WebElement btnSearch = driver.findElement(By.xpath("//span[text()='Search']"));
+		btnSearch.click();
+		WebElement btnPro = driver.findElement(By.xpath("(//img[@class=\"product-image \"])[1]"));
+		btnPro.click();
+		String parentWind = driver.getWindowHandle();
+		Set<String> allWind = driver.getWindowHandles();
+		for (String cd : allWind) {
+			if (!(parentWind.equals(cd))) {
+				driver.switchTo().window(cd);
+			}
+		}
+		WebElement btnAdd = driver.findElement(By.id("add-cart-button-id"));
+		btnAdd.click();
+		driver.switchTo().defaultContent();
+	}  
+}
+***************************************************************************************
+package com.WebTesting;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.w3schools.com/html/html_tables.asp");
+		WebElement main = driver.findElement(By.xpath("//table[@id='customers']"));
+		List<WebElement> tr = main.findElements(By.tagName("tr"));
+		for (int i=0; i<tr.size(); i++) {
+			WebElement row = tr.get(i);
+			List<WebElement> th = row.findElements(By.tagName("th")); 
+			for (int j=0; j<th.size(); j++) {
+				WebElement head = th.get(i);
+				String text = head.getText();
+				System.out.println(text);	
+			}
+		List<WebElement> td = row.findElements(By.tagName("td"));
+		for (int j=0; j<td.size(); j++) {
+			WebElement data = td.get(j);
+			String text1 = data.getText();
+			System.out.println(text1);	
+		}
+	}
+		driver.quit();
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.w3schools.com/html/html_tables.asp");
+		WebElement main = driver.findElement(By.xpath("//table[@id='customers']"));
+		List<WebElement> tr = main.findElements(By.tagName("tr"));
+		WebElement row = tr.get(3);
+		List<WebElement> td = row.findElements(By.tagName("td"));
+		for (int j=0; j<td.size(); j++) {
+			WebElement head = td.get(j);
+			String text = head.getText();
+			System.out.println(text);	
+		}
+		driver.quit();
+   }  
+}
+***************************************************************************************
 
+***************************************************************************************
+
+***************************************************************************************
 ***************************************************************************************
 ***************************************************************************************
 
