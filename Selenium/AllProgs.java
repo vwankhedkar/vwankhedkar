@@ -308,11 +308,77 @@ public class Sample {
 	}  
 }
 ***************************************************************************************
+package com.WebTesting;
+import java.io.IOException;
+import java.io.File;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.commons.io.FileUtils;
+import com.Excel.TakeScreenshot;
 
+public class Sample {
+	public static void main(String[] args) throws IOException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://www.greenstechnology.com/");
+        // Take screenshot
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File dest = new File("C:\\Java-Selenium-Train\\eclipse-workspace\\SeleniumMaven1\\src\\test\\java\\com\\WebTesting\\Sample.png");
+        FileUtils.copyFile(src, dest);
+	}  
+}
 ***************************************************************************************
+package com.WebTesting;
+import java.io.IOException;
+import java.io.File;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.commons.io.FileUtils;
+import com.Excel.TakeScreenshot;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://www.facebook.com");
+		WebElement btnLogin = driver.findElement(By.name("login"));
+		boolean displayed = btnLogin.isDisplayed();
+		System.out.println(displayed);
+		WebElement btnCreate = driver.findElement(By.xpath("//a[text()='Create new account']"));
+		btnCreate.click();
+		Thread.sleep(3000);
+		WebElement rdoGender = driver.findElement(By.name("sex"));
+		rdoGender.click();
+		boolean selected2 = rdoGender.isSelected();
+		System.out.println(selected2);
+	}  
+}
+***************************************************************************************
+package com.WebTesting;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://netbanking.hdfcbank.com/netbanking/");
+		driver.switchTo().frame("login_page");
+		Thread.sleep(2000);
+		WebElement login = driver.findElement(By.cssSelector("a.btn.btn-primary.login-btn"));
+		login.click();
+		driver.switchTo().defaultContent();
+	}  
+}
 ***************************************************************************************
 
-***************************************************************************************
 ***************************************************************************************
 ***************************************************************************************
 
