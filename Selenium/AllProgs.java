@@ -464,7 +464,159 @@ public class Sample {
    }  
 }
 ***************************************************************************************
+package com.WebTesting;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		WebElement btnCreate = driver.findElement(By.xpath("//a[text()='Create new account']"));
+		btnCreate.click();
+		WebElement year = driver.findElement(By.id("year"));
+		Select s = new Select(year);
+		s.selectByIndex(2);
+		s.selectByValue("1996");
+		s.selectByVisibleText("1998");
+		s.deselectByIndex(2);
+		s.deselectByValue("1996");
+		s.deselectByVisibleText("1998");
+		driver.quit();
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		WebElement txtHighlight = driver.findElement(By.xpath("//h2[contains(text(),'Facebook helps')]"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].setAttribute('style','background:yellow')", txtHighlight);
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		WebElement btnLogin = driver.findElement(By.name("login"));
+		String color = btnLogin.getCssValue("background-color");
+		String fontSize = btnLogin.getCssValue("font-size");
+		String width = btnLogin.getCssValue("width");
+		String fam = btnLogin.getCssValue("font-family");
+		System.out.println(color);
+		System.out.println(fontSize);
+		System.out.println(width);
+		System.out.println(fam);
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		driver.navigate().to("https://www.redbus.in");
+		Thread.sleep(1000);
+		driver.navigate().back();
+		Thread.sleep(1000);
+		driver.navigate().forward();
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sample {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement txtMail = driver.findElement(By.id("email"));
+		txtMail.sendKeys("Azar");
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class Sample {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait1.until(ExpectedConditions.elementToBeClickable(By.name("login")));
+		WebElement login = driver.findElement(By.name("login"));
+		login.click();
+   }  
+}
+***************************************************************************************
+package com.WebTesting;
+import java.time.Duration;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+public class Sample {
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+		FluentWait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(20)).
+									pollingEvery(Duration.ofSeconds(1)).ignoring(Throwable.class);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("login")));
+		WebElement login = driver.findElement(By.name("login"));
+		login.click();
+   }  
+}
+***************************************************************************************
 ***************************************************************************************
 
 ***************************************************************************************
