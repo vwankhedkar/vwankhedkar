@@ -1334,3 +1334,256 @@ public class ArrayProgs {
 4, 2
 6
 2, 1, 3
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public String reverseString(String input) {
+	    return new StringBuilder(input).reverse().toString();
+	    }
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        String s = "Java Programming";
+        String result = obj.reverseString(s);
+        System.out.println("Reversed String is : " + result);	======>		Reversed String is : gnimmargorP avaJ
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public boolean isPalindrome(String str) {
+	    return str.equals(new StringBuilder(str).reverse().toString());
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        String s = "malayalam";
+        Boolean result = obj.isPalindrome(s);
+        System.out.println("Is string palindrome : " + result);		===>	Is string palindrome : true
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static int factorial(int n) {
+	    if (n == 1) return 1;
+	    return n * factorial(n-1);
+	    }
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        int num = 5;
+        System.out.println("Factorial of number is : " + obj.factorial(num));	====>	Factorial of number is : 120
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static void fibonacci(int count) {
+	    int a=0, b=1;
+	    for (int i=0; i<count; i++) {
+	    	System.out.print(a + " ");
+	    	int sum = a+b;
+	    	a=b;
+	    	b=sum;
+	    }
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        int num = 9;
+        obj.fibonacci(num);		=====>		0 1 1 2 3 5 8 13 21 
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static boolean primeCheck(int num) {
+	    if (num<=1) return false;
+	    for (int i=2; i<Math.sqrt(num);i++) {
+	    	if (num % i == 0) return false;
+	    }
+	    return true;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        int num = 7;
+        System.out.println("Is number prime: "+obj.primeCheck(num));	=====>	Is number prime: true
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static void SwapNumbers(int a, int b) {
+		System.out.println("Before: a= "+ a +",b="+b);
+		a = a + b;
+		b = a - b;
+		a = a - b;
+		System.out.println("After: a= "+ a +",b="+b);
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        int a=4, b=5;
+        obj.SwapNumbers(a, b);
+    }
+}
+Before: a= 4,b=5
+After: a= 5,b=4
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static int countDigits(int n) {
+		int count=0;
+		while(n!=0) {
+			n /= 10;
+			count++;
+		}
+		return count;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        System.out.println("countDigits: "+obj.countDigits(12346788));	=====>	countDigits: 8
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static int reverseNumber(int num) {
+		int rev=0;
+		while (num!=0) {
+			rev = rev * 10 + num % 10;
+			num /= 10;
+		}
+	return rev;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        System.out.println("Reverse number: "+obj.reverseNumber(12346788));	===>	Reverse number: 88764321
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static int sumOfDigits(int num) {
+		int sum = 0;
+		while (num != 0)  {
+			sum += num % 10;
+			num /= 10;
+		}
+	return sum;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        System.out.println("sumOfDigits: "+obj.sumOfDigits(1234));	===>	sumOfDigits: 10
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static boolean isArmstrong(int num) {
+		int temp=num, sum=0, digits=0;
+		while (temp != 0)  {
+			digits++;
+			temp /= 10;
+		}
+		temp = num;
+		while (temp != 0) {
+			sum += Math.pow(temp%10, digits);
+			temp /= 10;
+		}
+		return sum == num;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+        System.out.println("sumOfDigits: "+obj.isArmstrong(153));	===>	sumOfDigits: true
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static int LargestInArray(int[] arr) {
+		int max = arr[0];
+		for (int i:arr) {
+			if (i > max) max = i;
+		}
+	return max;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+    	int[] arr = {11,2,33,5,68,7,8,22};
+        System.out.println("LargestInArray is: "+obj.LargestInArray(arr));	====>	LargestInArray is: 68
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {   
+	public static int LinearSearch(int[] arr,int key) {
+		for (int i=0; i<arr.length;i++) {
+			if (arr[i] == key) return i;
+		}
+	return -1;
+	}
+    public static void main(String[] args) {
+    	tryProgs2 obj = new tryProgs2();
+    	int[] arr = {11,2,33,5,68,7,8,22};
+        System.out.println("Number present at location is: "+obj.LinearSearch(arr, 22));	==>	Number present at location is: 7
+    }
+}
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {
+    public static int binarySearch(int[] arr, int key) {
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] == key) return mid;
+            if (arr[mid] < key) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        tryProgs2 obj = new tryProgs2();
+        int[] arr = {1, 22, 33, 56, 68, 77, 89, 99};
+        int result = obj.binarySearch(arr, 56);
+        if (result != -1) {
+            System.out.println("Number present at location is: " + (result + 1)); // 1-based index
+        } else {
+            System.out.println("Number not found in array.");
+        }
+    }
+}		====>		Number present at location is: 4
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {
+    public static boolean EvenOdd(int n) {
+        return (n %2 == 0);
+    }
+    public static void main(String[] args) {
+        tryProgs2 obj = new tryProgs2();
+        int num = 66;
+        System.out.println("Number is even or not: "+ EvenOdd(num));
+    }
+}	====>		Number is even or not: true
+*********************************************************************************
+package WebHandling;
+public class tryProgs2 {
+    public static void MultiplicationTable(int n) {
+        for (int i=0; i<10; i++) {
+        	System.out.println(n+"x"+i+"="+(n*i));
+        }
+    }
+    public static void main(String[] args) {
+        tryProgs2 obj = new tryProgs2();
+        obj.MultiplicationTable(5);
+    }
+}
+5x0=0
+5x1=5
+5x2=10
+5x3=15
+5x4=20
+5x5=25
+5x6=30
+5x7=35
+5x8=40
+5x9=45
+*********************************************************************************
+
+*********************************************************************************
