@@ -347,9 +347,73 @@ PASSED: getSingleUser
     Tests run: 1, Failures: 0, Skips: 0
 ===============================================
 ***********************************************************************************************************
+package com.RestMethods;
+import java.util.HashMap;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import io.restassured.http.ContentType;
+
+public class PostPutRequest {
+
+    @Test
+    public void postWithMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "Vaishali");
+        map.put("job", "SDET"); // Lowercase key for consistency with most APIs
+
+        given()
+            .contentType(ContentType.JSON)
+            .body(map)
+
+        .when()
+            .post("https://reqres.in/api/users")
+
+        .then()
+            .statusCode(201)
+            .body("name", equalTo("Vaishali"))
+            .body("job", equalTo("SDET"))
+            .log().all();
+    }
+}
 ***********************************************************************************************************
-  
+package com.RestMethods;
+import java.util.HashMap;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+public class PostPutRequest {
+
+    @Test
+    public void postWithMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "Vaishali");
+        map.put("job", "SDET"); // Lowercase key for consistency with most APIs
+
+        Response res = given()
+            .contentType(ContentType.JSON)
+            .body(map)
+
+        .when()
+            .post("https://reqres.in/api/users");
+        System.out.println("Status Code: "+res.statusCode());
+        System.out.println("Id is: "+res.jsonPath().getInt("id"));
+        String username = res.jsonPath().getString("name");
+        System.out.print("Username is: "+username);
+        String job = res.jsonPath().getString("job");
+        System.out.print("Job is: "+job);
+        //.then()
+         //   .statusCode(201)
+           // .body("name", equalTo("Vaishali"))
+           // .body("job", equalTo("SDET"))
+            //.log().all();
+    }
+}
 ***********************************************************************************************************
+
 ***********************************************************************************************************
   
 ***********************************************************************************************************
