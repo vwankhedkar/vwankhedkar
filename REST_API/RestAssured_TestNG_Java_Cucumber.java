@@ -204,7 +204,85 @@ PASSED: validateSingleUser
     Tests run: 3, Failures: 0, Skips: 0
 ===============================================
 ***********************************************************************************************************
+package com.RestMethods;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class GetWithNonBDD {
+
+    @BeforeClass
+    public void setup() {
+        RestAssured.baseURI = "https://reqres.in/api";
+    }
+
+    @Test
+    public void getSingleUserDetails() {
+        Response res = RestAssured.get("/users/2");
+        int statuscode = res.getStatusCode();
+        Assert.assertEquals(statuscode, 200, "Status code is not matched!");
+        System.out.println("Status code is matched! " + statuscode);
+        System.out.println("Status Line: " + res.getStatusLine());
+        System.out.println("***** Response as Raw String ***********");
+        System.out.println(res.asString());
+        System.out.println("***** Pretty JSON ***********");
+        System.out.println(res.asPrettyString());
+        System.out.println("Response Time: " + res.getTime());
+        System.out.println("Content-Type Header: " + res.getHeader("Content-Type"));
+        System.out.println("Time in ms: " + res.getTimeIn(TimeUnit.MILLISECONDS));
+    }
+
+    @Test
+    public void validateSingleUser() {
+        Response res = RestAssured.get("/users/2");
+        int id = res.jsonPath().getInt("data.id");
+        System.out.println("Id is: " + id);
+        String email = res.jsonPath().getString("data.email");
+        Assert.assertEquals(email, "janet.weaver@reqres.in", "Email does not match!");
+        System.out.println("Email Id is: " + email);
+    }
+
+    @Test
+    public void getListOfUsers() {
+        Response res = RestAssured.get("/users?page=2");
+        Assert.assertEquals(res.getStatusCode(), 200, "Expected status code 200");
+        System.out.println("***** List of Users (Page 2) ***********");
+        System.out.println(res.asPrettyString());
+        List<Integer> listOfId = res.jsonPath().getList("data.id");
+        System.out.println("Total Id's: " + listOfId.size());
+        for (Integer i:listOfId) {
+        	System.out.println("List of Id's are: "+i);
+        }
+    }
+    @Test
+    public void createUser_post() {
+    	RestAssured.baseURI = ("https://reqres.in/api");
+    	RestAssured.given().body("{\n"
+    			+ "    \"name\": \"morpheus\",\n"
+    			+ "    \"job\": \"leader\"\n"
+    			+ "}");
+    	Response res = RestAssured.post("/users");
+    	System.out.println("Status code of createUser_post is: "+res.getStatusCode());
+    }
+}
+[RemoteTestNG] detected TestNG version 7.4.0
+Status code of createUser_post is: 415
+PASSED: createUser_post
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+===============================================
+Default suite
+Total tests run: 1, Passes: 1, Failures: 0, Skips: 0
+===============================================
 ***********************************************************************************************************
   
 ***********************************************************************************************************
