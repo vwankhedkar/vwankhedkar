@@ -284,7 +284,68 @@ Default suite
 Total tests run: 1, Passes: 1, Failures: 0, Skips: 0
 ===============================================
 ***********************************************************************************************************
-  
+BDD
+package com.RestMethods;
+
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+public class GetWithBDD {
+  @Test
+  public void getSingleUser() {
+	  given()
+	  .when()
+	    .get("https://reqres.in/api/users/2")
+	  .then()
+	     .statusCode(200)
+	     .log().all();
+  }
+}
+[RemoteTestNG] detected TestNG version 7.4.0
+HTTP/1.1 200 OK
+Date: Sat, 07 Jun 2025 08:26:22 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Content-Encoding: gzip
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749279870&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=ZRVfkOl5gBonD4KznWsPfSWJT45HDB%2BxcZQYts0QHV8%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1749279870&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=ZRVfkOl5gBonD4KznWsPfSWJT45HDB%2BxcZQYts0QHV8%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Ratelimit-Policy: 100;w=60
+Ratelimit-Limit: 100
+Ratelimit-Remaining: 96
+Ratelimit-Reset: 58
+Etag: W/"152-ApQgGHL6RKwaebFlrPCYPBO1xHg"
+Via: 1.1 vegur
+Cache-Control: max-age=14400
+Cf-Cache-Status: HIT
+Age: 4912
+Vary: Accept-Encoding
+Server: cloudflare
+Cf-Ray: 94bec3a40e8b3c13-BLR
+server-timing: cfL4;desc="?proto=TCP&rtt=2171&min_rtt=2171&rtt_var=1085&sent=8&recv=7&lost=0&retrans=1&sent_bytes=3328&recv_bytes=746&delivery_rate=557653&cwnd=253&unsent_bytes=0&cid=18da71c60fe2fb10&ts=176&x=0"
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral",
+        "text": "Tired of writing endless social media content? Let Content Caddy generate it for you."
+    }
+}
+PASSED: getSingleUser
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
 ***********************************************************************************************************
 ***********************************************************************************************************
   
