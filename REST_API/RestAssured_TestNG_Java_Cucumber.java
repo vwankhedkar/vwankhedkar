@@ -413,9 +413,111 @@ public class PostPutRequest {
     }
 }
 ***********************************************************************************************************
+package com.RestMethods;
+import java.util.HashMap;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
+public class PostPutRequest {
+
+    @Test
+    public void postWithMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "Vaishali");
+        map.put("job", "SDET"); // Lowercase key for consistency with most APIs
+
+        Response res = given()
+            .contentType(ContentType.JSON)
+            .body(map)
+
+        .when()
+            .post("https://reqres.in/api/users");
+        System.out.println("Status Code: "+res.statusCode());
+        System.out.println("Id is: "+res.jsonPath().getInt("id"));
+        String username = res.jsonPath().getString("name");
+        System.out.print("Username is: "+username);
+        String job = res.jsonPath().getString("job");
+        System.out.print("Job is: "+job);
+        //.then()
+         //   .statusCode(201)
+           // .body("name", equalTo("Vaishali"))
+           // .body("job", equalTo("SDET"))
+            //.log().all();
+    }
+    @Test
+    public void postRequestWithPOJO() {
+    	POJOData p1 = new POJOData();
+    	p1.setName("Vaishali");
+    	p1.setJob("SDET");
+    	
+    	Response res = given()
+    	
+    	.header("Content-Type","application/json")
+    	.body(p1)
+    	
+    	.when()
+    	.post("https://reqres.in/api/users");
+    	System.out.println("Status Code: "+res.statusCode());
+    	System.out.println("New user created with Id: "+res.jsonPath().getInt("id"));
+    }
+}
+POJOData.java
+------------
+package com.RestMethods;
+
+public class POJOData {
+	String name;
+	String job;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}	
+}
 ***********************************************************************************************************
-  
+package com.RestMethods;
+
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+public class PUTRequest_DELETE {
+  @Test
+  public void putRequest() {
+	  POJOData p1 = new POJOData();
+	  p1.setName("Vaishali");
+	  p1.setJob("SDET1");
+	  
+	  given()
+	   .header("Content-Type","application/json")
+	   .body(p1)
+	  .when()
+	    .put("https://reqres.in/api/users/2")
+	    .then()
+	    .statusCode(200)
+	    .body("name",equalTo("Vaishali"))
+	    .body("Job",equalTo("SDET"))
+	    .log().body();
+  }
+  public void deleteRequest()  {
+	  Response res = given()
+		.when()
+		  .delete("https://reqres.in/api/users/2");
+		System.out.println("Status code is: "+res.statusCode()); 
+  }
+}
+ 
 ***********************************************************************************************************
 ***********************************************************************************************************
   
