@@ -128,6 +128,143 @@ count = Counter(lst)
 most_common = count.most_common(1)[0][0]
 print(most_common)   ====>      3
 ***********************************************************************************************
+import pandas as pd
+student_data={
+    'Name': ['Alice','Bob','Charlie'],
+    'Marks':[85,90,78]
+}
+students = pd.DataFrame(student_data)
+print(students)
+print("************************************")
+data = pd.Series([10, 20, 30, 40])
+print(data)
+import pandas as pd
+student_data={
+    'Name': ['Alice','Bob','Charlie'],
+    'Marks':[85,90,78]
+}
+students = pd.DataFrame(student_data)
+print(students)
+print("************************************")
+data = pd.Series([10, 20, 30, 40])
+print(data)
+***********************************************************************************************
+import pandas as pd
+data = {
+    'Name': ['Alice','Bob','Charlie'],
+    'Marks':[25, 35, 40],
+    'City': ['Ny', 'LA', 'Chicago']
+}
+df = pd.DataFrame(data)
+print(df)
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+      Name  Marks     City
+0    Alice     25       Ny
+1      Bob     35       LA
+2  Charlie     40  Chicago
+***********************************************************************************************
+import pandas as pd
+Student = {
+    'Name': ['Alice','Bob','Charlie'],
+    'Marks':[25, 35, 40],
+    'City': ['Ny', 'LA', 'Chicago']
+}
+data = pd.Series([10, 20, 30, 40])
+print(data)
+df = pd.DataFrame(Student)
+print(Student)
+print(data[1])
+print(df.loc[1])
+print(df['Name'])
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+0    10
+1    20
+2    30
+3    40
+dtype: int64
+{'Name': ['Alice', 'Bob', 'Charlie'], 'Marks': [25, 35, 40], 'City': ['Ny', 'LA', 'Chicago']}
+20
+Name     Bob
+Marks     35
+City      LA
+Name: 1, dtype: object
+0      Alice
+1        Bob
+2    Charlie
+Name: Name, dtype: object
+***********************************************************************************************
+import pandas as pd
+Student = {
+    'Name': ['Alice','Bob','Charlie'],
+    'Age':[25, 35, 40],
+    'City': ['Ny', 'LA', 'Chicago']
+}
+data = pd.Series([10, 20, 30, 40])
+print(data)
+df = pd.DataFrame(Student)
+print(Student)
+print(data[1])
+print(df.loc[1])
+print(df['Name'])
+print(df.iloc[0])
+print(df[1:3])
+print(df.loc[1:2])
+print(df.iloc[0:2])
+print(df[['Name','City']])
+print(df[(df['Age']>25) & (df['City']=='LA')])
+df.set_index('Name', inplace=True)
+print(df)
+df.reset_index(inplace=True)
+print(df)
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+0    10
+1    20
+2    30
+3    40
+dtype: int64
+{'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 35, 40], 'City': ['Ny', 'LA', 'Chicago']}
+20
+Name    Bob
+Age      35
+City     LA
+Name: 1, dtype: object
+0      Alice
+1        Bob
+2    Charlie
+Name: Name, dtype: object
+Name    Alice
+Age        25
+City       Ny
+Name: 0, dtype: object
+      Name  Age     City
+1      Bob   35       LA
+2  Charlie   40  Chicago
+      Name  Age     City
+1      Bob   35       LA
+2  Charlie   40  Chicago
+    Name  Age City
+0  Alice   25   Ny
+1    Bob   35   LA
+      Name     City
+0    Alice       Ny
+1      Bob       LA
+2  Charlie  Chicago
+  Name  Age City
+1  Bob   35   LA
+         Age     City
+Name                 
+Alice     25       Ny
+Bob       35       LA
+Charlie   40  Chicago
+      Name  Age     City
+0    Alice   25       Ny
+1      Bob   35       LA
+2  Charlie   40  Chicago
+***********************************************************************************************
+
+***********************************************************************************************
+
+***********************************************************************************************
 
 ***********************************************************************************************
 
