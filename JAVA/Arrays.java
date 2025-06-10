@@ -168,4 +168,405 @@ class Test {
 }
 OUTPUT -[I@379619aa
 [I@379619aa
+****************************************************************************************************************
+package com.tryPrograms;
+public class SingleDimArray {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        System.out.println("Elements of array: ");
+        for (int i=0; i<numbers.length; i++) {
+        	System.out.println("Element at index : "+i+": "+numbers[i]);
+        }
+    }
+}
+Elements of array: 
+Element at index : 0: 10
+Element at index : 1: 20
+Element at index : 2: 30
+Element at index : 3: 40
+Element at index : 4: 50
+****************************************************************************************************************
+package com.tryPrograms;
+public class DoubleDiaArray {
+    public static void main(String[] args) {
+        int[][] arr = {
+        		{1, 2},
+        		{3, 4}
+        };
+        System.out.println(arr[0][0]);
+        System.out.println(arr[1][1]);
+    }
+}
+1
+4
+****************************************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class InputArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size of array: ");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        System.out.println("Enter "+ size + " elements: ");
+        for (int i=0; i<size; i++) {
+        	arr[i] = sc.nextInt();
+        }
+        System.out.println("You entered: ");
+        for (int i=0; i<size; i++) {
+        	System.out.println(arr[i]);
+        }
+        sc.close();
+    }
+}
+Enter size of array: 3
+Enter 3 elements: 
+87
+45
+32
+You entered: 
+87
+45
+32
+****************************************************************************************************************
+package com.tryPrograms;
+public class sortDescending {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 7};
+        for (int i=0; i<arr.length; i++) {
+        	for (int j=i+1; j<arr.length; j++) {
+        		if (arr[j] > arr[i]) {
+        			int temp = arr[i];
+        			arr[i] = arr[j];
+        			arr[j] = temp;
+        		}
+        	}
+        }
+    	System.out.println("Array in Descending order is: ");
+    	for (int num:arr) {
+        	System.out.print(num+" ");
+    	}
+    }
+}
+Array in Descending order is: 
+9 7 5 2 1 
+****************************************************************************************************************
+package com.tryPrograms;
+public class Try1 {
+    public static void main(String[] args) {
+        int[] number = {5, 2, 7, 8, 4, 3, 9};
+        int evenSum = 0;
+        int oddSum = 0;
+        for (int i=0; i<number.length; i++) {
+        	if (number[i] % 2 == 0) {
+        		evenSum += number[i];
+        	} else {
+        		oddSum += number[i];
+        	}
+        }
+        System.out.println("Sum of Even numbers: "+evenSum);
+        System.out.println("Sum of Odd numbers: "+oddSum);
+    }
+}
+Sum of Even numbers: 14
+Sum of Odd numbers: 24
+****************************************************************************************************************
+package com.tryPrograms;
+public class sumDigits {
+    public static void main(String[] args) {
+        int[] number = {123, 45, 9, 100, 78};
+        for (int i=0; i<number.length; i++) {
+        	int num = number[i];
+        	int sum = 0;
+        	while (num > 0) {
+        		sum += num % 10;
+        		num = num / 10;
+        }
+        	System.out.println("Numbers: "+ number[i] + "-> Sum of digits: " + sum);
+    } 
+  }
+}
+Numbers: 123-> Sum of digits: 6
+Numbers: 45-> Sum of digits: 9
+Numbers: 9-> Sum of digits: 9
+Numbers: 100-> Sum of digits: 1
+Numbers: 78-> Sum of digits: 15
+****************************************************************************************************************
+package com.tryPrograms;
+public class Try1 {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        boolean isUnique = true;
+        for (int i=0; i<arr.length; i++) {
+        	for (int j=i+1; j<arr.length; j++) {
+        		if (arr[i] == arr[j]) {
+        			isUnique = false;
+        			break;
+        		}
+        }
+        	if (!isUnique)  break;
+      } 
+    if (isUnique) {
+    	System.out.println("Array contains only unique values");
+    }  else  {
+    	System.out.println("Array contains duplicate values");
+    }
+  }
+}
+Array contains only unique values
+****************************************************************************************************************
+package com.tryPrograms;
+public class copyArray {
+    public static void main(String[] args) {
+        int[] orig = {10, 20, 30, 40, 50};
+        int[] copy = new int[orig.length];
+        for (int i=0; i<orig.length; i++) {
+        		copy[i] = orig[i];
+        }
+    	System.out.print("Copied array: ");
+    	for (int i=0; i<copy.length; i++) {
+    		System.out.print(copy[i] + " ");
+    	}
+  }
+}
+Copied array: 10 20 30 40 50 
+****************************************************************************************************************
+package com.tryPrograms;
+public class findIndex {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int target = 30;
+        int index = -1;
+        for (int i=0; i<arr.length; i++) {
+        	if (arr[i] == target) {
+        		index = i;
+        		break;
+        	}
+        }
+      if (index != -1) {
+    	  System.out.print("Element: " +target+ " found at index: "+index);
+      } else {
+    	  System.out.print("Element: " +target+ " not found in the array");
+    }
+  }
+}
+Element: 30 found at index: 2
+****************************************************************************************************************
+package com.tryPrograms;
+public class Try1 {
+    public static void main(String[] args) {
+        int[] orig = {10, 20, 30, 40, 50, 60, 70};
+        int newSize = (orig.length + 1) / 2;
+        int[] result = new int[newSize];
+        int index = 0;
+        for (int i=0; i<orig.length; i+=2) {
+        	result[index] = orig[i];
+        	index++;
+        }
+    System.out.print("Array after removing every second element:");
+    for (int i=0; i<result.length; i++) {
+    	System.out.print(result[i] + " ");
+    }
+  }
+}
+Array after removing every second element:10 30 50 70 
+****************************************************************************************************************
+package com.tryPrograms;
+public class insertEleArray {
+    public static void main(String[] args) {
+        int[] orig = {10, 20, 30, 40, 50};
+        int element = 25;
+        int position = 2;
+        if (position < 0 || position > orig.length) {
+        	System.out.print("Invalid position! ");
+        	return;
+        }
+        int[] newArray = new int[orig.length+1];
+        for (int i=0; i<position; i++) {
+        	newArray[i] = orig[i];
+        }
+        newArray[position] = element;
+        for (int i=position; i<orig.length; i++) {
+        	newArray[i+1] = orig[i];
+        }
+        System.out.println("Array after insertion: ");
+        for (int i=0; i<newArray.length; i++) {
+        	System.out.print(newArray[i] + " ");
+        }
+    }
+}
+Array after insertion: 
+10 20 25 30 40 50 
+****************************************************************************************************************
+package com.tryPrograms;
+public class minmaxArray {
+    public static void main(String[] args) {
+        int[] arr = {15, 22, 8, 19, 31, 4};
+        int max = arr[0];
+        int min = arr[0];
+        for (int i=0; i<arr.length; i++) {
+        	if (arr[i] > max) {
+        		max = arr[i];
+        	} 
+        	if (arr[i] < min) {
+        		min = arr[i];
+        	}
+        }
+    	System.out.println("Maximum value: "+max);
+    	System.out.println("Minimum value: "+min);
+    }
+}
+Maximum value: 31
+Minimum value: 4
+****************************************************************************************************************
+package com.tryPrograms;
+public class secondHighestNum {
+    public static void main(String[] args) {
+        int[] arr = {15, 22, 8, 19, 31, 4};
+        int highest = Integer.MIN_VALUE;
+        int secondHighest = Integer.MIN_VALUE;
+        for (int num : arr) {
+        	if (num > highest) {
+        		secondHighest = highest;
+        		highest = num;
+        	} else if (num > secondHighest && num < highest) {
+        		secondHighest = num;
+        	}
+        }
+        if (secondHighest == Integer.MIN_VALUE) {
+        	System.out.println("No second highest value found(array may have all equal elements): ");        	
+        } else {
+    	System.out.println("Second highest value is: "+ secondHighest);
+        }
+    }
+}
+Second highest value is: 22
+****************************************************************************************************************
+package com.tryPrograms;
+public class reverseArray {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50, 60};
+        int start = 0;
+        int end = arr.length-1;
+        while (start < end) {
+        	int temp = arr[start];
+        	arr[start] = arr[end];
+        	arr[end] = temp;
+        	start ++;
+        	end --;
+        }
+    	System.out.print("Reversed array : ");
+    	for (int i : arr) {
+        	System.out.print(i + " ");
+    	}
+    }
+}
+Reversed array : 60 50 40 30 20 10 
+****************************************************************************************************************
+package com.tryPrograms;
+public class dupFound {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 20, 40, 10, 50, 30};
+        System.out.println("Duplicate values in array: ");
+        boolean foundDuplicate = false;
+        for (int i=0; i<arr.length; i++) {
+        	boolean isDuplicate = false;
+        	for (int j=0; j<i; j++) {
+        		if (arr[i] == arr[j]) {
+        			isDuplicate = true;
+        			break;
+        		}
+        	}
+        	for (int k=i+1; k<arr.length; k++) {
+        		if (!isDuplicate) {
+        			if (arr[i] == arr[k]) {
+        				System.out.println(arr[i]);
+        				foundDuplicate =true;
+        				break;
+        			}
+        		}
+        	}
+    	}
+        if (!foundDuplicate) {
+        	System.out.println("No duplicates found!");
+        }
+    }
+}
+Duplicate values in array: 
+10
+20
+30
+****************************************************************************************************************
+package com.tryPrograms;
+public class Try1 {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 20, 10, 40, 10, 50, 30};
+        int n = arr.length;
+        int[] temp = new int[n];
+        int newIndex = 0;
+        for (int i=0; i<n; i++) {
+        	boolean isDuplicate = false;
+        	for (int j=0; j<newIndex; j++) {
+        		if (arr[i] == temp[j]) {
+        			isDuplicate = true;
+        			break;
+        		}
+        	}
+        	if (!isDuplicate) {
+        		temp[newIndex] = arr[i];
+        		newIndex++;
+        	}
+        }
+    	System.out.println("Array after removing duplicates: ");
+    	for (int i=0; i<newIndex; i++) {
+    		System.out.print(temp[i] + " ");
+    	}
+    }
+}
+Array after removing duplicates: 
+10 20 30 40 50 
+****************************************************************************************************************
+package com.tryPrograms;
+public class Try1 {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 2, 3, 4, 3, 5, 1, 2};
+        int maxCount = 0;
+        int mostFrequest = arr[0];
+        for (int i=0; i<arr.length; i++) {
+        	int count = 0;
+        	for (int j=0; j<arr.length; j++) {
+        		if (arr[i] == arr[j]) {
+        			count++;
+        		}
+        	}
+        	if (count > maxCount) {
+        		maxCount = count;
+        		mostFrequest = arr[i];
+        	}
+    	}
+		System.out.println("Most frequest number is: " + mostFrequest);
+		System.out.println("It appears " + maxCount + " times.");
+    }
+}
+Most frequest number is: 3
+It appears 3 times.
+****************************************************************************************************************
 
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
