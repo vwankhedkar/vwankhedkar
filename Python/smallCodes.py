@@ -50,8 +50,18 @@ C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\
 Pythonis 8
 2
 ************************************************************************************************************
-
-
+def count_sp_char(string):
+    sp_char = "!@#$%^&*()?|{}[]:;~`"
+    char = []
+    count = 0
+    for i in string:
+        if i in sp_char:
+            count += 1
+            char.append(i)
+    return count, char
+text = "Hello! How are you? #specialchars! 123"
+result = count_sp_char(text)
+print("Special Chars are: ", result)    ===>    Special Chars are:  (4, ['!', '?', '#', '!'])
 ************************************************************************************************************
 
 
