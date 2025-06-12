@@ -255,3 +255,43 @@ C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWa
   warnings.warn(
 401
 {'message': 'Bad credentials', 'documentation_url': 'https://docs.github.com/rest', 'status': '401'}
+*************************************************************************
+import requests
+def monitor_website(url):
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            print(f"{url} is UP")
+        else:
+            print(f"{url} might be DOWN")
+    except requests.RequestException:
+        print(f"{url} is unreachable")
+url = "https://petstore.swagger.io/#/pet/getPetById"
+monitor_website(url)
+OUTPUT - https://petstore.swagger.io/#/pet/getPetById is UP
+***********************************************************************
+import json
+with open("config.json") as f:
+    data = json.load(f)
+    print(data.get("app_name"))
+
+config.json
+{
+  "app_name": "MyApplication",
+  "version": "1.0.0",
+  "author": "Vaishali",
+  "debug": true
+}
+OUTPUT ------- MyApplication
+***********************************************************************
+import yaml
+with open("config.yaml") as f:
+    config = yaml.safe_load(f)
+    print(config.get("version"))
+    
+config.yaml
+app_name: MyApplication
+version: 1.0.0
+author: Vaishali
+debug: true
+OUTPUT    -------->    1.0.0
