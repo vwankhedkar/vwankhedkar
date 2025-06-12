@@ -175,3 +175,14 @@ jake        Lucas       jake@mymail.com
 lucas       London      lucas@mymail.com
 Barcelona   Doha        Barcelona@mymail.com
 ***************************************************
+with open("logfile.txt", "w") as file:
+    file.write("Starting application....\n")
+with open("logfile.txt", "a") as file:
+    file.write("Another log entry...\n")
+with open("logfile.txt", "r") as file:
+    for line in file:
+        if "error" not in line.lower():
+            print(line)
+Starting application....
+Another log entry...
+*********************************************************
