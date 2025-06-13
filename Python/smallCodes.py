@@ -283,13 +283,62 @@ MyClass.static_method()
 This is static method.
 It doesn't have access to instance variable or self.
 ************************************************************************************************************
-
+import calendar
+year = int(input("Enter year: "))
+month = int(input("Enter month: "))
+cal = calendar.month(year, month)
+print(cal)
+Enter year: 2025
+Enter month: 06
+     June 2025
+Mo Tu We Th Fr Sa Su
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30
 ************************************************************************************************************
-
+year = int(input("Enter a year: "))
+if (year % 400 == 0) and (year % 100 == 0):
+    print(f"{year} is a leap year")
+elif (year % 4 == 0) and (year % 100 != 0):
+    print("{0} is a leap year".format(year))
+else:
+    print("{} year is not a leap year".format(year))
+Enter a year: 2024
+2024 is a leap year
 ************************************************************************************************************
-
+num = int(input("Enter a number: "))
+fact = 1
+if (num < 0):
+    print("Factorial does not exists for negative numbers")
+elif num ==0:
+    print("Factorial of 0 is 1")
+else:
+    for i in range(1, num+1):
+        fact = fact * i
+    print(f"The facrotial of {num} is factorial")
+Enter a number: 5
+The facrotial of 5 is factorial
 ************************************************************************************************************
-
+nterms = int(input("How many terms? "))
+n1, n2 = 0, 1
+count = 0
+if nterms <= 0:
+    print("Enter positive integer: ")
+elif nterms == 1:
+    print(f"Fibbonacci sequence for {nterms} are: ", n1)
+else:
+    print(f"Fibbonacci sequence for {nterms} are: ", end=" ")
+    while (count < nterms):
+        print(n1, end=" ")
+        nth = n1 + n2
+        n1 = n2
+        n2 = nth
+        count += 1
+How many terms? 7
+Fibbonacci sequence for 7 are:  0 1 1 2 3 5 8 
 ************************************************************************************************************
 
 ************************************************************************************************************
