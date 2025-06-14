@@ -340,6 +340,93 @@ else:
 How many terms? 7
 Fibbonacci sequence for 7 are:  0 1 1 2 3 5 8 
 ************************************************************************************************************
+chars = ['A','B','C','D','E','f','g','h','i','j','k']
+print("The ASCII values are: ")
+chardct = {}
+for char in chars:
+    chardct[char] = ord(char)
+print(chardct)
+The ASCII values are: 
+{'A': 65, 'B': 66, 'C': 67, 'D': 68, 'E': 69, 'f': 102, 'g': 103, 'h': 104, 'i': 105, 'j': 106, 'k': 107}
+************************************************************************************************************
+dec_num = int(input("Enter decimal number: "))
+print("The decimal value of: ", dec_num, "is: ")
+print(bin(dec_num), "in binary")
+print(oct(dec_num), "in octal")
+print(hex(dec_num), "in hexadecimal")
+Enter decimal number: 27
+The decimal value of:  27 is: 
+0b11011 in binary
+0o33 in octal
+0x1b in hexadecimal
+************************************************************************************************************
+my_str = input("Enter a string: ")
+words = [word.capitalize() for word in my_str.split()]
+words.sort()
+print("The sorted words are: ")
+for word in words:
+    print(word,end=" ")
+Enter a string:  suresh ramesh vibhuti gulgule raji ram shyam ajay
+The sorted words are: 
+Ajay Gulgule Raji Ram Ramesh Shyam Suresh Vibhuti 
+************************************************************************************************************
+punctuations = '''!()-[]{};:'",<>./?@#$%^&*_~'''
+my_str = input("Enter a string: ")
+no_punc = ""
+for char in my_str:
+    if char not in punctuations:
+        no_punc = no_punc + char
+print(no_punc)
+Enter a string:  Hello!!!, he said ---and wen
+ Hello he said and wen
+************************************************************************************************************
+def find_words(words, k):
+    result = []
+    for i in words:
+        if len(i) > k:
+            result.append(i)
+    return result
+word_list = ["apple", "banana", "cherry", "date", "elderberry", "dragon"]
+k = 5
+long_words = find_words(word_list, k)
+print(f"Words longer than {k} characters: {long_words}")
+Words longer than 5 characters: ['banana', 'cherry', 'elderberry', 'dragon']
+************************************************************************************************************
+def remove_char(input_str, i):
+    if i < 0 or i >= len(input_str):
+        print(f"Invalid index {i}, The string remains unchanged")
+    result_str = input_str[:i] + input_str[i+1:]
+    return result_str
+input_str = "Hello World!"
+i = 7
+new_str = remove_char(input_str, i)
+print(f"Original string: {input_str}")
+print(f"String after removing {i}th character: {new_str}")
+Original string: Hello World!
+String after removing 7th character: Hello Wrld!
+************************************************************************************************************
+def find_duplicates(input_str):
+    char_count = {}
+    duplicates = []
+    for i in input_str:
+        if i in char_count:
+            char_count[i] += 1
+        else:
+            char_count[i] = 1
+    for i, count in char_count.items():
+        if count > 1:
+            duplicates.append(i)
+    return duplicates
+input_string = "vaishali wankhedkar"
+duplicates_char = find_duplicates(input_string)
+print("Duplicate characters: ", duplicates_char)    -->    Duplicate characters:  ['a', 'i', 'h', 'k']
+************************************************************************************************************
+
+************************************************************************************************************
+
+************************************************************************************************************
+
+************************************************************************************************************
 
 ************************************************************************************************************
 
