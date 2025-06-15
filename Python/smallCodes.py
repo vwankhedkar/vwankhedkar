@@ -593,4 +593,26 @@ B 80
  myenv\Scripts\activate
  source myenv/bin/activate
 ************************************************************************************************************
-
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+print(flatten([1,[2,[3]],[4,5]]))    --->    [1, 2, 3, 4, 5]
+******************************************************************************************************
+import pandas as pd
+df = pd.DataFrame({
+    'Region': ['North', 'South', 'North', 'South'],
+    'Product': ['A', 'A', 'B', 'B'],
+    'Sales': [100, 150, 200, 250]
+})
+pivot = df.pivot_table(index='Region', columns='Product', values='Sales', aggfunc='sum')
+print(pivot)
+Product    A    B
+Region           
+North    100  200
+South    150  250
+*************************************************************************************************
