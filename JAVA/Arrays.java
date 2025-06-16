@@ -551,15 +551,226 @@ public class Try1 {
 Most frequest number is: 3
 It appears 3 times.
 ****************************************************************************************************************
-
-
+package WebHandling;
+import java.util.LinkedHashMap;
+import java.util.Map;
+public class tryProgs2 {
+    public static Character firstNonRepeated(String str) {
+    	Map<Character, Integer> countMap = new LinkedHashMap<>();
+    	for (char c : str.toCharArray()) {
+    		countMap.put(c, countMap.getOrDefault(c, 0) + 1);
+    	}
+    	System.out.println("Count map is: "+countMap);
+    	for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+    		if (entry.getValue() == 1) return entry.getKey();
+    	}
+    	return null;    	
+    }
+    public static void main(String[] args) {
+        System.out.println("The nonrepeated 1st Char is: "+firstNonRepeated("swiss"));
+    }
+}
+Count map is: {s=3, w=1, i=1}
+The nonrepeated 1st Char is: w
 ****************************************************************************************************************
-
-
+package WebHandling;
+import java.util.HashSet;
+import java.util.Set;
+public class tryProgs2 {
+    public static int lengthOfLongestSubstring(String str) {
+    	Set<Character> set = new HashSet<>();  
+    	int left=0, max=0;
+    	for (int right=0; right<str.length(); right++) {
+    		while(set.contains(str.charAt(right))) {
+    			set.remove(str.charAt(left++));
+    		}
+    		set.add(str.charAt(right));
+    		max = Math.max(max, right-left+1);
+    	}
+    	return max;
+    }
+    public static void main(String[] args) {
+        System.out.println("The lengthOfLongestSubstring is: "+lengthOfLongestSubstring("abcabcbb"));
+    }
+}
+The lengthOfLongestSubstring is: 3
 ****************************************************************************************************************
+package WebHandling;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
+
+public class tryProgs2 {
+    public static boolean isValidParentheses(String str) {
+    	Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty()) return false;
+                char open = stack.pop();
+    			if ((c == ')' && open != '(') || (c == '}' && open != '{') || (c == ']' && open != '['))  {
+    				return false;
+    			}
+    		}
+    	}
+    	return stack.isEmpty();
+    }
+    public static void main(String[] args) {
+        System.out.println("The isValidParentheses is: "+isValidParentheses("()[]{}[]"));
+    }
+}
+The isValidParentheses is: true
 ****************************************************************************************************************
+package WebHandling;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
+public class tryProgs2 {
+    public static String reverseWords(String str) {
+        String[] words = str.trim().split("\\s+");  // use double backslash for regex
+        List<String> wordList = Arrays.asList(words);
+        Collections.reverse(wordList);
+        return String.join(" ", wordList);
+    }
+    public static void main(String[] args) {
+        System.out.println("The reverseWords string is: " + reverseWords("  the sky is blue  "));
+    }
+}
+The reverseWords string is: blue is sky the
+****************************************************************************************************************
+package WebHandling;
+public class tryProgs2 {
+    public static boolean  isAnagram(String s, String t) {
+        if (s.length() != t.length())  return false;
+        int[] count = new int[26];
+        for (char c : s.toCharArray()) count[c - 'a']++;
+        for (char c : t.toCharArray()) {
+        	if (--count[c - 'a'] < 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        System.out.println("Is string isAnagram : " + isAnagram("listen", "silent"));
+    }
+}
+Is string isAnagram : true
+****************************************************************************************************************
+package WebHandling;
+public class tryProgs2 {
+    public static int missingNumber(int[] nums) {
+        int n = nums.length;
+        int total = n * (n + 1) / 2;
+        for (int num : nums) total -= num;
+        return total;
+    }
+    public static void main(String[] args) {
+        System.out.println("Missing number in list is: "+missingNumber(new int[]{3, 0, 1}));
+    }
+}
+Missing number in list is: 2
+****************************************************************************************************************
+package WebHandling;
+import java.util.Arrays;
 
+public class tryProgs2 {
+    public static void moveZeroes(int[] nums) {
+        int index = 0;
+        for (int i=0; i < nums.length; i++) {
+        	if (nums[i] != 0) {
+        		nums[index++] = nums[i];
+        }
+      }
+        while (index < nums.length) {
+        	nums[index++] = 0;
+        }
+    }
+    public static void main(String[] args) {
+    	int[] arr = {0, 1, 0, 3, 12};
+    	moveZeroes(arr);
+        System.out.println("Array after moving zeros are: "+Arrays.toString(arr));
+    }
+}
+Array after moving zeros are: [1, 3, 12, 0, 0]
+****************************************************************************************************************
+package WebHandling;
+
+import java.util.Stack;
+
+public class tryProgs2 {  // OR rename class to MyQueue
+    Stack<Integer> input = new Stack<>();
+    Stack<Integer> output = new Stack<>();
+    public void push(int x) {
+        input.push(x);
+    }
+    public int pop() {
+        peek();  // Ensure elements are transferred if output is empty
+        return output.pop();
+    }
+    public int peek() {
+        if (output.isEmpty()) {
+            while (!input.isEmpty()) {
+                output.push(input.pop());
+            }
+        }
+        return output.peek();
+    }
+    public boolean empty()  {
+        return input.isEmpty() && output.isEmpty();
+    }
+    public static void main(String[] args) {
+        tryProgs2 q = new tryProgs2();  // Use current class name
+        q.push(1);
+        q.push(2);
+        System.out.println(q.peek());  // Output: 1
+        System.out.println(q.pop());   // Output: 1
+        System.out.println(q.empty()); // Output: false
+    }
+}
+1
+1
+false
+****************************************************************************************************************
+package WebHandling;
+
+public class tryProgs2 {
+	public static int majorityElement(int[] nums) {
+		int count=0, candidate=0;
+		for (int num : nums) {
+			if (count == 0)  candidate = num;
+			count += (num == candidate) ? 1 : -1;
+		}
+	return candidate;
+	}
+    public static void main(String[] args) {
+        System.out.println("majorityElement is: "+(majorityElement(new int[]{2,2,1,1,1,2,2})));
+    }
+}
+majorityElement is: 2
+****************************************************************************************************************
+package WebHandling;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class tryProgs2 {
+	public static int[] intersection(int[] num1, int[] num2) {
+		Set<Integer> set1 = new HashSet<>();
+		for (int num : num1) set1.add(num);
+		Set<Integer> resultSet = new HashSet<>();
+		for (int num : num2)
+		{
+			if (set1.contains(num))  resultSet.add(num);
+		}
+	 return resultSet.stream().mapToInt(i -> i).toArray();
+	}
+    public static void main(String[] args) {
+        System.out.println("majorityElement is: "+Arrays.toString(intersection(new int[]{1, 2, 2, 1}, new int[] {2, 2})));
+    }
+}
+majorityElement is: [2]
 ****************************************************************************************************************
 
 
