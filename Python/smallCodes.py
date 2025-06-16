@@ -616,3 +616,66 @@ Region
 North    100  200
 South    150  250
 *************************************************************************************************
+************************************************************************************************************
+from datetime import datetime
+now = datetime.now()
+print(now)
+bday = datetime(2025, 6, 14)
+print(bday)
+print(now.strftime("%d/%m/%Y"))
+print(now.strftime("%B %d %Y"))
+print(now.strftime("%I:%M %p"))
+2025-06-15 00:16:36.989018
+2025-06-14 00:00:00
+15/06/2025
+June 15 2025
+12:16 AM
+Format codes example:
+ %d → Day
+ %m → Month (number)
+ %B → Month name
+ %Y → Year
+ %I:%M %p → Hour:Minute AM/PM
+************************************************************************************************************
+squares = [x**2 for x in range(5)]
+print(squares)
+unique = {x for x in [1, 1, 2, 3, 3]}
+print(unique)
+names = {i: f"User{i}" for i in range(3)}
+print(names)
+
+for i, val in enumerate(["a","b"]):
+    print(i, val)
+name = ['A', 'B']
+score = [90, 80]
+for n,s in zip(name, score):
+    print(n, s)
+[0, 1, 4, 9, 16]
+{1, 2, 3}
+{0: 'User0', 1: 'User1', 2: 'User2'}
+0 a
+1 b
+A 90
+B 80
+************************************************************************************************************
+ pip freeze -  This command lists all installed Python packages and their versions
+ pip freeze > requirements.txt
+ pip install -r requirements.txt - to install all libs
+ Activate venv module
+ python -m venv myenv  # create environment
+ myenv\Scripts\activate
+ source myenv/bin/activate
+************************************************************************************************************
+s = {1, 2, 3, 3, 2, 4, 5, 5} 
+print(s) 
+# Remove will raise an error if the element is not in the set 
+s.remove(4) 
+print(s) 
+# Discard doesn't raise any errors 
+s.discard(1) 
+print(s) 
+Output: 
+{1, 2, 3, 4, 5} 
+{1, 2, 3, 5} 
+{2, 3, 5}
+**************************************************************************************************************
