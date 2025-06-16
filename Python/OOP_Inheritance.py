@@ -354,4 +354,18 @@ class B(A):
 a1 = B()
 a1.show()
 OUTPUT - In B Show
+************************************************************************************
+class Student:
+    def __init__(self, name, grade, percentage):
+        self.name = name
+        self.grade = grade
+        self.__percentage = percentage  # Private attribute (hidden)
+    def get_percentage(self):  # Public method to access the privateattribute
+        return self.__percentage
 
+# Creating a student object 
+student1 = Student("Madhav", 10, 98)
+
+# Accessing the private attribute using the public method 
+print(f"{student1.name}'s percentage is {student1.get_percentage()} %.")
+print(student1.__percentage)  # error
