@@ -1,0 +1,25 @@
+In MySQL
+show databases;
+create database telusko;
+use telusko;
+create table student(name varchar(20), college varchar(20))
+insert into student values('vais','modern'), ('wank','JNU');
+select * from student;
+
+Python MySQL.pl
+
+import mysql.connector
+my_db = mysql.connector.connect(
+    host="localhost",
+    user="vaishali",
+    passwd="1234",
+    database="telusko"  # Make sure to specify the correct DB
+)
+my_cursor = my_db.cursor()
+my_cursor.execute("select * from student")
+result = my_cursor.fetchall()
+for row in result:
+    print(row)
+OUTPUT :-
+('vais', 'modern')
+('wank', 'JNU')
