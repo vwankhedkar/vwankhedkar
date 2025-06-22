@@ -116,10 +116,55 @@ print(mail)
 C:\Users\vwank\PycharmProjects\PythonProject4\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PythonProject4\Selenium\waits.py 
 abc@gmail.com
 **************************************************************************************
+import time
 
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+act = ActionChains(driver)
+driver.get("https://greenstech.in/selenium-course-content.html")
+driver.maximize_window()
+txtAdd = driver.find_element(By.XPATH, "//h6[contains(text(), 'Greens')]")
+text1 = txtAdd.text
+print(text1)
+txtMail = driver.find_element(By.XPATH, "//p[@class='mail-info']")
+text2 = txtMail.text
+print(text2)
+time.sleep(10)
+act.move_to_element(txtAdd).perform()
+time.sleep(10)
+OUTPUT:--------------
+Greens Technology Adyar
+No:11,
+First Street,
+padmanabha Nagar,
+Adyar,
+Chennai-600 020.
+**************************************************************************************
+import time
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://demo.guru99.com/test/drag_drop.html")
+act = ActionChains(driver)
+sour1 = driver.find_element(By.XPATH, "//a[text()=' BANK ']")
+dest1 = driver.find_element(By.XPATH, "(//li[@class='placeholder'])[1]")
+act.drag_and_drop(sour1, dest1).perform()
+time.sleep(10)
+sour2 = driver.find_element(By.XPATH, "//a[text()=' 5000 ']")
+dest2 = driver.find_element(By.ID, "amt7")
+act.drag_and_drop(sour2, dest2).perform()
 **************************************************************************************
 
-**************************************************************************************
 **************************************************************************************
 
 **************************************************************************************
