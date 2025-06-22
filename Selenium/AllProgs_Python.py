@@ -164,17 +164,183 @@ sour2 = driver.find_element(By.XPATH, "//a[text()=' 5000 ']")
 dest2 = driver.find_element(By.ID, "amt7")
 act.drag_and_drop(sour2, dest2).perform()
 **************************************************************************************
-
+import time
+import pyautogui
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+# Set up Chrome
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+# Load the webpage
+driver.get("https://www.greenstechnologys.com/")
+time.sleep(3)
+# Find a paragraph and perform double-click and right-click
+paragraph = driver.find_element(By.XPATH, "//p[contains(@style, 'font-size: 18px')]")
+act = ActionChains(driver)
+act.double_click(paragraph).perform()
+act.context_click(paragraph).perform()
+time.sleep(2)
+# Use keyboard to navigate context menu
+pyautogui.keyDown('down')
+time.sleep(0.5)
+pyautogui.keyUp('down')
+# Press Enter
+pyautogui.press('enter')  # OR:
+# pyautogui.keyDown('enter')
+# pyautogui.keyUp('enter')
 **************************************************************************************
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://demo.automationtesting.in/Alerts.html")
+driver.find_element(By.XPATH, "//button[@onclick='alertbox()']").click()
+alert = driver.switch_to.alert
+alert.accept()
 **************************************************************************************
+import pyautogui
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://demo.automationtesting.in/Alerts.html")
+time.sleep(2)
+driver.find_element(By.XPATH, "//a[contains(text(), 'Alert with Textbox')]").click()
+time.sleep(1)
+driver.find_element(By.XPATH, "//button[@onclick='promptbox()']").click()
+time.sleep(2)
+pyautogui.typewrite("abc")
+time.sleep(1)
+pyautogui.press("enter")
+time.sleep(2)
+output = driver.find_element(By.ID, "demo1").text
+print("Alert result on page:", output)
+driver.quit()
 **************************************************************************************
-
+import pyautogui
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com")
+time.sleep(2)
+email_field = driver.find_element(By.ID, "email")
+driver.execute_script("arguments[0].setAttribute('value','testuser@example.com');", email_field)
+value = driver.execute_script("return arguments[0].getAttribute('value')", email_field)
+print("Email field value is:", value)
+txtpass = driver.find_element(By.ID, "pass")
+driver.execute_script("arguments[0].setAttribute('value','12345');", txtpass)
+btnLogin = driver.find_element(By.NAME, "login")
+driver.execute_script("arguments[0].click();", btnLogin)
+time.sleep(3)
+driver.quit()
 **************************************************************************************
+import pyautogui
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://toolsqa.com")
+time.sleep(2)
+try:
+    driver.find_element(By.ID, "cookie_action_close_header").click()
+    time.sleep(1)
+except:
+    pass
+txtScroll = driver.find_element(By.XPATH, "//div[text()='Selenium Online Trainings']")
+driver.execute_script("arguments[0].scrollIntoView(false);", txtScroll)
+time.sleep(3)
+driver.execute_script("arguments[0].scrollIntoView(true);", txtScroll)
+time.sleep(3)
+driver.quit()
 **************************************************************************************
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://toolsqa.com")
+time.sleep(2)
+try:
+    driver.find_element(By.ID, "cookie_action_close_header").click()
+    time.sleep(1)
+except:
+    pass
+txtScroll = driver.find_element(By.XPATH, "//div[text()='Selenium Online Trainings']")
+driver.execute_script("arguments[0].scrollIntoView(false);", txtScroll)
+time.sleep(2)
+driver.execute_script("arguments[0].scrollIntoView(true);", txtScroll)
+driver.save_screenshot("selenium_training_section.png")
+print("Screenshot saved as selenium_training_section.png")
+driver.quit()
 **************************************************************************************
-
+import pyautogui
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://toolsqa.com")
+try:
+    driver.find_element(By.ID, "cookie_action_close_header").click()
+    time.sleep(1)
+except:
+    pass
+txtScroll = driver.find_element(By.XPATH, "//div[text()='Selenium Online Trainings']")
+driver.execute_script("arguments[0].scrollIntoView(false);", txtScroll)
+time.sleep(1)
+driver.execute_script("arguments[0].scrollIntoView(true);", txtScroll)
+time.sleep(1)
+pyautogui.screenshot("selenium_training_section1.png")
+driver.quit()
 **************************************************************************************
+import pyautogui
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com")
+btnLogin = driver.find_element(By.NAME, "login")
+displayed = btnLogin.is_displayed()
+print(displayed)
+enabled = btnLogin.is_enabled()
+print(enabled)
+btnCreate = driver.find_element(By.XPATH, "//a[text()='Create new account']")
+btnCreate.click()
+rdoGender = driver.find_element(By.NAME, "sex")
+rdoGender.click()
+selected = rdoGender.is_selected()
+print(selected)
+driver.quit()
 **************************************************************************************
 
 **************************************************************************************
