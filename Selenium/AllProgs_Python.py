@@ -426,15 +426,178 @@ Island Trading Helen Bennett UK
 Laughing Bacchus Winecellars Yoshi Tannamuri Canada
 Magazzini Alimentari Riuniti Giovanni Rovelli Italy
 **************************************************************************************
-**************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.iplt20.com/points-table/men/2024")
+wait = WebDriverWait(driver, 30)
+wait.until(EC.visibility_of_element_located((By.XPATH, "//table//tbody/tr")))
+rows = driver.find_elements(By.XPATH, "//table//tbody/tr")
+print("MATCHES")
+for row in rows:
+    cells = row.find_elements(By.TAG_NAME, "td")
+    if len(cells) >= 7:
+        team = cells[1].text.strip()
+        matches = cells[2].text.strip()
+        print(matches)
+# for row in rows:
+#     cells = row.find_elements(By.TAG_NAME, "td")
+#     if len(cells) >= 7:
+#         team = cells[1].text.strip()
+#         matches = cells[2].text.strip()
+#         points = cells[6].text.strip()
+#         print(f"{team}\t{matches}\t{points}")
 
+driver.quit()
+C:\Users\vwank\PycharmProjects\PythonProject4\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PythonProject4\Selenium\waits.py 
+MATCHES
+KKR
+SRH
+RR
+RCB
+CSK
+DC
+LSG
+GT
+PBKS
+MI
 **************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait, Select
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+btnCreate = driver.find_element(By.XPATH, "//a[text()='Create new account']")
+btnCreate.click()
+year = driver.find_element(By.ID, "year")
+s = Select(year)
+s.select_by_index(2)
+s.select_by_value("1996")
+s.select_by_visible_text("1998")
+# s.deselect_by_index(2)
+# s.deselect_by_value("1996")
+# s.deselect_by_visible_text("1998")
+time.sleep(3)
+driver.quit()
 **************************************************************************************
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+txtHighlight = driver.find_element(By.XPATH, "//h2[contains(text(),'Facebook helps')]")
+driver.execute_script("arguments[0].setAttribute('style','background:yellow')",txtHighlight)
+time.sleep(3)
+driver.quit()
 **************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+time.sleep(2)
+txtHighlight = driver.find_element(By.XPATH, "//h2[contains(text(),'Facebook helps')]")
+driver.execute_script("arguments[0].setAttribute('style','background:yellow')", txtHighlight)
+time.sleep(3)
+btnLogin = driver.find_element(By.NAME, "login")
+color = btnLogin.value_of_css_property("background-color")
+font = btnLogin.value_of_css_property("font-size")
+width = btnLogin.value_of_css_property("width")
+fam = btnLogin.value_of_css_property("font-family")
+print("Login button styles:")
+print("Background Color:", color)
+print("Font Size:", font)
+print("Width:", width)
+print("Font Family:", fam)
+driver.quit()
+C:\Users\vwank\PycharmProjects\PythonProject4\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PythonProject4\Selenium\waits.py 
+Login button styles:
+Background Color: rgba(8, 102, 255, 1)
+Font Size: 20px
+Width: 332px
+Font Family: Helvetica, Arial, sans-serif
 **************************************************************************************
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+# Step 1: Open Facebook
+driver.get("https://www.facebook.com/")
+time.sleep(2)
+# Step 2: Navigate to Redbus
+driver.get("https://www.redbus.in/")
+time.sleep(2)
+# Step 3: Go back to Facebook
+driver.back()
+time.sleep(2)
+# Step 4: Go forward to Redbus
+driver.forward()
+time.sleep(2)
+# Step 5: Refresh Redbus
+driver.refresh()
+time.sleep(2)
+# Step 6: Quit browser
+driver.quit()
 **************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+driver.implicitly_wait(10)
+email = driver.find_element(By.ID, "email")
+email.send_keys("Vaish")
+wait = WebDriverWait(driver, 20)
+wait.until(EC.element_to_be_clickable((By.NAME, "login")))  # ✅ Corrected this line
+login = driver.find_element(By.NAME, "login")
+login.click()
+**************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+# FluentWait using WebDriverWait with polling and ignored exceptions
+wait = WebDriverWait(driver, timeout=20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
+# Wait until login button is clickable
+login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
+login_button.click()
 **************************************************************************************
 
 **************************************************************************************
