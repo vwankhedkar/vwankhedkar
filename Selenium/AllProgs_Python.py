@@ -342,6 +342,36 @@ selected = rdoGender.is_selected()
 print(selected)
 driver.quit()
 **************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://netbanking.hdfcbank.com/netbanking/")
+driver.switch_to.frame("login_page")  # Correct frame name
+time.sleep(2)
+customer_id_input = driver.find_element(By.NAME, "fldLoginUserId")
+customer_id_input.send_keys("12345678")  # Use a valid dummy or actual ID
+# Step 2: Now click the Continue button
+continue_btn = driver.find_element(By.CLASS_NAME, "login-btn")
+continue_btn.click()
+# Step 3: Switch back to default content (if needed later)
+driver.switch_to.default_content()
+time.sleep(5)
+driver.quit()
+
+**************************************************************************************
+
+**************************************************************************************
+
+**************************************************************************************
+**************************************************************************************
+
+**************************************************************************************
+**************************************************************************************
 
 **************************************************************************************
 **************************************************************************************
