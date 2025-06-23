@@ -364,7 +364,38 @@ time.sleep(5)
 driver.quit()
 
 **************************************************************************************
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.snapdeal.com")
+time.sleep(2)
+txtSearch = driver.find_element(By.ID, "inputValEnter")
+txtSearch.send_keys("Hand Sanitizer")
+btnSearch = driver.find_element(By.XPATH, "//span[text()='Search']")
+btnSearch.click()
+time.sleep(2)
+btnPro = driver.find_element(By.XPATH, "(//img[@class='product-image '])[1]")
+btnPro.click()
+time.sleep(2)
+parentWin = driver.current_window_handle
+allWind = driver.window_handles
+# Switch to the new window
+for win in allWind:
+    if win != parentWin:
+        driver.switch_to.window(win)
+        break
+print("Product Page Title:", driver.title)
+# driver.switch_to.window(parentWin)
+btnAdd = driver.find_element(By.ID, "add-cart-button-id")
+btnAdd.click()
+driver.switch_to.default_content()
+time.sleep(1)
+driver.quit()
 **************************************************************************************
 
 **************************************************************************************
