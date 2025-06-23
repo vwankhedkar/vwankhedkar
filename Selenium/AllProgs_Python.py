@@ -397,7 +397,34 @@ driver.switch_to.default_content()
 time.sleep(1)
 driver.quit()
 **************************************************************************************
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("https://www.w3schools.com/html/html_tables.asp")
+time.sleep(2)
+main = driver.find_element(By.XPATH, "//table[@id='customers']")
+rows = main.find_elements(By.TAG_NAME, "tr")
+first_row = rows[1]
+print(first_row.text)
+print("*************************")
+for row in rows:
+    print(row.text)
+driver.quit()
+C:\Users\vwank\PycharmProjects\PythonProject4\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PythonProject4\Selenium\waits.py 
+Alfreds Futterkiste Maria Anders Germany
+*************************
+Company Contact Country
+Alfreds Futterkiste Maria Anders Germany
+Centro comercial Moctezuma Francisco Chang Mexico
+Ernst Handel Roland Mendel Austria
+Island Trading Helen Bennett UK
+Laughing Bacchus Winecellars Yoshi Tannamuri Canada
+Magazzini Alimentari Riuniti Giovanni Rovelli Italy
 **************************************************************************************
 **************************************************************************************
 
