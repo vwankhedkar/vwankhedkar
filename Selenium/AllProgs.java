@@ -132,7 +132,7 @@ public class Sample {
 		driver.manage().window().maximize();
 		Actions a = new Actions(driver);
 		driver.get("https://www.shopclues.com/wholesale.html");
-    // To move mouse point
+                // To move mouse point
 		WebElement sport = driver.findElement(By.xpath("//a[text()='Sports & More']"));
 		a.moveToElement(sport).perform();
 		Thread.sleep(3000);
@@ -160,6 +160,25 @@ public class Sample {
 		WebElement sour2 = driver.findElement(By.xpath("//a[text()=' 5000 ']"));
 		WebElement dest2 = driver.findElement(By.id("amt7"));	
 		ac.dragAndDrop(sour2, dest2).perform();
+	}
+}
+***************************************************************************************
+package com.Utility;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+public class BrowserProvider 
+{
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://jqueryui.com/resources/demos/droppable/default.html");  
+		WebElement draggable = driver.findElement(By.xpath("//*[@id='draggable']")); 
+		WebElement droppable = driver.findElement(By.xpath("//*[@id='droppable']"));  
+		Actions action = new Actions(driver);  
+		action.dragAndDrop(draggable, droppable).perform(); 	
 	}
 }
 ***************************************************************************************
