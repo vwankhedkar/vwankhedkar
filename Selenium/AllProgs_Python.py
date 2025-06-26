@@ -164,6 +164,26 @@ sour2 = driver.find_element(By.XPATH, "//a[text()=' 5000 ']")
 dest2 = driver.find_element(By.ID, "amt7")
 act.drag_and_drop(sour2, dest2).perform()
 **************************************************************************************
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.get("http://jqueryui.com/resources/demos/droppable/default.html")
+drag = driver.find_element(By.XPATH, "//*[@id='draggable']")
+drop = driver.find_element(By.XPATH, "//*[@id='droppable']")
+act = ActionChains(driver)
+act.drag_and_drop(drag, drop).perform()
+# # FluentWait using WebDriverWait with polling and ignored exceptions
+# wait = WebDriverWait(driver, timeout=20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
+#
+# # Wait until login button is clickable
+# login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
+# login_button.click()
+**********************************************************************************************
 import time
 import pyautogui
 from selenium import webdriver
