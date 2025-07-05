@@ -165,7 +165,31 @@ aple
 a
 abc
 *************************************************************************************
+package com.tryPrograms;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+public class WordCountFile {
+	public static void main(String[] args) {
+		System.out.println("Enter string to reverse : ");
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		int len = s.length();
+		String rev = "";
+		for (int i=len-1; i>=0; i--) {
+			rev = rev + s.charAt(i);
+		}
+		System.out.println("Reverse string without inbuilt method: " +rev);
+		StringBuffer sf = new StringBuffer(s);
+		System.out.println("Reverse string with inbuilt method: " +sf.reverse());
+	}
 
+}
+Enter string to reverse : 
+This is Java Program
+Reverse string without inbuilt method: margorP avaJ si sihT
+Reverse string with inbuilt method: margorP avaJ si sihT
 *************************************************************************************
 
 *************************************************************************************
