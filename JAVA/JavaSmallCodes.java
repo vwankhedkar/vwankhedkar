@@ -1621,7 +1621,31 @@ public class Try1 {
     }
 }   ====>	[5, 6, 7, 1, 2, 3, 4]
 *********************************************************************************
+package com.tryPrograms;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+public class WordCountFile {
+	public static void main(String[] args) {
+		System.out.println("Enter Number to reverse : ");
+		Scanner sc = new Scanner(System.in);
+		long num = sc.nextLong();
+		long rev = 0;
+		while (num != 0) {
+			rev = rev * 10 + num % 10;
+			num = num / 10;
+		}
+		int num1 = 98756;
+		System.out.println("Reverse of number is w/o inbuild method is: "+rev);
+		System.out.println("Reverse of number is with inbuild method is: "+new StringBuffer(String.valueOf(num1)).reverse());
+	}
 
+}
+Enter Number to reverse : 
+643743
+Reverse of number is w/o inbuild method is: 347346
+Reverse of number is with inbuild method is: 65789
 *********************************************************************************
 
 *********************************************************************************
