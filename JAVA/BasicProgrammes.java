@@ -256,11 +256,52 @@ public class LambdaProgs {
     }
 }        ----->    17 is prime number - true
 *************************************************************************
-
+package com.tryPrograms;
+public class SumOfDigits {
+	public static void main(String[] args) {
+		int number = 12345;
+		int sum = 0;
+		while (number > 0) {
+			sum += number % 10;
+			number /= 10;
+		}
+		System.out.println("Sum of digits: " + sum);
+	}
+}
+Sum of digits: 15
 *************************************************************************
-
+package com.tryPrograms;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+public class RemoveDuplicates {
+	public static void main(String[] args) {
+		Integer[] numbers = {1,2,3,2,5,1,6,3,7};
+		Set<Integer> uniqueSet = new HashSet<>(Arrays.asList(numbers));
+		Integer[] uniqueNumbers = uniqueSet.toArray(new Integer[0]);
+		System.out.println("Original: " + Arrays.toString(numbers));
+		System.out.println("Without duplicates: " +Arrays.toString(uniqueNumbers));
+	}
+}
+Original: [1, 2, 3, 2, 5, 1, 6, 3, 7]
+Without duplicates: [1, 2, 3, 5, 6, 7]
 *************************************************************************
-
+package com.tryPrograms;
+public class RemoveDuplicates {
+	public static void main(String[] args) {
+		String sentence = "Java Coding Interview";
+		String[] words = sentence.split(" ");
+		StringBuilder result = new StringBuilder();
+		for (String word:words) {
+			StringBuilder revervedWord = new StringBuilder(word).reverse();
+			result.append(revervedWord).append(" ");
+		}
+		System.out.println("Original: " +sentence);
+		System.out.println("Reserved words : " + result.toString().trim());
+	}
+}
+Original: Java Coding Interview
+Reserved words : avaJ gnidoC weivretnI
 *************************************************************************
 
 *************************************************************************
