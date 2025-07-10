@@ -303,8 +303,46 @@ public class RemoveDuplicates {
 Original: Java Coding Interview
 Reserved words : avaJ gnidoC weivretnI
 *************************************************************************
-
+package com.tryPrograms;
+public class RemoveDuplicates {
+	public static void main(String[] args) {
+		String input = "Java Programming";
+		StringBuilder result = new StringBuilder();
+		for (char c:input.toCharArray()) {
+			if (Character.isUpperCase(c)) {
+				result.append(Character.toLowerCase(c));
+			} else if (Character.isLowerCase(c)) {
+				result.append(Character.toUpperCase(c));
+			} else result.append(c);
+		}
+		System.out.println("Original : "+input);
+		System.out.println("Case Converted : "+result.toString());
+	}
+}
+Original : Java Programming
+Case Converted : jAVA pROGRAMMING
 *************************************************************************
+package com.tryPrograms;
+public class RemoveDuplicates {
+	public static int findSecondLargest(int[] arr) {
+		int largest = Integer.MIN_VALUE;
+		int secondLargest = Integer.MIN_VALUE;
+		for (int num:arr) {
+			if (num > largest) {
+				secondLargest = largest;
+				largest = num;
+			} else if (num > secondLargest && num != largest) {
+				secondLargest = num;
+			}
+		}
+		return secondLargest;
+	}
+	public static void main(String[] args) {
+		int[] numbers = {12, 35, 35, 1, 10, 34, 1};
+		System.out.println("SecondLargestNumber is : " + findSecondLargest(numbers));
+	}
+}
+SecondLargestNumber is : 34
 *************************************************************************
 
 *************************************************************************
