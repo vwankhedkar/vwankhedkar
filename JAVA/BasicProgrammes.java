@@ -344,9 +344,50 @@ public class RemoveDuplicates {
 }
 SecondLargestNumber is : 34
 *************************************************************************
-
+package com.tryPrograms;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+public class RemoveDuplicates {
+	public static List<Integer> findDuplicates(int[] arr) {
+		Set<Integer> seen = new HashSet<>();
+		List<Integer> duplicates = new ArrayList<>();
+		for (int num : arr) {
+			if (!seen.add(num)) {
+				duplicates.add(num);
+			}
+		}
+		return duplicates;
+	}
+	public static void main(String[] args) {
+		 int[] numbers = {1, 2, 3, 4, 2, 7, 8, 8, 3};
+		System.out.println("Duplicate elements : " + findDuplicates(numbers));
+	}
+}
+Duplicate elements : [2, 8, 3]
 *************************************************************************
-
+package com.tryPrograms;
+public class RemoveDuplicates {
+	public static boolean areAnagram(String str1, String str2) {
+		str1 = str1.replaceAll("\\s", "").toLowerCase();
+		str2 = str2.replaceAll("\\s", "").toLowerCase();
+		if (str1.length() != str2.length()) {
+			return false;
+		}
+		char[] charArray1 = str1.toCharArray();
+		char[] charArray2 = str2.toCharArray();
+		java.util.Arrays.sort(charArray1);
+		java.util.Arrays.sort(charArray2);
+		return java.util.Arrays.equals(charArray1, charArray2);
+	}
+	public static void main(String[] args) {
+		String s1 = "Listen";
+		String s2 = "Silent";
+		System.out.println("\""+s1 + "\" and \"" + s2 + "\" are anagrams:" +areAnagram(s1,s2));
+	}
+}
+"Listen" and "Silent" are anagrams:true
 *************************************************************************
 
 *************************************************************************
