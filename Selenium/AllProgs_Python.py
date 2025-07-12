@@ -619,5 +619,59 @@ wait = WebDriverWait(driver, timeout=20, poll_frequency=2, ignored_exceptions=[N
 login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
 login_button.click()
 **************************************************************************************
-
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+# Edge-specific options
+options = Options()
+options.binary_location = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"  # Adjust only if non-standard
+# Setup Edge driver
+service = Service(EdgeChromiumDriverManager().install())
+driver = webdriver.Edge(service=service, options=options)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+# Fluent-style wait
+wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
+login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
+login_button.click()
 **************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.firefox import GeckoDriverManager
+options = Options()
+options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"  # Adjust if needed
+service = Service(GeckoDriverManager().install())
+driver = webdriver.Firefox(service=service, options=options)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
+login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
+login_button.click()
+*********************************************************************************************
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.chrome import ChromeDriverManager
+options = Options()
+options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"  # Adjust if needed
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Firefox(service=service, options=options)
+driver.maximize_window()
+driver.get("https://www.facebook.com/")
+wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
+login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
+login_button.click()
