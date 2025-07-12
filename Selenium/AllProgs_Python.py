@@ -675,3 +675,55 @@ driver.get("https://www.facebook.com/")
 wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
 login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
 login_button.click()
+***********************************************************************************************
+Execute tests in parallel
+(.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25> pip install pytest-xdist
+
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"  # Adjust if needed
+
+def test_google():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+    driver.get("https://www.google.com")
+    assert "Google" in driver.title
+    driver.quit()
+def test_facebook():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+    driver.get("https://www.facebook.com")
+    assert "Facebook" in driver.title
+    driver.quit()
+def test_insta():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+    driver.get("https://www.instagram.com")
+   # assert "Facebook" in driver.title
+    driver.quit()
+def test_gmail():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+    driver.get("https://www.gmail.com")
+   # assert "Facebook" in driver.title
+    driver.quit()
+def test_rediff():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+    driver.get("https://www.rediffmail.com")
+   # assert "Facebook" in driver.title
+    driver.quit()
+
+(.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25> pytest .\Selenium\test_webpage_login.py -n 5
+                                                                                                                                     [100%]
+=============================================================== 5 passed in 33.49s ================================================================ 
+(.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25>  
