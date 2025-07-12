@@ -43,7 +43,42 @@ Original:  Hello, World!
 Encrypted:  KelloZorld
 Decrypted:  HelloWorld
 ************************************************************************************************
+class Singleton:
+    _instance = None  # Use _instance consistently
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance
+singleton_1 = Singleton()
+singleton_2 = Singleton()
+print(singleton_1 is singleton_2)  # ✅ Output: True
 ************************************************************************************************
+# public variable
+class MyClass1:
+    def __init__(self):
+        self.public_variable = "This is public."
+obj = MyClass1()
+print(obj.public_variable)
+# Protected variable
+class Myclass2:
+    def __init__(self):
+        self._protected_variable = "This is protected variable"
+class subClass(Myclass2):
+    def print_protected(self):
+        print(self._protected_variable)
+obj = subClass()
+obj.print_protected()
+# Private
+class MyClass3:
+    def __init__(self):
+        self.__private_variable = "This is private variable"
+    def get_private_variable(self):
+        return self.__private_variable
+obj = MyClass3()
+print(obj.get_private_variable())
+This is public.
+This is protected variable
+This is private variable
 ************************************************************************************************
 
 ************************************************************************************************
