@@ -43,43 +43,7 @@ Original:  Hello, World!
 Encrypted:  KelloZorld
 Decrypted:  HelloWorld
 ************************************************************************************************
-package com.tryPrograms;
-public class RemoveDuplicates {
-	public static int findMissingNumber(int[] arr, int n) {
-		int expectedSum = n * (n + 1) / 2;
-		int actualSum = 0;
-		for (int num : arr) {
-			actualSum += num;
-		}
-		return expectedSum - actualSum;
-	}
-	public static void main(String[] args) {
-		int[] numbers = {1, 2, 4, 6, 3, 7, 8};
-		int n = 8; 
-		System.out.println("Missing number : " +findMissingNumber(numbers, n));
-	}
-}    =====>    Missing number : 5
 ************************************************************************************************
-package com.tryPrograms;
-public class RemoveDuplicates {
-	public static boolean areAnagram(String str1, String str2) {
-		str1 = str1.replaceAll("\\s", "").toLowerCase();
-		str2 = str2.replaceAll("\\s", "").toLowerCase();
-		if (str1.length() != str2.length()) {
-			return false;
-		}
-		char[] charArray1 = str1.toCharArray();
-		char[] charArray2 = str2.toCharArray();
-		java.util.Arrays.sort(charArray1);
-		java.util.Arrays.sort(charArray2);
-		return java.util.Arrays.equals(charArray1, charArray2);
-	}
-	public static void main(String[] args) {
-		String s1 = "Listen";
-		String s2 = "Silent";
-		System.out.println("\""+s1 + "\" and \"" + s2 + "\" are anagrams:" +areAnagram(s1,s2));
-	}
-}  ===>    "Listen" and "Silent" are anagrams:true
 ************************************************************************************************
 
 ************************************************************************************************
