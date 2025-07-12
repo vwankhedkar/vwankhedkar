@@ -727,3 +727,31 @@ def test_rediff():
                                                                                                                                      [100%]
 =============================================================== 5 passed in 33.49s ================================================================ 
 (.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25>  
+************************************************************************
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+import pytest
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+driver = None
+options = Options()
+options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"  # Adjust if needed
+@pytest.fixture(scope='module')
+def init_driver():
+    global driver
+    print("----------Setup--------------")
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+    driver.delete_all_cookies()
+    driver.get("https://www.google.com")
+    yield
+    print("-----------Tear Down-------------")
+    driver.quit()
+@pytest.mark.usefixtures("init_driver")
+def test_google_title():
+    assert driver.title == "Google"
+@pytest.mark.usefixtures("init_driver")
+def test_google_url():
+    assert driver.current_url == "https://www.google.com/"
+5> pytest .\Selenium\test_fixture_google.py
