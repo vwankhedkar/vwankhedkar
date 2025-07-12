@@ -389,10 +389,52 @@ public class RemoveDuplicates {
 }
 "Listen" and "Silent" are anagrams:true
 *************************************************************************
-
+package com.tryPrograms;
+public class RemoveDuplicates {
+	public static void bubbleSort(int[] arr) {
+		int n = arr.length;
+		boolean swapped;
+		for (int i=0; i<n-1; i++) {
+			swapped = false;
+			for (int j=0; j<n-i-1; j++) {
+				if (arr[j] > arr[j+1]) {
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+					swapped = true;
+				}
+			}
+			if (!swapped)   break;
+		}
+	}
+	public static void main(String[] args) {
+		int[] arr = {64, 34, 25, 12, 22, 11, 90};
+		System.out.println("Original array : " + java.util.Arrays.toString(arr));
+		bubbleSort(arr);
+		System.out.println("Sorted array : " + java.util.Arrays.toString(arr));
+	}
+}
+Original array : [64, 34, 25, 12, 22, 11, 90]
+Sorted array : [11, 12, 22, 25, 34, 64, 90]
+*************************************************************************
+package com.tryPrograms;
+public class RemoveDuplicates {
+	public static int findMissingNumber(int[] arr, int n) {
+		int expectedSum = n * (n + 1) / 2;
+		int actualSum = 0;
+		for (int num : arr) {
+			actualSum += num;
+		}
+		return expectedSum - actualSum;
+	}
+	public static void main(String[] args) {
+		int[] numbers = {1, 2, 4, 6, 3, 7, 8};
+		int n = 8; 
+		System.out.println("Missing number : " +findMissingNumber(numbers, n));
+	}
+}    =====>    Missing number : 5
 *************************************************************************
 
-*************************************************************************
 *************************************************************************
 
 *************************************************************************
