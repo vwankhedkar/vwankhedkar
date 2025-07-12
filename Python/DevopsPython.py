@@ -80,9 +80,101 @@ This is public.
 This is protected variable
 This is private variable
 ************************************************************************************************
-
+def interpolation_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high  and arr[low] <= target <= arr[high]:
+        if low == high:
+            return low if arr[low] == target else -1
+        pos = low + (target - arr[low]) * (high - low) // (arr[high] - arr[low])
+        if arr[pos] == target:
+            return pos
+        low = pos+1 if arr[pos] < target else low
+        high = pos-1 if arr[pos] > target else high
+    return -1
+arr = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+target = 12
+result = interpolation_search(arr, target)
+if result != -1:
+    print(f"Element {target} found at index {result}")
+else:
+    print(f"Element {target} not found in the array")
+Element 12 found at index 5
 ************************************************************************************************
+file_path = "output.txt"
+file_path1 = "logfile.txt"
+buffer_size = 8192
+with open(file_path, 'rb') as file:
+    while True:
+        data = file.read(buffer_size)
+        if not data:
+            break
+        print(data)
+        with open(file_path1, 'wb') as file1:
+            file1.write(data)
+b'From: abc@gmail.com\r\nFrom: abc1@gmail.com\r\nFrom: abc2@gmail.com\r\nFrom: vais@gmail.com\r\nFrom: wan@gmail.com\r\nThis is first line\r\nThis is second line\r\n'
+*************************************************************************
+def build_pyramid(height):
+    for i in range(1, height+1):
+        spaces = ' ' * (height-i)
+        stars = '*' * (2 * i -1)
+        print(spaces + stars)
+pyramid_height = 5
+build_pyramid(pyramid_height)
+    *
+   ***
+  *****
+ *******
+*********
+*************************************************************************
+import time
+class TimerContext:
+    def __enter__(self):
+        self.start_time = time.time()
+        return self
+    def __exit__(self, exc_type, exc_val, traceback):
+        self.end_time = time.time()
+        elapsed_time = self.end_time - self.start_time
+        print(f'Time elapsed : {elapsed_time} seconds')
+with TimerContext():
+    for _ in range(10000):
+        pass
+Time elapsed : 0.00024127960205078125 seconds
+*************************************************************************
+import requests
+import os
+# URL of the image to download
+image_url = "https://example.com/image.jpg"
+response = requests.get(image_url)
+if (response.status_code == 200):
+    image_data = response.content
+    local_image_path = "img.jpg"
+    with open(local_image_path, 'wb') as local_file:
+        local_file.write(image_data)
+else:
+    print(f"Failed to download image. status code {response. status_code}")
+*************************************************************************
+import os
+def custom_walk(top) :
+    for root, dirs, files in os.walk(top):
+        yield root, dirs, files
+# Example usage:
+directory = "C:\\Users\\vwank\\PycharmProjects\\PytestFramework\\Python_Codes\\"
+for root, dirs, files in custom_walk(directory) :
+    print(f"Directory: {root}")
+    print(f"Subdirectories: {dirs}")
+    print(f"Files: {files}")
+    print()
+Directory: C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\
+Subdirectories: ['log', '__pycache__']
+Files: ['config.json', 'config.yaml', 'data.csv', 'example.db', 'example.txt', 'file.py', 'iterables.py', 'logfile.txt', 'output.csv', 'output.txt', 'py.ini', 'try.py']
 
+Directory: C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\log
+Subdirectories: []
+Files: ['pytesting.log']
+
+Directory: C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\__pycache__
+Subdirectories: []
+Files: ['try.cpython-312.pyc', 'try.cpython-313-pytest-8.3.5.pyc']
 ************************************************************************************************
 
 ************************************************************************************************
