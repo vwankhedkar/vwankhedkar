@@ -92,9 +92,67 @@ WebDriverWait(driver,10).until(EC.presence_of_element_located((By.ID, "idOfButto
 print("Data loaded successfully")
 driver.quit()
 *****************************************************************************************
-    
+import csv
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+# Setup Chrome driver
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.get("https://practicetestautomation.com/practice-test-login/")
+# Read CSV with tab delimiter
+with open("login_data.csv", "r") as file:
+    reader = csv.reader(file, delimiter='\t')
+    next(reader)  # skip header if any
+    for row in reader:
+        username, password = row
+        print(f"Trying login with: {username} / {password}")
+        # Perform login
+        driver.find_element(By.ID, "username").clear()
+        driver.find_element(By.ID, "username").send_keys(username)
+        driver.find_element(By.ID, "password").clear()
+        driver.find_element(By.ID, "password").send_keys(password)
+        driver.find_element(By.ID, "submit").click()
+        # You can add validation and logout logic here if needed
+        driver.get("https://practicetestautomation.com/practice-test-login/")  # Reset for next test
+        driver.quit()
+
 *****************************************************************************************
-    
+test_login.py
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from login_page import LoginPage
+# Setup Chrome driver
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.implicitly_wait(10)
+driver.get("https://practicetestautomation.com/practice-test-login/")
+lp = LoginPage(driver)
+lp.login("student", "Password123")
+assert "Logged In Successfully" in driver.page_source
+driver.quit()
+
+login_page.py
+
+import csv
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+class LoginPage:
+
+    def __init__(self, driver):
+        self.driver = driver
+    def login(self, user, pwd):
+        self.driver.find_element(By.ID, "username").send_keys(user)
+        self.driver.find_element(By.ID, "password").send_keys(pwd)
+        self.driver.find_element(By.ID, "submit").click()
+
+
 *****************************************************************************************
     
 *****************************************************************************************
