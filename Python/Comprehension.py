@@ -1,3 +1,11 @@
+print({x for x in [1,2,3,4,6,2]})
+print({i: f"User{i}" for i in range(3)})
+print({i:val for i, val in enumerate(['a','b','c'])})
+OUTPUT
+{1, 2, 3, 4, 6}
+{0: 'User0', 1: 'User1', 2: 'User2'}
+{0: 'a', 1: 'b', 2: 'c'}
+************************************************************
 vowels = ['a', 'e', 'i', 'o', 'u']
 word = "python programming"
 l = [ch for ch in vowels if ch in word]
