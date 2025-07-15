@@ -117,3 +117,31 @@ class Test_Google_Firefox(Base_Firefox_Test):
     def test_google_title_firefox(self):
         self.driver.get("https://www.google.com")
         assert "Google" in self.driver.title
+********************************************************************
+import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+# Fixture for cross-browser setup
+@pytest.fixture(params=["chrome", "firefox"], scope='class')
+def init_driver(request):
+    browser = request.param
+    if browser == "chrome":
+        service = ChromeService(ChromeDriverManager().install())
+        web_driver = webdriver.Chrome(service=service)
+    elif browser == "firefox":
+        service = FirefoxService(GeckoDriverManager().install())
+        web_driver = webdriver.Firefox(service=service)
+    request.cls.driver = web_driver
+    yield
+    web_driver.quit()
+@pytest.mark.usefixtures("init_driver")
+class BaseTest:
+    pass
+# Test class
+class Test_Google(BaseTest):
+    def test_google(self):
+        self.driver.get("https://www.google.com")
+        assert "Google" in self.driver.title
