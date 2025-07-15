@@ -65,3 +65,55 @@ DevTools listening on ws://127.0.0.1:60756/devtools/browser/fb4eecc3-c183-4465-8
 .....                                                                                                                                        [100%]
 =============================================================== 5 passed in 50.50s ================================================================ 
 (.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25\Selenium> 
+
+************************************************************************
+for html reports
+------------------
+(.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25\Selenium> pip install pytest-html 
+
+(.venv) PS C:\Users\vwank\PycharmProjects\PytestJuly25\Selenium> pytest Selenium\test_fixture_google.py -v -s --html=test_google_report.html
+
+**********************************************************************************************************
+
+import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+# Fixture for Chrome
+@pytest.fixture(scope='class')
+def init_chrome_driver(request):
+    service = ChromeService(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    request.cls.driver = driver  # Fix: Correct attribute assignment
+    yield
+    driver.quit()
+# Fixture for Firefox
+@pytest.fixture(scope='class')
+def init_ff_driver(request):
+    service = FirefoxService(GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=service)
+    request.cls.driver = driver
+    yield
+    driver.quit()
+# Chrome base test class
+@pytest.mark.usefixtures("init_chrome_driver")
+class Base_Chrome_Test:
+    pass
+# Chrome test class
+@pytest.mark.usefixtures("init_chrome_driver")
+class Test_Google_Chrome(Base_Chrome_Test):
+    def test_google_title_chrome(self):
+        self.driver.get("https://www.google.com")
+        assert "Google" in self.driver.title
+# Firefox base test class
+@pytest.mark.usefixtures("init_ff_driver")
+class Base_Firefox_Test:
+    pass
+# Firefox test class (optional)
+@pytest.mark.usefixtures("init_ff_driver")
+class Test_Google_Firefox(Base_Firefox_Test):
+    def test_google_title_firefox(self):
+        self.driver.get("https://www.google.com")
+        assert "Google" in self.driver.title
