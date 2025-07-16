@@ -70,3 +70,17 @@ Select Avg(Emp_Sal) from Employee;
 select distinct Emp_Sal from Employee;
 select * from Employee where Emp_Email like '%@gmail.com';
 DELETE from Employee where EMP_ID > 106;
+
+Emp_Id,Emp_Name,Emp_Sal,Emp_Phone,Emp_Rank,Emp_Email, Location, Department_ID
+	Vais	10000	9876234123	1	vais101@gmail.com		        60
+102	Sumit	30000	9456234123	2	Sumit102@gmail.com	Bellandur	30
+103	Sandip	50000	8876274023	3	sandy103@gmail.com	Whitefield	10
+104	Archana	70000	7876239923	4	arch104@gmail.com	Sarjapur	80
+105	Bhavana	90000	9876298623	5	bhav105@gmail.com	Varthur	40
+106	Hetarth	40000	7896298623	6	heth106@gmail.com	Bellandur	20
+107	Shiv	40000	7896296663	7	shiv107@yahoo.com	Varthur	50
+108	Shambhu	50000	7834296663	8	shambhu108@rediff.com	Whitefield	50
+109	Abhyant	77000	9843296663	9	abhya109@yahoo.com	Whitefield	30
+110	Chiku	40000	7896296444	10	chiku110@rediff.com	Bellandur	30
+111	Swaraj	80000	7895435444	11	swaraj111@rediff.com		50
+112		    80000	7895435444	11	swaraj111@rediff.com		50
