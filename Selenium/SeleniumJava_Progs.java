@@ -61,6 +61,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.firefox.FirefoxDriver;
 public class openHTML {
     public static void main(String[] args) throws InterruptedException, IOException {
+    	System.setProperty("webdriver.firefox.profile", "default");
     	FirefoxDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.amazon.in");
