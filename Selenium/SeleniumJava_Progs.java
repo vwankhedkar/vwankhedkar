@@ -76,7 +76,331 @@ public class openHTML {
     }
 }
 *****************************************************************************
+package com.PractiseProgs;
+import java.io.IOException;
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class openHTML {
+    public static void main(String[] args) throws IOException {
+        WebDriver driver = new FirefoxDriver();
+        driver.get("https://www.actitime.com/login-to-product");
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.name("pwd")).sendKeys("manager");
+        driver.findElement(By.id("loginButton")).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logoutLink")));
+        String title = driver.getTitle();
+        System.out.println("Page Title: " + title);
+        driver.quit();
+    }
+}
+*****************************************************************************
+package com.PractiseProgs;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class openHTML {
+    public static void main(String[] args) throws IOException {
+    	WebDriver driver = new FirefoxDriver();
+    	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    	driver.get("https://www.facebook.com");
+    	driver.manage().window().maximize();
+    	System.out.print(driver.getCurrentUrl());
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.urlContains("facebook"));
+    	driver.quit();
+    }
+}
+*****************************************************************************
+package com.PractiseProgs;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class openHTML {
+    public static void main(String[] args) throws IOException {
+    	WebDriver driver = new FirefoxDriver();
+    	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    	driver.get("https://www.facebook.com");
+    	driver.manage().window().maximize();
+    	System.out.println(driver.getCurrentUrl());
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.urlContains("facebook"));
+    	WebElement ev = driver.findElement(By.id("email"));
+    	ev.sendKeys("abc@gmail.com");
+    	String values = ev.getAttribute("value");
+    	System.out.println(values);
+    	driver.quit();
+    }
+}
+*****************************************************************************
+package com.PractiseProgs;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class openHTML {
+    public static void main(String[] args) throws IOException {
+    	WebDriver driver = new FirefoxDriver();
+    	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    	driver.get("https://www.facebook.com");
+    	driver.manage().window().maximize();
+    	System.out.println(driver.getCurrentUrl());
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.urlContains("facebook"));
+    	WebElement ev = driver.findElement(By.id("email"));
+    	ev.sendKeys("abc@gmail.com");
+    	ev.clear();
+    	ev.sendKeys("xyz@gmail.com");
+    	String values = ev.getAttribute("value");
+    	System.out.println(values);
+    	// Change values without clear methood
+    	ev.sendKeys(Keys.CONTROL+"a");
+    	ev.sendKeys(Keys.DELETE);
+    	ev.sendKeys("lmn@gmail.com");
+    	driver.quit();
+    }
+}
+*****************************************************************************
+With Backspace
+package com.PractiseProgs;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class openHTML {
+    public static void main(String[] args) throws IOException {
+    	WebDriver driver = new FirefoxDriver();
+    	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    	driver.get("https://www.facebook.com");
+    	driver.manage().window().maximize();
+    	System.out.println(driver.getCurrentUrl());
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.urlContains("facebook"));
+    	WebElement ev = driver.findElement(By.id("email"));
+    	ev.sendKeys("abc@gmail.com");
+    	ev.clear();
+    	ev.sendKeys("xyz@gmail.com");
+    	String values = ev.getAttribute("value");
+    	System.out.println(values);
+    	int count = values.length();
+		for (int i=0; i<=count; i++)
+		ev.sendKeys(Keys.BACK_SPACE);
+	    driver.quit();
+    }
+}
+*****************************************************************************
+copy paste from 1 textbox to other
+package com.PractiseProgs;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class openHTML {
+    public static void main(String[] args) throws IOException {
+    	WebDriver driver = new FirefoxDriver();
+    	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    	driver.get("https://www.facebook.com");
+    	driver.manage().window().maximize();
+    	System.out.println(driver.getCurrentUrl());
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.urlContains("facebook"));
+    	WebElement ev = driver.findElement(By.id("email"));
+    	ev.sendKeys("abc@gmail.com");
+    	ev.sendKeys(Keys.CONTROL+"a");
+    	ev.sendKeys(Keys.CONTROL+"c");
+	WebElement ev1 = driver.findElement(By.id("pass"));
+    	ev1.clear();
+    	ev1.sendKeys(Keys.CONTROL+"v");
+	    driver.quit();
+    }
+}
+*****************************************************************************
+package com.PractiseProgs;
+import java.time.Duration; // Recommended for Selenium 4
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Point; // Correct Point class for WebElement
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class openHTML {
+    public static void main(String[] args) {
+        WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.get("https://www.facebook.com");
+        driver.manage().window().maximize();
+        WebElement em = driver.findElement(By.id("email"));
+        Point p = em.getLocation(); // Get the x, y coordinates
+        System.out.println("X coordinate (in pixels): " + p.getX());
+        System.out.println("Y coordinate (in pixels): " + p.getY());
+        driver.quit();
+    }
+}
+X coordinate (in pixels): 746
+Y coordinate (in pixels): 148
+*****************************************************************************
+package com.PractiseProgs;
+import org.openqa.selenium.By; import 
+org.openqa.selenium.Dimension; import 
+org.openqa.selenium.Point; import 
+org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver; 
+public class openHTML { 
+public static void main(String[] args) 
+{ 
+	WebDriver driver=new FirefoxDriver(); 
+	driver.get("http://www.facebook.com"); 
+	WebElement em=driver.findElement(By.id("email")); 
+	Point p1=em.getLocation(); 
+	int x1=p1.getX(); 
+	System.out.println("X value of email field: "+x1); 
+	WebElement nxt=driver.findElement(By.id("pass")); 
+	Point p2=nxt.getLocation(); 
+	int x2=p2.getX(); 
+	System.out.println("X value of next button: "+x2); 
+	Dimension s = em.getSize(); 
+	System.out.println("Height of the textbox: "+s.getHeight()); 
+	System.out.println("Width of the textbox: "+s.getWidth()); 
+	if(x2-x1<=0) 
+	{ 
+		System.out.println("Email textbox and next button aligned  horizontally"); 
+	} 
+	else 
+	{ 
+		System.out.println("Not alligned Horizontally"); 
+	} 
+  } 
+}
+X value of email field: 746
+X value of next button: 762
+Height of the textbox: 51
+Width of the textbox: 363
+Not alligned Horizontally
+*****************************************************************************
+package com.PractiseProgs;
+import org.openqa.selenium.By; import 
+org.openqa.selenium.Dimension; import 
+org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver; 
+public class openHTML { 
+	public static void main(String[] args) 
+	{ 
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("http://www.facebook.com"); 
+		WebElement em=driver.findElement(By.id("email")); 
+		Dimension s1 = em.getSize(); 
+		int w1 = s1.getWidth(); 
+		WebElement nxt=driver.findElement(By.id("pass")); 
+		Dimension s2=nxt.getSize(); 
+		int w2=s2.getWidth(); 
+		System.out.println("Width of Email textbox: "+w1); 
+		System.out.println("Width of next button: "+w2); 
+		if(w1==w2) 
+		{ 
+			System.out.println("Width of email textbox and next button is same"); 
+		} 
+		else 
+		{ 
+			System.out.println("Width of email textbox & next button is not same"); 
+		} 
+	} 
+} 
+Width of Email textbox: 363
+Width of next button: 300
+Width of email textbox & next button is not same
+*****************************************************************************
+package com.PractiseProgs;
 
+import java.sql.Time;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("http://demo.vtiger.com");
+		WebElement un = driver.findElement(By.name("username")); 
+		System.out.println(un.getCssValue("font-size"));
+		System.out.println(un.getCssValue("color")); 
+		RemoteWebDriver r= (RemoteWebDriver) driver; 
+		String c="document.getElementsByTagName('input').value='admin'"; 
+		r.executeScript(c); 
+		String xp="//button[@type=\"submit\"]"; 
+		WebElement btn = driver.findElement(By.xpath(xp)); 
+		btn.sendKeys(Keys.ENTER); 
+		driver.quit();
+	}
+} 
+*****************************************************************************
+package com.PractiseProgs;
+
+import java.sql.Time;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("http://amazon.in");
+		WebElement un = driver.findElement(By.xpath("//input[contains(@class,'nav-input nav-progressive-attribute')]")); 
+		System.out.println(un.getCssValue("font-size"));
+		System.out.println(un.getCssValue("color")); 
+		RemoteWebDriver r= (RemoteWebDriver) driver; 
+		String c="document.getElementsByClassName('nav-input nav-progressive-attribute').value='laptop'"; 
+		r.executeScript(c); 
+		Thread.sleep(5000);
+		String xp="//input[@placeholder='Search Amazon.in']"; 
+		WebElement btn = driver.findElement(By.xpath(xp)); 
+		btn.sendKeys(Keys.ENTER); 
+		driver.quit();
+	}
+} 
+*****************************************************************************
+*****************************************************************************
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
