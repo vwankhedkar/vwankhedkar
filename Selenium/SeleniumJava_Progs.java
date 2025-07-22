@@ -457,7 +457,57 @@ public class openHTML {
 	}
 } 
 *****************************************************************************
+package com.PractiseProgs;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("https://demo.automationtesting.in/Register.html"); 
+		List<WebElement> allchkbox = driver.findElements(By.xpath("//input[@type=\"checkbox\"]"));
+		int count = allchkbox.size(); 
+		for (int i=0; i<count;i++) {
+			WebElement chkbox = allchkbox.get(i);
+			chkbox.click();
+		}
+		for (int i=0; i<count;i++) {
+			WebElement chkbox = allchkbox.get(i);
+			chkbox.click();
+		} 
+		driver.quit();
+	}
+} 
 *****************************************************************************
+package com.PractiseProgs;
+import java.util.ArrayList;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		List<String> linkItem = new ArrayList<>();
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("https://www.naukri.com"); 
+		List<WebElement> allLinks = driver.findElements(By.xpath("//a"));
+		//List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+		int count = allLinks.size(); 
+		for (WebElement link : allLinks) {
+			String url = link.getAttribute("href");
+			System.out.println(url);
+		}
+		driver.quit();
+	}
+} 
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
