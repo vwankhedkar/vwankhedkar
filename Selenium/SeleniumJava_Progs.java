@@ -400,6 +400,32 @@ public class openHTML {
 	}
 } 
 *****************************************************************************
+package com.PractiseProgs;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("https://www.amazon.in/"); 
+		WebElement ele = driver.findElement(By.xpath("//span[contains(text(), 'Amazon.in')]"));
+		ele.click();
+		RemoteWebDriver r= (RemoteWebDriver) driver; 
+		//String c="window.scrollTo(0,document.body.scrollHeight)"; 
+		System.out.println(ele.getText()); 
+		Point l = ele.getLocation(); 
+		int y=l.getY(); 
+		String c="window.scrollTo(0,"+y+")"; 
+		r.executeScript(c);  
+		Thread.sleep(3000);
+		driver.quit();
+	}
+} 
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
