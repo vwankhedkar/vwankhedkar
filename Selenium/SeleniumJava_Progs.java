@@ -427,6 +427,35 @@ public class openHTML {
 	}
 } 
 *****************************************************************************
+package com.PractiseProgs;
+import java.util.ArrayList;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		List<String> linkItem = new ArrayList<>();
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("https://www.naukri.com/"); 
+		List<WebElement> allLinks = driver.findElements(By.xpath("//a"));
+		//List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+		int count = allLinks.size(); 
+		for (int i=0; i<count;i++) {
+			String text = allLinks.get(i).getText().trim();
+			if (!text.isEmpty())
+			linkItem.add(text);
+		}
+		for (String items : linkItem)
+			System.out.println(items); 
+		driver.quit();
+	}
+} 
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
