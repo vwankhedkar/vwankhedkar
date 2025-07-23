@@ -162,14 +162,12 @@ af
 f
 ******************************************************************************
 package WebHandling;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
-
 public class tryProgs2 {
     public static void main(String[] args) {
     	HashMap<Integer, String> hm = new HashMap<>();
@@ -194,12 +192,132 @@ public class tryProgs2 {
         System.out.println("Is hashkey empty : " + hm.isEmpty());
     }
 }
+Hashmap is: {100=John, 102=David, 103=Mary, 104=Scott} Size of Hashmap is: 4
+Keys are : [100, 102, 103, 104] and Values are : [John, David, Mary, Scott]
+100 : John
+102 : David
+103 : Mary
+104 : Scott
+
+Using Iterator:
+100 John
+102 David
+103 Mary
+104 Scott
+Is hashkey empty : true
 *************************************************************************************
-	
+package WebHandling;
+import java.util.ArrayList; 
+import java.util.HashSet; 
+import java.util.Iterator; 
+import java.util.Set; 
+
+public class tryProgs2 {
+    public static void main(String[] args) {
+    	HashSet<Object> myset = new HashSet<>();
+    	//HashSet myset = new HashSet();
+    	myset.add(100);
+    	myset.add(10.5); 
+    	myset.add("welcome"); 
+    	myset.add(true); 
+    	myset.add('A'); 
+    	myset.add(100); 
+    	myset.add(null); 
+    	myset.add(null); 
+        System.out.println("Hashset is : "+myset+ " having size : "+myset.size());
+        myset.remove(10.5);
+        System.out.println("Hashset is : "+myset+ " having size : "+myset.size());
+        //Convert `HashSet` to `ArrayList` for indexed access
+        ArrayList<Object> al = new ArrayList<Object>(myset);
+        System.out.println(al);
+        System.out.println(al.get(2));
+        for (Object x : myset)
+        	System.out.println(x);
+        Iterator<Object> it = myset.iterator();
+        while (it.hasNext())
+        	System.out.println(it.next());
+        myset.clear();
+        System.out.println(myset.isEmpty());
+    }
+}
+Hashset is : [null, A, 100, 10.5, welcome, true] having size : 6
+Hashset is : [null, A, 100, welcome, true] having size : 5
+[null, A, 100, welcome, true]
+100
+null
+A
+100
+welcome
+true
+null
+A
+100
+welcome
+true
+true
 *************************************************************************************
-	
+package WebHandling;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+public class tryProgs2 {
+    public static void main(String[] args) {
+    	ArrayList<String> myList = new ArrayList<String>();
+    	myList.add("Alice");
+    	myList.add("25");       // Integer as String 
+        myList.add("3.14");     // Double as String 
+        myList.add("true");     // Boolean as String 
+        myList.add("A");         // Character as String 
+        myList.add(null);       // Null value 
+        myList.add("25");       // Duplicate value 
+        myList.add("Alice");    // Duplicate String 
+        System.out.println("ArrayList after adding elements: " + myList);
+        System.out.println("Element at index 3: " + myList.get(3));
+        myList.set(1, "99");
+        myList.remove(4);
+        System.out.println(myList.contains("3.14"));
+        for (int i=0; i<myList.size(); i++)
+        	 System.out.println(myList.get(i)); 
+        for (Object x : myList) 
+        	 System.out.println(x);
+        Iterator<String> it = myList.iterator();
+        while(it.hasNext())
+        	 System.out.println(it.next());
+        myList.clear();
+        System.out.println("\nAfter clearing, is the list empty? " + myList.isEmpty()); 
+    }
+}
+ArrayList after adding elements: [Alice, 25, 3.14, true, A, null, 25, Alice]
+Element at index 3: true
+true
+Alice
+99
+3.14
+true
+null
+25
+Alice
+Alice
+99
+3.14
+true
+null
+25
+Alice
+Alice
+99
+3.14
+true
+null
+25
+Alice
+After clearing, is the list empty? true
 *************************************************************************************
-	
+
 *************************************************************************************
 	
 *************************************************************************************
