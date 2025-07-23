@@ -160,3 +160,63 @@ al
 laf
 af
 f
+******************************************************************************
+package WebHandling;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class tryProgs2 {
+    public static void main(String[] args) {
+    	HashMap<Integer, String> hm = new HashMap<>();
+    	hm.put(100, "John");
+    	hm.put(102, "Scott"); 
+        hm.put(103, "Mary"); 
+        hm.put(104, "Scott"); 
+        hm.put(102, "David"); 
+        System.out.println("Hashmap is: "+hm+" Size of Hashmap is: "+hm.size());
+        System.out.println("Keys are : "+hm.keySet() + " and Values are : "+hm.values());
+        // Read all the elements  → using for-each loop
+        for (int k : hm.keySet())
+        	System.out.println(k+" : "+hm.get(k));
+        // using Iterator 
+        System.out.println("\nUsing Iterator:"); 
+        Iterator<Entry<Integer,String>> it = hm.entrySet().iterator();
+        while (it.hasNext()) {
+        	Entry<Integer, String>entry = it.next();
+        	System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+        hm.clear();
+        System.out.println("Is hashkey empty : " + hm.isEmpty());
+    }
+}
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
+*************************************************************************************
+	
