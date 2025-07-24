@@ -133,8 +133,74 @@ public class tryProgs2 {
 }
 OUTPUT - Non-repeated elements : [3, 4]
 ************************************************************************************
+package com.tryPrograms;
 
+import java.util.Objects;
+
+public class Student {
+	private int id;
+	private String name;
+	// constructor
+	public Student(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+		Student student = (Student) obj;
+		return id == student.id && Objects.equals(name, student.name);
+	}
+		public static void main(String[] args) {
+			Student student1 = new Student(1, "Alice");
+			Student student2 = new Student(2, "Bob");
+			Student student3 = new Student(1, "Alice");
+			System.out.println("student1.equals(student2) : " + student1.equals(student2));
+			System.out.println("student1.equals(student3) : " + student1.equals(student3));
+			// Testing hashCode method 
+			System.out.println("Hashcode of student1: " + student1.hashCode()); 
+			System.out.println("Hashcode of student2: " + student2.hashCode()); 
+			System.out.println("Hashcode of student3: " + student3.hashCode());
+	}
+}
+student1.equals(student2) : false
+student1.equals(student3) : true
+Hashcode of student1: 63351360
+Hashcode of student2: 67988
+Hashcode of student3: 63351360
 ************************************************************************************
+package com.tryPrograms;
+
+import java.util.Objects;
+
+public class Student {
+	public static void main(String[] args) {
+		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9}; 
+		int[] count = countOddAndEven(array);
+		System.out.println("Even numbers count: " + count[1]);
+		System.out.println("Odd numbers count: " + count[0]);
+	}
+	public static int[] countOddAndEven(int[] array) {
+		int[] count = new int[2];
+		for (int num : array) {
+			if (num % 2 == 0)
+				count[1]++;
+			else {
+				count[0]++;
+			}
+		}
+		return count;
+	}
+}
+Even numbers count: 4
+Odd numbers count: 5
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
