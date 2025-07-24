@@ -106,8 +106,34 @@ public class tryProgs2 {
 102 Praveen
 103 Pankaj
 ************************************************************************************
-
+package WebHandling;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+public class tryProgs2 {
+    public static void main(String[] args) {
+    	int[] array = {1, 1, 2, 2, 3, 4, 5, 5, 6, 6};
+		List<Integer> result = findNonRepeatedElements(array);
+		System.out.print("Non-repeated elements : "+result);
+	}
+	public static List<Integer> findNonRepeatedElements(int[] array) {
+		HashMap<Integer, Integer> countMap = new HashMap<Integer, Integer>();
+		for (int num : array) {
+			countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+		}
+		List<Integer> nonRepeatedElements = new ArrayList<>();
+		for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+			if (entry.getValue() == 1) {
+				nonRepeatedElements.add(entry.getKey());
+			}
+		}
+		return nonRepeatedElements;
+    }
+}
+OUTPUT - Non-repeated elements : [3, 4]
 ************************************************************************************
+
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
