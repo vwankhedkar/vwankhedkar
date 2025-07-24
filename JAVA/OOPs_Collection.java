@@ -413,9 +413,63 @@ Longest substring without repeating characters in s2: 1
 Longest substring without repeating characters in s3: 3
 Longest substring without repeating characters in s4: 0
 ************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter String : ");
+		String input = sc.nextLine();
+		System.out.println("Original String is : " + input);
+		separateAplhaAndNumeric(input);
+	}
+	public static void separateAplhaAndNumeric(String input) {
+		StringBuilder alphaPart = new StringBuilder();
+		StringBuilder numericPart = new StringBuilder();
+		for (char ch : input.toCharArray()) {
+			if (Character.isLetter(ch))
+				alphaPart.append(ch);
+			else if (Character.isDigit(ch))
+				numericPart.append(ch);
+		}
+		System.out.println("Output in Alpha : " + alphaPart.toString());
+		System.out.println("Output in Numeric : "+ numericPart.toString());
+ 	}
+}
+Enter String :  Subbu123raj 
+Original String is :  Subbu123raj 
+Output in Alpha : Subburaj
+Output in Numeric : 123
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a string : ");
+		String input = sc.nextLine();
+		System.out.println("Original String is : " +input);
+		separateCharacters(input);
+ 	}
+	public static void separateCharacters(String input) {
+		StringBuilder lowerCase = new StringBuilder();
+		StringBuilder upperCase = new StringBuilder();
+		for (char ch : input.toCharArray()) {
+			if (Character.isLowerCase(ch))
+				lowerCase.append(ch);
+			else
+				upperCase.append(ch);
+		}
+		System.out.println("Output in lowercase: "+lowerCase); 
+		System.out.println("Output in uppercase "+upperCase);
+	} 
+}
+Enter a string : aBACbcEDed
+Original String is : aBACbcEDed
+Output in lowercase: abced
+Output in uppercase BACED
+************************************************************************************
 
-************************************************************************************
-************************************************************************************
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
