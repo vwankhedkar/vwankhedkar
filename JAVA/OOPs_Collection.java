@@ -177,9 +177,7 @@ Hashcode of student2: 67988
 Hashcode of student3: 63351360
 ************************************************************************************
 package com.tryPrograms;
-
 import java.util.Objects;
-
 public class Student {
 	public static void main(String[] args) {
 		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9}; 
@@ -201,6 +199,228 @@ public class Student {
 }
 Even numbers count: 4
 Odd numbers count: 5
+************************************************************************************
+package com.tryPrograms;
+import java.util.Objects;
+public class Student {
+	public static void main(String[] args) {
+		int[] array = {5, 2, 9, 1, 6, 3}; 
+		int max = findMaximum(array); 
+		int min = findMinimum(array);
+		System.out.println("Minimum value in the array: " + min); 
+		System.out.println("Maximum value in the array: " + max);
+	}
+	public static int findMaximum(int[] array) {
+		if (array.length == 0) {
+			throw new IllegalArgumentException("Array must not be empty!");
+		}
+		int max = array[0];
+		for (int i=0; i<array.length; i++) {
+			if (array[i] > max) 
+				max = array[i];
+		}
+		return max;
+	}
+	public static int findMinimum(int[] array) {
+		if (array.length == 0) {
+			throw new IllegalArgumentException("Array must not be empty");
+			}
+			int min = array[0];
+			for (int i=0; i<array.length; i++) {
+				if (array[i] < min)
+					min = array[i];
+		}
+		return min;
+	}
+}
+Minimum value in the array: 1
+Maximum value in the array: 9
+************************************************************************************
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) {
+		int[] array = {1, 2, 4, 5, 6}; // Missing number is 3 
+		int missingNumber = findMissingNumber(array); 
+		System.out.println("The missing number is: " + missingNumber); 
+	}
+	public static int findMissingNumber(int[] array) {
+		int n = array.length+1;
+		int totalSum = n * (n + 1)/2;
+		int arraySum = 0;
+		for (int num : array)
+			arraySum += num;
+		return totalSum - arraySum;
+	} 
+}
+The missing number is: 3
+************************************************************************************
+package com.tryPrograms;
+import java.util.ArrayList;
+import java.util.HashSet;
+public class Student {
+	public static void main(String[] args) {
+		ArrayList<Integer> alist = new ArrayList<>();
+		alist.add(5);
+		alist.add(2);
+		alist.add(9);
+		alist.add(1);
+		alist.add(6);
+		alist.add(2);
+		alist.add(5);
+		ArrayList<Integer> uniqueList = removeDuplicates(alist);
+		System.out.print("ArrayList with duplicates removed:");
+		for (int num : uniqueList)
+			System.out.print(num + " ");
+	}
+	public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> list) {
+		HashSet<Integer> set = new HashSet<>(list);
+	return new ArrayList<>(set);
+	} 
+}
+ArrayList with duplicates removed:1 2 5 6 9 
+************************************************************************************
+package com.tryPrograms;
+import java.util.ArrayList;
+import java.util.HashSet;
+public class Student {
+	public static void main(String[] args) {
+		int[] array = {5, 2, 9, 1, 6, 2, 5}; 
+		int[] uniqueList = removeDuplicates(array);
+		System.out.print("ArrayList with duplicates removed:");
+		for (int num : uniqueList)
+			System.out.print(num + " ");
+	}
+	public static int[] removeDuplicates(int[] list) {
+		HashSet<Integer> set = new HashSet<>(); 
+		for (int num : list) { 
+			set.add(num); 
+			} 
+			int[] result = new int[set.size()]; 
+			int i = 0; 
+			for (int num : set) { 
+			result[i++] = num; 
+			} 
+			return result; 
+	} 
+}
+ArrayList with duplicates removed:1 2 5 6 9 
+************************************************************************************
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) {
+		int[] array = {5, 2, 9, 1, 6}; 
+		selectionSort(array); 
+		System.out.println("Sorted array:");
+		for (int num : array)
+			System.out.print(num + " ");
+	}
+	public static void selectionSort(int[] array) {
+		int n = array.length;
+		for (int i=0; i<n-1; i++) {
+			int midIndex = i;
+			for (int j=i+1; j<n; j++) {
+				if (array[j] < array[midIndex])
+					midIndex = j;
+			}
+			int temp = array[i];
+			array[i] = array[midIndex];
+			array[midIndex] = temp;
+		}		
+	} 
+}
+Sorted array:
+1 2 5 6 9 
+************************************************************************************
+package com.tryPrograms;
+import java.util.ArrayList;
+public class Student {
+	public static void main(String[] args) {
+		ArrayList<String> arrayList = new ArrayList<>();
+		arrayList.add("Apple");
+		arrayList.add("Banana"); 
+		arrayList.add("Cherry"); 
+		arrayList.add("Date"); 
+		arrayList.add("Elderberry"); 
+		if (!arrayList.isEmpty()) {
+			String firstElement = arrayList.get(0);
+			String lastElement = arrayList.get(arrayList.size()-1);
+			System.out.println("First element: " + firstElement); 
+			System.out.println("Last element: " + lastElement); 
+		} else
+			System.out.println("The ArrayList is empty."); 
+	} 
+}
+First element: Apple
+Last element: Elderberry
+************************************************************************************
+package com.tryPrograms;
+import java.util.HashSet;
+public class Student {
+	public static void main(String[] args) {
+		int[] array1 = {1, 2, 3, 4, 5}; 
+		int[] array2 = {4, 5, 6, 7, 8};
+		HashSet<Integer> commonEle = findCommonElements(array1, array2);
+		System.out.print("Common elements : " + commonEle);
+	} 
+	public static HashSet<Integer> findCommonElements(int[] array1, int[] array2) {
+		HashSet<Integer> set1 = new HashSet<>();
+		HashSet<Integer> commonSet = new HashSet<>();
+		for (int num : array1)
+			set1.add(num);
+		for (int num : array2) {
+			if (set1.contains(num))
+				commonSet.add(num);
+		}
+		return commonSet;
+	}
+}
+Common elements : [4, 5]
+************************************************************************************
+package com.tryPrograms;
+import java.util.HashSet;
+public class Student {
+	public static void main(String[] args) {
+		String s1 = "abcabcbb"; // Expected: "abc", length 3 
+		String s2 = "bbbbb"; // Expected: "b", length 1 
+		String s3 = "pwwkew"; // Expected: "wke", length 3 
+		String s4 = ""; // Expected: "", length 0 
+		System.out.println("Longest substring without repeating characters in s1: " + lengthOfLongestSubstring(s1)); // Output: 3 
+		System.out.println("Longest substring without repeating characters in s2: " + lengthOfLongestSubstring(s2)); // Output: 1 
+		System.out.println("Longest substring without repeating characters in s3: " + lengthOfLongestSubstring(s3)); // Output: 3 
+		System.out.println("Longest substring without repeating characters in s4: " + lengthOfLongestSubstring(s4)); // Output: 0 
+	} 
+	public static int lengthOfLongestSubstring(String s) {
+		HashSet<Character> set = new HashSet<>();
+		int maxLength = 0;
+		int start = 0;
+		int end = 0;
+		while (end < s.length()) {
+			char currentChar = s.charAt(end);
+			if (!set.contains(currentChar)) {
+				set.add(currentChar);
+				maxLength = Math.max(maxLength, end-start+1);
+				end ++;
+			} else {
+				set.remove(s.charAt(start));
+				start ++;
+			}
+		}
+		return maxLength;
+	}
+}
+Longest substring without repeating characters in s1: 3
+Longest substring without repeating characters in s2: 1
+Longest substring without repeating characters in s3: 3
+Longest substring without repeating characters in s4: 0
+************************************************************************************
+
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
