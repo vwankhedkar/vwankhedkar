@@ -469,10 +469,214 @@ Original String is : aBACbcEDed
 Output in lowercase: abced
 Output in uppercase BACED
 ************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter string :  ");
+		String input = sc.nextLine();
+		String output = getCharacterCount(input);
+		System.out.println("Output : " + output);
+	} 
+	public static String getCharacterCount(String str) {
+		StringBuilder result = new StringBuilder();
+		int count = 1;
+		for (int i=0; i<str.length(); i++) {
+			if (i+1<str.length() && str.charAt(i) == str.charAt(i+1))
+				count ++;
+			else {
+				result.append(str.charAt(i)).append(count);
+				count = 1;
+			}
+		}
+		return result.toString();
+	}
+}
+Enter string :  aabbcccdd
+Output : a2b2c3d2
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter first string: "); 
+		String str1 = sc.nextLine();
+		System.out.print("Enter second string: "); 
+		String str2 = sc.nextLine();
+		System.out.println("Before swapping the str1 = : "+str1+" and str2 = "+str2); 
+		str1 = str1 + str2;
+		str2 = str1.substring(0, str1.length() - str2.length());
+		str1 = str1.substring(str2.length());
+		System.out.println("After swapping : str1 = " +str1+", str2 = "+str2);
+	}
+}
+Enter first string: Hello
+Enter second string: World
+Before swapping the str1 = : Hello and str2 = World
+After swapping : str1 = World, str2 = Hello
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter string : ");
+		String input = sc.nextLine();
+		String doubleString = doubleCharacters(input);
+		System.out.print("Double characters : " + doubleString);
+	}
+	public static String doubleCharacters(String str) {
+		StringBuilder doubled = new StringBuilder();
+		for (int i=0; i<str.length(); i++) {
+			char ch = str.charAt(i);
+			doubled.append(ch).append(ch);
+		}
+		return doubled.toString();
+	}
+}
+Enter string : hello
+Double characters : hheelllloo
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter String : ");
+		String input = sc.nextLine();
+		String stringWithoutSpaces = removeSpaces(input);
+		System.out.print("String without spaces : " +stringWithoutSpaces);
+	}
+	public static String removeSpaces(String str) {
+		StringBuilder result = new StringBuilder();
+		for (int i=0; i<str.length(); i++) {
+			if (str.charAt(i) != ' ')
+				result.append(str.charAt(i));
+		}
+		return result.toString();
+	}
+}
+Enter String :  Welcome    to  Java   World 
+String without spaces : WelcometoJavaWorld
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter String : ");
+		String input = sc.nextLine();
+		System.out.print("Even indexed characters in \"" + input + "\" : ");
+		printEvenIndexedCharacters(input);
+	}
+	public static void printEvenIndexedCharacters(String str) {
+		for (int i=0; i<str.length(); i++) {
+			if (i % 2 == 0)
+				System.out.print(str.charAt(i));
+		}
+	}
+}
+Enter String : Automation
+Even indexed characters in "Automation" : Atmto
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in); 
+		System.out.print("Enter a string: "); 
+		String input = scanner.nextLine(); 
+		System.out.println("Unique characters in \"" + input + "\":"); 
+		printUniqueCharacters(input); 
+	}
+	public static void printUniqueCharacters(String str) {
+		boolean[] unique = new boolean[128]; 
+		for (int i = 0; i < str.length(); i++) { 
+			char ch = str.charAt(i); 
+			if (!unique[ch]) { 
+			unique[ch] = true; 
+			System.out.print(ch + " "); 
+			} 
+		}
+	}
+}
+Enter a string: Java Automation
+Unique characters in "Java Automation":
+J a v   A u t o m i n 
+************************************************************************************
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) {
+		String str = "Hello World";
+		VowelConsonantCount(str);
+	}
+	static void VowelConsonantCount(String str) {
+		int vowels=0, consonants=0;
+		str = str.toLowerCase();
+		for (char c : str.toCharArray()) {
+			if (c >= 'a' && c <= 'z') {
+				if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+					vowels++;
+				else
+					consonants++;
+			}
+		}
+		System.out.println("Vowels : " + vowels);
+		System.out.println("consonants : " + consonants);
+		
+	}
+}
+Vowels : 3
+consonants : 7
+************************************************************************************
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) {
+		String str1 = "listen"; 
+		String str2 = "silent"; 
+		System.out.println("Strings are Anagrams : " + areAnagrams(str1,str2)); 
+	}
+	static boolean areAnagrams(String str1, String str2) {
+		if (str1.length() != str2.length())
+			return false;
+		int[] charCount = new int[256];
+		for (int i=0; i<str1.length(); i++) {
+			charCount[str1.charAt(i)]++;
+			charCount[str2.charAt(i)]--;
+		}
+		for (int count : charCount) {
+			if (count != 0)
+				return false;
+		}
+		return true;
+	}
+}
+Strings are Anagrams : true
+************************************************************************************
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) {
+		String str = "madam"; 
+		System.out.println("String is palindrome : " +isPalindrome(str));  
+	}
+	static boolean isPalindrome(String str) {
+		int start = 0;
+		int end = str.length()-1;
+		while (start < end) {
+			if (str.charAt(start) != str.charAt(end)) {
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
+	}
+}
+String is palindrome : true
+************************************************************************************
 
-************************************************************************************
-************************************************************************************
-************************************************************************************
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
