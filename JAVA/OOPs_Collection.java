@@ -676,9 +676,68 @@ public class Student {
 }
 String is palindrome : true
 ************************************************************************************
-
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) {
+		String str = "abc"; 
+		permute(str, "");   
+	}
+	static void permute(String str, String prefix) {
+		if (str.length() == 0) { 
+			System.out.println(prefix); 
+			} else { 
+			for (int i = 0; i < str.length(); i++) { 
+			String rem = str.substring(0,i) + str.substring(i+1); 
+			//System.out.println(rem); 
+			permute(rem,prefix + str.charAt(i)); 
+			} 
+		} 
+	}
+}
+abc
+acb
+bac
+bca
+cab
+cba
 ************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		System.out.print("Enter the String : ");
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		int count = 1;
+		for (int i=0; i<s.length()-1; i++) {
+			if ((s.charAt(i) == ' ') && (s.charAt(i + 1) != ' ')) {
+				count ++;
+			}
+		}
+		System.out.println("Number of words in string : " +count);
+  }
+}
+Enter the String : Welcome to Java World 
+Number of words in string : 4
 ************************************************************************************
+package com.tryPrograms;
+import java.util.HashMap;
+public class Student {
+	public static void main(String[] args) {
+		CharacterCount("Test Automation Java Automation"); 
+		}
+	static void CharacterCount(String inputString) {
+		HashMap<String, Integer> CharCountMap = new HashMap<>();
+		for (String s : inputString.split(" ")) {
+			if (CharCountMap.containsKey(s)) {
+				CharCountMap.put(s, CharCountMap.get(s)+1);
+			} else
+				CharCountMap.put(s, 1);
+		}
+		System.out.println("Count of Characters in a given string : " + CharCountMap);
+  }
+}
+Count of Characters in a given string : {Java=1, Automation=2, Test=1}
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
