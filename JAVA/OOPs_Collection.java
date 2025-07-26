@@ -837,6 +837,84 @@ public class Student {
 Enter any number : 17
 17 is prime
 ************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) { 
+	int no, rev = 0, r, a;
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter any number : ");
+	no = sc.nextInt();
+	a = no;
+	while (no > 0) {
+		r = no % 10;
+		rev = rev * 10 + r;
+		no = no / 10;
+	}
+	System.out.print("Reverse : " + rev);
+	}
+}
+Enter any number : 123456
+Reverse : 654321
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) { 
+	int arm=0,a,b,c,d,no;
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter any number : ");
+	no = sc.nextInt();
+	d = no;
+	while (no > 0) {
+		a = no % 10;
+		no = no / 10;
+		arm = arm + a*a*a;
+	}
+	if (arm == d)
+		System.out.println("Armstrong number"); 
+	else
+		System.out.println("No Armstrong number"); 
+	}
+}
+Enter any number : 153
+Armstrong number	
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) { 
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a number : ");
+	int number = sc.nextInt();
+	if (isPalindrome(number))
+		System.out.println(number + " is palindrome");
+	else
+		System.out.println(number + " is not palindrome");
+	}
+	public static boolean isPalindrome(int num) {
+		int originalNumber = num;
+		int reversedNumber = 0;
+		while (num != 0) {
+			int digit = num % 10;
+			reversedNumber = reversedNumber * 10 + digit;
+			num = num / 10;
+		}
+		return originalNumber == reversedNumber;
+	}
+}
+Enter a number : 1001
+1001 is palindrome
+************************************************************************************
+
+************************************************************************************
+************************************************************************************
+************************************************************************************
+
+************************************************************************************
+************************************************************************************
+************************************************************************************
+
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
