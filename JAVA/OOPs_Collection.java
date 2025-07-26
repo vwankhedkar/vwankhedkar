@@ -739,6 +739,81 @@ public class Student {
 }
 Count of Characters in a given string : {Java=1, Automation=2, Test=1}
 ************************************************************************************
+package com.tryPrograms;
+import java.util.HashMap;
+public class Student {
+	public static void main(String[] args) { 
+		duplicateCharacterCount("Learn Java Programming"); 
+		} 
+	static void duplicateCharacterCount(String inputString) {
+	    inputString = inputString.toLowerCase();  // normalize case
+	    HashMap<Character, Integer> charCountMap = new HashMap<>();
+	    char[] strArray = inputString.toCharArray();
+
+	    for (char c : strArray) {
+	        if (c == ' ') continue; // ignore spaces
+	        charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+	    }
+
+	    System.out.println("Duplicate Characters in : " + inputString);
+	    for (char ch : charCountMap.keySet()) {
+	        if (charCountMap.get(ch) > 1) {
+	            System.out.println(ch + " : " + charCountMap.get(ch));
+	        }
+	    }
+	} 
+}
+Duplicate Characters in : learn java programming
+a : 4
+r : 3
+g : 2
+m : 2
+n : 2
+************************************************************************************
+package com.tryPrograms;
+public class Student {
+	public static void main(String[] args) { 
+		reverseEachWordOfString("Java is good programming langauges"); 
+	} 
+	static void reverseEachWordOfString(String inputString) {
+	    String[] words = inputString.split(" ");
+	    String reverseString = "";
+	    for (int i=0; i<words.length; i++) {
+	    	String word = words[i];
+	    	String nstr = "";
+	    	char ch;
+	    	for (int j=0; j<word.length(); j++) {
+	    		ch = word.charAt(j);
+	    		nstr = ch + nstr;
+	    	}
+	    	reverseString = reverseString + nstr + " ";
+	    }
+	    System.out.println(inputString);
+	    System.out.println(reverseString);
+	} 
+}
+Java is good programming langauges
+avaJ si doog gnimmargorp seguagnal 
+************************************************************************************
+package com.tryPrograms;
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) { 
+		Scanner scanner = new Scanner(System.in); 
+		System.out.print("Enter a string: "); 
+		String input = scanner.nextLine(); 
+		char ch; 
+		String nstr = ""; 
+		for (int i = 0; i < input.length(); i++) { 
+		ch = input.charAt(i); 
+		nstr = ch + nstr; 
+		} 
+		System.out.println("Reversed String is : " + nstr); 
+	}
+}
+Enter a string: Java is programming language
+Reversed String is : egaugnal gnimmargorp si avaJ
+************************************************************************************
 ************************************************************************************
 ************************************************************************************
 ************************************************************************************
