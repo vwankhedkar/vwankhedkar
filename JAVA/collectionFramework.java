@@ -317,7 +317,24 @@ null
 Alice
 After clearing, is the list empty? true
 *************************************************************************************
-
+package com.basic;
+import java.util.Iterator;
+import java.util.TreeSet;
+public class HashSetDemo 
+	public static void main(String[] args) {
+		TreeSet<String> al = new TreeSet<String>();
+		al.add("Vaishali");
+		al.add("Sandeep");
+		al.add("Vishal");
+		al.add("Shiv");
+		al.add("Shambhu");
+		al.add("Abhyant");
+		Iterator<String> itr = al.iterator();
+		while (itr.hasNext()) 
+			System.out.print(" "+itr.next());
+	}
+}
+OUTPUT -  Abhyant Sandeep Shambhu Shiv Vaishali Vishal
 *************************************************************************************
 	
 *************************************************************************************
