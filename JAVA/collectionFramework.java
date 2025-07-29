@@ -336,9 +336,46 @@ public class HashSetDemo
 }
 OUTPUT -  Abhyant Sandeep Shambhu Shiv Vaishali Vishal
 *************************************************************************************
-	
+package com.basic;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+public class HashSetDemo {
+	public static void main(String[] args) {
+		LinkedHashSet<String> al = new LinkedHashSet<String>();
+		al.add("Vaishali");
+		al.add("Sandeep");
+		al.add("Vishal");
+		al.add("Shiv");
+		al.add("Shambhu");
+		al.add("Abhyant");
+		Iterator<String> itr = al.iterator();
+		while (itr.hasNext()) {
+			System.out.print(" " + itr.next());
+		}
+	}
+}
+ Vaishali Sandeep Vishal Shiv Shambhu Abhyant
 *************************************************************************************
-	
+package com.basic;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+public class HashSetDemo {
+	public static void main(String[] args) {
+		HashSet<String> set = new HashSet<String>();
+		set.add("Vaishali");
+		set.add("Sandeep");
+		set.add("Vishal");
+		set.add("Shiv");
+		set.add("Shambhu");
+		set.add("Abhyant");
+		Iterator<String> itr = set.iterator();
+		while(itr.hasNext()) {
+			System.out.print(" " + itr.next());
+		}
+	}
+}
+ Sandeep Abhyant Shiv Vaishali Shambhu Vishal
 *************************************************************************************
 	
 *************************************************************************************
