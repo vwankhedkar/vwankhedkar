@@ -141,8 +141,51 @@ with sync_playwright() as p:
 <Page url='https://demo.automationtesting.in/Windows.html'>
 <Page url='https://www.selenium.dev/'>
 --------------------------------------------------------------------------------------
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto('https://demo.automationtesting.in/Windows.html')
+    page.wait_for_selector('//button[contains(text(),"    click   ")]').click()
+    page.wait_for_timeout(3000)
+    total_pages = context.pages
+    print(len(total_pages))
+    for i in total_pages:
+        print(i)
+    print(page.title())
+    new_page = total_pages[1]
+    new_page.bring_to_front()
+    page.wait_for_timeout(3000)
+    print(new_page.title())
+    new_page.close()
+    page.bring_to_front()
+    page.wait_for_timeout(3000)
+    browser.close()
+2
+<Page url='https://demo.automationtesting.in/Windows.html'>
+<Page url='https://www.selenium.dev/'>
+Frames & windows
+Selenium
 --------------------------------------------------------------------------------------
+from jinja2.runtime import new_context
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto('https://www.redbus.in/')
+    my_cookies = page.context.cookies()
+    print(my_cookies)
+    page.context.clear_cookies()
+    new_cookies = {
+        'name' : 'ravi',
+        'udid' : '4375y34975y3947595483'
+    }
+    page.context.add_cookies([new_cookies])
+    page.screenshot(path='test.png', full_page=True)
 --------------------------------------------------------------------------------------
+
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
