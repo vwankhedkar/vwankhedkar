@@ -486,6 +486,39 @@ Enter value to find
 78
 78 is present at location 5.
 ********************************************************************************************
+package com.tryPrograms;
+import java.io.IOException;
+public class Main {
+	public static void main(String []args) { 
+		 Runtime rs = Runtime.getRuntime();
+		 try {
+			 rs.exec("notepad");
+		 } catch(IOException e) {
+			 System.out.print(e);
+		 }
+	}
+}
+********************************************************************************************
+package com.tryPrograms;
+import java.net.InetAddress;
+import java.net.*;
+
+public class Main {
+	public static void main(String []args) throws Exception { 
+		 Runtime rs = Runtime.getRuntime();
+		 System.out.println("Free memory in JVM before Garbage Collection = "+rs.freeMemory());
+		 rs.gc();
+		 System.out.println("Free memory in JVM after Garbage Collection = "+rs.freeMemory());
+		 System.out.println(InetAddress.getLocalHost());
+	}
+}
+Free memory in JVM before Garbage Collection = 110476936
+Free memory in JVM after Garbage Collection = 9640304
+Vaishali/192.168.0.102
+********************************************************************************************
+
+********************************************************************************************
+
 ********************************************************************************************
 ********************************************************************************************
 ********************************************************************************************
