@@ -263,7 +263,29 @@ Amazon
 Giovanni Rovelli
 Italy
 --------------------------------------------------------------------------------------
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto('https://demo.automationtesting.in/FileUpload.html')
+    file_upload = './test.txt'
+    upload_location = page.query_selector('//input[@id="input-4"]')
+    upload_location.set_input_files(file_upload)
+    page.wait_for_timeout(5000)
 --------------------------------------------------------------------------------------
+from playwright.sync_api import sync_playwright
+def download_handle(download):
+    location_file='./files/test.zip'
+    download.save_as(location_file)
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto('https://www.tutorialspoint.com/selenium/practice/upload-download.php')
+    page.on('download', download_handle)
+    page.wait_for_selector('//a[@id="downloadButton"]').click()
+    # page.wait_for_timeout(2000)
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
