@@ -516,7 +516,20 @@ Free memory in JVM before Garbage Collection = 110476936
 Free memory in JVM after Garbage Collection = 9640304
 Vaishali/192.168.0.102
 ********************************************************************************************
-
+package com.tryPrograms;
+import java.util.Random;
+public class Main {
+	public static void main(String []args) throws Exception { 
+		 Random t = new Random();
+		 for (int c=1; c<=5; c++)
+			 System.out.println(t.nextInt(100));
+	}
+}
+9
+9
+69
+85
+66
 ********************************************************************************************
 
 ********************************************************************************************
