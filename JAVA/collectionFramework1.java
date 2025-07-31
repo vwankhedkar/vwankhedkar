@@ -531,7 +531,97 @@ public class Main {
 85
 66
 ********************************************************************************************
+package com.tryPrograms;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+public class Main {
+	public static void main(String []args) throws Exception { 
+		Date date = new Date();   
+	    System.out.println("Date formate chnage by Technolamror "); 
+	    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");   
+	    String strDate = formatter.format(date);   
+	    System.out.println("Date Format with MM/dd/yyyy : "+strDate);   
+	   
+	    formatter = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");   
+	    strDate = formatter.format(date);   
+	    System.out.println("Date Format with dd-M-yyyy hh:mm:ss : "+strDate);   
+	   
+	    formatter = new SimpleDateFormat("dd MMMM yyyy");   
+	    strDate = formatter.format(date);   
+	    System.out.println("Date Format with dd MMMM yyyy : "+strDate);   
+	   
+	    formatter = new SimpleDateFormat("dd MMMM yyyy zzzz");   
+	    strDate = formatter.format(date);   
+	    System.out.println("Date Format with dd MMMM yyyy zzzz : "+strDate);   
+	   
+	    formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");   
+	    strDate = formatter.format(date);   
+	    System.out.println("Date Format with E, dd MMM yyyy HH:mm:ss z : "+strDate);  
+	}
+}
+Date formate chnage by Technolamror 
+Date Format with MM/dd/yyyy : 07/30/2025
+Date Format with dd-M-yyyy hh:mm:ss : 30-7-2025 10:46:43
+Date Format with dd MMMM yyyy : 30 July 2025
+Date Format with dd MMMM yyyy zzzz : 30 July 2025 India Standard Time
+Date Format with E, dd MMM yyyy HH:mm:ss z : Wed, 30 Jul 2025 22:46:43 IST
+********************************************************************************************
+package com.tryPrograms;
+import java.sql.Date;
+public class Main {
+	public static void main(String []args) throws Exception { 
+		String str="2015-03-31";   
+	    Date date=Date.valueOf(str);//converting string into sql date   
+	    System.out.println(date);     
+	}
+}	===>		2015-03-31
 
+********************************************************************************************
+package com.tryPrograms;
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+public class Main {
+	public static void main(String []args) throws Exception { 
+		long millis=System.currentTimeMillis();   
+        java.sql.Date date1=new java.sql.Date(millis);   
+        System.out.println(date1);  
+        int day, month, year; 
+        int second, minute, hour; 
+        GregorianCalendar date = new GregorianCalendar(); 
+        day = date.get(Calendar.DAY_OF_MONTH); 
+        month = date.get(Calendar.MONTH); 
+        year = date.get(Calendar.YEAR); 
+        second = date.get(Calendar.SECOND); 
+        minute = date.get(Calendar.MINUTE); 
+        hour = date.get(Calendar.HOUR); 
+        System.out.println("Current date is  "+day+"/"+(month+1)+"/"+year); 
+        System.out.println("Current time is  "+hour+" : "+minute+" : "+second); 
+	}
+}
+2025-07-30
+Current date is  30/7/2025
+Current time is  10 : 50 : 47
+********************************************************************************************
+package com.tryPrograms;
+interface Info {
+	static final String language = "Java";
+	public void display();
+}
+public class Main implements Info {
+	public static void main(String[] args) {
+		Main obj = new Main();
+		obj.display();
+	}
+	  public void display() { 
+	    System.out.println(language + " is awesome"); 
+  }  
+} 	====>		Java is awesome
+********************************************************************************************
+
+********************************************************************************************
+********************************************************************************************
 ********************************************************************************************
 ********************************************************************************************
 ********************************************************************************************
