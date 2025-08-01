@@ -362,8 +362,58 @@ Combinations that sum to 6 :
 (2, 4)
 (1, 2, 3)
 *******************************************************************************
+def decompress(s):
+    result = ""
+    i = 0
+    while i < len(s):
+        char = s[i]
+        i += 1
+        num = ""
+        while i < len(s) and s[i].isdigit():
+            num += s[i]
+            i += 1
+        result += char * int(num)
+    return result
+input_str = "a2b2c3d2"
+output = decompress(input_str)
+print("Decompressed Output:", output)
+Decompressed Output: aabbcccdd
 *******************************************************************************
+def compress_and_reverse(s):
+    result = ""
+    count = 1
+
+    for i in range(1, len(s)):
+        if s[i] == s[i-1]:
+            count += 1
+        else:
+            result += s[i-1] + str(count)
+            count = 1
+    result += s[-1] + str(count)
+
+    reversed_result = result[::-1]
+    return reversed_result
+input_str = "aabbcccdd"
+output = compress_and_reverse(input_str)
+print("Reversed Compressed Output:", output)
+Reversed Compressed Output: 2d3c2b2a
 *******************************************************************************
+def compress_string(s):
+    result = ""
+    count = 1
+    for i in range(1, len(s)):
+        if s[i] == s[i-1]:
+            count += 1
+        else:
+            result += s[i-1] + str(count)
+            count = 1
+    # Add the last group
+    result += s[-1] + str(count)
+    return result
+input_str = "aabbcccdd"
+output = compress_string(input_str)
+print("Output:", output)
+Output: a2b2c3d2
 *******************************************************************************
 *******************************************************************************
 *******************************************************************************
