@@ -803,3 +803,19 @@ def test_google_title():
 def test_google_url():
     assert driver.current_url == "https://www.google.com/"
 5> pytest .\Selenium\test_fixture_google.py
+******************************************************************************
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+#options = Options
+#options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.implicitly_wait(10)
+driver.maximize_window()
+driver.get("https://www.naukri.com")
+alllinks = driver.find_elements(By.TAG_NAME, "a")
+for i in alllinks:
+    print(i.text)
