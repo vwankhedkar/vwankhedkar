@@ -346,6 +346,21 @@ else:
 OUTPUT - Enter a number: 5
 5 Number is prime
 *******************************************************************************
+from itertools import combinations
+arr=[1,2,3,4,5]
+target = 6
+result = []
+for r in range(2,len(arr)+1):
+    for combo in combinations(arr, r):
+        if sum(combo) == target:
+            result.append(combo)
+print(f"Combinations that sum to {target} : ")
+for res in result:
+    print(res)
+Combinations that sum to 6 : 
+(1, 5)
+(2, 4)
+(1, 2, 3)
 *******************************************************************************
 *******************************************************************************
 *******************************************************************************
