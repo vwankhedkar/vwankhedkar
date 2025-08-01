@@ -1,4 +1,52 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+
+options = webdriver.ChromeOptions()
+options.add_argument("--disable-blink-features=AutomationControlled")
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option("useAutomationExtension", False)
+
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=options)
+driver.implicitly_wait(10)
+driver.maximize_window()
+
+driver.get("https://www.amazon.in")
+
+# Step 1: Handle "Continue shopping" if needed
+try:
+    continue_button = WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Continue shopping')]"))
+    )
+    continue_button.click()
+    print("Clicked 'Continue shopping'")
+except:
+    print("No 'Continue shopping' button appeared.")
+
+# Step 2: Wait for logo
+try:
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "nav-logo-sprites")))
+    print("Logo found.")
+except:
+    print("Logo not found.")
+
+# Step 3: Hover on 'Fresh' menu
+try:
+    fresh_menu = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//a[contains(text(), 'Fresh')]"))
+    )
+    ActionChains(driver).move_to_element(fresh_menu).perform()
+    print("Hovered over 'Fresh' menu.")
+except Exception as e:
+    print("Could not find or hover over 'Fresh' menu.")
+    print("Error:", str(e))
+*********************************************************************************************************
+from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
