@@ -679,3 +679,18 @@ Output:
 {1, 2, 3, 5} 
 {2, 3, 5}
 **************************************************************************************************************
+arr = [1, 2, 3, 2, 3, 4]
+target_sum = 6
+pairs = []
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] + arr[j] == target_sum:
+            pairs.append((arr[i], arr[j]))
+print("Pairs with sum = 6:")
+for pair in pairs:
+    print(pair)
+OUTPUT:
+Pairs with sum = 6:
+(2, 4)
+(3, 3)
+(2, 4)
