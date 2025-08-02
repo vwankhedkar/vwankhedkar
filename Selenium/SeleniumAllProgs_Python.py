@@ -143,7 +143,6 @@ weight = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[text()='Weight Ga
 weight.click()
 **************************************************************************************
 import time
-
 from argparse import Action
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -165,7 +164,6 @@ C:\Users\vwank\PycharmProjects\PythonProject4\.venv\Scripts\python.exe C:\Users\
 abc@gmail.com
 **************************************************************************************
 import time
-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service
@@ -227,7 +225,6 @@ act = ActionChains(driver)
 act.drag_and_drop(drag, drop).perform()
 # # FluentWait using WebDriverWait with polling and ignored exceptions
 # wait = WebDriverWait(driver, timeout=20, poll_frequency=2, ignored_exceptions=[NoSuchElementException])
-#
 # # Wait until login button is clickable
 # login_button = wait.until(EC.element_to_be_clickable((By.NAME, "login")))
 # login_button.click()
@@ -493,6 +490,35 @@ Ernst Handel Roland Mendel Austria
 Island Trading Helen Bennett UK
 Laughing Bacchus Winecellars Yoshi Tannamuri Canada
 Magazzini Alimentari Riuniti Giovanni Rovelli Italy
+---------------------------------------------------
+To get company and contact of 'Italy'
+company = driver.find_element(By.XPATH, "//table[@id='customers']//tr[td='Italy']/td[1]").text
+contact = driver.find_element(By.XPATH, "//table[@id='customers']//tr[td='Italy']/td[2]").text
+//td[text()='Italy']
+To get all descendant ==>   //table[@id='customers']/descendant::td
+//td[text()='Italy']/following-sibling::td
+//td[text()='Italy']/preceding-sibling::td
+//td[text()='Italy']/preceding-sibling::td[1]
+//td[text()='Italy']/parent::tr
+//table[@id='customers']/child::tr
+//td[text()='Italy']/self::td
+//td[text()='Italy']/preceding-sibling::td[2]
+| Axis                   | Purpose                                  |
+| ---------------------- | ---------------------------------------- |
+| `ancestor::`           | All ancestors (parent, grandparent, ...) |
+| `ancestor-or-self::`   | Self + ancestors                         |
+| `descendant::`         | All children, grandchildren, etc.        |
+| `descendant-or-self::` | Self + descendants                       |
+| `following::`          | All nodes after the current node         |
+| `following-sibling::`  | Sibling nodes after current              |
+| `preceding::`          | All nodes before the current node        |
+| `preceding-sibling::`  | Sibling nodes before current             |
+| `parent::`             | Immediate parent node                    |
+| `child::`              | Immediate children                       |
+| `self::`               | Current node itself                      |
+
+print(f"Company: {company}, Contact: {contact}")
+
 **************************************************************************************
 from selenium import webdriver
 from selenium.webdriver.common.by import By
