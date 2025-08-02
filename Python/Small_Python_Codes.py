@@ -1,15 +1,16 @@
-import decimal
-integer = 10
-print(decimal.Decimal(integer))
-print(type(decimal.Decimal(integer)))
-string = '12345'
-print(decimal.Decimal(string))
-print(type(decimal.Decimal(string)))
-C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
-10
-<class 'decimal.Decimal'>
-12345
-<class 'decimal.Decimal'>
+lst = [12, 34, 67, 89, 54, 32, 12, 89, 89, 76, 67]
+max_val = 0
+sec_max = 0
+for no in lst:
+    if no > max_val:
+        sec_max = max_val
+        max_val = no
+    elif no > sec_max and no != max_val:
+        sec_max = no
+print(f"max : {max_val}, Second max : {sec_max}")
+max : 89, Second max : 76
+********************************************************************
+
 ************************************************************************************************************
 str = "Python Programming"
 print(str[::-1])
@@ -757,4 +758,16 @@ print(output)
 Enter a digit from 0-99: 45
 FOURTY FIVE
 ***********************************************************************
+import decimal
+integer = 10
+print(decimal.Decimal(integer))
+print(type(decimal.Decimal(integer)))
+string = '12345'
+print(decimal.Decimal(string))
+print(type(decimal.Decimal(string)))
+C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
+10
+<class 'decimal.Decimal'>
+12345
+<class 'decimal.Decimal'>
 ***********************************************************************
