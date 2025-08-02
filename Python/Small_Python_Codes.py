@@ -11,6 +11,28 @@ print(f"max : {max_val}, Second max : {sec_max}")
 max : 89, Second max : 76
 ********************************************************************
 
+************************************************************************
+no_word=0
+no_char=0
+no_line=0
+no_space = 0
+with open("input.txt",'r') as file:
+    for line in file:
+        no_line += 1
+        no_char = len(line)
+        words = line.split()
+        no_word += len(words)
+        no_space += len(words)-1
+    print("File analysis summary:")
+    print("Character count:", no_char)
+    print("Word count:", no_word)
+    print("Space count:", no_space)
+    print("Line count:", no_line)
+File analysis summary:
+Character count: 22
+Word count: 33
+Space count: 25
+Line count: 8
 ************************************************************************************************************
 str = "Python Programming"
 print(str[::-1])
