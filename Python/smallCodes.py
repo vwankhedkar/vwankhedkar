@@ -694,3 +694,46 @@ Pairs with sum = 6:
 (2, 4)
 (3, 3)
 (2, 4)
+***********************************************************************
+lst = [1,2,1,3,3,2,1]
+dct = {}
+for num in lst:
+    dct[num] = dct.get(num,0)+1
+print(dct)
+{1: 3, 2: 2, 3: 2}
+***********************************************************************
+str = "Vaishali"
+str_dct = {}
+for ch in str:
+    str_dct[ch] = str_dct.get(ch,0)+1
+print(f"All Char count is : {str_dct}")
+for k, v in str_dct.items():
+    if v == 1:
+        print(f"first unique character is -> {k} : {v}")
+        break
+All Char count is : {'V': 1, 'a': 2, 'i': 2, 's': 1, 'h': 1, 'l': 1}
+first unique character is -> V : 1
+***********************************************************************
+str = "Vaishali"
+str_dct = {}
+for ch in str:
+    str_dct[ch] = str_dct.get(ch,0)+1
+for k, v in str_dct.items():
+    print(f"Unique character {k} appeared {v} times")
+Unique character V appeared 1 times
+Unique character a appeared 2 times
+Unique character i appeared 2 times
+Unique character s appeared 1 times
+Unique character h appeared 1 times
+Unique character l appeared 1 times
+***********************************************************************
+word = "Kundan Kumar Pandey Kundan Kumar"
+words = word.split(" ")
+wrd_cnt = {}
+for str in words:
+    wrd_cnt[str] = wrd_cnt.get(str,0)+1
+print("Words count are : ", wrd_cnt)
+Words count are :  {'Kundan': 2, 'Kumar': 2, 'Pandey': 1}
+***********************************************************************
+***********************************************************************
+***********************************************************************
