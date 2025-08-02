@@ -485,12 +485,100 @@ public class Main {
   } 
 }	
 ************************************************************************************************
+package com.tryPrograms;
 
-************************************************************************************************
+import java.util.LinkedHashMap;
+import java.util.Map;
 
+public class Main {
+	public static void main(String[] args) {
+		int a[] = {1,2,1,3,3,2,1};  
+		Map<Integer,Integer> map = new LinkedHashMap<Integer,Integer>(); 
+		for(Integer i : a){ 
+		if(map.containsKey(i)){ 
+		map.put(i,map.get(i)+1); 
+		}else{ 
+		map.put(i,1); 
+		} 
+		} 
+		for(Integer i : map.keySet()){ 
+		System.out.println(i+":"+map.get(i)); 
+		} 
+	}
+}	
+1:3
+2:2
+3:2
 ************************************************************************************************
-
+package com.tryPrograms;
+import java.util.LinkedHashMap;
+import java.util.Map;
+public class Main {
+	public static void main(String[] args) {
+		String  s = "Vaishali";  
+		Map<Character,Integer> map = new LinkedHashMap<Character,Integer>();
+		for (Character ch : s.toCharArray()) {
+			if (map.containsKey(ch)) {
+				map.put(ch,map.get(ch)+1);
+			} else {
+				map.put(ch, 1);
+			}
+		}
+		for (Character ch : map.keySet()) {
+			if (map.get(ch) == 1) {
+				System.out.print(ch+" : "+map.get(ch));
+				break;
+			}
+		}
+	}
+}	===> V : 1
 ************************************************************************************************
+package com.tryPrograms;
+import java.util.LinkedHashMap;
+import java.util.Map;
+public class Main {
+	public static void main(String[] args) {
+		String s = "Vaishali";
+		Map<Character,Integer> map = new LinkedHashMap<Character, Integer>();
+		for (Character ch : s.toCharArray()) {
+			if (map.containsKey(ch)) {
+				map.put(ch, map.get(ch)+1);
+			} else 
+				map.put(ch, 1);
+		}
+		for (Character ch : map.keySet()) {
+			System.out.println(ch + " : " + map.get(ch));
+		}
+	}
+}	
+V : 1
+a : 2
+i : 2
+s : 1
+h : 1
+l : 1
+************************************************************************************************
+package com.tryPrograms;
+import java.util.LinkedHashMap;
+import java.util.Map;
+public class Main {
+	public static void main(String[] args) {
+		String a = "Kundan Kumar Pandey Kundan Kumar"; 
+		String s[] = a.split(" ");
+		Map<String,Integer> map = new LinkedHashMap<String,Integer>();
+		for (String ch : s) {
+			if (map.containsKey(ch)) {
+				map.put(ch, map.get(ch)+1);
+			} else 
+				map.put(ch, 1);
+		}
+	for (String ch : map.keySet())
+		System.out.println(ch + " : " + map.get(ch));
+	}
+}	
+Kundan : 2
+Kumar : 2
+Pandey : 1
 ************************************************************************************************
 
 ************************************************************************************************
