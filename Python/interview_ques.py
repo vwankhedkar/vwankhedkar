@@ -11,6 +11,13 @@ arr = [1, 0, 3, 5, 2, 3, 6]
 print(find_sum_pair(arr, 5))
 [(0, 5), (2, 3), (3, 2)]
 ****************************************************************************************
+A = (1, 2, 3)
+B = (1, 2, 3)
+C = A
+print(A == B) #- True or False
+print(A is B) #- True or False
+print(A is C) #- True or False
+**************************************************************************************
 Find the second largest number in the set of array 
 lst = [12, 34, 67, 89, 54, 32, 12, 89, 89, 76, 67]
 max_val = 0
