@@ -95,3 +95,26 @@ class Solution:
 string = "A man, a plan, a canal: Panama"
 b = Solution()
 print(b.isPalindrome(string))
+****************************************************************
+How to import data from an excel (Scenario: while you are writing some code in Python, but you need some date which was located in Excel)
+> pip install pandas openpyxl
+import pandas as pd
+# Read Excel and parse the 'DOB' column as datetime
+df = pd.read_excel('Data.xlsx', parse_dates=['DOB'])
+print(df)
+print(df.dtypes)  # To verify DOB is datetime64
+      Name        DOB
+0    Alice 1995-04-23
+1      Bob 1988-12-01
+2  Charlie 1990-07-15
+Name            object
+DOB     datetime64[ns]
+dtype: object
+**************************************************************
+import pandas as pd
+df = pd.read_excel("test_data.xlsx")
+for index, row in df.iterrows():
+    username = row['Username']
+    password = row['Password']
+    print(f"Testing login with: {username}, {password}")
+**************************************************************
