@@ -61,7 +61,31 @@ driver.save_screenshot("selenium_training_section.png")
 print("Screenshot saved")
 driver.close()
 *****************************************************************************
-
+	
+package com.PractiseProgs;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+public class openHTML { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		WebDriver driver=new FirefoxDriver(); 
+		driver.get("https://www.amazon.in/"); 
+		RemoteWebDriver r= (RemoteWebDriver) driver; 
+		WebElement ele = driver.findElement(By.linkText("Your Amazon.in"));
+		System.out.println(ele);
+		Point p = ele.getLocation();
+		int y = p.getY();
+		String s = "window.scrollTo(0,"+y+")";
+		Thread.sleep(3000);
+		//String c="window.scrollTo(0,document.body.scrollHeight)"; 
+		r.executeScript(s);  
+		driver.quit();
+	}
+} 
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
