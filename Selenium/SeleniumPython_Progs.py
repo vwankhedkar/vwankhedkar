@@ -87,6 +87,23 @@ public class openHTML {
 	}
 } 
 *****************************************************************************
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+	
+	public class LocatorDemo2 {
+	
+		public static void main(String[] args)
+		{
+			WebDriver driver=new EdgeDriver();
+			driver.get("https://automationplayground.com/crm/login.html");
+			driver.findElement(By.name("email-name")).sendKeys("vikasloud@gmail.com");
+			driver.findElement(By.id("password")).sendKeys("test123");
+			driver.findElement(By.id("remember")).click();
+			driver.findElement(By.id("submit-id")).click();
+ 
+	
+		}
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
