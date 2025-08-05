@@ -87,6 +87,31 @@ print("Alphanumeric:", alphanum)
 Digits: [1, 2]
 Alphabetic: ['a', 'b', 'c']
 Alphanumeric: ['1a', '5gg']
+*************************************************************************
+import re
+def expand_string(s):
+    result = []
+    i = 0
+    while i < len(s):
+        if s[i].isdigit():
+            count = int(s[i])
+            i += 1
+            group = ''
+            while i < len(s) and not s[i].isdigit():
+                group += s[i]
+                i += 1
+            result.append(group * count)
+        else:
+            result.append(s[i])
+            i += 1
+    return ''.join(result)
+# Test cases
+print(expand_string("2ad3b4c"))   # adadbbbcccc
+print(expand_string("2a3b4c"))    # aabbbcccc
+print(expand_string("2ab3b4c"))   # ababbbbcccc
+***********************************************************************************************
+***********************************************************************************************
+***********************************************************************************************
 ***********************************************************************************************
 def ispalin(str):
     for i in range(0, int(len(str)/2)):
