@@ -1,3 +1,4 @@
+Brillius (Amazon):
 Your function should print the pair numbers from the array that add up to the integer parameter.
 def find_sum_pair(arr, sum_val):
     arr = list(set(arr))
@@ -31,7 +32,7 @@ for no in lst:
 print(f"max : {max_val}, Second max : {sec_max}")
 max : 89, Second max : 76
 ******************************************************************************************
-s1 = input("Enter s1:") #lazy
+s1 = input("Enter s1:") #lazy    # Validate anagram
 s2 = input("Enter s2:") #zaly
 if sorted(s1) == sorted(s2):
     print("Strings are anagram")
@@ -41,6 +42,51 @@ OUTPUT:
 Enter s1:lazy
 Enter s2:zaly
 Strings are anagram
+*************************************************************************
+EPAM interview questions
+class InvalidInputError(Exception):
+    """Raised when entered value is invalid"""
+    pass
+def checkException():
+    try:
+        num = input("Enter a number: ")
+        if not num.isdigit():
+            raise InvalidInputError("Only numeric values are allowed")
+        print(f"You entered: {num}")
+        print("This is valid input")
+    except InvalidInputError as e:
+        print(f"Custom Exception: {e}")
+    except ValueError:
+        print("ValueError occurred")
+    finally:
+        print("Reached last stage")
+checkException()
+Enter a number: vais
+Custom Exception: Only numeric values are allowed
+Reached last stage
+**********************************************************************************************
+str_list = ["a", "b", "c", 1, 2, '1a', '5gg','%^&', '!@#']
+digit = []
+numeric = []
+alphanum = []
+for ch in str_list:
+    ch_str = str(ch)  # Convert everything to string
+    if ch_str.isdigit():
+        digit.append(ch)
+    elif ch_str.isalpha():
+        numeric.append(ch)
+    elif ch_str.isalnum():
+        alphanum.append(ch)
+    else:
+        print(f"{ch} is a special character (not digit, alphabetic or alphanumeric)")
+print("Digits:", digit)
+print("Alphabetic:", numeric)
+print("Alphanumeric:", alphanum)
+%^& is a special character (not digit, alphabetic or alphanumeric)
+!@# is a special character (not digit, alphabetic or alphanumeric)
+Digits: [1, 2]
+Alphabetic: ['a', 'b', 'c']
+Alphanumeric: ['1a', '5gg']
 ***********************************************************************************************
 def ispalin(str):
     for i in range(0, int(len(str)/2)):
