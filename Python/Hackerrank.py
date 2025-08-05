@@ -57,3 +57,55 @@ Enter second complex number (real imaginary): 5 6
 2.24+0.00i
 7.81+0.00i
 **************************************************
+3
+This line has junk text.  
+121.18.19.20  
+2001:0db8:0000:0000:0000:ff00:0042:8329 
+import re
+_octet = r'(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)'
+IPv4   = re.compile(rf'^{_octet}\.{_octet}\.{_octet}\.{_octet}$')
+IPv6   = re.compile(r'^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$')
+
+def classify(addr):
+    if IPv4.fullmatch(addr):
+        return "IPv4"
+    if IPv6.fullmatch(addr):
+        return "IPv6"
+    return "Neither"
+    
+N = int(input())
+for _ in range(N):
+    line = input()
+    print(classify(line))
+	
+function main() {
+    const regex4ipv4 = /^(((25[0-5])|(2[0-4]\d)|(1\d{2})|(\d{1,2}))\.){3}((25[0-5])|(2[0-4]\d)|(1\d{2})|(\d{1,2}))$/;
+    const regex4ipv6 = /^(([0-9a-f]{1,4}):){7}([0-9a-f]{1,4})$/;
+    for (let i = 1; i < inputLines.length; i++) {
+        const str = inputLines[i];
+        if (regex4ipv4.test(str)) {
+            console.info('IPv4');
+        } else if (regex4ipv6.test(str)) {
+            console.info('IPv6');
+        } else {
+            console.info('Neither');
+        }
+    }
+}
+
+<?php
+    $input = stream_get_contents($_fp);
+    $lines = preg_split('/\R/', $input, -1, PREG_SPLIT_NO_EMPTY);
+    array_shift($lines);
+    $ipv4_pattern = '/^(([01]?[0-9]{0,2}|2[0-5]?[0-5]?)\.){3}([01]?[0-9]{0,2}|2[0-5]?[0-5]?)$/';
+    $ipv6_pattern = '/^(([a-fA-F0-9]{1,4}):){7}[a-fA-F0-9]{1,4}$/';
+    foreach($lines as $line) {
+        $result = 'Neither';
+        if (preg_match($ipv4_pattern, $line)) {
+            $result = 'IPv4';
+        } elseif (preg_match($ipv6_pattern, $line)) {
+            $result = 'IPv6';
+        }
+        
+        echo $result . PHP_EOL;
+    }
