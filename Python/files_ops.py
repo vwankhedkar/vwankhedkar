@@ -186,3 +186,24 @@ with open("logfile.txt", "r") as file:
 Starting application....
 Another log entry...
 *********************************************************
+Replace file contents with user input in same file
+s = input("Enter text to replace the existing contents:")
+f = open("input.txt", "r+")
+f.truncate(0)
+f.write(s)
+f.close()
+with open("input.txt","r") as fh:
+    print(fh.readlines())
+print("Text replaced ....")
+*********************************************************
+import sys
+import fileinput
+x = input("Enter text to be replaced:")
+y = input("Enter replacement text")
+for l in fileinput.input(files = "file.txt"):
+    l = l.replace(x, y)
+    sys.stdout.write(l)
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
