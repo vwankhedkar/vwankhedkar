@@ -110,6 +110,28 @@ print(expand_string("2ad3b4c"))   # adadbbbcccc
 print(expand_string("2a3b4c"))    # aabbbcccc
 print(expand_string("2ab3b4c"))   # ababbbbcccc
 ***********************************************************************************************
+mphasis interview
+-------------------
+import requests
+import json
+url = "https://jsonplaceholder.typicode.com/posts/1"
+request=requests.get(url=url)
+jsonres = request.json()
+print(type(request))
+code = request.status_code
+assert code in [200,201]
+print(json.dumps(jsonres, indent=4))
+print(jsonres['id'])
+print(jsonres['title'])
+<class 'requests.models.Response'>
+{
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+1
+sunt aut facere repellat provident occaecati excepturi optio reprehenderit
 ***********************************************************************************************
 ***********************************************************************************************
 ***********************************************************************************************
