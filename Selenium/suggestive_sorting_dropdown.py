@@ -27,3 +27,31 @@ successText = driver.find_element(By.CLASS_NAME,"alert-success").text
 print(successText)
 assert "Success! Thank you!" in successText
 driver.close()
+*************************************************************************************
+Sorting dropdown
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import Select
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.implicitly_wait(10)
+driver.maximize_window()
+driver.get("https://testautomationpractice.blogspot.com/")
+dropdown = Select(driver.find_element(By.XPATH, "//select[@id='animals']"))
+options = dropdown.options
+original_list = []
+tmp_list = []
+for option in options:
+    original_list.append(option.text)
+    tmp_list.append(option.text)
+print("Before sorting ...")
+print("Original List:", original_list)
+print("Temp List:", tmp_list)
+tmp_list.sort()
+# Print both lists
+print("After sorting ...")
+print("Original List:", original_list)
+print("Temp List:", tmp_list)
+driver.quit()
