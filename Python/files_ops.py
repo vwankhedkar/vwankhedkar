@@ -204,6 +204,12 @@ for l in fileinput.input(files = "file.txt"):
     l = l.replace(x, y)
     sys.stdout.write(l)
 *********************************************************
+with open('input.txt', 'r', encoding='utf-8') as file:
+    data = file.readlines()
+print(data)
+data[1] = "Here is modified Line 2 \n"
+with open('input.txt', 'w', encoding='utf-8') as file:
+    file.writelines(data)
 *********************************************************
 *********************************************************
 *********************************************************
