@@ -864,5 +864,9 @@ driver.implicitly_wait(10)
 driver.maximize_window()
 driver.get("https://www.naukri.com")
 alllinks = driver.find_elements(By.TAG_NAME, "a")
-for i in alllinks:
-    print(i.text)
+for ele in alllinks:
+    text = ele.text.strip()
+    href = ele.get_attribute("href")
+    if text:
+        print(f"{text} -> {href}")
+driver.quit()
