@@ -12,6 +12,10 @@ tablename checkbox
 //td[text()='Maria Anders']/preceding-sibling::td/child::input
 Canada
 //td[text()='Yoshi Tannamuri']/following-sibling::td[1]
+Get 3rd row values
+//table[@id='contactList']/child::tbody/tr[4]/child::td
+Austria
+//table[@id='contactList']/child::tbody/tr[4]/child::td[3]
 All textboxes
 //div[@class='container']/child::input[@type='text']
 //div[@class='container']/child::input[@type='text'][1]
