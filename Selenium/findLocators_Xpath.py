@@ -25,3 +25,7 @@ All buttons
 //div[@class='container']/descendant::button
 whole frame boxes
 //div[@class='buttons']/ancestor-or-self::div
+******************************************************************************
+https://www.iplt20.com/points-table/men/2024
+//div[@class='ih-pt-ic ']/div//following-sibling::h2
+//table[@class="ih-td-tab"]/tbody/tr//following-sibling::h2
