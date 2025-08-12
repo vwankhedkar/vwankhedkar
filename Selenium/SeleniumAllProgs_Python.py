@@ -71,25 +71,39 @@ Page Title: Facebook – log in or sign up
 Page URL:  https://www.facebook.com/
 **************************************************************************************
 import time
-
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver import ActionChains
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service)
-driver.maximize_window()
-driver.implicitly_wait(10)
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+options = Options()
+options.set_preference("dom.webnotifications.enabled", False)
+service = Service()
+driver = webdriver.Firefox(service=service, options=options)
+driver.maximize_window()  # Works for Firefox
 driver.get("https://www.sbilife.co.in/")
+try:
+    notification = WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[@id='notify-visitors-confirm-popup-btn-positive']"))
+    )
+    notification.click()
+    print("Clicked notification")
+except:
+    print("No notification popup")
 menu = driver.find_elements(By.XPATH, "//div[@id='container']/div[2]/ul/li")
 action = ActionChains(driver)
-for item in menu[0:5]:
+for item in menu[:5]:
     action.move_to_element(item).perform()
-    time.sleep(5)
+    time.sleep(1)  # Shorter wait just to trigger hover
 action.move_to_element(menu[0]).perform()
-child = driver.find_element(By.LINK_TEXT,"Learn About Insurance")
+time.sleep(1)  # Ensure submenu appears
+child = driver.find_element(By.LINK_TEXT, "Learn About Insurance")
 action.move_to_element(child).click().perform()
+print("Clicked 'Learn About Insurance'")
+time.sleep(2)  # Give time to load next page
+driver.quit()
 *********************************************************************************************
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
