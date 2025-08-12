@@ -1097,4 +1097,42 @@ class TestData:
     USER_NAME = "naveenanimation30@gmail.com"
     PASSWORD = "Selenium@12345"
     LOGIN_PAGE_TITLE = "HubSpot Login"
+****************************************************************************************************
+import os
+import time
+
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+download_dir = os.path.abspath("downloads")
+upload_file_path = os.path.abspath("sample_upload.txt")
+if not os.path.exists(download_dir):
+    os.makedirs(download_dir)
+options = webdriver.FirefoxOptions()
+options.set_preference("dom.webnotifications.enabled", False)
+options.set_preference("browser.download.folderList", 2)  # 2 means custom folder
+options.set_preference("browser.download.dir", download_dir)
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/plain,application/octet-stream")
+options.set_preference("pdfjs.disabled", True)  # Disable built-in PDF viewer
+service = Service()
+driver = webdriver.Firefox(service=service, options=options)
+try:
+    driver.get("https://the-internet.herokuapp.com/upload")
+    upload_input = driver.find_element(By.ID, "file-upload")
+    upload_input.send_keys(upload_file_path)
+    driver.find_element(By.ID, "file-submit").click()
+    print("File uploaded:", upload_file_path)
+    time.sleep(3)
+    driver.get("https://the-internet.herokuapp.com/download")
+    file_link = driver.find_element(By.XPATH, "//a[text()='some-file.txt']")
+    file_link.click()
+    print("Download started...")
+    download_file_path = os.path.join(download_dir, "some-file.txt")
+    WebDriverWait(driver, 20).until(lambda d: os.path.exists(download_file_path))
+    print("File downloaded:", download_file_path)
+finally:
+    time.sleep(3)
+    driver.quit()
 
