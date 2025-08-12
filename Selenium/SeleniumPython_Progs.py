@@ -156,8 +156,27 @@ print("After sorting ...")
 print("Original List:", original_list)
 print("Temp List:", tmp_list)
 driver.quit()
-
 *****************************************************************************
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
+options = Options()
+options.set_preference("dom.webnotifications.enabled", False)
+service = Service()
+driver = webdriver.Firefox(service=service, options=options)
+try:
+    driver.get("https://www.globalsqa.com/demo-site/select-dropdown-menu/")
+    select_element = driver.find_element(By.TAG_NAME, "select")
+    select = Select(select_element)
+    select.select_by_visible_text("India")
+    print("Selected india")
+finally:
+    driver.quit()
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
