@@ -178,6 +178,53 @@ try:
 finally:
     driver.quit()
 *****************************************************************************
+import os
+import time
+
+import requests
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+download_dir = os.path.abspath("downloads")
+upload_file_path = os.path.abspath("sample_upload.txt")
+if not os.path.exists(download_dir):
+    os.makedirs(download_dir)
+options = webdriver.FirefoxOptions()
+options.set_preference("dom.webnotifications.enabled", False)
+options.set_preference("browser.download.folderList", 2)  # 2 means custom folder
+options.set_preference("browser.download.dir", download_dir)
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/plain,application/octet-stream")
+options.set_preference("pdfjs.disabled", True)  # Disable built-in PDF viewer
+service = Service()
+driver = webdriver.Firefox(service=service, options=options)
+try:
+    driver.get("https://google.com")
+    links = driver.find_elements(By.TAG_NAME, "a")
+    urls = [link.get_attribute("href") for link in links if link.get_attribute("href")]
+    print(f"Found {len(urls)} links. Checking...")
+    for url in urls:
+        try:
+            response = requests.head(url, timeout=5)
+            if response.status_code >= 400:
+                print(f"Broken link : {url} (Status {response.status_code})")
+            else:
+                print(f"Working link : {url} (Status {response.status_code})")
+        except requests.RequestException as e:
+            print(f"Could not check : {url} - {e}")
+finally:
+    driver.quit()
+Working link : https://www.google.com/intl/en_in/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1 (Status 301)
+Working link : https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1 (Status 301)
+Working link : https://google.com/search/howsearchworks/?fg=1 (Status 301)
+Working link : https://policies.google.com/privacy?hl=en-IN&fg=1 (Status 200)
+Working link : https://policies.google.com/terms?hl=en-IN&fg=1 (Status 200)
+Working link : https://www.google.com/preferences?hl=en-IN&fg=1 (Status 200)
+Working link : https://www.google.com/advanced_search?hl=en-IN&fg=1 (Status 200)
+Working link : https://www.google.com/history/privacyadvisor/search/unauth?utm_source=googlemenu&fg=1&cctld=com (Status 301)
+Working link : https://www.google.com/history/optout?hl=en-IN&fg=1 (Status 302)
+Broken link : https://support.google.com/websearch/?p=ws_results_help&hl=en-IN&fg=1 (Status 404)
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
