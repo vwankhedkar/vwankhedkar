@@ -320,6 +320,15 @@ for _ in range(n):
 91-011-23413627
 CountryCode=1,LocalAreaCode=877,Number=2638277
 CountryCode=91,LocalAreaCode=011,Number=23413627
+
+import re
+[print(re.sub(r"(\d{1,3})[\-\s](\d{1,3})[\-\s](\d{4,10})",r"CountryCode=\1,LocalAreaCode=\2,Number=\3",
+       input())) for _ in range(int(input()))]
+2
+1 877 2638277
+91-011-23413627
+CountryCode=1,LocalAreaCode=877,Number=2638277
+CountryCode=91,LocalAreaCode=011,Number=23413627
 *******************************************************************************
 *******************************************************************************
 *******************************************************************************
