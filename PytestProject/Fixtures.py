@@ -86,3 +86,59 @@ Fixtures.py::test_google_url PASSED                                      [100%]-
 ============================= 2 passed in 20.46s ==============================
 
 Process finished with exit code 0
+******************************************************************************************************
+import os
+from time import sleep
+import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+
+# Set webdriver_manager cache location to avoid permission issues
+os.environ['WDM_LOCAL'] = '1'
+os.environ['WDM_CACHE'] = r'C:\Temp\webdriver'  # Make sure this folder exists
+
+@pytest.fixture(scope='class')
+def init_chrome_driver(request):
+    service = ChromeService(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    driver.implicitly_wait(5)
+    request.cls.driver = driver
+    yield
+    sleep(2)
+    driver.quit()
+
+@pytest.fixture(scope='class')
+def init_ff_driver(request):
+    service = FirefoxService(GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=service)
+    driver.implicitly_wait(5)
+    request.cls.driver = driver
+    yield
+    sleep(2)
+    driver.quit()
+
+@pytest.mark.usefixtures("init_chrome_driver")
+class Base_Chrome_Test:
+    pass
+
+class Test_Google_Chrome(Base_Chrome_Test):
+    def test_google_title_chrome(self):
+        self.driver.get("https://www.google.com")
+        assert self.driver.title == 'Google'
+
+@pytest.mark.usefixtures("init_ff_driver")
+class Base_Firefox_Test:
+    pass
+
+class Test_Google_Firefox(Base_Firefox_Test):
+    def test_google_title_firefox(self):
+        self.driver.get("https://www.google.com")
+        assert self.driver.title == 'Google'
+[gw0] PASSED Fixture_class.py::Test_Google_Chrome::test_google_title_chrome 
+[gw1] PASSED Fixture_class.py::Test_Google_Firefox::test_google_title_firefox 
+
+=============================================================== 2 passed in 27.00s ================================================================ 
+(.venv) PS C:\Users\vwank\PycharmProjects\Python_Aug25\Pytest> pytest -v -s -n 2 .\Fixture_class.py
