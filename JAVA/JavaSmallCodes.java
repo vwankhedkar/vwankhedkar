@@ -1647,7 +1647,30 @@ Enter Number to reverse :
 Reverse of number is w/o inbuild method is: 347346
 Reverse of number is with inbuild method is: 65789
 *********************************************************************************
-
+package com.tryPrograms;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class Try1 {
+    public static void main(String[] args) {
+    	Scanner scanner = new Scanner(System.in);
+    	int n = Integer.parseInt(scanner.nextLine());
+    	Pattern pattern = Pattern.compile("^(\\d{1,3})[- ](\\d{1,3})[- ](\\d{4,10})");
+    	for (int i=0; i<n; i++) {
+    		Matcher matcher = pattern.matcher(scanner.nextLine());
+    		if (matcher.find()) {
+    			System.out.print("CountryCode="+matcher.group(1));
+    			System.out.print(",LocalAreaCode="+matcher.group(2));
+    			System.out.print(",Number="+matcher.group(3));
+    		}
+    	}
+    }
+}
+2
+1 877 2638277
+91-011-23413627
+CountryCode=1,LocalAreaCode=877,Number=2638277
+CountryCode=91,LocalAreaCode=011,Number=23413627
 *********************************************************************************
 
 *********************************************************************************
