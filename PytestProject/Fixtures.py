@@ -49,3 +49,40 @@ Selenium/test_fixture_google.py::Test_Google_Firefox::test_google_title_firefox 
 
 ========== 2 passed in 37.04s 
 **********************************************************************************
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+import pytest
+from webdriver_manager.firefox import GeckoDriverManager
+import os
+os.environ['WDM_LOCAL'] = '1'
+os.environ['WDM_CACHE'] = r'C:\Temp\webdriver'  # Any folder you have access to
+@pytest.fixture(scope='module')
+def init_driver():
+    global driver
+    print("----------Setup----------------")
+    service = Service(GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=service)
+    driver.implicitly_wait(5)
+    driver.delete_all_cookies()
+    driver.get("https://www.google.com")
+    yield
+    print("----------TearDown----------------")
+    driver.quit()
+@pytest.mark.usefixtures("init_driver")
+def test_google_title():
+    assert driver.title == 'Google'
+@pytest.mark.usefixtures("init_driver")
+def test_google_url():
+    assert driver.current_url == 'https://www.google.com/'
+============================ test session starts =============================
+collecting ... collected 2 items
+
+Fixtures.py::test_google_title ----------Setup----------------
+PASSED                                    [ 50%]
+Fixtures.py::test_google_url PASSED                                      [100%]----------TearDown----------------
+
+
+============================= 2 passed in 20.46s ==============================
+
+Process finished with exit code 0
