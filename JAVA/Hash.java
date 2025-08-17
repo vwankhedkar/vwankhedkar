@@ -92,11 +92,102 @@ public class Main {
 }	
 ArrayList with duplicates removed:1 2 5 6 9 
 *************************************************************************
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 6, 2, 5}; 
+        int[] uniquearr = removeDuplicates(arr);
+
+        System.out.println("Array with duplicates removed:");
+        for (int num : uniquearr)
+            System.out.print(num + " ");
+    }
+
+    public static int[] removeDuplicates(int[] array) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : array)
+            set.add(num);
+
+        int[] result = new int[set.size()];
+        int i = 0;
+        for (int num : set)
+            result[i++] = num;
+
+        return result;
+    }
+}
+Array with duplicates removed:
+1 2 5 6 9 
+*************************************************************************
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.ArrayList;
+class Main {
+    public static void main(String[] args) {
+        int[] array =  {5, 2, 9, 1, 6}; 
+        selectionSort(array);
+        System.out.println("Sorted Array");
+        for (int num : array)
+            System.out.print(num + " ");
+    }
+   public static void selectionSort(int[] array) {
+       int n = array.length;
+       for (int i=0; i<n-1; i++) {
+           int minindex = i;
+           for (int j=i+1; j<n; j++) {
+               if (array[j] < array[minindex])
+                  minindex = j;
+           }
+       int temp = array[i];
+       array[i] = array[minindex];
+       array[minindex] = temp;
+       }
+   }	Sorted Array
+}		1 2 5 6 9 
+*************************************************************************
+import java.util.HashSet;
+import java.util.Set; 
+public class CommonElements { 
+    public static void main(String[] args) { 
+        int[] array1 = {1, 2, 3, 4, 5}; 
+        int[] array2 = {4, 5, 6, 7, 8}; 
+        Set<Integer> commonElements = findCommonElements(array1, 
+        array2); 
+        System.out.println("Common elements: " + commonElements); 
+} 
+public static Set<Integer> findCommonElements(int[] array1, 
+    int[] array2) { 
+    Set<Integer> set1 = new HashSet<>(); 
+    Set<Integer> commonSet = new HashSet<>(); 
+    // Add elements of the first array to the set 
+    for (int num : array1) { 
+        set1.add(num); 
+    } 
+    for (int num : array2) { 
+        if (set1.contains(num)) { 
+            commonSet.add(num); 
+        } 
+    } 
+    return commonSet; 
+   } 
+}		Common elements: [4, 5]
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+*************************************************************************
+
+*************************************************************************
 
 *************************************************************************
 
 *************************************************************************
 
+*************************************************************************
+
+*************************************************************************
 *************************************************************************
 
 *************************************************************************
