@@ -10,7 +10,15 @@ for no in lst:
 print(f"max : {max_val}, Second max : {sec_max}")
 max : 89, Second max : 76
 ********************************************************************
-
+Execute file IO on https://www.programiz.com/python-programming/online-compiler/
+import io
+fh = io.StringIO()
+fh = io.StringIO()
+fh.write("This is line1")
+fh.seek(0)
+dat = fh.readline()
+print(dat)
+This is line1
 ************************************************************************
 no_word=0
 no_char=0
