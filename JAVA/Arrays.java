@@ -772,8 +772,33 @@ public class tryProgs2 {
 }
 majorityElement is: [2]
 ****************************************************************************************************************
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 
-
+class Main {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        int[] arr1 = {1, 3, 2, 7, 10};
+        int[] arr2 = {7, 2, 5, 9, 12};
+        ArrayList<Integer> merged = new ArrayList<>();
+        int i = 0, j = 0;
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
+                merged.add(arr1[i++]);
+            } else {
+                merged.add(arr2[j++]);
+            }
+        }
+        while (i < arr1.length) merged.add(arr1[i++]);
+        while (j < arr2.length) merged.add(arr2[j++]);
+        set.addAll(merged);
+        for (int num : set) {
+            System.out.print(num + " ");
+        }
+    }
+}
+1 2 3 5 7 9 10 12
 ****************************************************************************************************************
 
 
