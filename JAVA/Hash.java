@@ -207,10 +207,85 @@ Longest substring without repeating characters in s2: 1
 Longest substring without repeating characters in s3: 3
 Longest substring without repeating characters in s4: 0
 *************************************************************************
-
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string : ");
+        String input = scanner.nextLine();
+        System.out.println("Original string is : " + input);
+        separateAplhaAndNumeric(input);
+    }
+    public static void separateAplhaAndNumeric(String input) {
+        StringBuilder alphaPart = new StringBuilder();
+        StringBuilder numericPart = new StringBuilder();
+        for (char ch : input.toCharArray()) {
+            if (Character.isLetter(ch))
+                alphaPart.append(ch);
+            else if (Character.isDigit(ch))
+                 numericPart.append(ch);
+        }
+    System.out.println("Output in Alpha: " + alphaPart.toString());
+    System.out.println("Output in Numeric: "+numericPart.toString()); 
+    }
+}
+Enter a string : Subbu123raj
+Original string is : Subbu123raj
+Output in Alpha: Subburaj
+Output in Numeric: 123
 *************************************************************************
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string : ");
+        String input = scanner.nextLine();
+        System.out.println("Original string is : " + input);
+        separateCharacters(input);
+    }
+    public static void separateCharacters(String input) {
+        StringBuilder lowerCase = new StringBuilder();
+        StringBuilder upperCase = new StringBuilder();
+        for (char ch : input.toCharArray()) {
+            if (Character.isLowerCase(ch))
+                lowerCase.append(ch);
+            else if (Character.isUpperCase(ch))
+                 upperCase.append(ch);
+        }
+    System.out.println("Output in lowercase: "+lowerCase);
+    System.out.println("Output in uppercase: "+upperCase); 
+    }
+}
+Enter a string : aBACbcEDed
+Original string is : aBACbcEDed
+Output in lowercase: abced
+Output in uppercase: BACED
 *************************************************************************
-
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string : ");
+        String input = scanner.nextLine();
+        String output = getCharacterCount(input); 
+        System.out.println("Output: " + output); 
+    }
+    public static String getCharacterCount(String str) {
+        StringBuilder result = new StringBuilder();
+        int count = 1;
+        for (int i=0; i<str.length();i++) {
+             if (i+1<str.length() && str.charAt(i)==str.charAt(i+1))
+                 count++;
+             else {
+                 result.append(str.charAt(i)).append(count);
+                 count = 1;
+             }
+           } 
+           return result.toString(); 
+    }
+}
+Enter a string : aabbcccdd
+Output: a2b2c3d2
 *************************************************************************
 
 *************************************************************************
