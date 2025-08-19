@@ -1672,6 +1672,53 @@ public class Try1 {
 CountryCode=1,LocalAreaCode=877,Number=2638277
 CountryCode=91,LocalAreaCode=011,Number=23413627
 *********************************************************************************
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first String : ");
+        String str1 = scanner.nextLine();
+        System.out.print("Enter second String : ");
+        String str2 = scanner.nextLine();
+        System.out.println("Before swapping:str1 = "+str1+",str2 = "+str2);
+        str1 = str1 + str2;
+        str2 = str1.substring(0,str1.length()-str2.length());
+        str1 = str1.substring(str2.length());
+        System.out.println("After swapping:str1= "+str1+", str2="+str2);
+    }
+}
+Enter first String : Hello
+Enter second String : World
+Before swapping:str1 = Hello,str2 = World
+After swapping:str1= World, str2=Hello
+*********************************************************************************
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: "); 
+        String input = scanner.nextLine();
+        String doubledString = doubleCharacters(input); 
+        System.out.println("Doubled characters: " + doubledString);
+    }
+    public static String doubleCharacters(String str) {
+        StringBuilder doubled = new StringBuilder();
+        for (int i=0; i<str.length(); i++) {
+            char ch = str.charAt(i);
+            doubled.append(ch).append(ch);
+        }
+        return doubled.toString();
+    }
+}
+Enter a string: hello
+Doubled characters: hheelllloo
+*********************************************************************************
+*********************************************************************************
+
+*********************************************************************************
+
+*********************************************************************************
+*********************************************************************************
 
 *********************************************************************************
 
