@@ -1713,11 +1713,85 @@ class Main {
 Enter a string: hello
 Doubled characters: hheelllloo
 *********************************************************************************
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        String input = "Hello World"; 
+        VowelConsonantCount(input); 
+    }
+    public static void VowelConsonantCount(String str) {
+        int vowels=0, consonents=0;
+        str = str.toLowerCase();
+        for (char c : str.toCharArray()) {
+            if (c>='a' && c<='z') {
+                if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+                   vowels++;
+                else
+                   consonents++;
+            }
+        }
+        System.out.println("Vowels : "+vowels);
+        System.out.println("Consonents : "+consonents);
+    }
+}
+Vowels : 3
+Consonents : 7
+*********************************************************************************
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        String str1 = "listen"; 
+        String str2 = "silent"; 
+        System.out.println("Are strings Anagrams : "+areAnagrams(str1,str2)); 
+    }
+static boolean areAnagrams(String str1, String str2) { 
+    if(str1.length() != str2.length()) 
+         return false; 
+    int[] charCount = new int[256]; 
+    for( int i = 0; i < str1.length(); i++) { 
+        charCount[str1.charAt(i)]++; 
+        charCount[str2.charAt(i)]--; 
+    } 
+    for ( int count : charCount) { 
+        if ( count !=0 ) 
+            return false; 
+    } 
+    return true;
+   }
+}     Are strings Anagrams : true
+*********************************************************************************
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        String str = "abc"; 
+        permute(str, ""); 
+    }
+static void permute(String str, String prefix) { 
+    if (str.length() == 0) {
+        System.out.println(prefix);
+    } else {
+        for (int i=0;i<str.length();i++) {
+            String rem = str.substring(0,i) + str.substring(i+1);
+            permute(rem,prefix+str.charAt(i));
+        }
+     }
+   }
+}
+abc
+acb
+bac
+bca
+cab
+cba
+*********************************************************************************
 *********************************************************************************
 
 *********************************************************************************
 
 *********************************************************************************
+
+*********************************************************************************
+
 *********************************************************************************
 
 *********************************************************************************
