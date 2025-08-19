@@ -311,6 +311,21 @@ print(data)
 -----------------------------------------------------------------------------------
 ['1 member', '2 members', '5 members', '5 members', '30 members', 'No members', 'No members']
 ******************************************************************************************
+import re
+data = ['No members', '1 member', '2 members', 'No members', 'NA members', '5 members', '5 members', '30 members']
+def extract_number(s):
+    match = re.match(r"^\d+", s)
+    return int(match.group()) if match else None
+numeric_part = [s for s in data if extract_number(s) is not None]
+non_numeric_part = [s for s in data if extract_number(s) is None]
+for i in range(len(numeric_part)):
+    for j in range(0, len(numeric_part) - i - 1):
+        if extract_number(numeric_part[j]) > extract_number(numeric_part[j + 1]):
+            numeric_part[j], numeric_part[j + 1] = numeric_part[j + 1], numeric_part[j]
+result = numeric_part + non_numeric_part
+print(result)
+['1 member', '2 members', '5 members', '5 members', '30 members', 'No members', 'No members', 'NA members']
+******************************************************************************************
 def pyramid(n):
     for i in range(n):
         for j in range(i,n):
