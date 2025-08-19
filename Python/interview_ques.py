@@ -297,6 +297,19 @@ for item in lst1:
 print(lst2)
 result = [x[1].replace("members","members").replace("member","member") for x in lst2]
 print(result)
+-------------------------------------------------------------------------------
+data = ["1 member", "5 members", "No members", "2 members","No members", "5 members", "30 members"]
+def extract_number(s):
+    if "No" in s:
+        return float('inf')
+    return int(s.split()[0])
+for i in range(len(data)):
+    for j in range(0, len(data) - i - 1):
+        if extract_number(data[j]) > extract_number(data[j + 1]):
+            data[j], data[j + 1] = data[j + 1], data[j]
+print(data)
+-----------------------------------------------------------------------------------
+['1 member', '2 members', '5 members', '5 members', '30 members', 'No members', 'No members']
 ******************************************************************************************
 def pyramid(n):
     for i in range(n):
