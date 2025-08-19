@@ -281,7 +281,23 @@ print(spaceCount, len(spaceCount))
 12 2
 Pythonisand 11
 [' ', ' ', ' ', ' '] 4
-*************************************************************************
+******************************************************************************************
+saltmine intv ques Sort = ["1 member", "5 members", "No members", "2 members", "5 members", "30 members"]
+import re
+lst = ["1 member", "5 members", "No members", "2 members", "5 members", "30 members"]
+lst1 = [re.sub(" ","",items) for items in lst]
+print(lst1)
+lst2 = []
+for item in lst1:
+    if item.lower().startswith("no"):
+        num = 0
+    else:
+        num = int(re.findall(r"\d+", item)[0])
+    lst2.append((num, item))
+print(lst2)
+result = [x[1].replace("members","members").replace("member","member") for x in lst2]
+print(result)
+******************************************************************************************
 def pyramid(n):
     for i in range(n):
         for j in range(i,n):
