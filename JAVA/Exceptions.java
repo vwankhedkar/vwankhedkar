@@ -109,6 +109,32 @@ public class StringProgs {
 }
 Caught checked exception: data.txt (The system cannot find the file specified)
 ***************************************************************************
+class CustomException extends RuntimeException {
+    public CustomException(String str) {
+        super(str);
+    }
+}
+public class Main {
+    public static void main(String a[]) {
+        int i = 20;
+        int j = 0;
+        try {
+            j = 18 / i;  // 18/20 = 0 (integer division)
+            if (j == 0) 
+                throw new CustomException("I don't want to print ");
+        }
+        catch(CustomException e) {
+            j = 18 / 1;  // set j = 18
+            System.out.print("Default output : " + e);
+        } 
+        catch(Exception e) {
+            System.out.print("Something went wrong : " + e);
+        }
+        System.out.println(j);
+    }
+}
+Default output : CustomException: I don't want to print 18
+*****************************************************************************
 package com.tryPrograms;
 public class StringProgs {
     public static void main(String[] args) {
