@@ -581,10 +581,68 @@ Kumar : 2
 Pandey : 1
 ************************************************************************************************
 
+class Main {
+    public static void main(String[] args) {
+        reverseEachWordOfString("Java is good programming langauges"); 
+    }
+    static void reverseEachWordOfString(String input) {
+        String[] words = input.split(" ");
+        String reverse = "";
+        for (int i=0; i<words.length; i++) {
+            String word = words[i];
+            String nstr = "";
+            char ch;
+            for (int j=0; j<word.length(); j++) {
+                ch = word.charAt(j);
+                nstr = ch + nstr;
+            }
+            reverse = reverse + nstr+" ";
+        }
+        System.out.println(input);
+        System.out.println(reverse);
+    }
+}
+Java is good programming langauges
+avaJ si doog gnimmargorp seguagnal 
 ************************************************************************************************
-
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string : ");
+        String input = scanner.nextLine();
+        char ch;
+        String nstr = " ";
+        for (int i=0; i<input.length(); i++) {
+            ch = input.charAt(i);
+            nstr = ch + nstr;
+        }
+        System.out.print("Reversed string is : " +nstr);
+    }
+} 		
+Enter a string : Java is good programming langauges
+Reversed string is : seguagnal gnimmargorp doog si avaJ 
 ************************************************************************************************
-
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        String str = "malayalam";
+        Boolean flag = false;
+        int start = 0;
+        int end = str.length()-1;
+        while (start < end) {
+            if (str.charAt(start) != str.charAt(end))
+                flag = false;
+            else flag = true;
+                start++;
+                end--;
+        }
+        if (flag)
+            System.out.print("Palindrome");
+        else
+            System.out.print("Not Palindrome");
+    }
+}	==>	Palindrome
 ************************************************************************************************
 
 ************************************************************************************************
