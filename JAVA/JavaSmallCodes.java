@@ -1,23 +1,17 @@
 package com.basic;
-
 public class AddTwoMatrix {
     public static void main(String args[]) {
         int[][] first = { {1, 2}, {5, 10}, {2, 6} };
         int[][] second = { {2, 6}, {1, 2}, {5, 3} };
-
         int m = first.length;         // number of rows
         int n = first[0].length;      // number of columns
-
         int[][] sum = new int[m][n];
-
         System.out.println("Calculating sum of 2 matrices ...");
-
         for (int c = 0; c < m; c++) {
             for (int d = 0; d < n; d++) {
                 sum[c][d] = first[c][d] + second[c][d];
             }
         }
-
         System.out.println("Sum of 2 matrices:");
         for (int c = 0; c < m; c++) {
             for (int d = 0; d < n; d++) {
@@ -35,27 +29,20 @@ Sum of 2 matrices:
 7	9
 ******************************************************************
 package com.basic;
-
 import java.util.ArrayList;
-
 public class ArrayListExample1 {
-
 	public static void main(String[] args) {
-		// Declarations
 		ArrayList<String> list = new ArrayList<>();
 		list.add("John");
 		list.add("David");
 		list.add("Scott");
 		list.add("Smith");
 		System.out.println(list.size());
-		
-		// reading values from arraylist
 		for (String s : list)
 		{
 			System.out.println(s);
 		}
 	}
-
 }
 4
 John
@@ -64,9 +51,7 @@ Scott
 Smith
 ***********************************************
 package com.basic;
-
 public class EvenOrOddNumber {
-
 	public static void main(String[] args) {
 		int num = 10;
 		if (num % 2 == 0)
@@ -82,9 +67,7 @@ public class EvenOrOddNumber {
 Number is even number
 **************************************************
 package com.basic;
-
 public class BinarySearch {
-
 	public static void main(String[] args) {
 		int c, first, last, middle, n, search_element;
 		int array[] = { 100, 200, 300, 400, 500 };
@@ -113,11 +96,8 @@ public class BinarySearch {
 200 found at location 2.
 *********************************************************************************
 package com.basic;
-
 public class EvenAndOddNumbersinArray {
-
 	public static void main(String[] args) {
-
 		int a[] = { 10, 20, 15, 3, 5, 7, 8, 2, 5, 7};
 		int n = a.length;
 		System.out.println("Odd Numbers");
@@ -139,7 +119,6 @@ public class EvenAndOddNumbersinArray {
 			}
 		}
 	}
-
 }
 Odd Numbers
 15 3 5 7 5 7 
@@ -147,15 +126,10 @@ Even Numbers:
 10 20 8 2 
 *********************************************************************
 package com.basic;
-
 import java.util.ArrayList;
-
 public class ArrayListExample2 {
-
 	public static void main(String[] args) {
-		// Declararion
 		ArrayList<Object> list = new ArrayList<>();
-		// Adding values to array list
 		list.add("Welcome");
 		list.add(100);
 		list.add(10.5);
@@ -164,19 +138,15 @@ public class ArrayListExample2 {
 		System.out.println(list.size());
 		System.out.println(list.get(2));
 		System.out.println("Before inserting:" + list);
-		// Insert values into arraylist
 		list.add(1, "selenium");
 		System.out.println("After insertion:" + list);
-		// remove values from arraylist
 		list.remove(3);
 		System.out.println("After remove:" + list);
-		
 		for (Object i : list)
 		{
 			System.out.println(i);
 		}
 	}
-
 }
 10.5
 Before inserting:[Welcome, 100, 10.5, C, true]
@@ -189,15 +159,10 @@ C
 true
 ***********************************************************************
 package com.basic;
-
 import java.util.Random;
-
 public class GenerateRandonNumberssInGivenRange {
-
 	public static void main(String[] args) {
-
 		System.out.println("Randon integers between 0 and 50 using Random class :");
-		
 		Random random = new Random();
 		for (int i=0; i<=5; i++)
 		{
@@ -215,28 +180,41 @@ Randon integers between 0 and 50 using Random class :
 Random integers between 0 and 50 using Math.random():
 26 40 24 45 43 
 **********************************************************************
-package com.basic;
-
-import java.util.Arrays;
-
-public class BinarySearch {
-
-	public static void main(String[] args) {
-		int array[] = { 10, 20, 30, 40, 50};
-		System.out.println(Arrays.binarySearch(array, 30));
-	}
+import java.util.HashMap;
+import java.util.Set;
+class Main {
+    public static void main(String[] args) {
+        duplicateCharacterCount("Learn Java programming");
+    }
+    static void duplicateCharacterCount(String inputString) {
+        HashMap<Character, Integer> charCountMap = new HashMap<>();
+        char[] strArray = inputString.toLowerCase().toCharArray();
+        for (char c : strArray) {
+            if (c != ' ') {  // skip spaces
+                charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+            }
+        }
+        System.out.println("Duplicate Characters in: " + inputString);
+        for (char ch : charCountMap.keySet()) {
+            if (charCountMap.get(ch) > 1) {
+                System.out.println(ch + " : " + charCountMap.get(ch));
+            }
+        }
+    }
 }
-2
+Duplicate Characters in: Learn Java programming
+a : 4
+r : 3
+g : 2
+m : 2
+n : 2
 ********************************************************************
 package com.basic;
-
 public class BubbleSort {
-
 	public static void main(String[] args) {
 		int n, c, d, temp;
 		int array[] = {500, 300, 200, 400, 100 };
 		n = array.length;
-		
 		System.out.println("Array before Bubble Sort");
 		for (int i=0; i<n; i++)
 		{
@@ -270,11 +248,8 @@ Array After Bubble sort
 100 200 300 400 500 
 ***********************************************************************
 package com.basic;
-
 import java.util.Scanner;
-
 public class CountTheWords {
-
 	public static void main(String[] args) {
 		System.out.println("Enter the String: ");
 		Scanner sc = new Scanner(System.in);
@@ -289,36 +264,28 @@ public class CountTheWords {
 		}
 		System.out.println("Number of words in a string = " +count);
 	}
-
 }
 Enter the String: 
 Candidate is low to average in Python skill
 Number of words in a string = 8
 **************************************************************************
 package com.basic;
-
 public class CountCharacterOccurance {
-
 	public static void main(String[] args) {
 		String s = "Java is java again and again";
 		char c = 'a';
 		int count = s.length() - s.replace("a", "").length();
 		System.out.println("Number of occurances of a is : " + count);
-		
 	}
-
 }
 Number of occurances of a is : 9
 **********************************************************************
 package com.basic;
-
 public class GreatestOfThreeNumbers {
-
 	public static void main(String[] args) {
 		int a = 50;
 		int b = 100;
 		int c = 20;
-		
 		if (a > b && a > c)
 		{
 			System.out.println("a is greatest");
@@ -332,14 +299,11 @@ public class GreatestOfThreeNumbers {
 			System.out.println("c is greatest");
 		}
 	}
-
 }
 b is greatest
 *************************************************************
 package com.basic;
-
 public class IfElseCondition {
-
 	public static void main(String[] args) {
 		int age = 20;
 		if (age >= 18)
@@ -350,14 +314,11 @@ public class IfElseCondition {
 			System.out.println("Not Eligible for vote");
 		}
 	}
-
 }
 Eligible for vote
 ******************************************************
 package com.basic;
-
 public class IntegerToStr {
-
 	public static void main(String[] args) {
 		int i = 123;
 		String s = Integer.toString(i);
@@ -365,15 +326,12 @@ public class IntegerToStr {
 		s = String.valueOf(i);
 		System.out.println(s);
 	}
-
 }
 123
 123
 ******************************************************
 package com.basic;
-
 public class LinearSearch {
-
 	public static void main(String[] args) {
 		int array[] = { 100, 200, 300, 400, 500 };
 		int search_ele = 400;
@@ -389,14 +347,11 @@ public class LinearSearch {
 		if (c == array.length)
 			System.out.println(search_ele + " isn't present in array.");
 	}
-
 }
 400 is present at location 4.
 ************************************************************
 package com.basic;
-
 public class MaxMinElement {
-
 	public static void main(String[] args) {
 		int array[] = { 10, 100, 20, 50, 5, 60 };
 		int max = array[0];
@@ -423,9 +378,7 @@ Max element in array: 100
 Min element in array: 5
 ********************************************************
 package com.basic;
-
 public class DayOfWeek {
-
 	public static void main(String[] args) {
 		int day = 5;
 		if (day == 1)
@@ -458,9 +411,7 @@ public class DayOfWeek {
 Thursday
 *************************************************************************************
 package com.basic;
-
 public class CountDigits {
-
 	public static void main(String[] args) {
 		int count = 0;
 		int num = 123456;
@@ -475,14 +426,11 @@ public class CountDigits {
 Number of digits: 6
 ************************************************************************************
 package com.basic;
-
 public class NumberisPalindrome {
-
 	public static void main(String[] args) {
 		int lastDigit, sum=0, a;
 		int inputNumber = 171;
 		a = inputNumber;
-		
 		while (a > 0)
 		{
 			System.out.println("Inpput Number : " +a);
@@ -510,9 +458,7 @@ Digit: 1 was added to sum 170
 Number is palindrome 
 *********************************************************************************
 package com.basic;
-
 public class StringPalindrome {
-
 	public static void main(String[] args) {
 		String s = "dad";
 		int len = s.length();
@@ -535,9 +481,7 @@ dad
 Palindrone string
 ********************************************************************
 package com.basic;
-
 public class GreatestOfThreeNumbers {
-
 	public static void main(String[] args) {
 		int num = 10;
 		if (num > 0)
@@ -552,12 +496,9 @@ public class GreatestOfThreeNumbers {
 Number is positive
 ************************************************************
 package com.basic;
-
 import java.util.ArrayList;
 import java.util.HashSet;
-
 public class RemoveDuplicateEle {
-
     public static void main(String[] args) {
         ArrayList<String> listWtDuplicateEle = new ArrayList<>();
         listWtDuplicateEle.add("JAVA");
@@ -567,16 +508,10 @@ public class RemoveDuplicateEle {
         listWtDuplicateEle.add("JAVA");
         listWtDuplicateEle.add("STRUTS");
         listWtDuplicateEle.add("JSP");
-
         System.out.println("ArrayList with duplicate elements:");
         System.out.println(listWtDuplicateEle);
-
-        // Remove duplicates using HashSet
         HashSet<String> set = new HashSet<>(listWtDuplicateEle);
-
-        // Convert back to ArrayList
         ArrayList<String> listWODuplicateEle = new ArrayList<>(set);
-
         System.out.println("ArrayList after removing duplicate elements:");
         System.out.println(listWODuplicateEle);
     }
@@ -587,9 +522,7 @@ ArrayList after removing duplicate elements:
 [JAVA, SERVLETS, JSP, J2EE, STRUTS]
 ***************************************************************************
 package com.basic;
-
 public class RemoveJunk {
-
     public static void main(String[] args) {
     	String s = "å°?ç±³ä½“éªŒç‰ˆ latin string 01234567890";
     	String s1 = "@#$@#$@ testing #@$@#$@#$ Selenium !@#$@#$@# &&&& Java";
@@ -606,9 +539,7 @@ latinstring01234567890
 testingSeleniumJava
 *****************************************************************************
 package com.basic;
-
 public class StrWithoutSpace {
-
     public static void main(String[] args) {
     	String str = " Core Java selenium automation oops   			programming ";
     	String strWOSpace = str.replaceAll("\\s", "");
@@ -618,11 +549,8 @@ public class StrWithoutSpace {
 CoreJavaseleniumautomationoopsprogramming
 *************************************************************************
 package com.basic;
-
 import java.util.Scanner;
-
 public class ReverseChars {
-
     public static void main(String[] args) {
     	Scanner scan = new Scanner(System.in);
     	System.out.println("Please enter the string: ");
@@ -652,17 +580,13 @@ GreatestOfThreeNumbers
 srebmuNeerhTfOtsetaerG
 **************************************************************
 package com.basic;
-
 import java.util.Scanner;
-
 public class reverseEachWord {
-
     public static void main(String[] args) {
     	reverseEachWordOfString("Java Concept Of The Day");
     	reverseEachWordOfString("Java J2EE JSP Servlets Hibernate Struts");
     	reverseEachWordOfString("I am string not reversed");
     	reverseEachWordOfString("Reverse Me");
-
     }
     static void reverseEachWordOfString(String inputString)
     {
@@ -697,7 +621,6 @@ esreveR eM
 ------------------------------------
 *********************************************************************************
 public class ReverseNumbers {
-
     public static void main(String[] args) {
     	long num = 12345;
     	long rev = 0;
@@ -711,25 +634,20 @@ public class ReverseNumbers {
     	// With StringBuffer method
     	long num1 = 12345;
     	System.out.println(new StringBuffer(String.valueOf(num1)).reverse());
-    	
     }
 }
 Reversed num is: 54321
 54321
 ***********************************************************
 package com.basic;
-
 import java.util.Scanner;
-
 public class StringReverse {
-
     public static void main(String[] args) {
     	System.out.println("Enter the string: ");
     	Scanner sc = new Scanner(System.in);
     	String s = sc.nextLine();
     	int len = s.length();
     	String rev = "";
-    	
     	for (int i=len-1; i >= 0; i--)
     	{
     		rev = rev + s.charAt(i);
@@ -745,11 +663,8 @@ reffuBgnirtS
 reffuBgnirtS
 *********************************************************
 package com.basic;
-
 import java.util.Scanner;
-
 public class SearchNumInArray {
-
     public static void main(String[] args) {
     	int a[] = { 10, 20, 30, 40, 50 };
     	int num = 30;
@@ -772,11 +687,8 @@ public class SearchNumInArray {
 Element Found
 *************************************************************
 package com.basic;
-
 import java.util.Scanner;
-
 public class StrSearchInArray {
-
     public static void main(String[] args) {
     	String a[] = { "abc", "xyz", "pqr", "mno"};
     	String search_str = "xyz";
@@ -796,18 +708,6 @@ public class StrSearchInArray {
 }
 Element Found
 *************************************************************
-package com.basic;
-import java.util.Arrays;
-
-public class SearchNumArrayMethod {
-
-    public static void main(String[] args) {
-    	int array[] = { 10, 20, 30, 40, 50, 60 };
-    	System.out.println(Arrays.binarySearch(array, 50));
-    }
-}
-4
-*******************************************************
 package com.basic;
 
 public class SingleDimensionArray {
@@ -836,11 +736,8 @@ Print except 400
 100 200 300 
 *******************************************************
 package com.basic;
-
 import java.util.Arrays;
-
 public class SortArray {
-
     public static void main(String[] args) {
     	int data[] = { 4, 10, 2, 6, 1 };
     	Arrays.sort(data);
@@ -848,8 +745,6 @@ public class SortArray {
     	{
     		System.out.print(c + " ");
     	}
-    	
-    	// String array sorting
     	String data2[] = {"z", "a", "x"};
     	Arrays.sort(data2);
     	System.out.print("\n");
@@ -863,40 +758,31 @@ public class SortArray {
 a x z 
 ******************************************
 package com.basic;
-
 import java.util.Arrays;
-
 public class StringOps {
-
     public static void main(String[] args) {
     	String s = "welcome";
     	System.out.println(s.length()); // length
     	String s1 = "welcome";
     	String s2 = " to java";
     	System.out.println(s1.concat(s2));
-    	System.out.println("welcome".concat(" to java"));
-    	
+    	System.out.println("welcome".concat(" to java"));  	
     	s = "       welcome      ";
     	System.out.print(s);
     	System.out.println(s.trim());
     	System.out.println(s.charAt(4));
-    	
     	s = "welcome to java";
     	System.out.println(s.contains("java"));
     	System.out.println(s.contains("Java"));
-    	
     	s = "Selenium";
     	System.out.println(s.equals("SELENIUM"));
     	System.out.println(s.equalsIgnoreCase("SELENIUM"));   
-    	
     	s = "welcome to java";
     	System.out.println(s.replace('e', 'a'));
     	System.out.println(s.replace("java", "selenium"));
-    	
     	s = "Welcome";
     	System.out.println(s.substring(2, 4));
     	System.out.println(s.substring(4, 7));
-    	
     	s = "WelCome";
     	System.out.println(s.toLowerCase());
     	System.out.println(s.toUpperCase());
@@ -919,23 +805,17 @@ welcome
 WELCOME
 *************************************************************
 package com.basic;
-
 import java.util.Arrays;
-
 public class GreatestOfThreeNumbers {
-
     public static void main(String[] args) {
     	String a = "Hello";
     	String b = "World";
-    	
     	System.out.println("Before swapping");
     	System.out.println("The value of a is: " +a);
     	System.out.println("The value of b is: " +b);
-    	
     	a = a + b;
     	b = a.substring(0, a.length() - b.length());
     	a = a.substring(b.length());
-    	
     	System.out.println("The value of a and b after swapping is: ");
     	System.out.println("The value of a is: " +a);
     	System.out.println("The value of a is: " +b);
@@ -950,9 +830,7 @@ The value of a is: Hello
 ******************************************************************************
 package com.basic;
 import java.util.Arrays;
-
 public class ArrayEleSum {
-
     public static void main(String[] args) {
     	int[] array = { 10, 20, 30, 40, 50, 10 };
     	int sum = 0;
@@ -967,9 +845,7 @@ Sum of array elements is: 160
 *********************************************************************
 package com.basic;
 import java.util.Arrays;
-
 public class SwapValues {
-
     public static void main(String[] args) {
     	int x = 5;
     	int y = 10;
@@ -996,12 +872,9 @@ x = 10 and y = 5
 ****************************************************
 package com.basic;
 import java.util.Arrays;
-
 public class SwitchStmt {
-
     public static void main(String[] args) {
     	int day = 10;
-    	
     	switch (day)
     	{
     	case 1:
@@ -1028,16 +901,13 @@ public class SwitchStmt {
     	default:
     		System.out.println("Invalid week number");
     	}
-    	
     }
 }
 Invalid week number
 ********************************************************************
 package com.basic;
 import java.util.Arrays;
-
 public class TwoDimArray {
-
     public static void main(String[] args) {
     	int a[][] = new int[3][2];
     	a[0][0] = 100;
