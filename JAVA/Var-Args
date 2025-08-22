@@ -1,50 +1,94 @@
-class Test {
-    public static void m1(int... x) {
-        System.out.println("var-arg method");
-    }
+Butterfly shuffle:
+class Main {
     public static void main(String[] args) {
-        m1();
-        m1(10,20);
-        m1(10,20,30,40);
-    }
-}
-OUTPUT -
-var-arg method
-var-arg method
-var-arg method
-
-class Test {
-    public static void main(String[] args) {
-        sum();
-        sum(10,20);
-        sum(10,20,30);
-        sum(10,20,30,40);
-    }
-    public static void sum(int... x) {
-        int total=0;
-        for(int x1:x)
-        {
-            total = total + x1;
+        int a[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+        int len = a.length/2;
+        for (int i=len-1; i>=0; i--) {
+            System.out.println(a[i]);
         }
-            System.out.println("The Sum: "+total);
+        for (int i=a.length-1; i>=len; i--)
+            System.out.println(a[i]);
     }
 }
-OUTPUT -
-The Sum: 0
-The Sum: 30
-The Sum: 60
-The Sum: 100
+5
+4
+3
+2
+1
+0
+9
+8
+7
+6
+******************************************************************************
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
 
-public class Main
-{
+class Main {
+
+    public int binarySearch(int[] inputArr, int key) {
+        int start=0;
+        int end = inputArr.length-1;
+        while (start <= end) {
+            int mid = (start+end)/2;
+            if (key == inputArr[mid])
+                return mid;
+            if (key < inputArr[mid])
+                end = mid - 1;
+            else
+                start = mid + 1;
+        }
+         return -1;
+    }
     public static void main(String[] args) {
-        for (int i=0; i<args.length; i++){
-            System.out.println(args[i]);
+        Main mbs = new Main();
+        int[] arr = {2, 4, 6, 8, 10, 12, 14, 16};
+        System.out.println("Key 14's position: "+mbs.binarySearch(arr, 14));
+        int[] arr1 = {6,34,78,123,432,900};
+        System.out.println("Key 432's position: "+mbs.binarySearch(arr1, 432));
+    }
+}
+Key 14's position: 6
+Key 432's position: 4
+******************************************************************************
+class Main {
+public static int[] removeDuplicates(int[] input){
+    int j = 0;
+    int i = 1;
+    if(input.length < 2){
+        return input;
+        }
+         while(i < input.length){
+            if(input[i] == input[j]){
+                i++;
+    } else{
+        input[++j] = input[i++];
+    } 
+}
+    int[] output = new int[j+1];
+     for(int k=0; k<output.length; k++){
+        output[k] = input[k];
+        }
+     return output;
+ }
+public static void main(String a[]){
+     int[] input1 = {2,3,6,6,8,9,10,10,10,12,12};
+     int[] output = removeDuplicates(input1);
+     System.out.print("List After removeDuplicates : ");
+     for(int i:output){
+        System.out.print(i+" ");
         }
     }
 }
-java Test A B C
-A B C
+List After removeDuplicates : 2 3 6 8 9 10 12 
+******************************************************************************
 
+******************************************************************************
 
+******************************************************************************
 
+******************************************************************************
+
+******************************************************************************
+
+******************************************************************************
