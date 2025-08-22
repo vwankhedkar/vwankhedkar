@@ -125,4 +125,102 @@ class Test {
         System.out.println(d);
     }
 }
+**************************************************************
+    class Test {
+    public static void m1(int... x) {
+        System.out.println("var-arg method");
+    }
+    public static void main(String[] args) {
+        m1();
+        m1(10,20);
+        m1(10,20,30,40);
+    }
+}
+OUTPUT -
+var-arg method
+var-arg method
+var-arg method
+
+class Test {
+    public static void main(String[] args) {
+        sum();
+        sum(10,20);
+        sum(10,20,30);
+        sum(10,20,30,40);
+    }
+    public static void sum(int... x) {
+        int total=0;
+        for(int x1:x)
+        {
+            total = total + x1;
+        }
+            System.out.println("The Sum: "+total);
+    }
+}
+OUTPUT -
+The Sum: 0
+The Sum: 30
+The Sum: 60
+The Sum: 100
+
+public class Main
+{
+    public static void main(String[] args) {
+        for (int i=0; i<args.length; i++){
+            System.out.println(args[i]);
+        }
+    }
+}
+java Test A B C
+A B C
+
+*****************************************************************
+class Test {
+    public static void m1(int... x) {
+        System.out.println("var-arg method");
+    }
+    public static void main(String[] args) {
+        m1();
+        m1(10,20);
+        m1(10,20,30,40);
+    }
+}
+OUTPUT -
+var-arg method
+var-arg method
+var-arg method
+
+class Test {
+    public static void main(String[] args) {
+        sum();
+        sum(10,20);
+        sum(10,20,30);
+        sum(10,20,30,40);
+    }
+    public static void sum(int... x) {
+        int total=0;
+        for(int x1:x)
+        {
+            total = total + x1;
+        }
+            System.out.println("The Sum: "+total);
+    }
+}
+OUTPUT -
+The Sum: 0
+The Sum: 30
+The Sum: 60
+The Sum: 100
+
+public class Main
+{
+    public static void main(String[] args) {
+        for (int i=0; i<args.length; i++){
+            System.out.println(args[i]);
+        }
+    }
+}
+java Test A B C
+A B C
+
 
