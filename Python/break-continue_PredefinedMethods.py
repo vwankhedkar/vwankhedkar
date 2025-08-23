@@ -103,3 +103,12 @@ C:\Users\VWankhedkar\PycharmProjects\Practise-Proj\venv\Scripts\python.exe C:\Us
 3
 4
 *********************************************************************
+import numpy as np
+rows = 3
+cols = 3
+random_matrix = np.random.rand(rows, cols)
+print("Random Matrix : ",random_matrix)
+Random Matrix :  [[0.1908944  0.05831195 0.04394315]
+ [0.28796139 0.65179879 0.74098046]
+ [0.86922028 0.4207848  0.64469013]]
+**********************************************************
