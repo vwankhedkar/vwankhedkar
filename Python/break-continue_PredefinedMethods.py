@@ -112,3 +112,16 @@ Random Matrix :  [[0.1908944  0.05831195 0.04394315]
  [0.28796139 0.65179879 0.74098046]
  [0.86922028 0.4207848  0.64469013]]
 **********************************************************
+import random
+import string
+def generate_password(length, include_digits=True, include_special_chars=True):
+    characters = string.ascii_letters
+    if include_digits:
+        characters += string.digits
+    if include_special_chars:
+        characters += string.punctuation
+    password = "".join(random.choice(characters) for _ in range(length))
+    return password
+password_length=12
+print("Generated password:", generate_password(password_length))
+Generated password: h6fRPl6;1VTo
