@@ -125,3 +125,31 @@ def generate_password(length, include_digits=True, include_special_chars=True):
 password_length=12
 print("Generated password:", generate_password(password_length))
 Generated password: h6fRPl6;1VTo
+**************************************************************
+import statistics
+data = [1,2,3,4,5]
+std_dev = statistics.stdev(data)
+print("Standard deviation : ", std_dev)
+Standard deviation :  1.5811388300841898
+***************************************************************
+import math
+numbers = [24, 36, 48, 60, 72]
+gcd = math.gcd(*numbers)
+print("GCD of the numbers:", gcd)    ---->    GCD of the numbers: 12
+*************************************************************************
+import random
+random_list = random.sample(range(1, 100), 5)
+print("Random list:", random_list)
+SET-10
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+   
