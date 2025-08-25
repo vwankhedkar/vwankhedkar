@@ -800,8 +800,28 @@ class Main {
 }
 1 2 3 5 7 9 10 12
 ****************************************************************************************************************
-
-
+import java.util.Arrays;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 3, 4, 5, 5, 6 }; 
+        int[] uniqueArray = removeDuplicates(arr); 
+        System.out.print("Array with duplicates removed: ");
+        for (int num : uniqueArray) {
+            System.out.print(num + " ");
+        }
+    }
+    public static int[] removeDuplicates(int[] arr) {
+        int[] uniqueArray = new int[arr.length];
+        int j = 0;
+        for (int i=0; i<arr.length-1; i++) {
+            if (arr[i] != arr[i+1])
+                uniqueArray[j++] = arr[i];
+        }
+        uniqueArray[j++] = arr[arr.length-1];
+        return Arrays.copyOf(uniqueArray, j);
+    }
+}
+Array with duplicates removed: 1 2 3 4 5 6 
 ****************************************************************************************************************
 
 
