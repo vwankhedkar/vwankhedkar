@@ -15,6 +15,7 @@ Canada
 //table[@id='customers']//tr//td[contains(text(), 'Canada')]/preceding-sibling::td[1]
 Italy
 //table[@id='customers']/child::tbody/child::tr[7]/td[3]
+//table[@id='customers']//tbody//td[contains(text(), 'Italy')]
 Get 3rd row values
 //table[@id='contactList']/child::tbody/tr[4]/child::td
 Austria
