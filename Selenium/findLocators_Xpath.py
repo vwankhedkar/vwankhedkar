@@ -12,6 +12,7 @@ tablename checkbox
 //td[text()='Maria Anders']/preceding-sibling::td/child::input
 Canada
 //td[text()='Yoshi Tannamuri']/following-sibling::td[1]
+//table[@id='customers']//tr//td[contains(text(), 'Canada')]/preceding-sibling::td[1]
 Italy
 //table[@id='customers']/child::tbody/child::tr[7]/td[3]
 Get 3rd row values
