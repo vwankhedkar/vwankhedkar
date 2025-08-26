@@ -823,6 +823,58 @@ class Main {
 }
 Array with duplicates removed: 1 2 3 4 5 6 
 ****************************************************************************************************************
+import java.util.Arrays;
+import java.util.Collections;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = { 64, 34, 25, 12, 22, 11, 90 }; 
+        
+        bubbleSort(arr); 
+        
+        System.out.println("Sorted array: " + Arrays.toString(arr));
+        System.out.println("Max in an array: " + arr[arr.length - 1]);
+        System.out.println("Second Max in an array: " + arr[arr.length - 2]);
+        // Reverse manually
+        System.out.print("Reverse array: [");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i]);
+            if (i != 0) System.out.print(", ");
+        }
+        System.out.println("]");
+    }
+
+    // Bubble Sort
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+Sorted array: [11, 12, 22, 25, 34, 64, 90]
+Max in an array: 90
+Second Max in an array: 64
+Reverse array: [90, 64, 34, 25, 22, 12, 11]
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
+
+
+****************************************************************************************************************
 
 
 ****************************************************************************************************************
