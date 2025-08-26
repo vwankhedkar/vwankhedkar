@@ -67,6 +67,29 @@ versions = ["v1.2.3.4.112", "v2.3.6.7.111"]
 latest = find_latest_version(versions)
 print("Latest version:", latest)    ----------->    Latest version: v2.3.6.7.111
 *************************************************************************
+import re
+
+def find_latest_version(versions):
+    version_pat = r'v(\d+(?:\.\d+)*)'
+    extracted_versions = []
+
+    for v in versions:
+        match = re.match(version_pat, v)
+        if match:
+            # Convert "1.2.3.4.112" → (1,2,3,4,112)
+            version_tuple = tuple(map(int, match.group(1).split(".")))
+            extracted_versions.append((version_tuple, v))
+
+    if extracted_versions:
+        latest = max(extracted_versions, key=lambda x: x[0])
+        return latest[1]   # return original string (e.g. "v2.3.6.7.111")
+    return None
+
+versions = ["v1.2.3.4.112", "v2.3.6.7.111"]
+latest = find_latest_version(versions)
+print("Latest version:", latest)
+Latest version: v2.3.6.7.111
+*********************************************************
 str = "python"
 rev_str = ""
 cnt = len(str)
