@@ -101,6 +101,15 @@ def generate_combinations(elements, current, index):
         current.pop()
 str_list = ["a", "b", "c"]
 generate_combinations(str_list, [], 0)
+
+s = ["a", "b", "c"]
+str1 = []
+ln = len(s)
+str1 = [s[i]+" "+s[j]+" "+s[k] for i in range(ln) for j in range(ln) for k in range(ln) if i!=j and j!=k and i!=k]
+print(str1)
+print(", ".join(str1))
+['a b c', 'a c b', 'b a c', 'b c a', 'c a b', 'c b a']
+a b c, a c b, b a c, b c a, c a b, c b a
 *************************************************************************
 from itertools import combinations
 str_list = ["a", "b", "c"]
