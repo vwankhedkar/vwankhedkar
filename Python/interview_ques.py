@@ -41,6 +41,19 @@ for i, val in enumerate(arr):
     index = i + 1
 print(f"The number {num} should be inserted at index {index} to maintain sorted order.")
 
+arr = [1, 3, 4, 5, 7, 8]
+val = 6
+index = 0
+arr.sort()
+for i in range(1,len(arr)-1):
+    if val > arr[i]:
+        index = i+1
+print(index)
+arr.insert(index, val)
+print(arr)
+4
+[1, 3, 4, 5, 6, 7, 8]
+*****************************************************************
 import bisect
 index = bisect.bisect_left(arr, num)
 print(print(f"The number {num} should be inserted at index {index} to maintain sorted order."))
