@@ -324,9 +324,67 @@ class Main {
 Enter a string : aabbcccdd
 Output: a2b2c3d2
 *************************************************************************
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+class Main {
+    public void mergeListRemoveDuplicates(List<String> list1, List<String> list2) {
+        System.out.println("List1 is :: "+list1);
+        System.out.println("List2 is :: "+list2);
+        list1.addAll(list2);
+        System.out.println("After merging 2 lists: "+list1);
+        List<String> uniqueList = new ArrayList<>();
+        for (String name : list1)
+            if (!uniqueList.contains(name))
+               uniqueList.add(name);
+        System.out.println("UniqueList names : "+uniqueList);
+    }
+    public static void main(String[] args) {
+        List<String> list1 = new ArrayList<>(Arrays.asList("A","B","C","D"));
+        List<String> list2 = new ArrayList<>(Arrays.asList("P","Q","C","D"));
+        Main example = new Main();
+        example.mergeListRemoveDuplicates(list1, list2);
+    }
+}
+List1 is :: [A, B, C, D]
+List2 is :: [P, Q, C, D]
+After merging 2 lists: [A, B, C, D, P, Q, C, D]
+UniqueList names : [A, B, C, D, P, Q]
 *************************************************************************
-
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+    public List<String> arrayFirstLastSameEle() {
+        List<String> nameList = new ArrayList<>();
+        nameList.add("A");
+        nameList.add("B");
+        nameList.add("C");
+        nameList.add("D");
+        nameList.add("E");
+        nameList.add("level");
+        nameList.add("radar");
+        nameList.add("hello");
+        System.out.println("Original List : " + nameList);
+        List<String> newList = new ArrayList<>();
+        for (String name : nameList) {
+            if (name == null || name.isEmpty())
+                continue;
+            char first = name.charAt(0);
+            char last = name.charAt(name.length() - 1);
+            if (first == last) {
+                newList.add(name);
+            }
+        }
+        System.out.println("Filtered List (first == last): " + newList);
+        return newList;
+    }
+    public static void main(String[] args) {
+        Main example = new Main();
+        example.arrayFirstLastSameEle();
+    }
+}
+Original List : [A, B, C, D, E, level, radar, hello]
+Filtered List (first == last): [A, B, C, D, E, level, radar]
 *************************************************************************
 
 *************************************************************************
