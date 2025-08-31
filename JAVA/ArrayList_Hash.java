@@ -386,14 +386,133 @@ class Main {
 Original List : [A, B, C, D, E, level, radar, hello]
 Filtered List (first == last): [A, B, C, D, E, level, radar]
 *************************************************************************
-
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+    public String ArrayLongestName(List<String> nameList) {
+        String longestName = null;
+        int max = 0;
+        for (String name : nameList) {
+            int curr = name.length();
+            if (curr > max) {
+                max = curr;
+                longestName = name;
+            }
+    }
+        System.out.println("longestName is : " + longestName);
+        return longestName;
+    }
+    public static void main(String[] args) {
+        List<String> sampleNames = new ArrayList<>(Arrays.asList("Vaish","Sandip","Sumit","Hetarth","Abhyant","Swaraj"));
+        Main example = new Main();
+        example.ArrayLongestName(sampleNames);
+    }
+}
+longestName is : Hetarth
+*************************************************************************
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+    public List<Integer> reverseArrayList(List<Integer> list) {
+        System.out.println("Original list : "+list);
+        int size = list.size();
+        for (int i=0; i<size/2; i++) {
+            Integer temp = list.get(i);
+            list.set(i, list.get(size-1-i));
+            list.set(size-1-i, temp);
+        }
+        System.out.println("ReversedList : "+list);
+        return list;
+    }
+    public static void main(String[] args) {
+        Main example = new Main();
+        List<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+        example.reverseArrayList(numbers);
+    }
+}
+Original list : [10, 20, 30, 40, 50]
+ReversedList : [50, 40, 30, 20, 10]
+*************************************************************************
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+    public List<String> findDuplicateWOSet(List<String> inputList) {
+        inputList.add("Vaishali");
+        inputList.add("Sandeep");
+        inputList.add("Sumit");
+        inputList.add("Shiv");
+        inputList.add("Shambhu");
+        inputList.add("Chiku");
+        inputList.add("Vaishali");
+        inputList.add("Shiv");
+        System.out.println("Originaal List : "+inputList);
+        String[] arrayL = inputList.toArray(new String[0]);
+        System.out.println("To ArrayList : "+Arrays.toString(arrayL));
+        List<String> uniqueList = new ArrayList<String>();
+        List<String> duplicateList = new ArrayList<String>();
+        for (String name : inputList) {
+            if (uniqueList.contains(name)) {
+                if (!duplicateList.contains(name))
+                   duplicateList.add(name);
+            }
+            else
+                uniqueList.add(name);
+        }
+        System.out.println("Duplicate list is : "+duplicateList);
+        return duplicateList;
+    }
+    public static void main(String[] args) {
+        Main example = new Main();
+        example.findDuplicateWOSet(new ArrayList<String>());
+    }
+}
+Originaal List : [Vaishali, Sandeep, Sumit, Shiv, Shambhu, Chiku, Vaishali, Shiv]
+To ArrayList : [Vaishali, Sandeep, Sumit, Shiv, Shambhu, Chiku, Vaishali, Shiv]
+Duplicate list is : [Vaishali, Shiv]
+*************************************************************************
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+    public List<String> filteringList() {
+        List<String> inputList = new ArrayList<String>();
+        inputList.add("Vaishali");
+        inputList.add("Sandeep");
+        inputList.add("Sumit");
+        inputList.add("Hetarth");
+        inputList.add("Shambhu");
+        inputList.add("Chiku");
+        inputList.add("Vaishali");
+        List<String> inputList1 = new ArrayList<String>();
+        for (String name : inputList) {
+            if (name != null && !name.isEmpty()) {
+                String firstLetter = name.substring(0,1).toUpperCase();
+                if (firstLetter.equals("S") || firstLetter.equals("V"))
+                    inputList1.add(name);
+            }
+        }
+        System.out.println("Names starting with S and V are : "+inputList1);
+        return inputList1;
+    }
+    public static void main(String[] args) {
+        Main example = new Main();
+        example.filteringList();
+    }
+}
+Names starting with S and V are : [Vaishali, Sandeep, Sumit, Shambhu, Vaishali]
+*************************************************************************
+*************************************************************************
 *************************************************************************
 
 *************************************************************************
-*************************************************************************
-
-*************************************************************************
-
 *************************************************************************
 *************************************************************************
 
