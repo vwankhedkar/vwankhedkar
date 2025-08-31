@@ -171,6 +171,43 @@ public static Set<Integer> findCommonElements(int[] array1,
    } 
 }		Common elements: [4, 5]
 *************************************************************************
+import java.util.ArrayList;
+import java.util.List;
+class Main {
+    public List<List<String>> findIntersection() {
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+        list1.add("A");
+        list1.add("B");
+        list1.add("C");
+        list1.add("D");
+        list1.add("E");
+        System.out.println("List names : "+list1);
+        list2.add("P");
+        list2.add("Q");
+        list2.add("R");
+        list2.add("D");
+        list2.add("E");
+        System.out.println("List names : "+list2);
+        ArrayList<String> common = new ArrayList<>();
+        for (String name : list1) 
+            if (list2.contains(name))
+                common.add(name);
+        System.out.println("Common List names : "+common);
+        List<List<String>> bothLists = new ArrayList<>();
+        bothLists.add(list1);
+        bothLists.add(list2);
+        return bothLists;
+        }
+    public static void main(String[] args) {
+        Main example = new Main();
+        example.findIntersection();
+    }
+}
+List names : [A, B, C, D, E]
+List names : [P, Q, R, D, E]
+Common List names : [D, E]
+******************************************************************************
 import java.util.HashSet;
 class Main {
     public static void main(String[] args) {
