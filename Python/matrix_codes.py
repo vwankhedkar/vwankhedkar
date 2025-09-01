@@ -65,3 +65,27 @@ nums = [
 print(Solution().longestIncreasingPath(nums))
 
 OUTPUT: 4
+************************************************************************************
+def matrix_reverse(s, n=4):
+    matrix = [[None]*n for _ in range(n)]
+    index = 0
+    for i in range(n):
+        for j in range(n):
+            matrix[i][j] = s[index]
+            index += 1
+    for row in matrix:
+        print(row[:])
+    print("Final Reverse matrix is : ")
+    for row in matrix:
+        print(row[::-1])
+        
+matrix_reverse("ABCDEFGHIJKLMNOP", 4)
+['A', 'B', 'C', 'D']
+['E', 'F', 'G', 'H']
+['I', 'J', 'K', 'L']
+['M', 'N', 'O', 'P']
+Final Reverse matrix is : 
+['D', 'C', 'B', 'A']
+['H', 'G', 'F', 'E']
+['L', 'K', 'J', 'I']
+['P', 'O', 'N', 'M']
