@@ -509,6 +509,42 @@ class Main {
 }
 Names starting with S and V are : [Vaishali, Sandeep, Sumit, Shambhu, Vaishali]
 *************************************************************************
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+class Main {
+    public void frequencyWords() {
+        List<String> nameList = new ArrayList<String>();
+        nameList.add("Vaishali");
+        nameList.add("Sandeep");
+        nameList.add("Sumit");
+        nameList.add("Hetarth");
+        nameList.add("Shambhu");
+        nameList.add("Chiku");
+        nameList.add("Vaishali");
+        Map<String, Integer> freqMap = new HashMap<String, Integer>();
+        for (String name : nameList) {
+            if (freqMap.containsKey(name))
+               freqMap.put(name, freqMap.get(name)+1);
+            else
+               freqMap.put(name, 1);
+        }
+        for (Map.Entry<String, Integer> entry : freqMap.entrySet())
+            System.out.println(entry.getKey() + " Occurs : "+ entry.getValue()+" times");
+    }
+    public static void main(String[] args) {
+        Main example = new Main();
+        example.frequencyWords();
+    }
+}
+Sandeep Occurs : 1 times
+Hetarth Occurs : 1 times
+Vaishali Occurs : 2 times
+Shambhu Occurs : 1 times
+Sumit Occurs : 1 times
+Chiku Occurs : 1 times
 *************************************************************************
 *************************************************************************
 
