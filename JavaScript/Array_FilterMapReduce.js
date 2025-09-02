@@ -31,7 +31,6 @@ const nestedArray = [1, [2, [3, 4], 5], 6];
 console.log(flattenArray(nestedArray));
 [ 1, 2, 3, 4, 5, 6 ]
 ********************************************************************
-const arr = [15, 7, 20, 3, 45];
 function findSecondLargest(arr) {
 let largest = -Infinity;
 let secondLargest = -Infinity;
@@ -48,6 +47,14 @@ secondLargest = num;
 }
 const numbers = [12, 35, 1, 10, 34, 1];
 console.log(findSecondLargest(numbers)); `==>    34
+function findSecondLargest(arr) {
+    const uniqArr = [...new Set(arr)];
+    if (uniqArr.length<2) return null;
+    uniqArr.sort((a,b) => b-a);
+    return uniqArr[1];
+}
+const numbers = [12, 35, 1, 10, 34, 34, , 35, 1];
+console.log(findSecondLargest(numbers));    ==> 34
 ********************************************************************
 
 ********************************************************************
