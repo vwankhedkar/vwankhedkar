@@ -143,7 +143,7 @@ re.search(): Searches for the pattern anywhere in the string.
  re.match(): Checks for a match at the beginning.
  re.findall(): Returns all matching substrings.
  re.sub(): Replaces substrings matching the pattern.
-
+****************************************************************************************
 Regular Expressions (Regex):
 import re
 stmt = "Python is interpreted language. I love learning python"
@@ -153,7 +153,7 @@ print(match.group())
 C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\try.py 
 <re.Match object; span=(48, 54), match='python'>
 python
-
+****************************************************************************************
 import re
 mail = "user@example.com"
 pattern = r"^[a-zA-Z0-9_._-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
@@ -162,7 +162,7 @@ if re.match(pattern, mail):
 else:
     print("Invalid email")
 OUTPUT -----  Valid email
-
+****************************************************************************************
 import re
 mail = "user@example.com"
 pattern = r"^[a-zA-Z0-9_._-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
@@ -172,14 +172,24 @@ if email:
 else:
     print("Invalid email")
 OUTPUT    -------------    Valid email: user@example.com
-
+***************************************************************************************
 import re
 text = "The event is on 10/05/2025."
 date = re.search(r"\d{2}/\d{2}/\d{4}", text)
 if date:
     print("Found date: ", date.group())
 OUTPUT     -------------    Found date:  10/05/2025
-
+****************************************************************************************
+import re
+pattern = r'^(3[01]|[1-2][0-9]|0?[1-9])/(1[0-2]|0?[1-9])/(([0-9]{2})?[0-9]{2})$'
+regex = re.compile(pattern)
+date = "01/12/2022"
+if regex.match(date):
+    print("Valid date")
+else:
+    print("Invalid date")
+Valid date
+****************************************************************************************
 import re
 phone = "(123)456-7980"
 pattern = r"\(\d{3}\)\d{3}-\d{4}"
