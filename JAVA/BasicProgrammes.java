@@ -753,11 +753,103 @@ Not Palindrome
 Reverse of number is : 1234321
 Palindrome
 ************************************************************************************************
-
+import java.util.Scanner;
+ public class Main {
+    public static void main(String[] args) {
+        int n = new java.util.Scanner(System.in).nextInt();
+        int t = n, sum=0;
+        while(t!=0){ int d=t%10; sum += d*d*d; t/=10; }
+        System.out.println(sum==n ? "Armstrong" : "Not Armstrong");
+    }
+ }	153
+Armstrong
 ************************************************************************************************
-
+import java.util.Scanner;
+ public class Main {
+    public static void main(String[] args) {
+        int num=new java.util.Scanner(System.in).nextInt();
+        if (num<2) {System.out.println("Not a prime no");}
+        for (int i=2; i*i<=num;i++) 
+        if (num%i==0) {System.out.println("Not a prime number"); return;}
+        System.out.println("It's a prime number");
+    }
+ }			12
+Not a prime
 ************************************************************************************************
+class Main {
+    static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i=2; i*i<=n; i++)
+            if (n % i == 0)
+               return false;
+            return true;
+    }
+    public static void main(String[] args) {
+        System.out.print("Enter number :");
+        int n = new java.util.Scanner(System.in).nextInt();
+        for (int i=2; i<=n; i++) 
+            if (isPrime(i)) System.out.print(i + " ");
+    }
+}	Enter number :17
+2 3 5 7 11 13 17 
 ************************************************************************************************
+Square pattern (****)
+ public class Main {
+    public static void main(String[] args) {
+        int n=4;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+ }
+ Right triangle pattern
+ public class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+ }
+ Inverted triangle pattern
+ public class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+ }
+ Pyramid pattern
+ public class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++){
+            for(int s=1;s<=n-i;s++) System.out.print(" ");
+            for(int j=1;j<=2*i-1;j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+ }
+ Diamond pattern
+ public class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++){
+            for(int s=1;s<=n-i;s++) System.out.print(" ");
+            for(int j=1;j<=2*i-1;j++) System.out.print("*");
+            System.out.println();
+        }
+        for(int i=n-1;i>=1;i--){
+            for(int s=1;s<=n-i;s++) System.out.print(" ");
+            for(int j=1;j<=2*i-1;j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+ }
 ************************************************************************************************
 
 ************************************************************************************************
