@@ -546,6 +546,24 @@ Shambhu Occurs : 1 times
 Sumit Occurs : 1 times
 Chiku Occurs : 1 times
 *************************************************************************
+import java.util.*;
+class Student {
+    int id; String name; Student(int id, String n) {
+        this.id = id; this.name = n; }}
+class SMS {
+    Map<Integer,Student> map = new HashMap<>();
+    void add(Student s) {map.put(s.id,s);}
+    Student get(int id) { return map.get(id); }
+}
+class Main {
+    public static void main(String[] args) {
+        SMS s = new SMS();
+        s.add(new Student(1, "Max"));
+        System.out.println(s.get(1).id);
+        System.out.println(s.get(1).name);
+    }
+}	1
+Max
 *************************************************************************
 
 *************************************************************************
