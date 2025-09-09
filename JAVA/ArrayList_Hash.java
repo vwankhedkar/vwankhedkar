@@ -565,9 +565,53 @@ class Main {
 }	1
 Max
 *************************************************************************
-
+import java.util.*;
+ class Employee { int id; String name; Employee(int id,String n){this.id=id;this.name=n;} }
+class EMS {
+    Map<Integer, Employee> map = new HashMap<>(); 
+    void add(Employee e) {map.put(e.id,e); } 
+    Employee get(int id) {return map.get(id);}
+}
+class Main {
+    public static void main(String[] args) {
+        EMS s = new EMS();
+        s.add(new Employee(1,"Ana"));
+        System.out.println(s.get(1).name);
+}  }		===>		Ana
 *************************************************************************
+import java.util.*;
+class Account {
+    private int balance;
+    Account(int bal) {this.balance=bal; }
+    synchronized void deposit(int amt) { balance+=amt; }
+    synchronized boolean withdraw(int amt) 
+    { if (amt<=balance) {
+        balance-=amt; return true; } return false; } 
+        synchronized int balance() { return balance; }} 
+class Main {
+    public static void main(String[] args) {
+        Account acc=new Account(1000);
+        acc.deposit(500); acc.withdraw(200);
+        System.out.println(acc.balance());
+    }
+}		===>		1300
 *************************************************************************
+ import java.util.*;
+ class Book { String id,title; boolean issued; Book(String id,String t){this.id=id;this.title=t;} }
+ class Library {
+    Map<String,Book> books=new HashMap<>();
+    void add(Book b){ books.put(b.id,b); }
+    boolean issue(String id){ Book b=books.get(id); if(b!=null && !b.issued){ b.issued=true; return true; } 
+    return false; }
+    void list(){ books.values().forEach(b->System.out.println(b.id+":"+b.title+":"+b.issued)); }
+ }
+ public class Main {
+    public static void main(String[] args) {
+        Library lib=new Library(); lib.add(new Book("1","Java Basics")); lib.add(new Book("2","DSA"));
+        lib.issue("1"); lib.list();
+    }
+ }			==> 1:Java Basics:true
+2:DSA:false
 *************************************************************************
 
 *************************************************************************
