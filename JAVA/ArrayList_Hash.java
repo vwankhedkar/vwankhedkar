@@ -746,10 +746,45 @@ Producer–Consumer problem using Threads
         producer.join(); consumer.join();
     }
  }
+Consumed 1
+Produced 1
+Produced 2
+Consumed 2
+Consumed 3
+Produced 3
+Produced 4
+Produced 5
+Consumed 4
+Consumed 5
 *************************************************************************
-
+//  LRU Cache implementation using LinkedHashMap
+ import java.util.*;
+ class LRU<K,V> extends LinkedHashMap<K,V>{
+    private final int cap;
+    LRU(int cap){ super(cap, 0.75f, true); this.cap=cap; }
+    protected boolean removeEldestEntry(Map.Entry<K,V> e){ return size()>cap; }
+ }
+ public class Main {
+    public static void main(String[] args) {
+        LRU<Integer,Integer> cache=new LRU<>(2);
+        cache.put(1,1); cache.put(2,2); cache.get(1); cache.put(3,3);
+        System.out.println(cache.keySet());
+    }
+}		==>		[1, 3]
 *************************************************************************
-
+import java.util.*;
+ public class Main {
+    public static void main(String[] args) {
+        String s="abcdeabcbb";
+        int l=0, best=0; Map<Character,Integer> pos=new HashMap<>();
+        for(int r=0;r<s.length();r++){
+            char c=s.charAt(r);
+            if(pos.containsKey(c) && pos.get(c)>=l) l=pos.get(c)+1;
+            pos.put(c,r); best=Math.max(best, r-l+1);
+        }
+        System.out.println(best+" "+pos);
+    }
+ }	==>	5 {a=5, b=9, c=7, d=3, e=4}
 *************************************************************************
 
 *************************************************************************
