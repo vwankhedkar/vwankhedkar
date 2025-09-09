@@ -786,14 +786,123 @@ import java.util.*;
     }
  }	==>	5 {a=5, b=9, c=7, d=3, e=4}
 *************************************************************************
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String s="to be or not to be";
+        Map<String,Integer> map=new LinkedHashMap<>();
+        for(String w: s.trim().toLowerCase().split("\\s+"))
+            map.put(w, map.getOrDefault(w,0)+1);
+        System.out.println(map);
+    }
+}   ==>   {to=2, be=2, or=1, not=1}
 *************************************************************************
-
+ Quick sort, Merge sort
+import java.util.Arrays;
+public class Main {
+    static void quick(int[] a,int l,int r){
+        if(l>=r) return;
+        int i=l,j=r,p=a[l+(r-l)/2];
+        while(i<=j){
+            while(a[i]<p) i++;
+            while(a[j]>p) j--;
+            if(i<=j){ int t=a[i]; a[i]=a[j]; a[j]=t; i++; j--; }
+        }
+        if(l<j) quick(a,l,j);
+        if(i<r) quick(a,i,r);
+    }
+    static void mergeSort(int[] a,int l,int r){
+        if(l>=r) return;
+        int m=(l+r)/2;
+        mergeSort(a,l,m); mergeSort(a,m+1,r);
+        int[] tmp=new int[r-l+1]; int i=l,j=m+1,k=0;
+        while(i<=m && j<=r) tmp[k++]= a[i]<=a[j]? a[i++]:a[j++];
+        while(i<=m) tmp[k++]=a[i++];
+        while(j<=r) tmp[k++]=a[j++];
+        System.arraycopy(tmp,0,a,l,tmp.length);
+    }
+    public static void main(String[] args) {
+        int[] a={5,2,9,1,5,6};
+        quick(a,0,a.length-1);
+        System.out.println(Arrays.toString(a));
+        mergeSort(a,0,a.length-1);
+        System.out.println(Arrays.toString(a));
+    }
+}
+[1, 2, 5, 5, 6, 9]
+[1, 2, 5, 5, 6, 9]
 *************************************************************************
-
+ Bubble sort, Selection sort, Insertion sort
+ import java.util.Arrays;
+ public class Main {
+    static void bubble(int[] a){
+        for(int i=0;i<a.length-1;i++)
+            for(int j=0;j<a.length-1-i;j++)
+                if(a[j]>a[j+1]){ int t=a[j]; a[j]=a[j+1]; a[j+1]=t; }
+    }
+    static void selection(int[] a){
+        for(int i=0;i<a.length-1;i++){
+            int min=i;
+            for(int j=i+1;j<a.length;j++) if(a[j]<a[min]) min=j;
+            int t=a[i]; a[i]=a[min]; a[min]=t;
+        }
+    }
+    static void insertion(int[] a){
+        for(int i=1;i<a.length;i++){
+            int key=a[i], j=i-1;
+            while(j>=0 && a[j]>key){ a[j+1]=a[j]; j--; }
+            a[j+1]=key;
+        }
+    }
+    public static void main(String[] args) {
+        int[] a={5,1,4,2,8};
+        bubble(a.clone()); selection(a.clone()); insertion(a.clone());
+        System.out.println(Arrays.toString(a));
+    }
+ }
 *************************************************************************
-
+Binary search implementation
+ public class Main {
+    static int bs(int[] a,int key){
+        int l=0,r=a.length-1;
+        while(l<=r){
+            int m=l+(r-l)/2;
+            if(a[m]==key) return m;
+            if(a[m]<key) l=m+1; else r=m-1;
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        int[] a={1,3,5,7,9};
+        System.out.println(bs(a,7));
+    }
+ }
+ Linear search implementation
+ public class Main {
+    static int ls(int[] a,int key){
+        for(int i=0;i<a.length;i++) if(a[i]==key) return i;
+        return -1;
+    }
+    public static void main(String[] args) {
+        int[] a={4,2,7,1};
+        System.out.println(ls(a,7));
+    }
+ }
 *************************************************************************
+ import java.util.*;
+ public class Main {
+    static boolean balanced(String s){
+        Map<Character,Character> m=new HashMap<>();
+        m.put(')', '('); m.put(']', '['); m.put('}', '{');
+        Deque<Character> st=new ArrayDeque<>();
+        for(char ch: s.toCharArray()){
+            if(m.containsValue(ch)) st.push(ch);
+            else if(m.containsKey(ch)) if(st.isEmpty() || st.pop()!=m.get(ch)) return false;
+        }
+        return st.isEmpty();
+    }
+    public static void main(String[] args) { System.out.println(balanced("{[()]}")); }
+ }		==>		true
 *************************************************************************
 
 *************************************************************************
