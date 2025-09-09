@@ -631,12 +631,62 @@ import java.util.*;
     }
  }		===>		20 [2, 4, 6, 8, 10]
 *************************************************************************
-
+Functional interfaces (Predicate, Function, Consumer)
+import java.util.function.*;
+ public class Main {
+    public static void main(String[] args) {
+        Predicate<Integer> isEven = x -> x%2==0;
+        Function<Integer,Integer> square = x -> x*x;
+        Consumer<Integer> print = System.out::println;
+        if(isEven.test(4)) print.accept(square.apply(4));
+    }
+ }		==>		16
 *************************************************************************
-
+ Lambda expressions example
+ interface Op { int run(int a,int b); }
+ public class Main {
+    public static void main(String[] args) {
+        Op add=(a,b)->a+b;
+        System.out.println(add.run(2,3));
+    }
+ }		==>		5
 *************************************************************************
-
+import java.util.concurrent.*;
+ public class Main {
+    public static void main(String[] args) throws Exception {
+        ExecutorService pool=Executors.newFixedThreadPool(2);
+        for(int i=1;i<=4;i++){
+            final int id=i;
+            pool.submit(()-> System.out.println("Task "+id+" by "+Thread.currentThread().getName()));
+        }
+        pool.shutdown();
+    }
+ }
+Task 2 by pool-1-thread-2
+Task 1 by pool-1-thread-1
+Task 3 by pool-1-thread-1
+Task 4 by pool-1-thread-2
 *************************************************************************
+ Inter-thread communication (wait(), notify())
+ class Shared {
+    private int data; private boolean ready=false;
+    synchronized void produce(int v) throws InterruptedException {
+        while(ready) wait();
+        data=v; ready=true; notify();
+    }
+    synchronized int consume() throws InterruptedException {
+        while(!ready) wait();
+        ready=false; notify(); return data;
+    }
+ }
+ public class Main {
+    public static void main(String[] args) throws Exception {
+        Shared s=new Shared();
+        Thread p=new Thread(()->{ try{ s.produce(42); }catch(Exception e){} });
+        Thread c=new Thread(()->{ try{ System.out.println(s.consume()); }catch(Exception e){} });
+        p.start(); c.start(); p.join(); c.join();
+    }
+ }		==>		42
 *************************************************************************
 
 *************************************************************************
