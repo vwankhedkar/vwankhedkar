@@ -688,6 +688,84 @@ Task 4 by pool-1-thread-2
     }
  }		==>		42
 *************************************************************************
+Create thread using Thread class
+ public class Main extends Thread {
+    public void run(){ System.out.println("Hello from Thread"); }
+    public static void main(String[] args){ new Main().start(); }
+ }	==>	Hello from Thread
+ Create thread using Runnable interface
+ public class Main {
+    public static void main(String[] args){
+        Runnable r = () -> System.out.println("Hello from Runnable");
+        new Thread(r).start();
+    }
+ }	==>		Hello from Runnable
+*************************************************************************
+ class Singleton {
+    private static volatile Singleton instance;
+    private Singleton(){}
+    public static Singleton getInstance(){
+        if(instance==null){
+            synchronized(Singleton.class){
+                if(instance==null) instance=new Singleton();
+            }
+        }
+        return instance;
+    }
+ }
+ public class Main { public static void main(String[] args){ System.out.println(Singleton.getInstance()); } }	==> Singleton@2a139a55
+*************************************************************************
+ Deadlock example in Java
+ public class Main {
+    public static void main(String[] args) throws Exception {
+        final Object A=new Object(); final Object B=new Object();
+        Thread t1=new Thread(()->{ synchronized(A){ try{Thread.sleep(100);}catch(Exception e){} synchronized(B
+ ){} } });
+        Thread t2=new Thread(()->{ synchronized(B){ try{Thread.sleep(100);}catch(Exception e){} synchronized(A
+ ){} } });
+        t1.start(); t2.start(); t1.join(); t2.join();
+    }
+ }
+*************************************************************************
+Producer–Consumer problem using Threads
+ import java.util.concurrent.ArrayBlockingQueue;
+ public class Main {
+    public static void main(String[] args) throws Exception {
+        ArrayBlockingQueue<Integer> q = new ArrayBlockingQueue<>(2);
+        Thread producer = new Thread(() -> {
+            try{
+                for(int i=1;i<=5;i++){ q.put(i); System.out.println("Produced "+i); }
+            }catch(Exception ignored){}
+        });
+        Thread consumer = new Thread(() -> {
+            try{
+                for(int i=1;i<=5;i++){ System.out.println("Consumed "+q.take()); }
+            }catch(Exception ignored){}
+        });
+        producer.start(); consumer.start();
+        producer.join(); consumer.join();
+    }
+ }
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
+
+*************************************************************************
 
 *************************************************************************
 
