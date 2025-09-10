@@ -904,7 +904,15 @@ Binary search implementation
     public static void main(String[] args) { System.out.println(balanced("{[()]}")); }
  }		==>		true
 *************************************************************************
-
+ public class Main {
+    public static void main(String[] args) {
+        String s="Java is fun";
+        String[] parts=s.split("\\s+");
+        StringBuilder sb=new StringBuilder();
+        for(int i=parts.length-1;i>=0;i--) sb.append(parts[i]).append(i==0?"":" ");
+        System.out.println(sb.toString());
+    }
+ }	==>	fun is Java
 *************************************************************************
 
 *************************************************************************
