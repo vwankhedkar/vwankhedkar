@@ -754,3 +754,24 @@ C:\Trainings\Pytest-Bdd-Udemy\TestFrameworkApp-main\.venv\Scripts\python.exe C:\
 12345
 <class 'decimal.Decimal'>
 ***********************************************************************
+str_1 = input("Enter first string: ").replace(" ", "").lower()
+str_2 = input("Enter second string: ").replace(" ", "").lower()
+if len(str_1) != len(str_2):
+    print("No, the strings are not anagrams.")
+else:
+    freq = {}
+    for ch in str_1:
+        freq[ch] = freq.get(ch, 0) + 1
+    for ch in str_2:
+        if ch in freq:
+            freq[ch] -= 1
+        else:
+            freq[ch] = 1
+    
+    if all(value == 0 for value in freq.values()):
+        print("Yes, the given strings are anagrams.")
+    else:
+        print("No, the given strings are not anagrams.")
+Enter first string: lazy
+Enter second string: zaly
+Yes, the given strings are anagrams.
