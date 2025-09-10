@@ -610,6 +610,20 @@ AB
 CA
 AD
 *****************************************************************
+str = input("Enter string : ")
+result = ""
+new_word=True
+for ch in str:
+    if new_word and ch.isalpha():
+        result += ch.upper()
+        new_word = False
+    else:
+        result += ch
+    if ch == " ":
+        new_word = True
+print(result)
+Enter string : python automation architect
+Python Automation Architect
 *****************************************************************
 *****************************************************************
 *****************************************************************
