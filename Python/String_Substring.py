@@ -169,6 +169,11 @@ PS D:\Selenium\Scripts> & C:/Programs/Python/Python39/python.exe d:/Selenium/Scr
 The original string  is : Geeksforgeeks
 The reversed string(using stack) is : skeegrofskeeG
 *************************************************************************
+for i in range(ord('D'), ord('A') - 1, -1):
+    print(chr(i), end=" ")
+for i in range(4, 0, -1):
+    print(i, end=" ")
+OUTPUT - D C B A 4 3 2 1 
 *************************************************************************
 *************************************************************************
 *************************************************************************
