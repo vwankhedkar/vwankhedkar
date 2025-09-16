@@ -175,6 +175,20 @@ for i in range(4, 0, -1):
     print(i, end=" ")
 OUTPUT - D C B A 4 3 2 1 
 *************************************************************************
+str = input("Enter a string: ")
+result = ""
+new_word = True
+for char in str:
+    if new_word and char.isalpha():
+        result += char.upper()
+        new_word = False
+    else:
+        result += char
+    if char == " ":
+        new_word = True
+print("Capitalized:", result)
+Enter a string: phthon program is easy
+Capitalized: Phthon Program Is Easy
 *************************************************************************
 *************************************************************************
 *************************************************************************
