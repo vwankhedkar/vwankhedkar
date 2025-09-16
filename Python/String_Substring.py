@@ -190,6 +190,20 @@ print("Capitalized:", result)
 Enter a string: phthon program is easy
 Capitalized: Phthon Program Is Easy
 *************************************************************************
+sentence = input("Enter a string: ")
+freq = {}
+for char in sentence:
+    if char != " ":
+        freq[char] = freq.get(char, 0) + 1
+        max_char = ""
+        max_count = 0
+        for char, count in freq.items():
+            if count > max_count:
+                max_char = char
+                max_count = count
+print(f"The maximum occurring character is '{max_char}' with {max_count} occurrences.")
+Enter a string: python programming language
+The maximum occurring character is 'g' with 4 occurrences.
 *************************************************************************
 *************************************************************************
 *************************************************************************
