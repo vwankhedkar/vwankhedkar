@@ -31,3 +31,10 @@ for row in rows:
 ['jake', 'Lucas', 'jake@mymail.com']
 ['lucas', 'London.lucas@mymail.com']
 ['Barcelona', 'Doha', 'Barcelona@mymail.com']
+*******************************************************************************
+import csv,json
+with open("data.csv","w",newline="") as f:
+    csv.writer(f).writerow(["name","age"])
+    data = {"name":"Alice","age":25}
+with open("data.json","w") as f:
+    json.dump(data,f)
