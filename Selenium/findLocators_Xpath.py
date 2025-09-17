@@ -1,5 +1,6 @@
 
 page -> https://www.hyrtutorials.com/p/add-padding-to-containers.html#google_vignette
+each sell - //table[@id="contactList"]//preceding-sibling::tr//child::td[2]
 
 Firstname text box
 //input[@name='name']/preceding-sibling::input[1]
