@@ -755,6 +755,26 @@ print(expand_string("2ad3b4c"))   # adadbbbcccc
 print(expand_string("2a3b4c"))    # aabbbcccc
 print(expand_string("2ab3b4c"))   # ababbbbcccc
 ***********************************************************************************************
+Coforge intv question
+s = "aaababz"
+result = ""
+count = 1
+dct = {}
+
+for i in range(1, len(s)):
+    if s[i] == s[i-1]:
+        count += 1
+    else:
+        result += s[i-1] + str(count)
+        dct.setdefault(s[i-1], []).append(count)  # store as list
+        count = 1
+result += s[-1] + str(count)
+dct.setdefault(s[-1], []).append(count)
+print("RLE String:", result)
+print("Dictionary:", dct)
+RLE String: a3b1a1b1z1
+Dictionary: {'a': [3, 1], 'b': [1, 1], 'z': [1]}
+***********************************************************************************************
 mphasis interview
 -------------------
 import requests
