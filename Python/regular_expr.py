@@ -162,16 +162,6 @@ if re.match(pattern, mail):
 else:
     print("Invalid email")
 OUTPUT -----  Valid email
-****************************************************************************************
-import re
-mail = "user@example.com"
-pattern = r"^[a-zA-Z0-9_._-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
-email = re.search(pattern, mail)
-if email:
-    print("Valid email:", email.group())
-else:
-    print("Invalid email")
-OUTPUT    -------------    Valid email: user@example.com
 ***************************************************************************************
 import re
 text = "The event is on 10/05/2025."
