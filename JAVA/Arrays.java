@@ -887,8 +887,26 @@ Max in an array: 90
 Second Max in an array: 64
 Reverse array: [90, 64, 34, 25, 22, 12, 11]
 ****************************************************************************************************************
-
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int target = 5;
+        findTarget(arr, target);
+    }
+    public static void findTarget(int[] input, int target) {
+        List<Integer> seen = new ArrayList<>();
+        for (int i=0; i<input.length; i++) {
+            int value = target - input[i];
+            if (seen.contains(value)) {
+                System.out.println("Given Target at : " +input[i]+ "+" +value +"="+target);
+            }
+            seen.add(input[i]);
+        }
+    }
+}
+Given Target at : 3+2=5
+Given Target at : 4+1=5
 ****************************************************************************************************************
 
 
