@@ -984,6 +984,27 @@ class Main {
     }
 }	==>	After removing duplicates: My nameisvhl
 ****************************************************************************************************************
-
+import java.util.HashSet;
+import java.util.Set;
+class Main {
+    public static void main(String[] args) {
+        int input[] = {4, 19, 3, 4, 16, 16, 19};
+        System.out.println("Second largest digit is : " + secondLargeDigit(input));
+    }
+    public static int secondLargeDigit(int[] input) {
+        int largest = 0;
+        int secondLarge = 0;
+        for (int i=0; i<input.length; i++) {
+            if (input[i] > largest) {
+                secondLarge = largest;
+                largest = input[i];
+            } 
+            else if (input[i]>secondLarge && input[i]<largest)
+                 secondLarge = input[i];
+            }
+             return secondLarge;
+        }
+    }	==>	Second largest digit is : 16
+****************************************************************************************************************
 
 ****************************************************************************************************************
