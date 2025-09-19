@@ -908,14 +908,81 @@ class Main {
 Given Target at : 3+2=5
 Given Target at : 4+1=5
 ****************************************************************************************************************
+import java.util.*;
 
-
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 1, 4, 5, 1};
+        countElements(arr);
+    }
+    public static void countElements(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            boolean alreadyPresent = false;
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    alreadyPresent = true;
+                    break;
+                }
+            }
+            if (alreadyPresent) {
+                continue; // skip duplicates
+            }
+            int count = 1;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+            System.out.println("Occurance of "+arr[i]+" is "+count); } } }
+Occurance of 1 is 3
+Occurance of 2 is 2
+Occurance of 3 is 1
+Occurance of 4 is 1
+Occurance of 5 is 1
 ****************************************************************************************************************
+import java.util.*;
 
-
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 5, 7, 8, 9, 6};
+        int k=3;
+        LargestDigit(arr, k);
+    }
+    public static void LargestDigit(int[] arr, int k) {
+        int result=0;
+        for (int i=0; i<arr.length; i++) {
+            for (int j=i+1; j<arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        result = arr[arr.length-k];
+        System.out.println("Kth largest digit: "+result); 
+        } 
+    }	===>	Kth largest digit: 7
 ****************************************************************************************************************
-
-
+import java.util.HashSet;
+import java.util.Set;
+class Main {
+    public static void main(String[] args) {
+        removeDuplicates("My name is vaishali");
+    }
+    public static void removeDuplicates(String input) {
+        StringBuilder result = new StringBuilder();
+        Set<Character> seen = new HashSet<>();
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+            if (!seen.contains(currentChar)) {
+                seen.add(currentChar);
+                result.append(currentChar);
+            }
+        }
+        System.out.println("After removing duplicates: " + result.toString());
+    }
+}	==>	After removing duplicates: My nameisvhl
 ****************************************************************************************************************
 
 
