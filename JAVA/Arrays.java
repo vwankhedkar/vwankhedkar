@@ -1,3 +1,27 @@
+import java.util.Arrays;
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {4, 5, 6};
+        combinedTwoArrays(arr1, arr2);
+    }
+    public static void combinedTwoArrays(int[] arr1, int[] arr2) {
+        int length = arr1.length+arr2.length;
+        int[] newArr = new int[length];
+        for (int i=0; i<arr1.length; i++) {
+            newArr[i] = arr1[i];
+        }
+        for (int i=0; i<arr1.length; i++) {
+            newArr[arr1.length+i] = arr2[i];
+        }
+        System.out.println("Combined Arrays are : "+Arrays.toString(newArr));
+    }
+}	====>	Combined Arrays are : [1, 2, 3, 4, 5, 6]
+*****************************************************************************************
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
 // corresponding class names for array types
 class Test {
     public static void main(String[] args)
