@@ -1,7 +1,6 @@
 package com.basic;
 import java.util.*;
 public class nameArrayList {
-
 	public static void main(String[] args) {
 		ArrayList<String> namedList = new ArrayList<String>();   // List<String> namedList = new LinkedList<String>();
 		String[] names = {"Ann", "Bob", "Carol"};
@@ -10,13 +9,11 @@ public class nameArrayList {
 		for (int k=0; k<names.length; k++)
 			System.out.println(namedList.get(k));
 	}
-
 }
 -----------------
 package com.basic;
 import java.util.*;
 public class nameArrayList {
-
 	public static void main(String[] args) {
 		List<String> namedList = new ArrayList<>();
 		String[] names = {"Ann", "Bob", "Carol"};
@@ -31,7 +28,6 @@ public class nameArrayList {
 package com.basic;
 import java.util.*;
 public class nameArrayList {
-
 	public static void main(String[] args) {
 		List<String> namedList = new ArrayList<>();
 		String[] names = {"Ann", "Bob", "Carol"};
@@ -43,7 +39,6 @@ public class nameArrayList {
 			System.out.println(it.next());
 	}
 }
-
 Ann
 Bob
 Carol
@@ -52,7 +47,6 @@ package com.basic;
 import java.util.HashSet;
 import java.util.Set;
 public class HashSetDemo {
-
 	public static void main(String[] args) {
 		Set<String> fruitSet = new HashSet<String>();
 		fruitSet.add("Apple");
@@ -108,31 +102,23 @@ public class subStrNonRepeated {
 {a=1, b=2, c=3, d=4, e=5}
 ***************************************************
 package com.basic;
-
 import java.util.HashSet;
 import java.util.Set;
-
 public class subStrNonRepeated {
-
     public static void main(String[] args) {
         String name = "pjdkaljdsfllalaf";
         String longestSubstring = "";
-
         for (int i = 0; i < name.length(); i++) {
             StringBuilder s = new StringBuilder();
             Set<Character> seenChars = new HashSet<>();
-
             for (int j = i; j < name.length(); j++) {
                 char currentChar = name.charAt(j);
-
                 if (seenChars.contains(currentChar)) {
                     break;
                 }
-
                 s.append(currentChar);
                 seenChars.add(currentChar);
             }
-
             if (s.length() > 0) {
                 System.out.println(s.toString());
                 if (s.length() > longestSubstring.length()) {
@@ -140,7 +126,6 @@ public class subStrNonRepeated {
                 }
             }
         }
-
         System.out.println("\nLongest substring without repeating characters: " + longestSubstring);
     }
 }
@@ -211,7 +196,6 @@ import java.util.ArrayList;
 import java.util.HashSet; 
 import java.util.Iterator; 
 import java.util.Set; 
-
 public class tryProgs2 {
     public static void main(String[] args) {
     	HashSet<Object> myset = new HashSet<>();
