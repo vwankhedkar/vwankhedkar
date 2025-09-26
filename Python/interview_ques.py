@@ -32,27 +32,39 @@ print(lst)
 [1, 1, 3, 3, 4, 5, 6, 7, 8]
 [1, 1, 3, 3, 4, 5, 6, 7, 8]
 *************************************************************************
-arr = [1, 3, 4, 5, 7, 8]
+def srt(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    print("Sorted:", arr)
+    return arr
+def find_pos(arr, num):
+    arr1 = srt(arr[:])   
+    index = 0
+    for key, val in enumerate(arr1):
+        if val > num:
+            break
+        index = key + 1
+    return index
+def find_pos1(arr, num):
+    arr1 = srt(arr[:])   
+    index = 0
+    for i in range(len(arr1)):
+        if arr1[i] > num:
+            break
+        index = i + 1
+    return index
+arr = [1, 3, 4, 5, 7, 8, 1, 0, 2]
 num = 6
-index = 0
-for i, val in enumerate(arr):
-    if val > num:
-        break
-    index = i + 1
-print(f"The number {num} should be inserted at index {index} to maintain sorted order.")
-
-arr = [1, 3, 4, 5, 7, 8]
-val = 6
-index = 0
-arr.sort()
-for i in range(1,len(arr)-1):
-    if val > arr[i]:
-        index = i+1
-print(index)
-arr.insert(index, val)
-print(arr)
-4
-[1, 3, 4, 5, 6, 7, 8]
+res = find_pos(arr, num)
+print("find_pos →", res)
+res = find_pos1(arr, num)
+print("find_pos1 →", res)
+Sorted: [0, 1, 1, 2, 3, 4, 5, 7, 8]
+find_pos → 7
+Sorted: [0, 1, 1, 2, 3, 4, 5, 7, 8]
+find_pos1 → 7
 *****************************************************************
 import bisect
 index = bisect.bisect_left(arr, num)
