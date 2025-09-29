@@ -74,4 +74,16 @@ def backspaceCompare(s, t):
 s = "ab#c"
 t = "ad#c"
 print(backspaceCompare(s, t))
+*********************************************************
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(0, len(nums)):
+           for j in range(i+1, len(nums)):
+                if (nums[i] + nums[j] == target):
+                    return i, j
 
+            
+s = Solution()
+nums = [2,7,11,15]
+target = 9
+print(s.twoSum(nums, target))
