@@ -140,9 +140,47 @@ class Main {
     }
 }    After removing duplicates : My nameisVhl
 ***************************************************************************************
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int input[] = {4, 19, 3, 4, 16, 16, 19};
+        System.out.println("2nd large digit is : "+secondLargest(input));
+    }    
+    public static int secondLargest(int[] input) {
+       int largest = 0;
+       int secondLarge = 0;
+       for (int i=0; i<input.length; i++) {
+           if (input[i] > largest) {
+               secondLarge = largest;
+               largest = input[i];
+           }  
+           else if(input[i]>secondLarge && input[i]<largest) {
+               secondLarge = input[i];
+           }
+       }
+            return secondLarge;
+    }
+}    2nd large digit is : 16
 ***************************************************************************************
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int input[] = {1, 4, 5, 4, 3, 0, 3, 2, 0, 1};
+        System.out.println("After shifting values : "+shiftToLast(input, 0));
+    }    
+    public static String shiftToLast(int[] input, int shiftVal) {
+       for (int i=0; i<input.length; i++) {
+           for (int j=i+1; j<input.length; j++) {
+               if (input[i] == shiftVal) {
+                   int temp = input[i];
+                   input[i] = input[j];
+                   input[j] = temp;
+               }
+           }
+       }
+       return Arrays.toString(input);
+    }
+}    After shifting values : [1, 4, 5, 4, 3, 3, 2, 1, 0, 0]
 ***************************************************************************************
 ***************************************************************************************
 
