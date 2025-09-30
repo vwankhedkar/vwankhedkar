@@ -94,9 +94,51 @@ Occurance of : 3 is 1
 Occurance of : 4 is 1
 Occurance of : 5 is 1
 ***************************************************************************************
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {2, 5, 7, 8, 9, 6};
+        int k=3;
+        LargestDigit(arr, k);
+    }    
+    public static void LargestDigit(int[] arr, int k) {
+       int result=0;
+       for (int i=0; i<arr.length; i++) {
+           for (int j=0; j<arr.length; j++) {
+               if (arr[i] > arr[j]) {
+                   int temp = arr[i];
+                   arr[i] = arr[j];
+                   arr[j] = temp;
+               }
+           }
+       }
+        for (int num : arr)
+            System.out.print(num + " ");
+        result = arr[arr.length-k];
+        System.out.println("\nKth Largest digit is : "+result);
+    }
+}
+9 8 7 6 5 2 
+Kth Largest digit is : 6
 ***************************************************************************************
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        removeDuplicateChar("My name is Vaishali");
+    }    
+    public static void removeDuplicateChar(String input) {
+       StringBuilder result = new StringBuilder();
+       Set<Character> seen = new HashSet<>();
+       for (int i=0; i<input.length(); i++) {
+           char currentChar = input.charAt(i);
+           if (!seen.contains(currentChar)) {
+               seen.add(currentChar);
+               result.append(currentChar);
+           }
+       }
+       System.out.println("After removing duplicates : "+result.toString());
+    }
+}    After removing duplicates : My nameisVhl
 ***************************************************************************************
 
 ***************************************************************************************
