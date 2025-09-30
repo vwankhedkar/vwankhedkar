@@ -60,7 +60,39 @@ class Main {
 Given target: 3 2
 Given target: 4 1
 ***************************************************************************************
-
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 2, 3, 1, 4, 5, 1};
+        countOfElement(arr);
+    }    
+    public static void countOfElement(int[] arr) {
+        for (int i=0; i<arr.length; i++) {
+            boolean alreadyPresent=false;
+            for (int j=0; j<i; j++) {
+                if (arr[i] == arr[j]) {
+                alreadyPresent = true;
+                break;
+            }
+        }
+        if (alreadyPresent) {
+            continue;
+        }
+        int count=1;
+        for (int j=i+1; j<arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+            }
+        }
+        System.out.println("Occurance of : "+arr[i]+ " is "+count);
+        }
+    }
+}
+Occurance of : 1 is 3
+Occurance of : 2 is 2
+Occurance of : 3 is 1
+Occurance of : 4 is 1
+Occurance of : 5 is 1
 ***************************************************************************************
 
 ***************************************************************************************
