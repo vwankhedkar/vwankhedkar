@@ -1670,6 +1670,20 @@ index:0+index:1=1+2
 index:9+index:10=2+1
 index:10+index:11=1+2
 *********************************************************************************
+import java.util.Date;
+import java.sql.*;
+class Tests 
+{
+    public static void main(String[] args)
+    {
+        Date d = new Date();
+        System.out.println(d.getClass().getName());
+    }
+}
+PS C:\Users\VWankhedkar\PycharmProjects\Robot\TestCase\Test> javac Tests.java
+PS C:\Users\VWankhedkar\PycharmProjects\Robot\TestCase\Test> java Tests.java 
+java.util.Date
+*************************************************************************
 
 *********************************************************************************
 
