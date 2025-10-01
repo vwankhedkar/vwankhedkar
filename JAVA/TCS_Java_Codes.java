@@ -29,7 +29,21 @@ class Main {
 OUTPUT ==>    Minimum is : 0, Maximum is : 8
 
 *********************************************************************************
-  
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1,1,7,2,8,2,3};
+        int start=0, end=arr.length-1;
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+        for (int num : arr)
+            System.out.print(num+" ");
+    }
+}    =====>        3 2 8 2 7 1 1 
 *********************************************************************************
   
 *********************************************************************************
