@@ -293,9 +293,93 @@ Nonseq num generating sum == 9
 [2, 2, 2, 3] [2, 5, 2] [2, 6, 1] [2, 7] [3, 4, 2] [3, 4, 2] [3, 2, 1, 3] [3, 5, 1] [3, 6] [3, 2, 1, 3] 
 [4, 2, 2, 1] [4, 2, 3] [4, 5] [4, 2, 3] [2, 5, 2] [2, 6, 1] [2, 7] [5, 1, 3] [6, 2, 1] [6, 3] [7, 2] [8, 1] 
 ***************************************************************************************
-
+import java.util.Arrays;   // Brute force approach
+class Main {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 0, 6},
+            {7, 8, 9}
+        };
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    for (int k = 0; k < rows; k++) {
+                        if (matrix[k][j] != 0) {
+                            matrix[k][j] = -1;
+                        }
+                    }
+                    for (int c = 0; c < cols; c++) {
+                        if (matrix[i][c] != 0) {
+                            matrix[i][c] = -1;
+                        }
+                    }
+                }
+            }
+        }
+        // Second pass: replace -1 with 0
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == -1) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for (int[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+}
+[1, 0, 3]
+[0, 0, 0]
+[7, 0, 9]
 ***************************************************************************************
+import java.util.Arrays;
 
+class Main {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 0, 6},
+            {7, 8, 9}
+        };
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        boolean[] rowZero = new boolean[rows];
+        boolean[] colZero = new boolean[cols];
+
+        // Pass 1: mark rows and cols
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    rowZero[i] = true;
+                    colZero[j] = true;
+                }
+            }
+        }
+
+        // Pass 2: update matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (rowZero[i] || colZero[j]) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        // Print result
+        for (int[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+}
+[1, 0, 3]
+[0, 0, 0]
+[7, 0, 9]
 ***************************************************************************************
 
 ***************************************************************************************
