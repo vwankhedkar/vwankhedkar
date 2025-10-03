@@ -29,6 +29,8 @@ class Main {
 OUTPUT ==>    Minimum is : 0, Maximum is : 8
 
 *********************************************************************************
+//Time Complexity: O(n) — Each element is swapped once.
+//Space Complexity: O(1) — We are swapping elements in plac
 class Main {
     public static void main(String[] args) {
         int[] arr = {1,1,7,2,8,2,3};
@@ -45,8 +47,24 @@ class Main {
     }
 }    =====>        3 2 8 2 7 1 1 
 *********************************************************************************
-  
+// Time Complexity: O(n) — We traverse the array once.
+// Space Complexity: O(n) — Space is required for the frequency 
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1,1,7,2,8,2,1};
+        System.out.print("Count of each num : "+countFreq(arr));
+    }
+    public static Map<Integer,Integer> countFreq(int[] arr) {
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for (int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num,0)+1);
+        }
+        return freqMap;
+    }
+}
 *********************************************************************************
+
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
