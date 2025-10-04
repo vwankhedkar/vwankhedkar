@@ -62,10 +62,33 @@ class Main {
         }
         return freqMap;
     }
-}
+}    ==>    Count of each num : {1=3, 2=2, 7=1, 8=1}
+*********************************************************************************
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {7, 3, 2, 9, 0, 6, 7, 3, 1, 2, 9, 0, 6, 4, 8, 5, 1};
+        rearrangeArray(arr);  // call the method
+    }
+    public static void rearrangeArray(int[] arr) {
+        Arrays.sort(arr);  // sort first
+        int[] result = new int[arr.length];
+        int left = 0, right = arr.length - 1;
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 0) {
+                result[i] = arr[right--];  // pick largest remaining
+            } else {
+                result[i] = arr[left++];   // pick smallest remaining
+            }
+        }
+        System.arraycopy(result, 0, arr, 0, arr.length);
+        System.out.println(Arrays.toString(result));
+    }
+}    --->    [9, 0, 9, 0, 8, 1, 7, 1, 7, 2, 6, 2, 6, 3, 5, 3, 4]
+// Time Complexity: O(n log n) — Due to sorting.
+// Space Complexity: O(n) — We use an extra array for rearrangin
 *********************************************************************************
 
-*********************************************************************************
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
