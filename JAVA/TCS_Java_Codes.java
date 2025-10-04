@@ -88,7 +88,19 @@ class Main {
 // Time Complexity: O(n log n) — Due to sorting.
 // Space Complexity: O(n) — We use an extra array for rearrangin
 *********************************************************************************
-
+// Time Complexity: O(n) — We traverse the array once.
+// Space Complexity: O(1) — No extra space required.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 0, 2, 5, 0, 1, 0, 7, 0};
+        int sum=0;
+        for (int num : arr) {
+            sum += num;
+        }
+        System.out.print("Sum of numbers : "+sum);
+    }
+}   Sum of numbers : 27
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
