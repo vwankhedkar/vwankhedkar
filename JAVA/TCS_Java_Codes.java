@@ -102,8 +102,74 @@ class Main {
     }
 }   Sum of numbers : 27
 *********************************************************************************
+// Time Complexity: O(n) — Each element is reversed a constant number of times.
+// Space Complexity: O(1) — In-place modification
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 0, 2, 5, 0, 1, 0, 7, 0};
+        int[] result;
+        result = rotateArray(arr, 5);
+        System.out.print("Rotated array : "+Arrays.toString(result));
+    }
+    public static int[] rotateArray(int[] arr, int k) {
+        int n = arr.length;
+        k = k % n;
+        reverse(arr, 0 , k-1);
+        reverse(arr, k , n-1);
+        reverse(arr, 0 , n-1);
+        return arr;
+    }
+    public static void reverse(int[] arr, int start, int end) {
+        while(start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}    ==>    Rotated array : [0, 1, 0, 7, 0, 8, 4, 0, 2, 5]
 *********************************************************************************
+// Time Complexity: O(n) — We reuse the sum calculation.
+// Space Complexity: O(1) — Only constant space used
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 0, 2, 5, 0, 1, 0, 7, 0};
+        double result;
+        result = (double)sumOfArray(arr)/arr.length; ;
+        System.out.print("Sum of array : "+result);
+    }
+    public static int sumOfArray(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+        sum += num;
+        }
+        return sum;
+    }
+}    ==>        Sum of array : 2.7
 *********************************************************************************
+// Time Complexity: O(n log n) — Sorting the array.
+// Space Complexity: O(1) — Sorting is done in place
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 0, 2, 5, 0, 1, 0, 7, 0};
+        double result;
+        result = findMedian(arr) ;
+        System.out.print("Sum of array : "+result);
+    }
+    public static double findMedian(int[] arr) {
+        Arrays.sort(arr);
+        int n = arr.length;
+        if (n % 2 == 0) {
+            return (arr[n/2-1] + arr[n/2])/2.0;
+        } else {
+            return arr[n / 2];
+          }
+    }  
+}    ===>        Sum of array : 1.5
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
