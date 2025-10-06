@@ -171,6 +171,108 @@ class Main {
     }  
 }    ===>        Sum of array : 1.5
 *********************************************************************************
+// Time Complexity: O(n) — Copying the entire array.
+// Space Complexity: O(n) — Extra space for the new arra
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 0, 2, 5, 0, 1, 0, 1, 7, 0};
+        int[] result = addElement(arr, 6);
+        System.out.println("Array after adding element: " + Arrays.toString(result));
+    }
+    public static int[] addElement(int[] arr, int ele) {
+        int[] newArr = new int[arr.length + 1];
+        System.arraycopy(arr, 0, newArr, 0, arr.length);
+        newArr[arr.length] = ele;  
+        return newArr;
+    }
+}  ==>   Array after adding element: [8, 4, 0, 2, 5, 0, 1, 0, 1, 7, 0, 6]
+*********************************************************************************
+// Time Complexity: O(n) — We traverse the array and use a set.
+// Space Complexity: O(n) — Set and list both take linear space
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0};
+        List<Integer> result = findRepeating(arr);
+        System.out.println("Array after adding element: " + result);
+    }
+    public static List<Integer> findRepeating(int[] arr) {
+        Set<Integer> seen = new HashSet<>();
+        List<Integer> repeating = new ArrayList<>();
+        for (int num : arr) {
+            if (!seen.add(num)) {
+                repeating.add(num);
+            }
+        }
+        return repeating;
+    }
+}    ==>    Array after adding element: [0, 1, 7, 0]
+*********************************************************************************
+// Time Complexity: O(n) — Two passes: one to count, another to filter.
+// Space Complexity: O(n) — HashMap to store counts.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0};
+        List<Integer> result = findNonRepeating(arr);
+        System.out.println("Array after adding element: " + result);
+    }
+    public static List<Integer> findNonRepeating(int[] arr) {
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (int num : arr) {
+            countMap.put(num, countMap.getOrDefault(num,0)+1);
+        }
+        List<Integer> result = new ArrayList<>();
+        for (Map.Entry<Integer, Integer>entry : countMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                result.add(entry.getKey());
+            }
+        }
+        return result;
+    }
+}    ==>        Array after adding element: [2, 4, 5, 8]
+*********************************************************************************
+// Time Complexity: O(n) — Traverse the array once.
+// Space Complexity: O(n) — Map takes linear space.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        // Each element is a pair {a, b}
+        int[][] arr = {
+            {1, 2},
+            {3, 4},
+            {5, 9},
+            {2, 1},
+            {4, 3},
+            {6, 7}
+        };
+
+        List<int[]> result = findSymmetricPairs(arr);
+        System.out.println("Symmetric pairs: ");
+        for (int[] pair : result) {
+            System.out.println(Arrays.toString(pair));
+        }
+    }
+    public static List<int[]> findSymmetricPairs(int[][] arr) {
+        Map<Integer, Integer> map = new HashMap<>();
+        List<int[]> result = new ArrayList<>();
+
+        for (int[] pair : arr) {
+            int first = pair[0], second = pair[1];
+
+            // If we already have the reverse pair (b, a)
+            if (map.containsKey(second) && map.get(second) == first) {
+                result.add(new int[]{second, first});
+            } else {
+                map.put(first, second);
+            }
+        }
+        return result;
+    }
+}    ==>        Symmetric pairs: 
+[1, 2]
+[3, 4]
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
@@ -180,3 +282,9 @@ class Main {
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+    
