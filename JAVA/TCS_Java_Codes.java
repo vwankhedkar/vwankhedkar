@@ -274,6 +274,34 @@ class Main {
 [1, 2]
 [3, 4]
 *********************************************************************************
+// Time Complexity: O(n) — One pass through the array.
+// Space Complexity: O(1) — Constant extra space.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0};
+        int result = maxProdSubArray(arr);
+        System.out.println("Maximum Product Subarray: " + result);
+    }
+    public static int maxProdSubArray(int[] arr) {
+        if (arr == null || arr.length == 0) return 0;
+        int max = arr[0];
+        int min = arr[0];
+        int result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                // swap max and min when negative number appears
+                int temp = max;
+                max = min;
+                min = temp;
+            }
+            max = Math.max(arr[i], max * arr[i]);
+            min = Math.min(arr[i], min * arr[i]);
+            result = Math.max(result, max);
+        }
+        return result;
+    }
+}    ==>    Maximum Product Subarray: 2240
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
