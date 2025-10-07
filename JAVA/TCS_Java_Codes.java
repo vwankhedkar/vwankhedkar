@@ -354,9 +354,129 @@ class Main {
     }
 }  ==>    Sorted array as per frequency : [0, 0, 0, 1, 1, 7, 7, 2, 4, 5, 8]
 *********************************************************************************
+// Time Complexity: O(n) — Reversing the elements.
+// Space Complexity: O(1) — No extra space used
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0};
+        int k = 3;  // number of positions to rotate
+        rotateLeft(arr, k);
+        System.out.println("Array after left rotation by " + k + " : " + Arrays.toString(arr));
+        rotateRight(arr, k);
+        System.out.println("Array after right rotation by " + k + " : " + Arrays.toString(arr));
+    }
+    public static void rotateLeft(int[] arr, int k) {
+        k = k % arr.length;
+        reverse(arr, 0, k - 1);
+        reverse(arr, k, arr.length - 1);
+        reverse(arr, 0, arr.length - 1);
+    }
+    public static void rotateRight(int[] arr, int k) {
+        k = k % arr.length;
+        reverse(arr, 0, arr.length - 1);
+        reverse(arr, 0, k - 1);
+        reverse(arr, k, arr.length - 1);
+    }
+    public static void reverse(int[] arr, int start, int end) {
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
+Array after left rotation by 3 : [2, 5, 0, 1, 0, 1, 7, 0, 8, 4, 7]
+Array after right rotation by 3 : [8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0]
 *********************************************************************************
+// Time Complexity: O(n) — Single pass through the array.
+// Space Complexity: O(1) — Only a few extra variables.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 1, 1, 6, 1, 7, 8};
+        int result = findEquilibriumIndex(arr);
+        System.out.println("Equilibrium Index: " + result);
+    }
+    public static int findEquilibriumIndex(int[] arr) {
+        int totalSum = 0, leftSum = 0;
+        for (int num : arr)
+            totalSum += num;
+        for (int i = 0; i < arr.length; i++) {
+            totalSum -= arr[i]; 
+            if (leftSum == totalSum)
+                return i;
+            leftSum += arr[i];
+        }
+        return -1; 
+    }
+}        ==>    Equilibrium Index: -1
+int[] arr = {1, 3, 5, 2, 2};    ==>    Equilibrium Index: 2
 *********************************************************************************
+// Time Complexity: O(n) — Reversing elements.
+// Space Complexity: O(1) — In-place reversal.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 2, 2};
+        int k = 2; // rotate by 2 steps
+        circularRotate(arr, k);
+        System.out.println("Circularly Rotated Array: " + Arrays.toString(arr));
+    }
+    public static void circularRotate(int[] arr, int k) {
+        k = k % arr.length;
+        reverse(arr, 0, arr.length - 1);
+        reverse(arr, 0, k - 1);
+        reverse(arr, k, arr.length - 1);
+    }
+    public static void reverse(int[] arr, int start, int end) {
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}    ==>    Circularly Rotated Array: [2, 2, 1, 3, 5]
 *********************************************************************************
+// Time Complexity: O(n + m) — n is the size of the array, m is the size of the order array.
+// Space Complexity: O(n) — Extra space for the frequency map
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 2, 2, 3, 1};
+        int[] order = {3, 1, 2}; // sort by this order
+        int[] result = sortByOrder(arr, order);
+        System.out.println("Array sorted by order: " + Arrays.toString(result));
+    }
+    public static int[] sortByOrder(int[] arr, int[] order) {
+        Map<Integer, Integer> freqMap = new HashMap<>();
+
+        // Count frequency of each number
+        for (int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+        int index = 0;
+        for (int num : order) {
+            if (freqMap.containsKey(num)) {
+                int count = freqMap.get(num);
+                while (count-- > 0)
+                    arr[index++] = num;
+                freqMap.remove(num);
+            }
+        }
+        for (int num : freqMap.keySet()) {
+            int count = freqMap.get(num);
+            while (count-- > 0)
+                arr[index++] = num;
+        }
+
+        return arr;
+    }
+}    ==>    Array sorted by order: [3, 3, 1, 1, 2, 2, 5]
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
