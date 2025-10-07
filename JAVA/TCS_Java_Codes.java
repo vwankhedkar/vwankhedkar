@@ -303,7 +303,56 @@ class Main {
     }
 }    ==>    Maximum Product Subarray: 2240
 *********************************************************************************
+// Time Complexity: O(n log n) — Sorting the array.
+// Space Complexity: O(n) — Space for the rank map.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0};
+        int[] result = rankArray(arr);
+        System.out.println("Ranks of each element in an Array: " + Arrays.toString(result));
+    }
+    public static int[] rankArray(int[] arr) {
+        int[] sorted = arr.clone();
+        Arrays.sort(sorted);
+        Map<Integer, Integer> rankMap = new HashMap<>();
+        int rank = 1;
+        for (int i = 0; i < sorted.length; i++) {
+            if (!rankMap.containsKey(sorted[i])) {
+                rankMap.put(sorted[i], rank++);
+            }
+        }
+        for (int i=0; i<arr.length; i++) {
+            arr[i] = rankMap.get(arr[i]);
+        }
+        return arr;
+    }
+}     ==>     Ranks of each element in an Array: [7, 4, 6, 3, 5, 1, 2, 1, 2, 6, 1]   
 *********************************************************************************
+// Time Complexity: O(n log n) — Sorting the array by frequency.
+// Space Complexity: O(n) — Map and result array.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 4, 7, 2, 5, 0, 1, 0, 1, 7, 0};
+        int[] result = sortByFreq(arr);
+        System.out.println("Sorted array as per frequency : " + Arrays.toString(result));
+    }
+    public static int[] sortByFreq(int[] arr) {
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for (int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num,0)+1);
+        } 
+        return Arrays.stream(arr)
+        .boxed()
+        .sorted((a,b) -> {
+            int freqCompare = freqMap.get(b).compareTo(freqMap.get(a));
+            return freqCompare != 0 ? freqCompare : Integer.compare(a,b);
+        })
+        .mapToInt(i -> i)
+        .toArray();
+    }
+}  ==>    Sorted array as per frequency : [0, 0, 0, 1, 1, 7, 7, 2, 4, 5, 8]
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
