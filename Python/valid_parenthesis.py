@@ -1,24 +1,23 @@
-parens  = { '(' : ')',
-          '[' : ']',
-          '{' : '}'}
-
+paren = {
+    '(' : ')', '[':']', '{':'}'}
 def isValid(s):
-   if len(s) <= 0 or len(s)%2 != 0:
-      return False
-   stack = []
-   for i in range(len(s)):
-      if s[i] in parens.keys():
-         stack.append(s[i])
-      else:
-         leftBracket = stack.pop()
-         correctBracket = parens[leftBracket]
-         if (s[i] != correctBracket):
-            return False
-   return len(stack) == 0
-******************************************************************   
+    if len(s) <= 0 or len(s) % 2 !=0:
+        return False
+    stack = []
+    for i in range(len(s)):
+        if s[i] in paren.keys():
+            stack.append(s[i])
+        else:
+            leftBracket = stack.pop()
+            correctBracket = paren[leftBracket]
+            if (s[i] != correctBracket):
+                return False
+    return len(stack) == 0
 string = "{()[]}()"
-print(isValid(string))
-
+print("Given string have valid parenthesis : ", isValid(string))
+string = "[({]}"
+print("Given string have valid parenthesis : ", isValid(string))
+******************************************************************   
 def valid_parentheses(string):
     string = "".join(ch for ch in string if ch in "()")
     while "()" in string: string = string.replace("()", "")
