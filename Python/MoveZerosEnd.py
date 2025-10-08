@@ -41,4 +41,28 @@ for i in arr:
 for i in range(count):
     out.append(0)
 print(out)
+***************************************************************************
+# Time:  O(logn) = O(1)
+# Space: O(1)
+class Solution:
+    # @return an integer
+    def trailingZeroes(self, n):
+        result = 0
+        while n > 0:
+            result += n / 5
+            n /= 5
+        return result
+
+if __name__ == "__main__":
+    print Solution().trailingZeroes(100)
+*************************
+def zeros(n):
+    result = 0
+    while n > 0:
+        result += n // 5  
+        n //= 5
+    return result
+
+print(zeros(10))
+***********************
 
