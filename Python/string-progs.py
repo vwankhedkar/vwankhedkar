@@ -107,21 +107,6 @@ else:
     print("Please enter value from 0-99 only...")
 print(output)
 *********************************************************
-Prime:
-n = int(input("Enter Input: "))
-n1 = 2
-while (n1 <= n):
-    is_prime = True
-    for i in range(2,n1//2+1):
-        if n1%i==0:
-            is_prime = False
-            break
-    if is_prime==True:
-        print(n1)
-    n1 = n1 + 1
-Enter Input: 5
-2 3 5 
-*********************************************************
 s = input("Enter String: ")
 s1 = input("Enter substring: ")
 if s1 in s:
