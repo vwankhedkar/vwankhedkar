@@ -327,7 +327,24 @@ while i<len(s1) and j<len(s2):
 print(output)
 ----------------------------------
 OUTPUT:   OTnweo
-
+********************************************************************
+s = "AB4AA1D2AA"
+output = ""
+num = 0
+grp = ""
+mult = ""
+for ch in s:
+    if ch.isalpha():
+        grp += ch
+    elif ch.isdigit():
+        num = int(ch)
+        mult += grp * num
+        grp = ""  # clear group after expansion
+output += mult
+if grp:
+    output += grp
+print(output)	==>	ABABABABAADDAA
+*********************************************************************
 s = "B4AA1D7C3E1A"
 alphabets = []
 digits = []
@@ -353,24 +370,8 @@ for ch in sorted(alphabets):
 for ch in sorted(digits):
     output = output + ch
 print(output)
-
 OUTPUT:   AAABCDE11347
-
-s = "D3A4B2C3"
-output = ''
-for ch in s:
-    if ch.isalpha():
-        x = ch
-    else:
-        d = int(ch)
-        output = output + x*d
-print(output)
-print(''.join(sorted(output)))
-OUTPUT :
-----------
-DDDAAAABBCCC
-AAAABBCCCDDD
-
+*******************************************************
 s = "AABBBCCCCDZZZZ"
 output = ''
 prev = s[0]
