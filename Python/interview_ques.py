@@ -893,3 +893,28 @@ for index, row in df.iterrows():
     password = row['Password']
     print(f"Testing login with: {username}, {password}")
 **************************************************************
+def reverse_string_preserve_special(s):
+    s = list(s)
+    left, right = 0, len(s) - 1
+    while left < right:
+        # Skip special characters
+        if not s[left].isalnum():
+            left += 1
+        elif not s[right].isalnum():
+            right -= 1
+        else:
+            # Swap normal characters
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+    return "".join(s)
+s = "a,b$c"
+print(reverse_string_preserve_special(s))
+OUTPUT	==>	c,b$a
+***********************************************************************
+
+***********************************************************************
+
+***********************************************************************
+
+***********************************************************************
