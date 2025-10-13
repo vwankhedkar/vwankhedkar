@@ -670,9 +670,95 @@ OUTPUT -->	[?2004l
 ✅ Unique counts match!
 3rd unique list: ['abc', 'pqr', 'xyz', 'bca', 'ppqrs']
 *************************************************************************
+import os
+import requests
 
+def upload_file_if_small(filepath, upload_url):
+    try:
+        # Check if file exists
+        if not os.path.isfile(filepath):
+            print("❌ File not found:", filepath)
+            return
+
+        # Get file size in bytes
+        file_size = os.path.getsize(filepath)
+
+        # 2 MB = 2 * 1024 * 1024 bytes
+        if file_size > 2 * 1024 * 1024:
+            print(f"❌ File is too large ({file_size / (1024 * 1024):.2f} MB). Max allowed is 2 MB.")
+            return
+
+        # Upload if size is OK
+        with open(filepath, "rb") as f:
+            files = {"file": f}
+            response = requests.post(upload_url, files=files)
+
+        if response.status_code == 200:
+            print("✅ File uploaded successfully!")
+        else:
+            print(f"⚠️ Upload failed. Status code: {response.status_code}")
+            print(response.text)
+
+    except Exception as e:
+        print("⚠️ Error:", e)
+
+
+# Example usage
+file_path = "example.txt"  # change to your file path
+upload_endpoint = "https://httpbin.org/post"  # test upload endpoint
+upload_file_if_small(file_path, upload_endpoint)
 *************************************************************************
+import json
+import xmltodict
 
+def read_json(file_path):
+    """Reads and returns a JSON file as a dictionary"""
+    with open(file_path, 'r') as f:
+        return json.load(f)
+
+def read_xml(file_path):
+    """Reads and returns an XML file as a dictionary"""
+    with open(file_path, 'r') as f:
+        return xmltodict.parse(f.read())
+
+def compare_dicts(d1, d2, path=""):
+    """Recursively compares two dictionaries and reports mismatches"""
+    for key in d1:
+        new_path = f"{path}/{key}" if path else key
+
+        if key not in d2:
+            print(f"❌ Missing key in second file: {new_path}")
+            continue
+
+        if isinstance(d1[key], dict) and isinstance(d2[key], dict):
+            compare_dicts(d1[key], d2[key], new_path)
+        elif isinstance(d1[key], list) and isinstance(d2[key], list):
+            if len(d1[key]) != len(d2[key]):
+                print(f"⚠️ Length mismatch at {new_path}: {len(d1[key])} vs {len(d2[key])}")
+            for i in range(min(len(d1[key]), len(d2[key]))):
+                compare_dicts(
+                    d1[key][i] if isinstance(d1[key][i], dict) else {"value": d1[key][i]},
+                    d2[key][i] if isinstance(d2[key][i], dict) else {"value": d2[key][i]},
+                    f"{new_path}[{i}]"
+                )
+        else:
+            if str(d1[key]).strip() != str(d2[key]).strip():
+                print(f"❌ Value mismatch at {new_path}: {d1[key]} != {d2[key]}")
+
+    # Check for extra keys in d2
+    for key in d2:
+        if key not in d1:
+            print(f"⚠️ Extra key in second file: {path}/{key}")
+# --- Example usage ---
+xml_file = "data.xml"
+json_file = "data.json"
+
+xml_data = read_xml(xml_file)
+json_data = read_json(json_file)
+
+# Compare XML and JSON
+compare_dicts(xml_data, json_data)
+>>>>	pip install xmltodict
 *************************************************************************
 
 *************************************************************************
