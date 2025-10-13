@@ -649,7 +649,26 @@ Mavan pom.xml
 </dependencies>
 
 *************************************************************************
-
+# BGV intv
+lst1 = ["abc", "pqr", "xyz", "bca", "ppqrs"]
+lst2 = ["pqr", "xyz", "bca", "ppqrs", "abc"]
+# Step 1: Remove duplicates while preserving order
+def unique(lst):
+    return list(dict.fromkeys(lst))
+u1 = unique(lst1)
+u2 = unique(lst2)
+# Step 2: Check if unique counts match
+if len(u1) == len(u2):
+    # Step 3: Get combined unique list (without duplicates)
+    third_list = list(dict.fromkeys(u1 + u2))
+    print("✅ Unique counts match!")
+    print("3rd unique list:", third_list)
+else:
+    print("❌ Unique count mismatch!")
+    print(f"List1 unique count: {len(u1)} | List2 unique count: {len(u2)}")
+OUTPUT -->	[?2004l
+✅ Unique counts match!
+3rd unique list: ['abc', 'pqr', 'xyz', 'bca', 'ppqrs']
 *************************************************************************
 
 *************************************************************************
