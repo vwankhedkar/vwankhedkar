@@ -1,5 +1,5 @@
 # data.xml
-<EmployeeData>
+<EmployeeData empname="Vaishali">
     <Employee>
         <Id>101</Id>
         <Name>John Doe</Name>
@@ -101,5 +101,27 @@ import xmltodict
 with open('data.json','r') as f:
     data = json.load(f)
 print(json.dumps(data, indent=3))
+****************************************************************************************
+import xml.etree.ElementTree as ET
+tree = ET.parse('data.xml')
+root = tree.getroot()
+print(root[0].tag)
+for child in root:
+    print(child[0].tag)
+    print(child[0].text)
+print(root[0][0].tag)
+print(root[0][0].text)
+print(root.attrib)
+for dept in root.iter('Department'):
+    print(dept.text)
+print(len(root[0].findall('Name')))
+print(root[0].findall('Name')[0].text)
+root[0][1].text = 'Vaishali'
+print(root[0].findall('Name')[0].text)
+root[1].remove(root[1][3])
+# tree.write('data.xml')
+****************************************************************************************
+****************************************************************************************
+****************************************************************************************
 ****************************************************************************************
   
