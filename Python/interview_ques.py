@@ -1017,7 +1017,23 @@ s = "a,b$c"
 print(reverse_string_preserve_special(s))
 OUTPUT	==>	c,b$a
 ***********************************************************************
-
+fruits = ['apple', 'banana', 'apple', 'pear', 'banana', 'apple']
+result = {}
+for i, fruits in enumerate(fruits):
+    result.setdefault(fruits, []).append(i)
+print(result)
+----------------------------------
+fruits = ['apple', 'banana', 'apple', 'pear', 'banana', 'apple']
+result = {}
+index = 0
+for fruit in fruits:
+    if fruit not in result:
+        result[fruit] = []
+    result[fruit].append(index)
+    index+=1
+print(result)
+OUTPUT
+{'apple': [0, 2, 5], 'banana': [1, 4], 'pear': [3]}
 ***********************************************************************
 
 ***********************************************************************
