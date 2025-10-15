@@ -220,3 +220,29 @@ student.info()
 OUTPUT	45.0
 Modern
 This is student class in info module
+****************************************************************
+class counter:
+    def __init__(self):
+        self.count = 0
+    def increment(self):
+        self.count += 1
+    def decrement(self):
+        self.count -= 1
+    def reset(self):
+        self.count = 0
+cnt = counter()
+cnt.increment()
+cnt.decrement()
+print("Count: ", cnt.count)
+cnt.decrement()
+print("Count: ", cnt.count)
+cnt.reset()
+print("Count: ", cnt.count)
+output :
+Count:  0
+Count:  -1
+Count:  0
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
