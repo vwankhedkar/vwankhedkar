@@ -1017,6 +1017,7 @@ s = "a,b$c"
 print(reverse_string_preserve_special(s))
 OUTPUT	==>	c,b$a
 ***********************************************************************
+infobeans
 fruits = ['apple', 'banana', 'apple', 'pear', 'banana', 'apple']
 result = {}
 for i, fruits in enumerate(fruits):
@@ -1035,6 +1036,42 @@ print(result)
 OUTPUT
 {'apple': [0, 2, 5], 'banana': [1, 4], 'pear': [3]}
 ***********************************************************************
+import pytest
+import requests
+@pytest.fixture
+def api_data():
+    return {
+        "url": "https://jsonplaceholder.typicode.com/posts",  # sample test API
+        "payload": {
+            "title": "pytest example",
+            "body": "testing POST request",
+            "userId": 101
+        },
+        "expected_status": 201
+    }
+class TestPostAPI:
+
+    @pytest.fixture(autouse=True)
+    def setup(self, api_data):
+        """Fixture automatically called before each test."""
+        self.url = api_data["url"]
+        self.payload = api_data["payload"]
+        self.expected_status = api_data["expected_status"]
+    def test_post_request(self):
+        """Send POST request and validate status code."""
+        response = requests.post(self.url, json=self.payload)
+        print(f"\nResponse JSON: {response.json()}")
+        assert response.status_code == self.expected_status, (
+            f"Expected {self.expected_status}, got {response.status_code}"
+        )
+    def test_post_request_value_error(self):
+        """Test case that handles invalid value (simulate ValueError)."""
+        try:
+            invalid_payload = {"title": None, "body": "", "userId": "NaN"}
+            response = requests.post(self.url, json=invalid_payload)
+            assert response.status_code == 400, "Expected 400 for invalid payload"
+        except ValueError as e:
+            pytest.fail(f"ValueError occurred: {e}")
 
 ***********************************************************************
 
