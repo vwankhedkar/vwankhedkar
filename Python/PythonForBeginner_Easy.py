@@ -1,3 +1,38 @@
+# Creating a tuple
+colors = ("red", "green", "blue")
+print("Original tuple:", colors)
+print("First color:", colors[0])
+# colors[0] = "yellow"     # this will raise an error
+# print("First color:", colors[0]) 
+color_pref = {colors : "John's favourite colors"}
+print(color_pref)
+
+# Set
+numbers = {1, 2, 3, 4, 4, 5}
+print("original set : ", numbers)
+numbers.add(6)
+print("set : ", numbers)
+numbers.remove(4)
+print("original set : ", numbers)
+print("Is 3 in numbers : ", 3 in numbers)
+a = {1, 2, 3}
+b = {3, 4, 5}
+print("Union : ", a | b)
+print("Intersection : ", a & b)
+print("Difference : ", a - b)
+
+# Creating a dictionary
+person = {"name": "John", "age": 30, "city": "New York"}
+print("Original dictionary:", person)
+print("Name : ", person["name"])
+person["Job"] = "Programmer"
+print("After adding : ", person)
+del person["age"]
+print("After deletion:", person)
+print("Age : ", person.get("age", "Not Available"))
+for key, value in person.items():
+    print(key, " : ", value)
+***********************************************************************************
 import time
 set1 = {1, 2, 3}
 set2 = {3, 4, 5}
