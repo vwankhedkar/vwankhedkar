@@ -149,11 +149,8 @@ try:
 finally:
     f.close()
 user        city        email
-
 jake        Lucas       jake@mymail.com
-
 lucas       London      lucas@mymail.com
-
 Barcelona   Doha        Barcelona@mymail.com
 **********************************************
 with open("myfile.txt",'r') as f:
@@ -237,9 +234,34 @@ with open('example.csv', 'r') as file:
 ['Alice', '30']
 ['Bob', '25']
 *********************************************************
-
+import json
+data = {
+    "name" : "John",
+    "age"   : 28,
+    "city" : "New York"
+}
+# Writing to JSON file
+with open('data.json','w') as file:
+    json.dump(data, file)
+# Reading from JSON file
+with open('data.json','r') as file:
+    data = json.load(file)
+    print(data)
+{'name': 'John', 'age': 28, 'city': 'New York'}
 *********************************************************
-
+import os
+file_path = os.path.join('example.txt','loc1','loc2')
+try:
+    with open('example.txt', 'r') as file:
+        while True:
+            line = file.readline()
+            if not line:
+                break
+            print(line.strip())
+except FileNotFoundError:
+    print("File Not Found!")
+except Exception as e:
+    print(f"An weeor occured : {e}")
 *********************************************************
 
 *********************************************************
