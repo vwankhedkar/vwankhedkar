@@ -10,12 +10,10 @@ OUTPUT - Data copied successfully .... True
 ***************************************************************************************
 file = open("D:\\python-webtraining\\scripts\\Algorithms\\temp_file.txt", 'r')
 dir = {}
-
 for line in file:
     line = line.strip()
     line = line.lower()
     words = line.split()
-        
     for w in words:
         # w = w.strip()
         if w in dir:
@@ -211,5 +209,43 @@ data[1] = "Here is modified Line 2 \n"
 with open('input.txt', 'w', encoding='utf-8') as file:
     file.writelines(data)
 *********************************************************
+try:
+    with open('example.txt', 'w') as file:
+        file.write("Hello, Python ! \n")
+        file.write("Writing to files is essential.")
+    with open('example.txt', 'a') as file:
+        file.write("\n Appending new line.")
+    with open('example.txt', 'r') as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("File not found")
 *********************************************************
+import csv
+# Writing to CSV file
+with open('example.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "age"])
+    writer.writerow(["Alice", "30"])
+    writer.writerow(["Bob", 25])
+# Reading from CSV file
+with open('example.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+['Name', 'age']
+['Alice', '30']
+['Bob', '25']
+*********************************************************
+
+*********************************************************
+
+*********************************************************
+
+*********************************************************
+
+*********************************************************
+
+*********************************************************
+
 *********************************************************
