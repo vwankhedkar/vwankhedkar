@@ -243,6 +243,18 @@ Count:  0
 Count:  -1
 Count:  0
 ****************************************************************
+class Dog:
+    # class attribute
+    species = "Canis familiaris"
+    # Initializer / Instance attributes
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+# Creating an object (an instance of the Dog class)
+my_dog = Dog("Buddy", 4)
+# Accessing the object's attrinutes
+print(f"My Dog {my_dog.name} is {my_dog.age} years old and belongs to the species {my_dog.species}")
+OUTPUT - My Dog Buddy is 4 years old and belongs to the species Canis familiaris
 ****************************************************************
 ****************************************************************
 ****************************************************************
