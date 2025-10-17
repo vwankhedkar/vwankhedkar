@@ -256,5 +256,33 @@ my_dog = Dog("Buddy", 4)
 print(f"My Dog {my_dog.name} is {my_dog.age} years old and belongs to the species {my_dog.species}")
 OUTPUT - My Dog Buddy is 4 years old and belongs to the species Canis familiaris
 ****************************************************************
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    # Instance method
+    def description(self):
+        return f"{self.name} is {self.age} years old"
+    # Another instance method
+    def speak(self, sound):
+        return f"{self.name} says {sound}"
+# Creating an instance of god
+my_dog = Dog("Buddy", 5)
+print(my_dog.description())
+print(my_dog.speak("Woof"))
+Buddy is 5 years old
+Buddy says Woof
+****************************************************************
+****************************************************************
+
+****************************************************************
+****************************************************************
+
+****************************************************************
+****************************************************************
+
+****************************************************************
+****************************************************************
+
 ****************************************************************
 ****************************************************************
