@@ -546,7 +546,69 @@ class Main {
     }
 }      =====>   isPalindrome : true
 *********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        countVowelConsonent(str);
+    }
+    public static void countVowelConsonent(String str) {
+        int vowels=0, consonents=0, spaces=0;
+        str = str.toLowerCase();
+        for (char ch : str.toCharArray()) {
+            if (ch == ' ') {
+                spaces++;
+            } else if (ch >= 'a' && ch <= 'z') {
+                if ("aeiou".indexOf(ch) != -1)
+                    vowels++;
+                else
+                    consonents++;
+            }
+        }
+        System.out.println("Vowels : " + vowels);
+        System.out.println("Consonents : " + consonents);
+        System.out.println("Spaces : " + spaces);
+    }
+}    ===>    
+Vowels : 3
+Consonents : 7
+Spaces : 1
 *********************************************************************************
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str = "AHello World";
+        for (char ch : str.toCharArray()) {
+            System.out.print((int)ch + " ");
+        }
+        countVowelConsonent(str);
+    }
+    public static void countVowelConsonent(String str) {
+        int vowels=0, consonents=0, spaces=0;
+        str = str.toLowerCase();
+        for (char ch : str.toCharArray()) {
+            if (ch == ' ') {
+                spaces++;
+            } else if (ch >= 'a' && ch <= 'z') {
+                if ("aeiou".indexOf(ch) != -1)
+                    vowels++;
+                else
+                    consonents++;
+            }
+        }
+        System.out.println("\nVowels : " + vowels);
+        System.out.println("Consonents : " + consonents);
+        System.out.println("Spaces : " + spaces);
+    }
+}
+65 72 101 108 108 111 32 87 111 114 108 100 
+Vowels : 4
+Consonents : 7
+Spaces : 1
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
