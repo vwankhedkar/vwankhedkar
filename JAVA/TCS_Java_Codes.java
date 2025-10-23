@@ -610,6 +610,32 @@ Vowels : 4
 Consonents : 7
 Spaces : 1
 *********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str = "Hello World123";
+        String revstr;
+        String str1 = "3 + (2 * [4 + 5])";
+        System.out.print("Ascii values of each char are : ");
+        for (char ch : str.toCharArray()) {
+            System.out.print((int)ch + " "); //TC, SC -> O(1)
+        }
+        System.out.println("\nAfter removing vowels : "+str.replaceAll("[AEIOUaeiou]",""));  //TC, SC -> O(n)
+        System.out.println("After removing spaces : "+str.replaceAll("\\s",""));  //TC, SC -> O(n)
+        System.out.println("After removing nonAlphabets : "+str.replaceAll("[^a-zA-Z]",""));  //TC, SC -> O(n)
+        revstr = new StringBuilder(str).reverse().toString();
+        System.out.println("After string reversing : " +revstr);
+        System.out.println("After removing brackets : " +str1.replaceAll("[\\[\\]{}()]",""));
+    }
+}
+Ascii values of each char are : 72 101 108 108 111 32 87 111 114 108 100 49 50 51 
+After removing vowels : Hll Wrld123
+After removing spaces : HelloWorld123
+After removing nonAlphabets : HelloWorld
+After string reversing : 321dlroW olleH
+After removing brackets : 3 + 2 * 4 + 5
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
