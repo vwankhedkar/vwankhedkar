@@ -637,7 +637,58 @@ After removing nonAlphabets : HelloWorld
 After string reversing : 321dlroW olleH
 After removing brackets : 3 + 2 * 4 + 5
 *********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str = "12abc34def56";
+        System.out.print("Sum of numbers are : "+sumOfNumbers(str));
+        }
+    public static int sumOfNumbers(String str) {
+        int sum = 0;
+        String temp = "";
+        for (char ch : str.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                temp += ch;
+            } else {
+                if (!temp.isEmpty()) {
+                    sum += Integer.parseInt(temp);
+                    temp = "";
+                }
+            }
+        }
+        if (!temp.isEmpty()) {
+            sum += Integer.parseInt(temp);
+        }
+        return sum;
+    }
+}        ====>    Sum of numbers are : 102
 *********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str = "hello words";
+        System.out.print("Updated string : "+CapitalizeStartEnd(str));
+        }
+    public static String CapitalizeStartEnd(String str) {
+        String[] words = str.split("\\s+");
+        StringBuilder result = new StringBuilder();
+        for (String word : words) {
+            if (word.length() == 1) {
+                result.append(word.toUpperCase()).append(" ");
+            } else {
+                result.append(word.substring(0,1).toUpperCase())
+                .append(word.substring(1, word.length()-1))
+                .append(word.substring(word.length()-1).toUpperCase())
+                .append(" ");
+            }
+        }
+        return result.toString().trim();
+    }
+}    ===>    Updated string : HellO WordS
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
