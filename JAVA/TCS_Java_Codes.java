@@ -690,8 +690,97 @@ class Main {
     }
 }    ===>    Updated string : HellO WordS
 *********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+import java.util.HashMap;
+import java.util.Map;
+class Main {
+    public static void main(String[] args) {
+        String str = "hello word";
+        frequencyCount(str);
+    }
+    public static void frequencyCount(String str) {
+        Map<Character, Integer> freqMap = new HashMap<>();
+        for (char ch : str.toCharArray()) {
+            if (ch != ' ') // ✅ use single quotes for char comparison
+                freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
+        }
+        System.out.println(freqMap);
+    }
+}    ===>    {r=1, d=1, e=1, w=1, h=1, l=2, o=2}
 *********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+import java.util.Map;
+import java.util.LinkedHashMap;
+class Main {
+    public static void main(String[] args) {
+        String str = "hello word";
+        nonRepearChars(str);
+    }
+    public static void nonRepearChars(String str) {
+        Map<Character, Integer> countMap = new LinkedHashMap<>();
+        for (char ch : str.toCharArray()) {
+            countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+        }
+        System.out.println("Non-repeating characters: ");
+        for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() == 1 && entry.getKey() != ' ') { 
+                System.out.print(entry.getKey() + " ");
+            }
+        }
+    }
+}
+Non-repeating characters: 
+h e w r d 
 *********************************************************************************
+// Time Complexity: O(n log n) (due to sorting)
+// Space Complexity: O(n)
+import java.util.Arrays;
+class Main {
+    public static void main(String[] args) {
+        String str1 = "listen";
+        String str2 = "silent";
+        System.out.println("Are strings anagrams : "+anagramCheck(str1, str2));
+    }
+    public static boolean anagramCheck(String str1, String str2) {
+        if (str1.length() != str2.length())
+            return false;
+        char[] arr1 = str1.toCharArray();
+        char[] arr2 = str2.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        return Arrays.equals(arr1, arr2);
+    }
+}    ===>    Are strings anagrams : true
+*********************************************************************************
+// Time Complexity: O(m * n) (m and n are lengths of the two strings)
+// Space Complexity: O(m * n)
+import java.util.Arrays;
+class Main {
+    public static void main(String[] args) {
+        String str1 = "abc";
+        String str2 = "abc";
+        System.out.println("commonSubSequence : " + commonSubSequence(str1, str2));
+    }
+    public static int commonSubSequence(String str1, String str2) {
+        int[][] dp = new int[str1.length() + 1][str2.length() + 1];
+
+        for (int i = 1; i <= str1.length(); i++) {
+            for (int j = 1; j <= str2.length(); j++) {
+                if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[str1.length()][str2.length()];
+    }
+}    =====>    commonSubSequence : 3
 *********************************************************************************
 
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
     
