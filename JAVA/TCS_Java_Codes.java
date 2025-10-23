@@ -498,10 +498,61 @@ class Main {
     }
 }
 *********************************************************************************
+// Time Complexity: O(n + m) — n is the size of the first array, m is the size of the second array.
+// Space Complexity: O(n) — Extra space for the set
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 2, 2, 3, 1, 7, 8, 9};
+        int[] arr2 = {1, 7, 8, 9};
+        boolean result = isSubSet(arr1, arr2);
+        if (result)
+            System.out.println("arr2 is a subset of arr1");
+        else
+            System.out.println("arr2 is NOT a subset of arr1");
+    }
+    public static boolean isSubSet(int[] arr1, int[] arr2) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr1) {
+            set.add(num);
+        }
+        for (int num : arr2) {
+            if (!set.contains(num)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}    =====>    arr2 is a subset of arr1
+*********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str = "malayalam";
+        System.out.println("isPalindrome : " + palindromeCheck(str));
+    }
+    public static boolean palindromeCheck(String str) {
+        int left=0, right=str.length()-1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left ++;
+            right --;
+        }
+        return true;
+    }
+}      =====>   isPalindrome : true
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
 
-*********************************************************************************
-*********************************************************************************
-*********************************************************************************
-*********************************************************************************
-*********************************************************************************
     
