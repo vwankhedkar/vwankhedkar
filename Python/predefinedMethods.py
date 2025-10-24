@@ -100,9 +100,39 @@ Enter length of the rectangle: 20
 Enter width of the rectangle: 30
 Area of the rectangle: 600.0
 ***************************************************************************
+def is_anagram(s1, s2):
+    return sorted(s1) == sorted(s2)
+string1 = input("Enter 1st string : ")
+string2 = input("Enter 2nd string : ")
+if is_anagram(string1, string2):
+    print("Anagram")
+else:
+    print("Not Anagram")
+Enter 1st string : listen
+Enter 2nd string : silent
+Anagram
+***************************************************************************
+def binary_search(arr, x):
+    low = 0
+    high = len(arr)-1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < x:
+            low = mid + 1
+        elif arr[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+    return -1
+arr = [2, 3, 4, 10, 40]
+x = 10
+result = binary_search(arr, x)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print(f"Element not found ! ")    ==>    Element found at index 3
+***************************************************************************
 
-***************************************************************************
-***************************************************************************
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
