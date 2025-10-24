@@ -809,9 +809,85 @@ class Main {
     }
 }    ====>    wildCardCharMatch : true
 *********************************************************************************
-*********************************************************************************
-*********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+import java.util.HashMap;
+import java.util.Map;
+class Main {
+    public static void main(String[] args) {
+        String str = "sample string";
+        maxOccurringChar(str);  // ✅ Call the method
+    }
+    public static void maxOccurringChar(String str) {
+        Map<Character, Integer> countMap = new HashMap<>();
 
+        for (char ch : str.toCharArray()) {
+            if (ch != ' ') { // ignore spaces
+                countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+            }
+        }
+        char maxChar = ' ';
+        int maxCount = 0;
+        for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                maxChar = entry.getKey();
+            }
+        }
+        System.out.println("Max Occurring Character: '" + maxChar + "' appears " + maxCount + " times.");
+    }
+}    ===>    Max Occurring Character: 's' appears 2 times.
+*********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(1) (Since the character set is fixed)
+import java.util.HashMap;
+import java.util.Map;
+class Main {
+    public static void main(String[] args) {
+        String str = "hello world";
+        String result = removeDuplicates(str);  // ✅ Capture the return value
+        System.out.println("After removing duplicates: " + result);
+    }
+    public static String removeDuplicates(String str) {
+        StringBuilder result = new StringBuilder();
+        boolean[] seen = new boolean[256]; // assuming ASCII
+
+        for (char ch : str.toCharArray()) {
+            if (!seen[ch]) {
+                result.append(ch);
+                seen[ch] = true;
+            }
+        }
+        return result.toString();
+    }
+}    ===>    After removing duplicates: helo wrd
+*********************************************************************************
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+import java.util.HashMap;
+import java.util.Map;
+class Main {
+    public static void main(String[] args) {
+        String str = "programming";
+        printDuplicates(str);  
+    }
+    public static void printDuplicates(String str) {
+        Map<Character, Integer> countMap = new HashMap<>();
+        for (char ch : str.toCharArray()) {
+            countMap.put(ch, countMap.getOrDefault(ch,0)+1);
+        }
+        System.out.println("Duplicate characters : ");
+        for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey()+" occurs " + entry.getValue()+" times.");
+            }
+        }
+    }
+}
+Duplicate characters : 
+r occurs 2 times.
+g occurs 2 times.
+m occurs 2 times.
 *********************************************************************************
 *********************************************************************************
 *********************************************************************************
