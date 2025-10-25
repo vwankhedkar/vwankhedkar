@@ -287,9 +287,50 @@ else:
 Enter number : 153
 Not a Perfect Cube...
 ***************************************************************************
+class Queue:
+    def __init__(self):
+        self.items = []
+    def enqueue(self, item):
+        self.items.insert(0, item)
+    def dequeue(self):
+        return self.items.pop()
+    def is_empty(self):
+        return self.items == []
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print("dequeued items : ", queue.dequeue())
+print("Queue is empty : ", queue.is_empty())
+dequeued items :  1
+Queue is empty :  False
 ***************************************************************************
+from itertools import chain, combinations
+def power_set(s):
+    return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
+input_set = [1,2,3]
+print("Power Set : ", power_set(input_set))
+Power Set :  [(), (1,), (2,), (3,), (1, 2), (1, 3), (2, 3), (1, 2, 3)]
 ***************************************************************************
+import string
+def is_pangram(s):
+    dct = {}
+    alphabet = set(string.ascii_lowercase)  # {'a', 'b', 'c', ..., 'z'}
+    for ch in s.lower():
+        if ch in alphabet:
+            dct[ch] = dct.get(ch, 0) + 1
+    for key in sorted(dct.keys()):
+        print(f"{key}: {dct[key]}", end = " ")
+    return set(s.lower()) >= alphabet
+input_string = input("Enter String : ")
+if is_pangram(input_string):
+    print("==> This is Pangram")
+else:
+    print("Not Pangram")
+Enter String : The quick brown fox jumps over the lazy dog
+a: 1 b: 1 c: 1 d: 1 e: 3 f: 1 g: 1 h: 2 i: 1 j: 1 k: 1 l: 1 m: 1 n: 1 o: 4 p: 1 q: 1 r: 2 s: 1 t: 2 u: 2 v: 1 w: 1 x: 1 y: 1 z: 1 ==> This is Pangram
 ***************************************************************************
+
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
