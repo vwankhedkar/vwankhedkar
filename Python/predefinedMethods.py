@@ -17,6 +17,15 @@ num = int(input("Enter number : "))
 print("Fibbonacci sequence : ", end="")
 for i in range(num):
     print(fibbo(i), end=" ")
+------------------------------------------
+def fibbo_series(n):
+    a, b = 0, 1
+    for _ in range(n+1):
+        print(a, end=" ")
+        a, b = b, a+b
+terms = int(input("Enter number of terms : "))
+print("Fibbocci Series : ")
+fibbo_series(terms)
 Enter number : 7
 Fibbonacci sequence : 1 1 2 3 5 8 13
 ***************************************************************************
@@ -151,7 +160,7 @@ Armstrong number
 ***************************************************************************
 n = 5
 for i in range(n):
-    print("*"*(i+1))
+    print("*"*(i+1))    # print(""*(n-i-1)+"* "*(2*i+1))
 *
 **
 ***
@@ -179,8 +188,51 @@ if result != -1:
 else:
     print("Element found !")    ==>    Element found at index 3
 ***************************************************************************
+def generate_primes(start, end):
+    primes = []
+    for num in range(start, end+1):
+        if num > 1:
+            for i in range(2, num):
+                if num % i == 0:
+                    break
+            else:
+                primes.append(num)
+    return primes
+start_range = int(input("Enter the starting range: "))
+end_range = int(input("Enter the ending range: "))
+print("Prime numbers:", generate_primes(start_range, end_range))
+Enter the starting range: 1
+Enter the ending range: 20
+Prime numbers: [2, 3, 5, 7, 11, 13, 17, 19]
 ***************************************************************************
+def is_leap_year(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
+year = int(input("Enter year : "))
+if is_leap_year(year):
+    print("Leap year")
+else:
+    print("Not a Leap year")
+Enter year : 2028
+Leap year
 ***************************************************************************
+def is_perfect_number(n):
+    sum = 0
+    for i in range(1, n):
+        if n % i == 0:
+            sum += i
+    return sum == n
+number = int(input("Enter number : "))
+if is_perfect_number(number):
+    print("Perfect Number")
+else:
+    print("Not a Perfect Number")
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
