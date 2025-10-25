@@ -132,9 +132,52 @@ if result != -1:
 else:
     print(f"Element not found ! ")    ==>    Element found at index 3
 ***************************************************************************
-
+def is_armstrong(n):
+    order = len(str(n))
+    temp = n 
+    sum = 0
+    while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+    return n == sum
+n = int(input("Enter a number : "))
+if is_armstrong(n):
+    print("Armstrong number")
+else:
+    print("Not a Armstrong number")
+Enter a number : 153
+Armstrong number
 ***************************************************************************
+n = 5
+for i in range(n):
+    print("*"*(i+1))
+*
+**
+***
+****
+*****
+n = 5
+for i in range(n):
+    print(" "*(n-i-1),"* "*(i+1))
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
 ***************************************************************************
+def linear_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+arr = [4, 2, 1, 7, 5]
+x = 7
+result = linear_search(arr, x)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element found !")    ==>    Element found at index 3
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
