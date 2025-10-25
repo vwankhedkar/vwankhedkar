@@ -174,6 +174,20 @@ for i in range(n):
    * * * 
   * * * * 
  * * * * * 
+n = 5
+for i in range(n):
+    print(""*(n-i-1)+"*"*(i+1))
+for i in range(n-1, 0, -1):
+    print(""*(n-i)+"*"*i)
+*
+**
+***
+****
+*****
+****
+***
+**
+*
 ***************************************************************************
 def linear_search(arr, x):
     for i in range(len(arr)):
@@ -234,8 +248,44 @@ if is_perfect_number(number):
 else:
     print("Not a Perfect Number")
 ***************************************************************************
+import math
+def is_perfect_square(n):
+    root = math.sqrt(n)
+    return root * root == n
+number = int(input("Enter number : "))
+if is_perfect_square(number):
+    print("Perfect Square")
+else:
+    print("Not a Perfect Square")
 ***************************************************************************
+class Stack:
+    def __init__(self):
+        self.items = []
+    def push(self, item):
+        self.items.append(item)
+    def pop(self):
+        return self.items.pop()
+    def is_empty(self):
+        return self.items == []
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+print("Popped Items : ", stack.pop())
+print("Stack is empty : ", stack.is_empty())
+Popped Items :  3
+Stack is empty :  False
 ***************************************************************************
+def is_perfect_cube(n):
+    root = round(n**(1/3))
+    return root**3 == n
+number = int(input("Enter number : "))
+if is_perfect_cube(number):
+    print("Perfect Cube...")
+else:
+    print("Not a Perfect Cube...")
+Enter number : 153
+Not a Perfect Cube...
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
