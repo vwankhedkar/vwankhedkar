@@ -330,7 +330,23 @@ else:
 Enter String : The quick brown fox jumps over the lazy dog
 a: 1 b: 1 c: 1 d: 1 e: 3 f: 1 g: 1 h: 2 i: 1 j: 1 k: 1 l: 1 m: 1 n: 1 o: 4 p: 1 q: 1 r: 2 s: 1 t: 2 u: 2 v: 1 w: 1 x: 1 y: 1 z: 1 ==> This is Pangram
 ***************************************************************************
-
+def generate_pascal_triangle(n):
+    triangle = [[1]]
+    for i in range(1, n):
+        prev_row = triangle[-1]
+        curr_row = [1]+[prev_row[j]+prev_row[j+1] for j in range(i-1)]+[1]
+        triangle.append(curr_row)
+    return triangle
+rows = 5
+print("Pascal's Triangle : ")
+for row in generate_pascal_triangle(rows):
+    print(row)
+Pascal's Triangle : 
+[1]
+[1, 1]
+[1, 2, 1]
+[1, 3, 3, 1]
+[1, 4, 6, 4, 1]
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
