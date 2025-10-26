@@ -348,10 +348,62 @@ Pascal's Triangle :
 [1, 3, 3, 1]
 [1, 4, 6, 4, 1]
 ***************************************************************************
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+    def insert(self, value):
+        if self.root is None:
+            self.root = Node(value)
+        else:
+            self._insert_recursive(self.root, value)
+    def _insert_recursive(self, node, value):
+        if value < node.value:
+            if node.left is None:
+                node.left = Node(value)
+            else:
+                self._insert_recursive(node.left, value)
+        elif value > node.value:
+            if node.right is None:
+                node.right = Node(value)
+            else:
+                self._insert_recursive(node.right, value)
+tree = BinaryTree()
+tree.insert(5)
+tree.insert(3)
+tree.insert(7)
 ***************************************************************************
+from sklearn.linear_model import LinearRegression
+import numpy as np
+X = np.array([[1,1], [1,2],[2,2],[2,3]])
+y = np.dot(X, np.array([1,2])) + 3
+reg = LinearRegression().fit(X, y)
+print("Coef: ", reg.coef_)
+print("Intercept : ", reg.intercept_)
+Coef:  [1. 2.]
+Intercept :  3.0000000000000018
 ***************************************************************************
+num = int(input("Enter an Integer : "))
+num_digits = len(str(abs(num)))
+print("Number of digits: ", num_digits)   
+Enter an Integer : 5234
+Number of digits:  4
 ***************************************************************************
+import random
+import string
+def generate_password(length):
+    characters = string.ascii_letters+string.digits+string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+password_length = 12
+print("Generate Password : ",generate_password(password_length))
+Generate Password :  [HtRq|byMX}=
 ***************************************************************************
+
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
