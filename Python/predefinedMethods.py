@@ -418,7 +418,35 @@ else:
 Enter an IP address 121.34.56.190
 Invalid IP address
 ***************************************************************************
+class Queue:
+    def __init__(self):
+        self.items = []
+    def enqueue(self, item):
+        self.items.insert(0, item)
+    def dequeue(self):
+        if self.items:
+            return self.items.pop()
+        return None
+    def is_empty(self):
+        return self.items == []
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print("Dqueued item : ", queue.dequeue())
+print("Queue is empty : ", queue.is_empty())
+Dqueued item :  1
+Queue is empty :  False
 ***************************************************************************
+def power_set_iterative(s):
+    power_set = [[]]
+    for elem in s:
+        for sub_set in power_set[:]:
+            power_set.append(sub_set+[elem])
+    return power_set
+input_set = [1, 2, 3]
+print("Power set (iterative) : ", power_set_iterative(input_set)) 
+Power set (iterative) :  [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
