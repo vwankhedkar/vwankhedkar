@@ -448,27 +448,300 @@ input_set = [1, 2, 3]
 print("Power set (iterative) : ", power_set_iterative(input_set)) 
 Power set (iterative) :  [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 ***************************************************************************
+def binary_search_recursive(arr, low, high, x):
+    if high >= low:
+        mid = (high + low) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] > x:
+            return binary_search_recursive(arr, low, mid-1, x)
+        else:
+            return binary_search_recursive(arr, mid+1, high, x)
+    else:
+        return -1
+arr = [2, 3, 4, 10, 40]
+x = 10
+result = binary_search_recursive(arr, 0, len(arr)-1, x)
+if result != -1:
+    print(f"Element found at index : {result}")
+else:
+    print("Element not found")
+Element found at index : 3
 ***************************************************************************
+def sum_of_digit(n):
+    return sum(int(digit) for digit in str(n))
+num = int(input("Enter number : "))
+print("Sum of digits : ", sum_of_digit(num))
+print("Binary : ", bin(num))
+print("HexaDecimal : ", hex(num))
+print("Octal : ", oct(num))
+Enter number : 1234
+Sum of digits :  10
+Binary :  0b10011010010
+HexaDecimal :  0x4d2
+Octal :  0o2322
 ***************************************************************************
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        mid_idx = i
+        for j in range(i+1,n):
+            if arr[j] < arr[mid_idx]:
+                mid_idx = j
+            arr[i], arr[mid_idx] = arr[mid_idx], arr[i]
+arr = [64, 25, 12, 22, 11]
+selection_sort(arr)
+print("Sorted array : ", arr)
+Sorted array :  [11, 22, 12, 25, 64]
 ***************************************************************************
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j>=0 and key <= arr[j]:
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = key    
+arr = [12, 11, 13, 5, 6]
+insertion_sort(arr)
+print("Sorted array : ", arr)
+Sorted array :  [5, 6, 11, 12, 13]
 ***************************************************************************
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+arr = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(arr)
+print("Sorted array : ", arr)
+Sorted array :  [11, 12, 22, 25, 34, 64, 90]
 ***************************************************************************
+def compute_lcm(x, y):
+    lcm = (x * y) // compute_gcd(x,y)
+    return lcm
+def compute_gcd(x, y):
+    while y:
+        x, y = y, x%y
+    return x
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print("LCM:", compute_lcm(num1, num2))
+print("GCD:", compute_gcd(num1, num2))
+Enter second number: 11
+LCM: 264
+GCD: 1
 ***************************************************************************
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+arr = [12, 11, 13, 5, 6, 7]
+sorted_arr = quick_sort(arr)
+print("sorted_arr : ", sorted_arr)
+sorted_arr :  [5, 6, 7, 11, 12, 13]
 ***************************************************************************
+def generate_fibonacci(n):
+    fibbonacci_sequence = [0, 1]
+    for i in range(2, n):
+        next_num = fibbonacci_sequence[-1] + fibbonacci_sequence[-2]
+        fibbonacci_sequence.append(next_num)
+    return fibbonacci_sequence
+terms = 10
+print("Fibbonacci sequence : ", generate_fibonacci(terms))
+Fibbonacci sequence :  [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ***************************************************************************
+base = int(input("Enter the base: "))
+exponent = int(input("Enter the exponent: "))
+result = 1
+for _ in range(exponent):
+    result *= base
+print("Result:", result)
+Enter the base: 10
+Enter the exponent: 3
+Result: 1000
 ***************************************************************************
+def linear_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+arr = [4, 2, 1, 7, 5]
+x = 7
+result = linear_search(arr, x)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
+Element found at index 3
 ***************************************************************************
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_hand = arr[:mid]
+        right_hand = arr[mid:]
+        merge_sort(left_hand)
+        merge_sort(right_hand)
+        i = j = k = 0
+        while i < len(left_hand) and j < len(right_hand):
+            if left_hand[i] < right_hand[j]:
+                arr[k] = left_hand[i]
+                i += 1
+            else:
+                arr[k] = right_hand[j]
+                j += 1
+            k += 1
+        while i < len(left_hand):
+            arr[k] = left_hand[i]
+            i += 1
+            k += 1
+        while j < len(right_hand):
+            arr[k] = right_hand[j]
+            j += 1
+            k += 1
+arr = [12, 11, 13, 5, 6, 7]
+merge_sort(arr)
+print("Sorted array:", arr)
+Sorted array: [5, 6, 7, 11, 12, 13]
 ***************************************************************************
+def binary_search(arr, x):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < x:
+            low = mid + 1
+        elif arr[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+    return -1
+arr = [2, 3, 4, 10, 40]
+x = 10
+result = binary_search(arr, x)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
+Element found at index 3
 ***************************************************************************
+import re
+def is_valid_email(email):
+    return bool(re.match(r"[^@]+@[^@]+\.[^@]+", email))
+input_mail = input("Enter an email address : ")
+if is_valid_email(input_mail):
+    print("Valid email address")
+else:
+    print("InValid email address")
+Enter an email address : abc@gmail.com
+Valid email address
 ***************************************************************************
+import random
+random_list = random.sample(range(1, 100), 5)
+print("Random list : ", random_list)
+Random list :  [76, 22, 35, 69, 47]
 ***************************************************************************
+import math
+numbers = [24, 36, 48, 60, 72]
+gcd = math.gcd(*numbers)
+print("GCD of the numbers : ", gcd)
+GCD of the numbers :  12
 ***************************************************************************
+import statistics
+data = [1, 2, 3, 4, 5]
+std_dev = statistics.stdev(data)
+print("Standard deviation : ", std_dev)
+Standard deviation :  1.5811388300841898
 ***************************************************************************
+import random
+import string
+def generate_password(length, include_digits=True, include_special_chars=True):
+    characters = string.ascii_letters
+    if include_digits:
+        characters += string.digits
+    if include_special_chars:
+        characters += string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+password_length = 12
+print("Generate password : ", generate_password(password_length))
+Generate password :  ^#J6=r+^9m2V
 ***************************************************************************
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+num = int(input("Enter a number : "))
+if is_prime(num):
+    print("Prime number")
+else:
+    print("Not a Prime number")
+Enter a number : 11
+Prime number
 ***************************************************************************
+list_of_dicts = [{'name': 'John', 'age': 30}, {'name': 'Jane', 'age': 25}, {'name': 'Bob', 'age': 35}]
+sorted_list = sorted(list_of_dicts, key = lambda x:x['age'])
+print("Sorted list of dictionaries:", sorted_list)
+Sorted list of dictionaries: [{'name': 'Jane', 'age': 25}, {'name': 'John', 'age': 30}, {'name': 'Bob', 'age': 35}]
 ***************************************************************************
+import numpy as np
+rows = 3
+cols = 3
+random_matrix = np.random.rand(rows, cols)
+print("Random matrix : ")
+print(random_matrix)
+Random matrix : 
+[[0.15616339 0.85962029 0.97933921]
+ [0.90341399 0.15640342 0.70590951]
+ [0.59602864 0.70466881 0.19473243]]
 ***************************************************************************
+class Counter:
+    def __init__(self):
+        self.count = 0
+    def increment(self):
+        self.count += 1
+    def decrement(self):
+        self.count -= 1
+    def reset(self):
+        self.count = 0
+counter = Counter()
+counter.increment()
+counter.increment()
+print("Count:", counter.count)
+counter.decrement()
+print("Count:", counter.count)
+counter.reset()
+print("Count:", counter.count)
+Count: 2
+Count: 1
+Count: 0
 ***************************************************************************
+import re
+def is_valid_url(url):
+    regex = re.compile(
+        r'^(?:http|ftp)s?://'
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'
+        r'localhost|'
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|'
+        r'\[?[A-F0-9]*:[A-F0-9:]+\]?)'
+        r'(?::\d+)?'
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+    return re.match(regex, url) is not None
+input_url = input("Enter a URL: ")
+if is_valid_url(input_url):
+    print("Valid URL")
+else:
+    print("Invalid URL")
+Enter a URL: https://abc.com
+Valid URL
 ***************************************************************************
 ***************************************************************************
 ***************************************************************************
