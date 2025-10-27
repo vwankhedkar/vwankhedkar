@@ -1074,5 +1074,23 @@ class TestPostAPI:
             pytest.fail(f"ValueError occurred: {e}")
 
 ***********************************************************************
-
+arr = [3, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+num = 24
+sublst = []
+main_list = []
+sum = 0
+for i in range(len(arr)):
+    sum = 0
+    sublst = []
+    for j in range(i, len(arr)):
+        sum += arr[j] 
+        sublst.append(arr[j])
+        if sum == num:
+        #   print(sublst)
+           main_list.append(sublst[:])
+           break
+        elif sum > num:
+                break
+print(main_list)
+[[3, 1, 2, 3, 4, 5, 6], [7, 8, 9]]
 ***********************************************************************
