@@ -920,6 +920,15 @@ print(jsonres['title'])
 1
 sunt aut facere repellat provident occaecati excepturi optio reprehenderit
 ***********************************************************************************************
+def power_set_iterative(s):
+    power_set = [[]]
+    for elem in s:
+        for sub_set in power_set[:]:
+            power_set.append(sub_set+[elem])
+    return power_set
+input_set = [1, 2, 3]
+print("Power set (iterative) : ", power_set_iterative(input_set)) 
+Power set (iterative) :  [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 ***********************************************************************************************
 ***********************************************************************************************
 def ispalin(str):
