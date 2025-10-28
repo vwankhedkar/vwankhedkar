@@ -83,9 +83,61 @@ public class Main
 Even numbers count : 4
 Odd numbers count : 5
 *************************************************************************************************
-
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] array = {5, 2, 9, 1, 6, 3,0};
+        int max = findMaximum(array);
+        int min = findMinimum(array);
+        System.out.println("Maximum value in the array : "+ max);
+        System.out.println("Minimum value in the array : "+ min);
+	}
+	public static int findMaximum(int[] array) {
+	    if (array.length == 0) {
+	        throw new IllegalArgumentException("Array must not be empty");
+	    }
+	    int max = array[0];
+	    for (int i=1; i<array.length-1; i++) {
+	        if (array[i] > max)
+	            max = array[i];
+	    }
+	    return max;
+	}
+	public static int findMinimum(int[] array) {
+	    if (array.length == 0) {
+	        throw new IllegalArgumentException("Array must not be empty");
+	    }
+	    int min = array[0];
+	    for (int i=1; i<= array.length-1; i++) {
+	        if (array[i] < min) 
+	            min = array[i];
+	    }
+	    return min;
+	} 
+}
+Maximum value in the array : 9
+Minimum value in the array : 0
 *************************************************************************************************
-
+public class Main
+{
+	public static void main(String[] args) {
+	    String[] array = {"5", "2", "9", "a", "1", "6", "#", "3"};
+        int sum = sumIntegers(array);
+        System.out.println("Sum of the integers in array : "+ sum);
+	} 
+	public static int sumIntegers(String[] array) {
+	    int sum = 0;
+	    for (String element : array) {
+	        try {
+	            int num = Integer.parseInt(element);
+	            sum += num;
+	        } catch (NumberFormatException e) {
+	            // Ignore elements
+	        }
+	    }
+	    return sum;
+	}
+}	==>	Sum of the integers in array : 26
 *************************************************************************************************
   
 *************************************************************************************************
