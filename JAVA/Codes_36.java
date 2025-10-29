@@ -286,14 +286,125 @@ public class Main
 	}
 }	==>		Sorted Array : 1 2 5 6 9 
 *************************************************************************************************
-
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+public class Main
+{
+	public static void main(String[] args) {
+	    ArrayList<String> arrayList = new ArrayList<>();
+	    arrayList.add("Apple");
+	    arrayList.add("Banana");
+        arrayList.add("Cherry");
+        arrayList.add("Date");
+        arrayList.add("Elderberry");
+        if (!arrayList.isEmpty()) {
+            String firstElement = arrayList.get(0);
+            String lastElement = arrayList.get(arrayList.size()-1);
+            System.out.println("First element: " + firstElement);
+            System.out.println("Last element: " + lastElement);
+        }  else {
+            System.out.println("The arrayList is empty");
+        }
+    }
+}
+First element: Apple
+Last element: Elderberry
+*************************************************************************************************
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] array1 = {1, 2, 3, 4, 5};
+	    int[] array2 = {4, 5, 6, 7, 8};
+	    Set<Integer> commonElements = findCommonElements(array1, array2);
+	    System.out.println("Common Elements : " +commonElements);
+    }
+    public static Set<Integer> findCommonElements(int[] array1, int[] array2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> commonSet = new HashSet<>();
+        for (int num : array1)
+            set1.add(num);
+        for (int num : array2)  {
+            if (set1.contains(num)) {
+                commonSet.add(num);
+            }
+        }
+        return commonSet;
+    }
+} ===>	Common Elements : [4, 5]
+*************************************************************************************************
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+public class Main
+{
+	public static void main(String[] args) {
+	    String s1 = "abcabcbb"; // Expected: "abc", length 3
+        String s2 = "bbbbb";    // Expected: "b", length 1
+        String s3 = "pwwkew";   // Expected: "wke", length 3
+        String s4 = "";         // Expected: "", length 0
+        System.out.println("Longest substring without repeatingcharacters in s1: "
+        +lenOfLongestSubstring(s1));
+        System.out.println("Longest substring without repeatingcharacters in s2: "
+        +lenOfLongestSubstring(s2));
+        System.out.println("Longest substring without repeatingcharacters in s3: "
+        +lenOfLongestSubstring(s3));
+        System.out.println("Longest substring without repeatingcharacters in s4: "
+        +lenOfLongestSubstring(s4));
+    }
+    public static int lenOfLongestSubstring(String s) {
+        HashSet<Character> set = new HashSet<>();
+        int maxLength = 0;
+        int start = 0;
+        int end = 0;
+        while (end < s.length()) {
+            char currentChar = s.charAt(end);
+            if (!set.contains(currentChar)) {
+                set.add(currentChar);
+                maxLength = Math.max(maxLength, end-start+1);
+                end ++;
+            } else {
+                set.remove(s.charAt(start));
+                start ++;
+            }
+        }
+        return maxLength;
+    }
+}
+Longest substring without repeatingcharacters in s1: 3
+Longest substring without repeatingcharacters in s2: 1
+Longest substring without repeatingcharacters in s3: 3
+Longest substring without repeatingcharacters in s4: 0
+*************************************************************************************************
+public class Main
+{
+	public static void main(String[] args) {
+	    String input = "32400121200";
+        String formattedOutput = String.format("%011d", Long.parseLong(input));
+        System.out.println("Formatted output: " + formattedOutput);
+        String output = rearrangeDigits(input);
+        System.out.println("Output : " + output);
+	}
+	public static String rearrangeDigits(String input) {
+	    StringBuilder digits = new StringBuilder();
+	    StringBuilder nonDigits = new StringBuilder();
+	    for (char c : input.toCharArray()) {
+	        if (Character.isDigit(c)) {
+	            digits.append(c);
+	        } else {
+	            nonDigits.append(c);
+	        }
+	    }
+	    return digits.toString() + nonDigits.toString();
+	}
+}
+Formatted output: 32400121200
+Output : 32400121200
 *************************************************************************************************
 
-*************************************************************************************************
-
-*************************************************************************************************
-
-*************************************************************************************************
 *************************************************************************************************
 
 *************************************************************************************************
