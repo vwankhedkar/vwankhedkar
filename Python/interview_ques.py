@@ -647,7 +647,89 @@ Mavan pom.xml
         <version>2.15.3</version>
     </dependency>
 </dependencies>
+*************************************************************************
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import org.json.JSONObject;
 
+public class PollingExample {
+
+    public static void main(String[] args) throws Exception {
+        String apiUrl = "https://example.com/api/job/status?id=123"; // Replace with actual endpoint
+        String pageUrl = "https://example.com/dashboard";            // Expected page URL after completion
+
+        checkJobStatus(apiUrl, pageUrl);
+    }
+
+    public static void checkJobStatus(String apiUrl, String pageUrl) {
+        long startTime = System.currentTimeMillis();
+        long timeout = 5 * 60 * 1000; // 5 minutes
+        int interval = 5000; // 5 seconds
+
+        try {
+            while (System.currentTimeMillis() - startTime < timeout) {
+                String response = sendGet(apiUrl);
+                JSONObject json = new JSONObject(response);
+
+                String status = json.getString("status");
+                System.out.println("Current Status: " + status);
+
+                if (status.equalsIgnoreCase("Completed")) {
+                    System.out.println("Job completed successfully!");
+                    verifyPageOpened(pageUrl);
+                    return;
+                } else if (status.equalsIgnoreCase("Failed")) {
+                    System.out.println("Job failed!");
+                    return;
+                }
+
+                Thread.sleep(interval);
+            }
+
+            System.out.println("Timed out after 5 minutes. Job did not complete.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String sendGet(String urlStr) throws Exception {
+        URL url = new URL(urlStr);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+
+        int responseCode = conn.getResponseCode();
+        if (responseCode != 200) {
+            throw new RuntimeException("Failed: HTTP error code : " + responseCode);
+        }
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        StringBuilder content = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null) {
+            content.append(inputLine);
+        }
+
+        in.close();
+        conn.disconnect();
+        return content.toString();
+    }
+    public static void verifyPageOpened(String pageUrl) throws Exception {
+        URL url = new URL(pageUrl);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+
+        int code = conn.getResponseCode();
+        if (code == 200) {
+            System.out.println("✅ Correct page opened successfully: " + pageUrl);
+        } else {
+            System.out.println("❌ Page did not open correctly. HTTP Code: " + code);
+        }
+        conn.disconnect();
+    }
+}
 *************************************************************************
 # BGV intv
 lst1 = ["abc", "pqr", "xyz", "bca", "ppqrs"]
