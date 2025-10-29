@@ -161,9 +161,49 @@ public class Main
 	}
 } ==>	Element 6 found at index : 4
 *************************************************************************************************
-
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] array = {5, 2, 9, 1, 6, 3};
+        int[] result = findLargestAndSmallest(array);
+        System.out.println("Smallest element: " + result[0]);
+        System.out.println("Largest element: " + result[1]);
+	}
+	public static int[] findLargestAndSmallest(int[] array) {
+		if (array == null || array.length == 0) {
+		    throw new IllegalArgumentException("Array must not be null or empty");
+		}
+		int smallest = array[0];
+		int largest = array[0];
+		for (int num : array) {
+		    if (num < smallest)
+		        smallest = num;
+		    if (num > largest)
+		        largest = num;
+		}
+		return new int[]{smallest, largest};
+	}
+}
+Smallest element: 1
+Largest element: 9
 *************************************************************************************************
-
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] array = {1, 2, 4, 5, 6}; // Missing number is 3
+	    int missingNumber = findMissingNumber(array);
+        System.out.println("The missing number is : " + missingNumber);
+	}
+	public static int findMissingNumber(int[] array) {
+		int n = array.length+1;
+		int totalSum = n*(n+1)/2;
+		int arraySum = 0;
+		for (int num : array) {
+		    arraySum += num;
+		}
+		return totalSum - arraySum;
+	}
+}	===>	The missing number is : 3
 *************************************************************************************************
 
 *************************************************************************************************
