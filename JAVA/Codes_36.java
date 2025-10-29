@@ -233,8 +233,58 @@ public class Main
 Arraylist with duplicates removed
 1 2 5 6 9 
 *************************************************************************************************
-
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] array = {5, 2, 9, 1, 6, 2, 5};
+	    int[] uniqueArray = removeDuplicates(array);
+        System.out.println("Array with duplicates removed : ");
+        for (int num : uniqueArray) {
+            System.out.print(num + " ");
+        }
+	}
+	public static int[] removeDuplicates(int[] array) {
+		Set<Integer> set = new HashSet<>();
+		for (int num : array) {
+		    set.add(num);
+		}
+		int[] result = new int[set.size()];
+		int i = 0;
+		for (int num : set) 
+		    result[i++] = num;
+		return result;
+	}
+}	==>		Array with duplicates removed : 
+1 2 5 6 9 
 *************************************************************************************************
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] array = {5, 2, 9, 1, 6};
+        selectionSort(array);
+        System.out.print("Sorted Array : ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+	}
+	public static void selectionSort(int[] array) {
+	    int n = array.length;
+	    for (int i=0; i<n-1; i++) {
+	        int minIndex = i;
+	        for (int j=i+1; j<n; j++) {
+	            if (array[j] < array[minIndex]) {
+	                minIndex = j;
+	            }
+	        }
+	        int temp = array[i];
+	        array[i] = array[minIndex];
+	        array[minIndex] = temp;
+	    }
+	}
+}	==>		Sorted Array : 1 2 5 6 9 
 *************************************************************************************************
 
 *************************************************************************************************
