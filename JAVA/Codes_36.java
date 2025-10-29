@@ -404,7 +404,30 @@ public class Main
 Formatted output: 32400121200
 Output : 32400121200
 *************************************************************************************************
-
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter string : ");
+		String input = scanner.nextLine();
+		System.out.println("Original string is : "+input);
+		separateAplhaAndNumeric(input);
+	}
+	public static void separateAplhaAndNumeric(String input) {
+	    StringBuilder alphaPart = new StringBuilder();
+	    StringBuilder numericPart = new StringBuilder();
+	    for (char ch : input.toCharArray()) {
+	        if (Character.isLetter(ch)) {alphaPart.append(ch);}
+	        else if (Character.isDigit(ch)) { numericPart.append(ch);}
+	    }
+	    System.out.println("Output in Alpha : "+alphaPart.toString());
+	    System.out.println("Output in Numeric : "+numericPart.toString());
+	}
+}
+Original string is : Vais$123tec
+Output in Alpha : Vaistec
+Output in Numeric : 123
 *************************************************************************************************
 
 *************************************************************************************************
