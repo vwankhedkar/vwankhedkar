@@ -176,9 +176,65 @@ Directory: C:\Users\vwank\PycharmProjects\PytestFramework\Python_Codes\__pycache
 Subdirectories: []
 Files: ['try.cpython-312.pyc', 'try.cpython-313-pytest-8.3.5.pyc']
 ************************************************************************************************
-
+file = open('example.txt','a')
+file.write("Hello World !")
+# file.close()
+file = open('example.txt','r')
+content = file.read()
+print(content)
+# file.close()
+with open('example.txt','r'):
+    content = file.read()
+    print(content)
 ************************************************************************************************
-
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+@app.route('/createJira', methods=['POST'])
+def create_jira():
+    # Replace with your real JIRA info — but NEVER hardcode API tokens in code
+    jira_url = "https://mdsajid020.atlassian.net/rest/api/3/issue"
+    api_token = "YOUR_API_TOKEN_HERE"  # 🔒 Use environment variable instead
+    auth = HTTPBasicAuth("mdsajid020@gmail.com", api_token)
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "fields": {
+            "project": {"id": "10000"},
+            "summary": "Main order flow broken",
+            "issuetype": {"id": "10001"},
+            "description": {
+                "type": "doc",
+                "version": 1,
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {"type": "text", "text": "Order entry fails when selecting supplier."}
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+    response = requests.post(
+        jira_url,
+        data=json.dumps(payload),
+        headers=headers,
+        auth=auth
+    )
+    # Return JSON response
+    try:
+        return jsonify(response.json()), response.status_code
+    except Exception:
+        return jsonify({"error": "Invalid response from JIRA", "details": response.text}), 500
+if __name__ == '__main__':
+    # Run Flask on port 5000
+    app.run(host='0.0.0.0', port=5000)
 ************************************************************************************************
 
 ************************************************************************************************
