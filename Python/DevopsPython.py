@@ -345,9 +345,54 @@ new_value = '600'  # New maximum connections allowed
 # Update the server configuration file
 update_server_config(server_config_file, key_to_update, new_value)
 ************************************************************************************************
-
+import requests
+# URL to fetch pull requests from the GitHub API
+url = f'https://api.github.com/repos/mdsajid786/Python/pulls'
+# Make a GET request to fetch pull requests data from the GitHub API
+response = requests.get(url) # Add headers=headers inside get() for authentication
+# Only if the response is successful
+if response.status_code == 200:
+    # Convert the JSON response to a dictionary
+    pull_requests = response.json()
+    # Create an empty dictionary to store PR creators and their counts
+    pr_creators = {}
+    # Iterate through each pull request and extract the creator's name
+    for pull in pull_requests:
+        creator = pull['user']['login']
+        if creator in pr_creators:
+            pr_creators[creator] += 1
+        else:
+            pr_creators[creator] = 1
+    # Display the dictionary of PR creators and their counts
+    print("PR Creators and Counts:")
+    for creator, count in pr_creators.items():
+        print(f"{creator}: {count} PR(s)")
+else:
+    print(f"Failed to fetch data. Status code: {response.status_code}")
+Output:
+PR Creators and Counts:
+DeepTests1: 1 PR(s)
+SudheerT: 1 PR(s)
+AparnaN: 1 PR(s)
+ShubhangiS: 1 PR(s)
 ************************************************************************************************
-
+import os
+def listdirectory():
+    path_name = input("Enter the path : ").split(' ')
+    print(path_name)
+    for paths in path_name:
+        try:
+            files = os.listdir(paths)
+            print(files)
+        except FileNotFoundError:
+            print("Enter valid folder path")
+            continue
+        # for path in paths:
+        #     print(path)
+        print(files)
+        for file in files:
+            print(file)
+listdirectory()
 ************************************************************************************************
 
 ************************************************************************************************
