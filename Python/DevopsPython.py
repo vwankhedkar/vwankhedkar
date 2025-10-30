@@ -236,12 +236,114 @@ if __name__ == '__main__':
     # Run Flask on port 5000
     app.run(host='0.0.0.0', port=5000)
 ************************************************************************************************
-
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+# Jira Cloud endpoint for issue creation
+url = "https://mdsajid020.atlassian.net/rest/api/3/issue"
+# Replace this with your actual Jira API token securely (use environment variable ideally)
+API_TOKEN = "YOUR_API_TOKEN"
+auth = HTTPBasicAuth("mdsajid020@gmail.com", API_TOKEN)
+headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+}
+# Jira issue payload
+payload = json.dumps({
+    "fields": {
+        "project": {
+            "id": "10000"
+        },
+        "summary": "First JIRA Ticket",
+        "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "My first Jira ticket"
+                        }
+                    ]
+                }
+            ]
+        },
+        "issuetype": {
+            "id": "10001"
+        }
+    }
+})
+# Send the POST request to Jira
+response = requests.post(
+    url,
+    headers=headers,
+    auth=auth,
+    data=payload
+)
+# Print formatted response
+print(json.dumps(response.json(), indent=4, sort_keys=True))
 ************************************************************************************************
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+import os
+# Jira Cloud API endpoint for all projects
+url = "https://mdsajid020.atlassian.net/rest/api/3/project"
+# Read credentials securely from environment variables (recommended)
+JIRA_EMAIL = "mdsajid020@gmail.com"
+API_TOKEN = os.getenv("JIRA_API_TOKEN")  # set this in your environment
+auth = HTTPBasicAuth(JIRA_EMAIL, API_TOKEN)
+headers = {
+    "Accept": "application/json"
+}
+# Send GET request
+response = requests.get(url, headers=headers, auth=auth)
+# Check if request succeeded
+if response.status_code == 200:
+    output = response.json()
+    print(f"Total Projects: {len(output)}")
+    for proj in output:
+        print(f"- {proj['name']} (Key: {proj['key']})")
+else:
+    print(f"Failed to fetch projects. Status code: {response.status_code}")
+    print(response.text)
 ************************************************************************************************
-
+import boto3
+# Create an S3 client
+s3 = boto3.client('s3')
+# Create a new bucket
+s3.create_bucket(Bucket='my-new-bucket')
+# Upload a file to the bucket
+s3.upload_file('local_file.txt', 'my-new-bucket', 'file_in_s3.txt')
+# List files in the bucket
+response = s3.list_objects_v2(Bucket='my-new-bucket')
+for obj in response.get('Contents', []):
+    print(obj['Key'])
 ************************************************************************************************
+def update_server_config(file_path, key, value):
+    # Read the existing content of the server configuration file
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
 
+    # Update the configuration value for the specified key
+    with open(file_path, 'w') as file:
+        for line in lines:
+            # Check if the line starts with the specified key
+            if line.strip().startswith(key + "="):
+                # Update the line with the new value
+                file.write(f"{key}={value}\n")
+            else:
+                # Keep the existing line as it is
+                file.write(line)
+# Path to the server configuration file
+server_config_file = 'server.conf'
+# Key and new value for updating the server configuration
+key_to_update = 'MAX_CONNECTIONS'
+new_value = '600'  # New maximum connections allowed
+# Update the server configuration file
+update_server_config(server_config_file, key_to_update, new_value)
 ************************************************************************************************
 
 ************************************************************************************************
