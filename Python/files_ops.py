@@ -263,7 +263,12 @@ except FileNotFoundError:
 except Exception as e:
     print(f"An weeor occured : {e}")
 *********************************************************
-
+fp = open("data.txt", "w")
+print("Dayalu Dean", file=fp)
+fp.seek(7)
+print("in Deen Dayal Nagar.", file=fp)
+fp.close()
+Dayalu in Deen Dayal Nagar.
 *********************************************************
 
 *********************************************************
