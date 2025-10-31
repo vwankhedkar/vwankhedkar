@@ -370,6 +370,58 @@ else:
 Enter a URL: https://www.example123.com
 Valid URL
 *******************************************************************************
+import re
+text = """ 
+Hello Prashant 
+How is Bangalore treating you? Do you continue to be in the same company? 
+I wanted to check if you are around on September 10, 2023? I am coming there for an official visit 
+on Sep 9 and would like to drop by your house in the evening of sept 10. 
+If that is not feasible, I may have to come back in October. Are you around on oct 10? or oct. 11? 
+Do let me know. 
+"""
+months = ('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec')
+regex12 = ''
+for mm in months:
+    regex12 = regex12 + mm + '|'
+regex12 = '('+regex12[:-1]+')'
+print(regex12)
+finalregex = '('+regex12+r'[a-z.]*\s+\d\d?)(,?\s?\d{2,4})?'
+dates = re.findall(finalregex, text.lower())
+for onedate in dates:
+    print(onedate)
+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)
+('september 10', 'sep', ', 2023')
+('sep 9', 'sep', '')
+('sept 10', 'sep', '')
+('oct 10', 'oct', '')
+('oct. 11', 'oct', '')
 *******************************************************************************
+import re
+text = """My departmental email id is rupesh@cse.iitm.ac.in. This is what I use for all the 
+official purposes. The institute also provides an id rupesh@iitm.ac.in. During PhD, I used 
+to have a personal email id rupesh0something@gmail.com, 10.212.141.100 . When 411015
+gmail was not around, id rupesh_something@usa.net was the one I used. I also own a bbc
+twitter 5kg handle @rupeshsomething, which I 10.212.141.100 hardly use. That's it from my side for now. See 
+you in class @11. 4256 7970 3986 AAYPW0064A http://www.onlinegdb.com"""
+regex = r'\w+@\w+'
+emails = re.findall(regex, text.lower())
+print(emails)
+pattern = r'\d\d'
+print(re.findall(pattern, text))
+pattern = r'\w\w\w\w\w\w\w'
+print(re.findall(pattern, text))
+pattern = r'[1-9]\d{5}' #pincode
+print(re.findall(pattern, text))
+# pattern = r'\d{12}'   # Aadhar
+pattern = '\d{4}\D\d{4}\D\d{4}'
+print(re.findall(pattern, text))
+pattern = '[A-Z]{5}\d{4}[A-Z]'  # PAN
+print(re.findall(pattern, text))
+pattern = r'http://[a-zA-Z_0-9-]+\.[a-zA-Z_0-9-]+\.[a-zA-Z_0-9-]+'
+print(re.findall(pattern, text))
+pattern = r'\d{1,3}(?:\.\d{1,3}){3}'    #(?: ... ){3} Non-capturing group, repeats 3 times
+print(re.findall(pattern, text))
+pattern = r'\d+\s*(kg|lb|gm)'
+print(re.findall(pattern, text))
 *******************************************************************************
 *******************************************************************************
