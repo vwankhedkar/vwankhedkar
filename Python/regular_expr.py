@@ -413,9 +413,9 @@ print(re.findall(pattern, text))
 pattern = r'[1-9]\d{5}' #pincode
 print(re.findall(pattern, text))
 # pattern = r'\d{12}'   # Aadhar
-pattern = '\d{4}\D\d{4}\D\d{4}'
+pattern = r'\d{4}\D\d{4}\D\d{4}'
 print(re.findall(pattern, text))
-pattern = '[A-Z]{5}\d{4}[A-Z]'  # PAN
+pattern = r'[A-Z]{5}\d{4}[A-Z]'  # PAN
 print(re.findall(pattern, text))
 pattern = r'http://[a-zA-Z_0-9-]+\.[a-zA-Z_0-9-]+\.[a-zA-Z_0-9-]+'
 print(re.findall(pattern, text))
@@ -423,5 +423,14 @@ pattern = r'\d{1,3}(?:\.\d{1,3}){3}'    #(?: ... ){3} Non-capturing group, repea
 print(re.findall(pattern, text))
 pattern = r'\d+\s*(kg|lb|gm)'
 print(re.findall(pattern, text))
+['rupesh@cse', 'rupesh@iitm', 'rupesh0something@gmail', 'rupesh_something@usa']
+['10', '21', '14', '10', '41', '10', '15', '10', '21', '14', '10', '11', '42', '56', '79', '70', '39', '86', '00', '64']
+['departm', 'officia', 'purpose', 'institu', 'provide', 'persona', 'rupesh0', 'somethi', 'rupesh_', 'somethi', 'twitter', 'rupeshs', 'omethin', 'AAYPW00', 'onlineg']
+['411015']
+['4256 7970 3986']
+['AAYPW0064A']
+['http://www.onlinegdb.com']
+['10.212.141.100', '10.212.141.100']
+['gm', 'kg']
 *******************************************************************************
 *******************************************************************************
