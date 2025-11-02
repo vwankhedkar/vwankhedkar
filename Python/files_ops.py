@@ -22,6 +22,32 @@ for line in file:
             dir[w] = 1
 print(dir)
 *********************************************************************************
+def readAll():
+    phones = {}
+    githubs = {}
+    
+    with open('datafile.txt', 'r') as df:
+        for line in df:
+            parts = line.strip().split()
+            if len(parts) < 3:
+                continue  # skip incomplete lines
+            # Handle names with spaces — join everything except last 2 items
+            name = ' '.join(parts[:-2])
+            phone = parts[-2]
+            github = parts[-1]
+            
+            phones[name] = phone
+            githubs[name] = github
+
+    print("Phone Numbers:")
+    for name, phone in phones.items():
+        print(f"{name}: {phone}")
+
+    print("\nGitHub Usernames:")
+    for name, gh in githubs.items():
+        print(f"{name}: {gh}")
+readAll()
+**************************************************************************************
 i = 0
 with open('file3.txt', 'w') as f:
     for i in range(5):
