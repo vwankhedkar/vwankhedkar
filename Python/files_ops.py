@@ -24,8 +24,7 @@ print(dir)
 *********************************************************************************
 def readAll():
     phones = {}
-    githubs = {}
-    
+    githubs = {} 
     with open('datafile.txt', 'r') as df:
         for line in df:
             parts = line.strip().split()
@@ -35,18 +34,81 @@ def readAll():
             name = ' '.join(parts[:-2])
             phone = parts[-2]
             github = parts[-1]
-            
             phones[name] = phone
             githubs[name] = github
-
     print("Phone Numbers:")
     for name, phone in phones.items():
         print(f"{name}: {phone}")
-
     print("\nGitHub Usernames:")
     for name, gh in githubs.items():
         print(f"{name}: {gh}")
 readAll()
+**************************************************************************************
+import re
+def is_valid_email(email):
+    # Basic email validation pattern
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    return re.match(pattern, email) is not None
+def is_valid_phone(phone):
+    # Accepts numbers like 9934242312, +91-8342998727, (+91)8342998727, etc.
+    pattern = r'^(\+?\d{1,3}[-\s]?)?\d{7,12}$'
+    return re.match(pattern, phone) is not None
+def readAll():
+    data = {}
+    with open('datafile.txt', 'r') as df:
+        for line in df:
+            parts = line.strip().split()
+            if len(parts) < 4:
+                continue  # skip incomplete lines
+            # Handle names with spaces → join everything except last 3 fields
+            name = ' '.join(parts[:-3])
+            phone = parts[-3]
+            github = parts[-2]
+            email = parts[-1]
+            # Validate phone and email
+            if not is_valid_phone(phone):
+                print(f"❌ Invalid phone for {name}: {phone}")
+                continue
+            if not is_valid_email(email):
+                print(f"❌ Invalid email for {name}: {email}")
+                continue
+            # Store multiple entries for duplicate names
+            if name not in data:
+                data[name] = []
+            data[name].append({
+                'phone': phone,
+                'github': github,
+                'email': email
+            })
+    for name, records in data.items():
+        print(f"\n✅ Name: {name}")
+        for entry in records:
+            print(f"  Phone: {entry['phone']}")
+            print(f"  GitHub: {entry['github']}")
+            print(f"  Email: {entry['email']}")
+            print("-" * 40)
+readAll()
+OUTPUT
+❌ Invalid phone for Jyothi Krishna: 22574abc
+✅ Name: Somesh
+  Phone: 9934242312
+  GitHub: ssomesh
+  Email: ssomesh@gmail.com
+----------------------------------------
+✅ Name: Shouvick
+  Phone: +91-8342998727
+  GitHub: shouvickmondal
+  Email: shouvickmondal@gmail.com
+----------------------------------------
+  Phone: +91-8342998727
+  GitHub: shouvickmondal
+  Email: shouvickmondal@gmail.com
+----------------------------------------
+✅ Name: Jyothi Krishna
+  Phone: 22574374
+  GitHub: jkrishna
+  Email: jkrishna1@gmail.com
+----------------------------------------
 **************************************************************************************
 i = 0
 with open('file3.txt', 'w') as f:
