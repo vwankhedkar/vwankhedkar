@@ -790,3 +790,38 @@ else:
 Enter first string: lazy
 Enter second string: zaly
 Yes, the given strings are anagrams.
+****************************************************************
+def count_to(n):    # Generator
+    i = 0
+    while i<=n:
+        yield i
+        i += 1
+counter = count_to(3)
+print(next(counter))
+print(next(counter))
+print(next(counter))
+print(next(counter))
+print(next(counter))
+0
+1
+2
+3
+Traceback (most recent call last):
+  File "/home/main.py", line 11, in <module>
+    print(next(counter))
+          ~~~~^^^^^^^^^
+StopIteration
+************************************************************
+# list vs generator
+import sys
+num_list = [x for x in range(100)]
+num_gen = (x for x in range(100))
+print(sys.getsizeof(num_list))  # large memory
+print(sys.getsizeof(num_gen))   # small memory footprint
+************************************************************
+
+************************************************************
+
+************************************************************
+
+************************************************************
