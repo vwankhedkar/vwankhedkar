@@ -937,27 +937,32 @@ Digits: [1, 2]
 Alphabetic: ['a', 'b', 'c']
 Alphanumeric: ['1a', '5gg']
 *************************************************************************
-import re
-def expand_string(s):
+def expand(s):
     result = []
     i = 0
     while i < len(s):
-        if s[i].isdigit():
-            count = int(s[i])
+        count = 0
+        # Get the number part
+        while i < len(s) and s[i].isdigit():
+            count = count * 10 + int(s[i])  # handle multi-digit numbers
             i += 1
-            group = ''
-            while i < len(s) and not s[i].isdigit():
-                group += s[i]
-                i += 1
+        # Get the character(s) part
+        group = ''
+        while i < len(s) and not s[i].isdigit():
+            group += s[i]
+            i += 1
+        # If there's a count and group, expand
+        if count and group:
             result.append(group * count)
-        else:
-            result.append(s[i])
-            i += 1
+        elif group:
+            result.append(group)
     return ''.join(result)
-# Test cases
-print(expand_string("2ad3b4c"))   # adadbbbcccc
-print(expand_string("2a3b4c"))    # aabbbcccc
-print(expand_string("2ab3b4c"))   # ababbbbcccc
+print(expand("200a2b"))   # aaaaaaaaaabb
+print(expand("3ab2c"))   # abababcc
+print(expand("2xy3z"))   # xyxyz zzz
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabb
+abababcc
+xyxyzzz
 ***********************************************************************************************
 Coforge intv question
 s = "aaababz"
