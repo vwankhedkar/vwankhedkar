@@ -358,9 +358,33 @@ print("in Deen Dayal Nagar.", file=fp)
 fp.close()
 Dayalu in Deen Dayal Nagar.
 *********************************************************
-
+import sys
+myfile = open(sys.argv[1], 'r+')
+alllines = myfile.read()
+print(alllines)
+modlines = alllines.replace('Hello','Welcome')
+myfile.seek(0)
+myfile.write(modlines)
+myfile.close()
 *********************************************************
-
+import sys
+myfile = open(sys.argv[1], 'r+')
+line = myfile.readline()
+while line:
+    modline = line.replace('Hello','Welcome')
+    curoff = myfile.tell()
+    myfile.seek(curoff-len(line))
+    myfile.write(modline)
+    print(modline, file=myfile, end='')
+    print("Current Position : ",myfile.tell())
+    line = myfile.readline()
+myfile.close()
+Welcome this is vaishali wankhedkar
+Welcome this is vaishali wankhedkar
+o this is vaishali wankhedkar
+o this is vaishali wankhedkar
+Current Position :  72
+Current Position :  132
 *********************************************************
 
 *********************************************************
