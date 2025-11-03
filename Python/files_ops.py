@@ -386,5 +386,17 @@ o this is vaishali wankhedkar
 Current Position :  72
 Current Position :  132
 *********************************************************
-
+import sys
+infile = open(sys.argv[1], 'r')
+outfile = open(sys.argv[2], 'w')
+outline = ''
+for line in infile:
+    words = line.strip().split(':')
+    print(words)
+    outline = outline + words[1] + " "
+    if "." in words[1]:
+        print(outline,file=outfile)
+        outline=''
+infile.close()
+outfile.close()
 *********************************************************
