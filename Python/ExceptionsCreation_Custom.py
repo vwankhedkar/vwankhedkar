@@ -31,3 +31,21 @@ except NegativeAgeError as e:
     print(e)
 OUTPUT
 Age -5 is not valid. Age cannot be negative.
+*******************************************************************************
+dictionary = {'euler_constant': 0.577, 'golden_ratio': 1.618}
+try:
+    dct = dictionary['euler_constant']
+except KeyError:
+    print("This code gives us KeyError")
+dct = dictionary['euler_cont']
+print(dct)
+Traceback (most recent call last):
+  File "/home/main.py", line 6, in <module>
+    dct = dictionary['euler_cont']
+          ~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'euler_cont'
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
