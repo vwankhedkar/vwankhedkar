@@ -70,3 +70,15 @@ After modify list :  [1, 2, 3, 4]
 Before modify number :  5
 Inside modify number:  15
 After modify number :  5
+******************************************************************************
+def func(**args):
+    for key in args:
+        print(key,":",args[key])
+func(Micoorganism='Aspergillus niger', Substrate='Molasses', Product='Inulinase', Fermentation_mode='Batch', Activity='1800 U/mL')
+Micoorganism : Aspergillus niger
+Substrate : Molasses
+Product : Inulinase
+Fermentation_mode : Batch
+Activity : 1800 U/mL
+
+******************************************************************************
