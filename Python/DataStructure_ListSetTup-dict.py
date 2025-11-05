@@ -189,6 +189,24 @@ sorted_list = sorted(list_of_dicts, key=lambda x:x['age'])
 print("Sorted list of dictionaries : ", sorted_list)
 Sorted list of dictionaries :  [{'name': 'Jane', 'age': 25}, {'name': 'John', 'age': 30}, {'name': 'Bob', 'age': 35}]
 **************************************************************************************
+lst, dct, tup = [], {}, ()
+print(bool(lst), bool(dct), bool(tup))
+lst, dct, tup = [0], {'a':1}, (1,)
+print(bool(lst), bool(dct), bool(tup))
+lst, dct, tup = [0.0], {'a':1.0}, (1.0,)
+print(bool(lst), bool(dct), bool(tup))
+a,b,c=0,3.14,'Hello Program'
+print(bool(lst), bool(dct), bool(tup))
+statement = None
+print(bool(None))
+true = True
+print(bool(true))
+False False False
+True True True
+True True True
+True True True
+False
+True
 **************************************************************************************
 **************************************************************************************
 **************************************************************************************
