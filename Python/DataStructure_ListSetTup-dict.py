@@ -189,6 +189,10 @@ sorted_list = sorted(list_of_dicts, key=lambda x:x['age'])
 print("Sorted list of dictionaries : ", sorted_list)
 Sorted list of dictionaries :  [{'name': 'Jane', 'age': 25}, {'name': 'John', 'age': 30}, {'name': 'Bob', 'age': 35}]
 **************************************************************************************
+def func():
+    msg = "Hello Python!"
+    new_msg = bytes(msg, 'utf-8')
+    print(new_msg)
 lst, dct, tup = [], {}, ()
 print(bool(lst), bool(dct), bool(tup))
 lst, dct, tup = [0], {'a':1}, (1,)
@@ -201,13 +205,31 @@ statement = None
 print(bool(None))
 true = True
 print(bool(true))
+print(callable(b))
+msg1 = func 
+print(callable(msg1))
+print(chr(65))
+print(chr(1500))
+code_line = 'x=3.14\ny=2.718\nprint("Result =", 2*x+5*y)'
+code = compile(code_line, 'main.py','exec')
+print(type(code))
+exec(code)
+exec('print(b+2.45)')
 False False False
 True True True
 True True True
 True True True
 False
 True
+False
+True
+A
+ל
+<class 'code'>
+Result = 19.87
+5.59
 **************************************************************************************
+
 **************************************************************************************
 **************************************************************************************
 **************************************************************************************
