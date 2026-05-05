@@ -825,3 +825,1835 @@ print(sys.getsizeof(num_gen))   # small memory footprint
 ************************************************************
 
 ************************************************************
+---------------------------------------------------
+		Python
+---------------------------------------------------
+with open('file.txt','r') as file:
+    for line in file:
+        print(line.strip())
+
+---------------------------------------------------
+with open('file.txt','w') as file:
+    file.write("Hello")
+with open('file.txt','r') as file:
+    print(file.read())
+---------------------------------------------------
+import re
+text = "I love learning Python!"
+match = re.search(r"Python", text)
+if match:
+    print(match.group())
+----------------
+import re
+text = "I love Python learning Python!"
+match = re.search(r"Python", text)
+if match:
+    print(match)
+---------------------------------------------------
+import re
+text = "My favorite number is 42."
+match = re.search(r"\d+",text)
+if match:
+    print("Found Number : ", match.group())
+Found Number :  42
+---------------------------------------------------
+import re
+email = "user@example.com"
+pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+if (re.match(pattern,email)):
+    print("Valid mail !")
+else:
+    print("Invalid mail !")
+Valid mail !
+---------------------------------------------------
+import re
+text = "The event is on 15/08/2025."
+date = re.search(r"\d{2}/\d{2}/\d{4}", text)
+if date:
+    print("Found date : ", date.group())
+Found date :  15/08/2025
+---------------------------------------------------
+import re
+phone_number = "(123) 456-7890"
+pattern = r"\(\d{3}\) \d{3}-\d{4}"
+if re.match(pattern, phone_number):
+    print("Valid phone number !")
+else:
+    print("Invalid phone number!")
+Valid phone number !
+---------------------------------------------------
+import re
+text = "Hello World!"
+modified_text = re.sub(r"\s","_",text)
+print(modified_text)
+Hello_World!
+---------------------------------------------------
+import re
+text = "Visit our website at https://www.example.com for more info."
+url = re.search(r"https?://[a-zA-Z0-9./]+",text)
+if url:
+    print("Found URL...", url.group())
+Found URL... https://www.example.com
+---------------------------------------------------
+import re
+text = "apple, banana, cherry"
+fruits = re.split(r",\s*",text)
+print(fruits)
+['apple', 'banana', 'cherry']
+---------------------------------------------------
+import re
+text = "I have 3 apples, 7 bananas, and 12 cherries."
+numbers = re.findall(r"\d+",text)
+print("Numbers found !", numbers)
+Numbers found ! ['3', '7', '12']
+---------------------------------------------------
+import re
+text = "Alice and Alex are amazing artists."
+words = re.findall(r"\b[Aa]\w+",text)
+print("Words found - ",words)
+Words found -  ['Alice', 'and', 'Alex', 'are', 'amazing', 'artists']
+---------------------------------------------------
+import re
+password = "Secure@123"
+pattern = r"^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+if re.match(pattern, password):
+    print("Strong password!")
+else:
+    print("Weak password!Try adding uppercase, lowercase, numbers, and special characters.")
+Strong password!
+---------------------------------------------------
+import re
+text = "Python is fun! Let's learn regex together."
+words = re.findall(r"\b\w+\b",text)
+print("Words : ", words)
+Words :  ['Python', 'is', 'fun', 'Let', 's', 'learn', 'regex', 'together']
+---------------------------------------------------
+import re
+tweet = "Learning #Python and #Regex is fun! #Coding"
+hashtags = re.findall(r"#\w+",tweet)
+print("Hashtags found - ", hashtags)
+Hashtags found -  ['#Python', '#Regex', '#Coding']
+---------------------------------------------------
+import re
+text = "Alice and Bob are learning Python in New York."
+capitalized_words = re.findall(r"\b[A-Z][a-z]*\b",text)
+print("capitalized Words : ", capitalized_words)
+capitalized Words :  ['Alice', 'Bob', 'Python', 'New', 'York']
+---------------------------------------------------
+import re
+text = "Python is awesome!"
+cleaned_text = re.sub(r"\s+"," ",text)
+print(cleaned_text)
+Python is awesome!
+---------------------------------------------------
+import re
+text = "I have 3 apples, 10 bananas, and 25 oranges."
+numbers = re.findall(r"\d+",text)
+print("Numbers found : ",numbers)
+Numbers found :  ['3', '10', '25']
+---------------------------------------------------
+import re
+text = "The tiger and the turtle are in the zoo."
+words = re.findall(r"\b[Tt]\w+",text)
+print("Words found : ", words)
+Words found :  ['The', 'tiger', 'the', 'turtle', 'the']
+---------------------------------------------------
+import re
+text = "Python123"
+if re.fullmatch(r"[A-Za-z0-9]+",text):
+    print("Valid input (letters and numbers only)")
+else:
+    print("Invalid input")
+Valid input (letters and numbers only)
+---------------------------------------------------
+class Dog:
+    def __init__(self,name,breed):
+        self.name = name
+        self.breed = breed
+    def bark(self):
+        print(f"{self.name} says Woof!")
+dog = Dog("Buddy", "Golden Retriever")
+dog.bark()
+Buddy says Woof!
+---------------------------------------------------
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+class Dog(Animal):
+    def speak(self):
+        print("Dog barks")
+dog = Dog()
+dog.speak()
+Dog barks
+---------------------------------------------------
+class Car:
+    def __init__(self,brand,speed):
+        self.__brand = brand
+        self.__speed = speed
+    def accelerate(self,increment):
+        if increment > 0:
+            self.__speed+=increment
+    def brake(self, decrement):
+        if decrement > 0 and self.__speed - decrement > 0:
+            self.__speed -= decrement
+    def get_speed(self):
+        return self.__speed
+    def get_brand(self):
+        return self.__brand
+---------------------------------------------------
+class Car:
+    def __init__(self,brand,speed):
+        self.__brand = brand
+        self.__speed = speed
+    def accelerate(self,increment):
+        if increment > 0:
+            self.__speed+=increment
+    def brake(self, decrement):
+        if decrement > 0 and self.__speed - decrement > 0:
+            self.__speed -= decrement
+    def get_speed(self):
+        return self.__speed
+    def get_brand(self):
+        return self.__brand
+my_car = Car("Toyota",50)
+print(my_car.get_speed())
+my_car.accelerate(30)
+print(my_car.get_speed())
+my_car.brake(20)
+print(my_car.get_speed())
+50
+80
+60
+---------------------------------------------------
+class Cat:
+    def speak(self):
+        print("Meow")
+class Dog:
+    def speak(self):
+        print("Woof")
+animals = [Cat(), Dog()]
+for animal in animals:
+    animal.speak()
+Meow
+Woof
+---------------------------------------------------
+from abc import ABC, abstractmethod
+class Animal(ABC):
+    @abstractmethod
+    def speak(self):
+        pass
+class Dog(Animal):
+    def speak(self):
+        print("Woof")
+dog = Dog()
+dog.speak()
+Woof
+---------------------------------------------------
+def decorator(func):
+    def wrapper():
+        print("Before function call")
+        func()
+        print("After function call")
+    return wrapper
+@decorator
+def say_hello():
+    print("Hello")
+say_hello()
+Before function call
+Hello
+After function call
+---------------------------------------------------
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+counter = count_up_to(3)
+for num in counter:
+    print(num)
+1
+2
+3
+---------------------------------------------------
+numbers = [1, 2, 3, 4, 5]
+sq = [x**2 for x in numbers]
+print(sq)
+[1, 4, 9, 16, 25]
+---------------------------------------------------
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+age_dict = {name:age for name, age in zip(names, ages)}
+print(age_dict)
+{'Alice': 25, 'Bob': 30, 'Charlie': 35}
+---------------------------------------------------
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(f"{index} : {fruit}")
+0 : apple
+1 : banana
+2 : cherry
+---------------------------------------------------
+names = ["Alice", "Bob", "Charlie"]
+scores = [85, 90, 95]
+combine = zip(names,scores)
+print(list(combine))
+[('Alice', 85), ('Bob', 90), ('Charlie', 95)]
+---------------------------------------------------
+numbers = [1, 2, 3]
+iterator = iter(numbers)
+print(next(iterator))	==>		1
+---------------------------------------------------
+import threading
+def print_num():
+    for i in range(5):
+        print(i)
+thread1 = threading.Thread(target=print_num)
+thread2 = threading.Thread(target=print_num)
+thread1.start()
+thread2.start()
+0
+1
+2
+3
+4
+0
+1
+2
+3
+4
+---------------------------------------------------
+def repeat(n):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                func(*args,**kwargs)
+        return wrapper
+    return decorator
+@repeat(3)
+def greet(name):
+    print(f"Hello, {name}!")
+greet("Alice")
+Hello, Alice!
+Hello, Alice!
+Hello, Alice!
+---------------------------------------------------
+import json
+person = {"name":"Alice", "age":25}
+json_data = json.dumps(person)
+print(json_data)
+{"name": "Alice", "age": 25}
+---------------------------------------------------
+import json
+json_string = '{"name":"Alice", "age":25}'
+person = json.loads(json_string)
+print(person)
+{'name': 'Alice', 'age': 25}
+---------------------------------------------------
+import csv
+data = [["name", "age"], ["Alice", 25], ["Bob", 30]]
+with open('output.csv','w',newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+    
+with open('output.csv','r') as file:
+    header = csv.reader(file)
+    for row in header:
+        print(row)
+['name', 'age']
+['Alice', '25']
+['Bob', '30']
+---------------------------------------------------
+import pandas as pd
+data = {"name": ["Alice", "Bob", "Charlie"], "age": [25, 30, 35]}
+df = pd.DataFrame(data)
+print(df)
+print()
+print(df["name"])
+print()
+print(df[df["age"]>=30])
+      name  age
+0    Alice   25
+1      Bob   30
+2  Charlie   35
+
+0      Alice
+1        Bob
+2    Charlie
+Name: name, dtype: object
+
+      name  age
+1      Bob   30
+2  Charlie   35
+---------------------------------------------------
+import requests
+response = requests.get("https://api.github.com")
+print(response.status_code)
+200
+---------------------------------------------------
+import requests
+response = requests.get("https://api.github.com")
+print(response.status_code)
+print(response.json())
+data = {"name":"Alice","age":25}
+response = requests.post("https://api.example.com", json=data)
+print(response.status_code)
+200
+{'current_user_url': 'https://api.github.com/user', 'current_user_authorizations_html_url': 'https://github.com/settings/connections/applications{/client_id}', 'authorizations_url': 'https://api.github.com/authorizations', 'code_search_url': 'https://api.github.com/search/code?q={query}{&page,per_page,sort,order}', 'commit_search_url': 'https://api.github.com/search/commits?q={query}{&page,per_page,sort,order}', 'emails_url': 'https://api.github.com/user/emails', 'emojis_url': 'https://api.github.com/emojis', 'events_url': 'https://api.github.com/events', 'feeds_url': 'https://api.github.com/feeds', 'followers_url': 'https://api.github.com/user/followers', 'following_url': 'https://api.github.com/user/following{/target}', 'gists_url': 'https://api.github.com/gists{/gist_id}', 'hub_url': 'https://api.github.com/hub', 'issue_search_url': 'https://api.github.com/search/issues?q={query}{&page,per_page,sort,order}', 'issues_url': 'https://api.github.com/issues', 'keys_url': 'https://api.github.com/user/keys', 'label_search_url': 'https://api.github.com/search/labels?q={query}&repository_id={repository_id}{&page,per_page}', 'notifications_url': 'https://api.github.com/notifications', 'organization_url': 'https://api.github.com/orgs/{org}', 'organization_repositories_url': 'https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}', 'organization_teams_url': 'https://api.github.com/orgs/{org}/teams', 'public_gists_url': 'https://api.github.com/gists/public', 'rate_limit_url': 'https://api.github.com/rate_limit', 'repository_url': 'https://api.github.com/repos/{owner}/{repo}', 'repository_search_url': 'https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}', 'current_user_repositories_url': 'https://api.github.com/user/repos{?type,page,per_page,sort}', 'starred_url': 'https://api.github.com/user/starred{/owner}{/repo}', 'starred_gists_url': 'https://api.github.com/gists/starred', 'topic_search_url': 'https://api.github.com/search/topics?q={query}{&page,per_page}', 'user_url': 'https://api.github.com/users/{user}', 'user_organizations_url': 'https://api.github.com/user/orgs', 'user_repositories_url': 'https://api.github.com/users/{user}/repos{?type,page,per_page,sort}', 'user_search_url': 'https://api.github.com/search/users?q={query}{&page,per_page,sort,order}'}
+201
+---------------------------------------------------
+import requests
+from bs4 import BeautifulSoup
+response = requests.get("https://example.com")
+soup = BeautifulSoup(response.text, 'html.parser')
+for link in soup.find_all('a'):
+    print(link.get('href'))
+https://iana.org/domains/example
+---------------------------------------------------
+from multiprocessing import Process
+def print_num():
+    for i in range(5):
+        print(i)
+process = Process(target = print_num)
+process.start()
+process.join()
+0
+1
+2
+3
+4
+---------------------------------------------------
+import asyncio
+async def greet():
+    await asyncio.sleep(1)
+    print("Hello, Async!")
+asyncio.run(greet())
+Hello, Async!
+---------------------------------------------------
+class CustomError(Exception):
+    pass
+try:
+    raise CustomError("A Custom error occured")
+except CustomError as e:
+    print(e)
+A Custom error occured
+---------------------------------------------------
+import yaml
+data = {"name":"Alice", "age":25}
+yaml_str = yaml.dump(data)
+print(yaml_str)
+age: 25
+name: Alice
+---------------------------------------------------
+import configparser
+config = configparser.ConfigParser()
+config.read("config.ini")
+print(config["DEFAULT"][Setting])
+---------------------------------------------------
+import calendar
+year = int(input("Enter year : "))
+month = int(input("Enter month : "))
+cal = calendar.month(year, month)
+print(cal)
+Enter year : 2026
+Enter month : 4
+     April 2026
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30
+---------------------------------------------------
+year = int(input("Enter a year : "))
+if (year % 400 == 0) and (year % 100 == 0):
+    print("{0} is a leap year".format(year))
+elif (year % 4 == 0) and (year % 100 != 0):
+    print("{0} is a leap year".format(year))
+else:
+    print("{0} is not a leap year")
+Enter a year : 2024
+2024 is a leap year
+---------------------------------------------------
+num = int(input("Enter a number : "))
+flag = False
+if num == 1:
+    print(f"{num}, is not a prime number")
+elif num > 1:
+    for i in range (2, num):
+        if (num % i == 0):
+            flag = True
+            break
+if flag:
+    print(f"{num}, is not prime number")
+else:
+    print(f"{num}, is prime number")
+Enter a number : 11
+11, is prime number
+---------------------------------------------------
+lower = int(input("Enter lower number : "))
+upper = int(input("Enter upper number : "))
+print("Prime numbers between {lower} and {upper} are : ")
+for num in range(lower, upper+1):
+    if num > 1:
+        for i in range(2, num):
+            if (num % i == 0):
+                break
+        else:
+            print(num, end = " ")
+Enter lower number : 1
+Enter upper number : 10
+Prime numbers between {lower} and {upper} are : 
+2 3 5 7 
+---------------------------------------------------
+num = int(input("Enter a number : "))
+fact = 1
+if num < 0:
+    print("Factirial does not exist for negative numbers")
+elif num == 0:
+    print("Factirial of 0 is 1")
+else:
+    for i in range(1, num+1):
+        fact = fact * i
+    print(f"Factirial of number {num} is {fact}")
+Enter a number : 4
+Factirial of number 4 is 24
+---------------------------------------------------
+nterms = int(input("How many terms? : "))
+n1, n2 = 0, 1
+count = 0
+if nterms <= 0:
+    print("Enter positive integer...")
+elif nterms == 1:
+    print("Fibbonacci series upto ",nterms," : ")
+    print(n1, end = " ")
+else:
+    print("Fibbonacci series : ")
+    while count < nterms:
+        print(n1, end = " ")
+        nth = n1 + n2
+        n1 = n2
+        n2 = nth
+        count += 1
+How many terms? : 10
+Fibbonacci series : 
+0 1 1 2 3 5 8 13 21 34 
+---------------------------------------------------
+num = int(input("Enter a number : "))
+num_str = str(num)
+num_digits = len(num_str)
+sum_of_power = 0
+temp_num = num
+while (temp_num > 0):
+    digit = temp_num % 10
+    sum_of_power += digit ** num_digits
+    temp_num //= 10
+if sum_of_power == num:
+    print(f"{num} is Armstrong number")
+else:
+    print(f"{num} is not an Armstrong number")
+Enter a number : 153
+153 is Armstrong number
+---------------------------------------------------
+lower = int(input("Enter the lower limit of the interval: "))
+upper = int(input("Enter the upper limit of the interval: "))
+for num in range(lower, upper+1):
+    order = len(str(num))
+    temp_num = num
+    sum = 0
+    while (temp_num > 0):
+        digit = temp_num % 10
+        sum += digit ** order
+        temp_num //= 10
+    if num == sum:
+        print(num)
+Enter the lower limit of the interval: 10
+Enter the upper limit of the interval: 10000
+153
+370
+371
+407
+1634
+8208
+9474
+---------------------------------------------------
+def compute_lcm(x, y):
+    if x > y:
+        greater = x
+    else:
+        greater = y
+    while(True):
+        if ((greater % x == 0) and (greater % y == 0)):
+            lcm = greater
+            break
+        greater += 1
+    return lcm
+num1 = int(input('Enter the number: '))
+num2 = int(input('Enter the number: '))
+print("The L.C.M. is", compute_lcm(num1, num2))
+Enter the number: 54
+Enter the number: 24
+The L.C.M. is 216
+---------------------------------------------------
+def compute_hcf(x, y):
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if ((x % i == 0) and (y % i == 0)):
+            hcf = i
+    return hcf
+num1 = int(input('Enter the number: '))
+num2 = int(input('Enter the number: '))
+print("The H.C.F. is", compute_hcf(num1, num2))
+Enter the number: 54
+Enter the number: 24
+The H.C.F. is 6
+---------------------------------------------------
+dec_num = int(input('Enter a decimal number: '))
+print("The decimal value of", dec_num, "is:")
+print(bin(dec_num), "in binary.")
+print(oct(dec_num), "in octal.")
+print(hex(dec_num), "in hexadecimal.")
+Enter a decimal number: 27
+The decimal value of 27 is:
+0b11011 in binary.
+0o33 in octal.
+0x1b in hexadecimal.
+---------------------------------------------------
+char = str(input("Enter the character : "))
+print("The ASCII value of {char} is : ", ord(char))
+Enter the character : V
+The ASCII value of {char} is :  86
+---------------------------------------------------
+def add(x, y):
+    return x + y
+def sub(x, y):
+    return x - y
+def multiply(x, y):
+    return x * y
+def divide(x, y):
+    return x / y
+print("Select opearation : ")
+print("1. Add ")
+print("2. Subtract ")
+print("3. Multiply ")
+print("4. Divide ")
+while True:
+    choice = input("Enter choice(1/2/3/4) : ")
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input, please enter number.")
+            continue
+        if choice == '1':
+            print(num1,"+",num2,'=',add(num1, num2))
+        elif choice == '2':
+            print(num1,"-",num2,'=',sub(num1, num2))
+        if choice == '3':
+            print(num1,"*",num2,'=',multiply(num1, num2))
+        if choice == '4':
+            print(num1,"/",num2,'=',divide(num1, num2))
+        next_calculation = input("Let's do next calculation? (yes/No) : ")    
+        if next_calculation == "no":
+            break
+    else:
+        print("Invalid Input")
+Select opearation : 
+1. Add 
+2. Subtract 
+3. Multiply 
+4. Divide 
+Enter choice(1/2/3/4) : 1
+Enter first number: 3
+Enter second number: 4
+3.0 + 4.0 = 7.0
+Let's do next calculation? (yes/No) : yes
+Enter choice(1/2/3/4) : 2
+Enter first number: 6
+Enter second number: 1
+6.0 - 1.0 = 5.0
+Let's do next calculation? (yes/No) : yes
+Enter choice(1/2/3/4) : 3
+Enter first number: 6
+Enter second number: 2
+6.0 * 2.0 = 12.0
+Let's do next calculation? (yes/No) : yes
+Enter choice(1/2/3/4) : 90
+Enter first number: 90
+Enter second number: 3
+90.0 / 3.0 = 30.0
+Let's do next calculation? (yes/No) : no
+---------------------------------------------------
+def recur_fibbo(n):
+    if n <= 1:
+        return n
+    else:
+        return (recur_fibbo(n-1) + recur_fibbo(n-2))
+nterms = int(input("Enter number of the terms greater than 0 : "))
+if nterms <= 0:
+    print("Please enter positive integer ")
+else:
+    print("Fibbonacci sequence : ")
+    for i in range(nterms):
+        print(recur_fibbo(i), end=" ")
+Enter number of the terms greater than 0 : 8
+Fibbonacci sequence : 
+0 1 1 2 3 5 8 13 
+---------------------------------------------------
+def recur_facto(n):
+    if n == 1:
+        return n
+    else:
+        return n * recur_facto(n-1)
+num = int(input("Enter the number : "))
+if num < 0:
+    print("Please enter positive integer factorial is not for negative num")
+elif num == 0:
+    print("The Factorial of 0 is 1")
+else:
+    print(f"The Factorial is : ", recur_facto(num))
+Enter the number : 7
+The Factorial is :  5040
+---------------------------------------------------
+def rotated_arr(arr, d):
+    n = len(arr)
+    if d < 0 or d >= n:
+        return "Invalid rotation value"
+    rotated_arr = [0] * n
+    for i in range(n):
+        rotated_arr[i] = arr[(i+d) % n]
+    return rotated_arr
+arr = [1, 2, 3, 4, 5]
+d = 2
+result = rotated_arr(arr, d)
+print("Original array : ", arr)
+print("Rotated array : ", result)
+Original array :  [1, 2, 3, 4, 5]
+Rotated array :  [3, 4, 5, 1, 2]
+---------------------------------------------------
+def split_and_arr(arr, k):
+    if k <= 0 or k >= len(arr):
+        return arr
+    first_part = arr[:k]
+    second_part = arr[k:]
+    result = second_part + first_part
+    return result
+arr = [1, 2, 3, 4, 5]
+k = 3
+result = split_and_arr(arr, k)
+print("Original array : ", arr)
+print("Array after splitting and adding : ", result)
+Original array :  [1, 2, 3, 4, 5]
+Array after splitting and adding :  [4, 5, 1, 2, 3]
+---------------------------------------------------
+A monotonic array is one that is entirely non-increasing or non-decreasing
+def is_monotonic(arr):
+    increasing = decreasing = True
+    for i in range(1, len(arr)):
+        if (arr[i] > arr[i-1]):
+            decreasing = False
+        elif (arr[i] < arr[i-1]):
+            increasing = False
+    return increasing or decreasing
+arr1 = [1, 2, 2, 3]
+arr2 = [3, 2, 1]
+arr3 = [1, 3, 2, 4]
+print("arr1 is monotonic:", is_monotonic(arr1))
+print("arr2 is monotonic:", is_monotonic(arr2))
+print("arr3 is monotonic:", is_monotonic(arr3))
+arr1 is monotonic: True
+arr2 is monotonic: True
+arr3 is monotonic: False
+---------------------------------------------------
+def add_matrices(mat1, mat2):
+    if len(mat1) != len(mat2) or len(mat1[0]) != len(mat2[0]):
+        return "Matrices must have the same dimensions for addition"
+    result = []
+    for i in range(len(mat1)):
+        row = []
+        for j in range(len(mat1[0])):
+            row.append(mat1[i][j] + mat2[i][j])
+        result.append(row)
+    return result
+matrix1 = [
+ [1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]
+]
+matrix2 = [
+ [9, 8, 7],
+ [6, 5, 4],
+ [3, 2, 1]
+]
+result_matrix = add_matrices(matrix1, matrix2)
+if isinstance(result_matrix, str):
+    print(result_matrix)
+else:
+    print("Sum of matrices:")
+    for row in result_matrix:
+        print(row)
+Sum of matrices:
+[10, 10, 10]
+[10, 10, 10]
+[10, 10, 10]
+---------------------------------------------------
+def multiply_matrices(mat1, mat2):
+    rows1 = len(mat1)
+    cols1 = len(mat1[0])
+    rows2 = len(mat2)
+    cols2 = len(mat2[0])
+    if cols1 != rows2:
+        return "Matrix multiplication is not possible. Number of columns mismatch"
+    result = [[0 for _ in range(cols2)] for _ in range(rows1)]
+    for i in range(rows1):
+        for j in range(cols2):
+            for k in range(cols1):
+                result[i][j] += mat1[i][k] * mat2[k][j]
+    return result
+matrix1 = [
+ [1, 2, 3],
+ [4, 5, 6]
+]
+matrix2 = [
+ [7, 8],
+ [9, 10],
+ [11, 12]
+]
+result_matrix = multiply_matrices(matrix1, matrix2)
+if isinstance(result_matrix, str):
+    print(result_matrix)
+else:
+    print("Result of matrics multiplication :")
+    for row in result_matrix:
+        print(row)
+Result of matrics multiplication :
+[58, 64]
+[139, 154]
+---------------------------------------------------
+def transpose_matrix(matrix):
+    rows, cols = len(matrix), len(matrix[0])
+    result = [[0 for _ in range(rows)] for _ in range(cols)]
+    for i in range(rows):
+        for j in range(cols):
+            result[j][i] = matrix[i][j]
+    return result
+matrix = [
+ [1, 2, 3],
+ [4, 5, 6]
+]
+transposed_matrix = transpose_matrix(matrix)
+for row in transposed_matrix:
+    print(row)
+[1, 4]
+[2, 5]
+[3, 6]
+---------------------------------------------------
+my_str = input("Enter a string : ")
+words = [word.capitalize() for word in my_str.split()]
+words.sort()
+print("The sorted words are : ")
+for word in words:
+    print(word)
+Enter a string : vaishali mangulal wankhedkar sandip vishal shiv shambhu chiku
+The sorted words are : 
+Chiku
+Mangulal
+Sandip
+Shambhu
+Shiv
+Vaishali
+Vishal
+Wankhedkar
+---------------------------------------------------
+punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+my_str = input("Enter a string : ")
+no_punct = ""
+for char in my_str:
+    if char not in punctuations:
+        no_punct = no_punct + char
+print(no_punct)
+/home/main.py:1: SyntaxWarning: invalid escape sequence '\,'
+  punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+Enter a string : Hello!!!, he said ---and went
+Hello he said and went
+---------------------------------------------------
+A Disarium number is a number that is equal to the sum of its digits each raised to the
+power of its respective position. For example, 89 is a Disarium number because 8 + = 8 + 81 = 89.
+def is_disarium(number):
+    num_str = str(number)
+    digit_sum = sum(int(i) ** (index + 1) for index, i in enumerate(num_str))
+    return digit_sum == number
+try:
+    num = int(input("Enter a number : "))
+    if is_disarium(num):
+        print(f"{num} is a Disarium number")
+    else:
+        print(f"{num} is not a Disarium number")
+except ValueError:
+    print("Invalid input. Please enter a valid number")
+Enter a number : 89
+89 is a Disarium number
+---------------------------------------------------
+def is_disarium(number):
+    num_str = str(number)
+    digit_sum = sum(int(i) ** (index + 1) for index, i in enumerate(num_str))
+    return digit_sum == number
+disarium_num = [num for num in range(1, 101) if is_disarium(num)]
+print("Disarium numbers between 1 to 100 : ")
+for num in disarium_num:
+    print(num, end = " | ")
+Disarium numbers between 1 to 100 : 
+1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 89 | 
+---------------------------------------------------
+19 is a Happy Number because:
+The process reaches 1, so 19 is a Happy Number.
+1 + = 82
+2 9
+2
+8 + = 68
+2 2
+2
+6 + = 100
+2 8
+2
+1 + + = 1
+
+def is_happy_num(num):
+    seen = set()
+    while num != 1 and num not in seen:
+        seen.add(num)
+        num = sum(int(i) ** 2 for i in str(num))
+    return num == 1
+num = int(input("Enter a number : "))
+if is_happy_num(num):
+    print(f"{num} is a happy number.")
+else:
+    print(f"{num} is a not a happy number.")
+Enter a number : 23
+23 is a happy number.
+---------------------------------------------------
+def is_happy_num(num):
+    seen = set()
+    while num != 1 and num not in seen:
+        seen.add(num)
+        num = sum(int(i) ** 2 for i in str(num))
+    return num == 1
+happy_num = []
+for num in range(1, 101):
+    if is_happy_num(num):
+        happy_num.append(num)
+print("Happy numbers between 1 and 100.")
+print(happy_num)
+Happy numbers between 1 and 100.
+[1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97, 100]
+---------------------------------------------------
+A Harshad number (or Niven number) is an integer that is divisible by the sum of its digits.
+18 is a Harshad number because , and 18 is divisible by 9
+42 is not a Harshad number because , and 42 is not divisible by 6.
+def is_harshad_num(num):
+    digit_sum = sum(int(i) for i in str(num))
+    return num % digit_sum == 0
+num = int(input("Enter a number : "))
+if is_harshad_num(num):
+    print(f"{num} is a Harshad number.")
+else:
+    print(f"{num} is not a Harshad number.")
+Enter a number : 18
+18 is a Harshad number.
+---------------------------------------------------
+A pronic number, also known as an oblong number or rectangular number, is a type of
+figurate number that represents a rectangle. It is the product of two consecutive integers, n
+and (n + 1). Mathematically, a pronic number can be expressed as:
+For example, the first few pronic numbers are:
+𝑃 = 𝑛 ∗ (𝑛 + 1) 𝑛
+𝑃1 = 1 ∗ (1 + 1) = 2
+𝑃2 = 2 ∗ (2 + 1) = 6
+𝑃3 = 3 ∗ (3 + 1) = 12
+𝑃4 = 4 ∗ (4 + 1) = 20
+def is_pronic_num(num):
+    for n in range(1, int(num ** 0.5)+1):
+        if n * (n + 1) == num:
+            return True
+    return False
+print("Pronic numbers between 1 and 100 are : ")
+for i in range(1, 101):
+    if is_pronic_num(i):
+        print(i, end = " | ")
+Pronic numbers between 1 and 100 are : 
+2 | 6 | 12 | 20 | 30 | 42 | 56 | 72 | 90 | 
+---------------------------------------------------
+numbers = [30, 10, 45, 5, 20]
+numbers.sort(reverse = True)
+if len(numbers) >= 2:
+    second_largest = numbers[1]
+    print("The second largest number in the list is:", second_largest)
+else:
+    print("The list does not contain a second largest number.")
+The second largest number in the list is: 30
+---------------------------------------------------
+def find_n_largest_ele(lst, n):
+    sorted_lst = sorted(lst, reverse=True)
+    largest_ele = sorted_lst[:n]
+    return largest_ele
+numbers = [30, 10, 45, 5, 20, 50, 15, 3, 345, 54, 67, 87, 98, 100, 34]
+N = int(input("N = "))
+result = find_n_largest_ele(numbers, N)
+print(f"The {N} largest number in the list are :", result)
+N = 3
+The 3 largest number in the list are : [345, 100, 98]
+---------------------------------------------------
+list_of_lists = [[1, 2, 3], [], [4, 5], [], [6, 7, 8], []]
+filtered_list = [i for i in list_of_lists if i]
+print("List after removing empty lists:", filtered_list)
+List after removing empty lists: [[1, 2, 3], [4, 5], [6, 7, 8]]
+---------------------------------------------------
+def count_occurance(l, element):
+    count = l.count(element)
+    return count
+my_list = [1, 2, 3, 4, 2, 5, 2, 3, 4, 6, 5]
+element_to_count = 2
+occurances = count_occurance(my_list, element_to_count)
+print(f"The element {element_to_count} appears {occurances} times in list")
+The element 2 appears 3 times in list
+---------------------------------------------------
+def find_words(words, k):
+    result = []
+    for i in words:
+        if len(i) > k:
+            result.append(i)
+    return result
+word_list = ["apple", "banana", "cherry", "date", "elderberry", "dragonfruit"]
+k = 5
+long_words = find_words(word_list, k)
+print(f"Words longer than {k} characters: {long_words}")
+Words longer than 5 characters: ['banana', 'cherry', 'elderberry', 'dragonfruit']
+---------------------------------------------------
+def remove_char(input_str, i):
+    if i < 0 or i >= len(input_str):
+        print(f"Invalid index {i}. The string remains unchanged.")
+        return input_str
+input_str = "Hello, wWorld!"
+i = 7
+new_str = remove_char(input_str, i)
+print(f"Original String : {input_str}")
+print(f"String after removing {i}th character: {new_str}")
+Original String : Hello, wWorld!
+String after removing 7th character: None
+---------------------------------------------------
+input_str = "Python program to split and join a string"
+word_list = input_str.split()
+separator = " "
+output_str = separator.join(word_list)
+print("Original String:", input_str)
+print("List of split Words:", word_list)
+print("Joined String:", output_str)
+Original String: Python program to split and join a string
+List of split Words: ['Python', 'program', 'to', 'split', 'and', 'join', 'a', 'string']
+Joined String: Python program to split and join a string
+---------------------------------------------------
+def is_binary_str(input_str):
+    for i in input_str:
+        if i not in '01':
+            return False
+    return True
+input_str = "1001110"
+if is_binary_str(input_str):
+    print(f"'{input_str}' is a binary string.")
+else:
+    print(f"'{input_str}' is not a binary string.")
+'1001110' is a binary string.
+---------------------------------------------------
+def uncommon_words(str1, str2):
+    words1 = set(str1.split())
+    words2 = set(str2.split())
+    uncommon_words_set = words1.symmetric_difference(words2)
+    uncommon_words_list = list(uncommon_words_set) 
+    return uncommon_words_list
+string1 = "This is first string"
+string2 = "This is second string"
+uncommon = uncommon_words(string1, string2)
+print("Uncommon words : ", uncommon)
+Uncommon words :  ['second', 'first']
+---------------------------------------------------
+def find_duplicates(input_str):
+    char_count = {}
+    duplicates = []
+    for i in input_str:
+        if i in char_count:
+            char_count[i] += 1
+        else:
+            char_count[i] = 1
+    for i, count in char_count.items():
+        if count > 1:
+            duplicates.append(i)
+    return duplicates
+input_string = "piyush sharma"
+duplicate_chars = find_duplicates(input_string)
+print("Duplicate characters : ", duplicate_chars)
+Duplicate characters :  ['s', 'h', 'a']
+---------------------------------------------------
+import re
+def check_special_char(in_str):
+    pattern = r'[!@#$%^&*()_+{}\[\]:;<>,.?~\\\/\'"\-=]'  
+    if re.search(pattern, in_str):
+        return True
+    else:
+        return False
+input_string = str(input("Enter a string : "))
+contains_special = check_special_char(input_string)
+if contains_special:
+    print("The string contains special characters. ")
+else:
+    print("The string does not contains special characters. ")
+Enter a string : "Hello, World $!"
+The string contains special characters. 
+---------------------------------------------------
+my_dict = {
+ 'a': 10,
+ 'b': 20,
+ 'c': 10,
+ 'd': 30,
+ 'e': 20
+}
+uni_val = set()
+for i in my_dict.values():
+    uni_val.add(i)
+unique_values_list = list(uni_val)
+print("Uniques values in the dictionary : ", unique_values_list)
+Uniques values in the dictionary :  [10, 20, 30]
+---------------------------------------------------
+my_dict = {
+ 'a': 10,
+ 'b': 20,
+ 'c': 10,
+ 'd': 30,
+ 'e': 20
+}
+total_sum = 0 
+for i in my_dict.values():
+    total_sum += i
+print("sum of all the items dictionary : ", total_sum)
+sum of all the items dictionary :  90
+---------------------------------------------------
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+merged_dict = {**dict1, **dict2}
+print("Merged dictionary (using dictionary unpacking) is : ", merged_dict)
+Merged dictionary (using dictionary unpacking) is :  {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+---------------------------------------------------
+key_values_list = [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+flat_dict = {}
+for key, value in key_values_list:
+    flat_dict[key] = value
+print("Flat dictionary : ", flat_dict)
+Flat dictionary :  {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+---------------------------------------------------
+from collections import OrderedDict
+ordered_dict = OrderedDict([('b', 2), ('c', 3), ('d', 4)])
+new_item = ('a',1)
+new_ordered_dict = OrderedDict([new_item])
+new_ordered_dict.update(ordered_dict)
+print("Updated Ordered Dict : ", new_ordered_dict)
+Updated Ordered Dict :  OrderedDict({'a': 1, 'b': 2, 'c': 3, 'd': 4})
+---------------------------------------------------
+from collections import OrderedDict
+def check_order(string, reference):
+    string_dict = OrderedDict.fromkeys(string)
+    reference_dict = OrderedDict.fromkeys(reference)
+    return string_dict == reference_dict
+input_string = "hello world"
+reference_string = "helo wrd"
+if check_order(input_string, reference_string):
+    print("The order of characters in the input string matches the reference string")
+else:
+    print("The order of characters in the input string does not matche the reference string")
+The order of characters in the input string matches the reference string
+---------------------------------------------------
+sample_dict = {'apple': 3, 'banana': 1, 'cherry': 2, 'date': 4}
+sorted_dict_by_keys = dict(sorted(sample_dict.items()))
+print("Sorted by Keys : ")
+for key, value in sorted_dict_by_keys.items():
+    print(f"{key} : {value}")
+Sorted by Keys : 
+apple : 3
+banana : 1
+cherry : 2
+date : 4
+---------------------------------------------------
+sample_dict = {'apple': 3, 'banana': 1, 'cherry': 2, 'date': 4}
+sorted_dict_by_values = dict(
+    sorted(sample_dict.items(), key=lambda item: item[1]))
+print("Sorted by values:")
+for key, value in sorted_dict_by_values.items():
+    print(f"{key}: {value}")
+Sorted by values:
+banana: 1
+cherry: 2
+apple: 3
+date: 4
+---------------------------------------------------
+import math
+C = 50
+H = 30
+def calculate_Q(D):
+    return int(math.sqrt((2 * C * D) / H))
+input_seq = input("Enter comma seperated values of D: ")
+D_values = input_seq.split(',')
+result = [calculate_Q(int(D)) for D in D_values]
+print(','.join(map(str, result)))
+Enter comma seperated values of D: 100,150,180
+18,22,24
+---------------------------------------------------
+X,Y = map(int, input("Enter two digits (X, Y): ").split(','))
+array = [[0 for j in range(Y)] for i in range(X)]
+for i in range(X):
+    for j in range(Y):
+        array[i][j] = i * j
+for row in array:
+    print(row)
+Enter two digits (X, Y): 3,5
+[0, 0, 0, 0, 0]
+[0, 1, 2, 3, 4]
+[0, 2, 4, 6, 8]
+---------------------------------------------------
+input_sequence = input("Enter a comma-separated sequence of words: ")
+words = input_sequence.split()
+sorted_words = sorted(words)
+sorted_sequence = ','.join(sorted_words)
+print("Sorted words : ", sorted_sequence)
+Enter a comma-separated sequence of words: without, hello, bag, world
+Sorted words :  bag,,hello,,without,,world
+---------------------------------------------------
+input_sequence = input("Enter a comma-separated sequence of words: ")
+words = input_sequence.split()
+sorted_words = sorted(words)
+result = ' '.join(sorted_words)
+print("Result : ", result)
+Enter a comma-separated sequence of words: hello world and practice makes perfect and hello world again
+Result :  again and and hello hello makes perfect practice world world
+---------------------------------------------------
+sentence = input("Enter a sentence: ")
+letter_count = 0
+digit_count = 0
+for char in sentence:
+    if char in sentence:
+        if char.isalpha():
+            letter_count += 1
+        elif char.isdigit():
+            digit_count += 1
+print("LETTERS", letter_count)
+print("DIGITS", digit_count)
+Enter a sentence: hello world! 123
+LETTERS 10
+DIGITS 3
+---------------------------------------------------
+import re
+def is_valid_password(password):
+    if 6 <= len(password) <= 12:
+        if re.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$#@])", password):
+            return True
+        return False
+password = input("Enter passwords separated by commas: ").split(',')
+valid_passwords = []
+for psw in password:
+    if is_valid_password(psw):
+        valid_passwords.append(psw)
+print(','.join(valid_passwords))
+Enter passwords separated by commas: ABd1234@1,a F1#,2w3E*,2We3345
+ABd1234@1
+---------------------------------------------------
+input_sentence = input("Enter a sentence: ")
+words = input_sentence.split()
+word_freq = {}
+for word in words:
+    word = word.strip('.,?')
+    word = word.lower()
+    if word in word_freq:
+        word_freq[word] += 1
+    else:
+        word_freq[word] = 1
+sorted_words = sorted(word_freq.items())
+for word, frequency in sorted_words:
+    print(f"{word}:{frequency}")
+Enter a sentence: New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+2:2
+3:1
+3?read:1
+and:1
+between:1
+choosing:1
+new:1
+or:2
+python:5
+to:1
+---------------------------------------------------
+subjects = ["I", "You"]
+verbs = ["Play", "Love"]
+objects = ["Hockey", "Football"]
+sentences = []
+for sub in subjects:
+    for verb in verbs:
+        for obj in objects:
+            sentence = f"{sub} {verb} {obj}"
+            sentences.append(sentence)
+for sentence in sentences:
+    print(sentence)
+I Play Hockey
+I Play Football
+I Love Hockey
+I Love Football
+You Play Hockey
+You Play Football
+You Love Hockey
+You Love Football
+---------------------------------------------------
+import zlib
+string = "hello world!hello world!hello world!hello world!"
+compressed_string = zlib.compress(string.encode())
+decompressed_string = zlib.decompress(compressed_string).decode()
+print("Original String:", string)
+print("Compressed String:", compressed_string)
+print("Decompressed String:", decompressed_string)
+Original String: hello world!hello world!hello world!hello world!
+Compressed String: b'x\x9c\xcbH\xcd\xc9\xc9W(\xcf/\xcaIQ\xcc \x82\r\x00\xbd[\x11\xf5'
+Decompressed String: hello world!hello world!hello world!hello world!
+---------------------------------------------------
+def binary_search(arr, target):
+    left, right = 0, len(arr)-1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+sorted_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target_element = 4
+result = binary_search(sorted_list, target_element)
+if result != -1:
+    print(f"Element {target_element} found at index {result}")
+else:
+    print(f"Element {target_element} not found in the list")
+Element 4 found at index 3
+---------------------------------------------------
+def divisible_by_5_and_7(n):
+    for num in range(n + 1):
+        if num % 5 == 0 and num % 7 == 0:
+            yield num
+try:
+    n = int(input("Enter a value for n: "))
+    result = divisible_by_5_and_7(n)
+    print(','.join(map(str, result)))
+except ValueError:
+    print("Invalid input. Please enter a valid integer for n.")
+Enter a value for n: 100
+0,35,70
+---------------------------------------------------
+def fibbonacci(n):
+    sequence = [0, 1]
+    [sequence.append(sequence[-1] + sequence[-2]) for _ in range(2, n)]
+    return sequence
+try:
+    n = int(input("Enter a value for n: "))
+    result = fibbonacci(n)
+    print(','.join(map(str, result)))
+except ValueError:
+    print("Invalid input. Please enter a valid integer for n.")
+Enter a value for n: 8
+0,1,1,2,3,5,8,13
+---------------------------------------------------
+def extract_username(email):
+    parts = email.split('@')
+    if len(parts) == 2:
+        return parts[0]
+    else:
+        return "Invalid email format"
+try:
+    email = input("Enter an email address: ")
+    username = extract_username(email)
+    print(username)
+except ValueError:
+    print("Invalid input. Please enter a valid integer for n.")
+Enter an email address: john@google.com
+john
+---------------------------------------------------
+class Shape:
+    def __init__(self):
+        pass
+    def area(self):
+        return 0
+class Square(Shape):
+    def __init__(self, length):
+        super().__init__()
+        self.length = length
+    def area(self):
+        return self.length ** 2
+shape = Shape()
+square = Square(float(input("Enter the shape of the square : ")))
+print("Shape's area by default:", shape.area()) 
+print("Area of the square:", square.area()) 
+Enter the shape of the square : 5
+Shape's area by default: 0
+Area of the square: 25.0
+---------------------------------------------------
+def stutter(word):
+    if len(word) < 2:
+        return "Word must be at least two characters long."
+    stutter_word = f"{word[:2]} ... {word[:2]} ... {word}?"
+    return stutter_word
+print(stutter("incredible")) 
+print(stutter("enthusiastic")) 
+print(stutter("outstanding")) 
+in ... in ... incredible?
+en ... en ... enthusiastic?
+ou ... ou ... outstanding?
+---------------------------------------------------
+import math
+def radians_to_degrees(radians):
+    degrees = radians * (180 / math.pi)
+    return round(degrees, 1)
+print(radians_to_degrees(1))
+print(radians_to_degrees(20))
+print(radians_to_degrees(50))
+57.3
+1145.9
+2864.8
+---------------------------------------------------
+def is_curzon(num):
+    numerator = 2 ** num + 1
+    denominator = 2 * num + 1
+    return numerator % denominator == 0
+print(is_curzon(5)) 
+print(is_curzon(10)) 
+print(is_curzon(14))
+True
+False
+True
+---------------------------------------------------
+import math
+def area_of_hexagon(x):
+    area = (3 * math.sqrt(3) * x**2) / 2
+    return round(area, 1)
+print(area_of_hexagon(1)) 
+print(area_of_hexagon(2)) 
+print(area_of_hexagon(3))
+2.6
+10.4
+23.4
+---------------------------------------------------
+import math
+def binary(decimal):
+    binary_str = ""
+    while decimal > 0:
+        remainder = decimal % 2
+        binary_str = str(remainder) + binary_str
+        decimal = decimal // 2
+    return binary_str if binary_str else "0"
+print(binary(1)) 
+print(binary(5)) 
+print(binary(10))
+1
+101
+1010
+---------------------------------------------------
+def evenly_divisible(a, b, c):
+    total = 0
+    for num in range(a, b+1):
+        if num % c == 0:
+            total += num
+    return total
+print(evenly_divisible(1, 10, 20)) 
+print(evenly_divisible(1, 10, 2)) 
+print(evenly_divisible(1, 10, 3))
+0
+30
+18
+---------------------------------------------------
+def correct_signs(expression):
+    try:
+        return eval(expression)
+    except:
+        return False
+print(correct_signs("3 < 7 < 11"))
+print(correct_signs("13 > 44 > 33 < 1"))
+print(correct_signs("1 < 2 < 6 < 9 > 3"))
+True
+False
+True
+---------------------------------------------------
+def replace_vowels(string, char):
+    vowels = "AEIOUaeiou"
+    for vowel in vowels:
+        string = string.replace(vowel, char)
+    return string
+print(replace_vowels("the aardvark", "#"))
+print(replace_vowels("minnie mouse", "?"))
+print(replace_vowels("shakespeare", "*"))
+th# ##rdv#rk
+m?nn?? m??s?
+sh*k*sp**r*
+---------------------------------------------------
+def hamming_distance(str1, str2):
+    if len(str1) != len(str2):
+        raise ValueError("Input string must have same length")
+    distance = 0
+    for i in range(len(str1)):
+        if str1[i] != str2[i]:
+            distance += 1
+    return distance
+print(hamming_distance("abcde", "bcdef"))
+print(hamming_distance("abcde", "abcde"))
+print(hamming_distance("strong", "strung"))
+5
+0
+1
+---------------------------------------------------
+def filter_list(lst):
+    result = []
+    for element in lst:
+        if isinstance(element, int) and element >= 0:
+            result.append(element)
+    return result
+print(filter_list([1, 2, "a", "b"]))
+print(filter_list([1, 2, "aasf", "1", "123", 123]))
+print(filter_list([1, "a", "b", 0, 15]))
+[1, 2]
+[1, 2, 123]
+[1, 0, 15]
+---------------------------------------------------
+num = int(input("Enter number : "))
+fact = 1
+if num in (0, 1):
+    fact = 1
+else:
+    for i in range(1, num+1):
+        fact = fact * i
+print(f"Factorial of {num} is : {fact}")
+Enter number : 5
+Factorial of 5 is : 120
+---------------------------------------------------
+text = input("Enter string to check if it is palindrome or not : ")
+rev = ""
+tempstr = ""
+for i in text:
+    if i.isalnum():
+        rev = i + rev
+        tempstr += i
+if tempstr == rev:
+    print("Given string is palindrome")
+else:
+    print(f"Given string is not palindrome")
+Enter string to check if it is palindrome or not : madam
+Given string is palindrome
+---------------------------------------------------
+text = input("Enter a string to find palindrome or not: ").lower()
+rev = ""
+tempstr = ""
+for i in text:
+    if i.isalnum(): 
+        rev = i + rev
+        tempstr += i
+if tempstr == rev:
+    print("Given string is palindrome")
+else:
+    print("Given string is not palindrome")
+Enter a string to find palindrome or not: Was it a car or a cat I saw?
+Given string is palindrome
+---------------------------------------------------
+text = str(input("Enter string to count vowels and consonents : ")).lower()
+vowels = 'aeiou'
+vowels_cnt = 0
+consonents_cnt = 0
+for i in text:
+    if i.isalpha():
+        if i in vowels:
+            vowels_cnt += 1
+        else:
+            consonents_cnt += 1
+print(f"Vowels : {vowels_cnt}, Consonents : {consonents_cnt}")
+Enter string to count vowels and consonents : Ashish Sunil Zope
+Vowels : 6, Consonents : 9
+---------------------------------------------------
+num = int(input("Enter num : "))
+sum = 0
+temp = abs(num)
+while temp > 0:
+    sum += temp % 10
+    temp //= 10
+print(f"All digits if {num} : {sum}")
+Enter num : 17121996
+All digits if 17121996 : 36
+---------------------------------------------------
+def srt(array):
+    n = len(array)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if array[j] > array[j+1]:
+                array[j],array[j+1] = array[j+1], array[j]
+    return array #(return sorted(array))
+
+if __name__ == "__main__":
+    array = [1, 5, 2, 6, 7, 9, 2]
+    print(srt(array))
+[1, 2, 2, 5, 6, 7, 9]
+---------------------------------------------------
+celsius = float(input("Enter temperature in Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print(f"{celsius}°C is equal to {fahrenheit:.2f}°F")
+Enter temperature in Celsius: 37
+37.0°C is equal to 98.60°F
+---------------------------------------------------
+num = int(input("Enter a number to check prime or not: "))
+if num <= 1:
+    print(f"{num} is neither Prime nor Composite number")
+else:
+    isPrime=True
+    for i in range(1, int(num**0.5)+1):
+        if num % i == 0:
+            isPrime = False
+            break
+    if isPrime:
+        print("Given number is a Prime number")
+    else:
+        print("Given number is a Composite number")
+Enter a number to check prime or not: 17
+Given number is a Composite number
+---------------------------------------------------
+nth_term = int(input("Enter number of terms to generate "))
+a, b = 0, 1
+print("Fibonacci series upto Nth term:")
+for i in range(nth_term):
+    print(a, end = " ")
+    a, b = b, a+b
+Enter number of terms to generate 15
+Fibonacci series upto Nth term:
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 
+---------------------------------------------------
+year = int(input("Enter year in YYYY format to check if a year is a leap year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print(f"{year} is a leap year")
+else:
+    print(f"{year} is not a leap year")
+Enter year in YYYY format to check if a year is a leap year: 2024
+2024 is a leap year
+---------------------------------------------------
+sentence = str(input("Enter a sentences :"))
+wordcount = 1 if len(sentence.strip()) > 0 else 0
+for i in sentence:
+    if i == " ":
+        wordcount += 1
+print(f"Total number of words in given sentence is {wordcount}")
+Enter a sentences :Ashish Sunil Zope Senior Data engineer
+Total number of words in given sentence is 6
+---------------------------------------------------
+list = list(map(int, input("Enter name seperated by space : ").split()))
+if len(list) < 2:
+    print("List should have at least 2 numbers.")
+else:
+    first = second = float('-inf')
+    for num in list:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    if second == float('-inf'):
+        print("No second largest number (all elements might be equal).")
+    else:
+        print(f"Second largest number is {second}.")
+Enter name seperated by space : 8 3 9 3 5 0 3
+Second largest number is 8.
+---------------------------------------------------
+list = list(map(int, input("Enter numbers seperated by space : ").split()))
+uniq_list = []
+for i in list:
+    if i not in uniq_list:
+        uniq_list.append(i)
+print("List with duplicate elements : ", uniq_list)
+Enter numbers seperated by space : 4 2 4 6 2 5 8 0 3 3
+List with duplicate elements :  [4, 2, 6, 5, 8, 0, 3]
+---------------------------------------------------
+num_1 = int(input("Enter the first number : "))
+num_2 = int(input("Enter the second number : "))
+def fn_find_gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+gcd = fn_find_gcd(num_1, num_2)
+print(f"GCD of {num_1} and {num_2} is : {gcd}")
+Enter the first number : 56
+Enter the second number : 98
+GCD of 56 and 98 is : 14
+---------------------------------------------------
+list = list(map(int, input("Enter numbers seperated by space : ").split()))
+for i in range(len(list)):
+    for j in range(i+1, len(list)):
+        if list[i] > list[j]:
+            list[i], list[j] = list[j], list[i]
+print("Sorted list is : ", list)
+Enter numbers seperated by space : 34 23 567 23 678 89
+Sorted list is :  [23, 23, 34, 89, 567, 678]
+---------------------------------------------------
+list_1 = list(map(int, input("Enter first list (space seperated) : ").split()))
+list_2 = list(map(int, input("Enter second list (space seperated) : ").split()))
+common_ele = []
+for i in list_1:
+    if i in list_2 and i not in common_ele:
+        common_ele.append(i)
+print("Common elements in list are : ", common_ele)
+Enter first list (space seperated) : 7 4 6 3 8 9 1 2 5 7 8 2
+Enter second list (space seperated) : 1 2 5 9 5 6 2 3 7 0 1 2
+Common elements in list are :  [7, 6, 3, 9, 1, 2, 5]
+---------------------------------------------------
+(.venv) PS C:\Users\vwank\PycharmProjects\Python_Aug25\Pytest> 
+---------------------------------------------------
+list_1 = list(map(int, input("Enter first list (space seperated) : ").split()))
+list_2 = list(map(int, input("Enter second list (space seperated) : ").split()))
+merged_list = []
+i, j = 0, 0
+while i < len(list_1) and j < len(list_2):
+    if list_1[i] < list_2[j]:
+        merged_list.append(list_1[i])
+        i += 1
+    else:
+        merged_list.append(list_2[i])
+        j += 1
+merged_list += list_1[i:]
+merged_list += list_2[j:]
+print("Merged list is : ", merged_list)
+Enter first list (space seperated) : 4 433 344 34 7
+Enter second list (space seperated) : 45 23 56 78
+Merged list is :  [4, 23, 23, 23, 23, 433, 344, 34, 7]
+---------------------------------------------------
+list = list(map(str, input("Enter second sorted list : ").split()))
+isDigit = True
+for i in list:
+    if not i.isdigit():
+        isDigit = False
+        break
+print("List contains only digit. "if isDigit else "List contain non-digit elements")
+Enter second sorted list : Ashish Sunil Zope 28-10-1996 28 7744046830
+List contain non-digit elements
+---------------------------------------------------
+import string
+sentence = input("Enter string : ")
+sent_no_punc = ""
+for i in sentence:
+    if i not in string.punctuation:
+        sent_no_punc += i
+print("Without punctuation : ", sent_no_punc)
+Enter string : Ashish Sunil Zope, Senior Data Engineer: turning messy data into
+insights—faster than tea...!!!Without punctuation :  Ashish Sunil Zope Senior Data Engineer turning messy data into
+---------------------------------------------------
+binary_num = input("Enter a binary number: ")
+if not all (bit in "01" for bit in binary_num):
+    print("Invalid input!! Please enter only 0s and 1s")
+else:
+    decimal_num = int(binary_num, 2)
+    print(f"The decimal value of binary {binary_num} is {decimal_num}")
+Enter a binary number: 1010010101
+The decimal value of binary 1010010101 is 661
+---------------------------------------------------
+num = int(input("Enter decimal number : "))
+bin_no = ""
+temp = num
+if num == 0:
+    bin_no = "0"
+while num > 0:
+    bin_no = str(num % 2) + bin_no
+    num //= 2
+print(f"The binary value of decimal number {temp} is {bin_no}")
+Enter decimal number : 18
+The binary value of decimal number 18 is 10010
+---------------------------------------------------
+sentence = input("Enter string : ")
+freq = {}
+for char in sentence:
+    if char != " ":
+        freq[char] = freq.get(char,0)+1
+max_char = ""
+max_count = 0
+for char, count in freq.items():
+    if count > max_count:
+        max_char = char
+        max_count = count
+print()
+print(f"The maximum occuring character is '{max_char}' with {max_count} occurances.")
+Enter string : shish Sunil Zope, Senior Data Engineer: turning messy data into insights—faster than tea...!!!
+The maximum occuring character is 'n' with 9 occurances.
+---------------------------------------------------
+str1 = input("Enter first string : ").replace(" ", "").lower()
+str2 = input("Enter second string : ").replace(" ", "").lower()
+if len(str1) != len(str2):
+    print("No, the strings are not anagrams.")
+else:
+    freq = {}
+    for ch in str1:
+        freq[ch] = freq.get(ch, 0)+1
+    for ch in str2:
+        if ch in freq:
+            freq[ch] -= 1
+        else:
+            freq[ch] = 1
+if all(value==0 for value in freq.values()):
+    print("Yes, the strings are anagrams.")
+else:
+    print("No, given strings are not anagrams.")
+Enter second string : silent
+Yes, the strings are anagrams.
+---------------------------------------------------
+str = input("Enter a string : ")
+upper = lower = 0
+for char in str:
+    if char.isupper():
+        upper += 1
+    elif char.islower():
+        lower += 1
+print(f"upper : {upper}, lower : {lower}")
+Enter a string : Ashish Sunil Zope, Senior Data Engineer
+upper : 6, lower : 27
+---------------------------------------------------
+str = input("Enter a string : ")
+result = ""
+new_word = True
+for char in str:
+    if new_word and char.isalpha():
+        result += char.upper()
+        new_word = False
+    else:
+        result += char
+    if char == " ":
+        new_word = True
+print(f"Capitalized : {result}")
+Enter a string : ashish sunil zope senior data engineer
+Capitalized : Ashish Sunil Zope Senior Data Engineer
+---------------------------------------------------
+str = input("Enter a string : ")
+result = ""
+new_word = True
+for char in str:
+    if char == " ":
+        result += "_"
+    else:
+        result += char
+print(f"Result : {result}")
+Enter a string : Ashish Sunil Zope Senior Data Engineer
+Result : Ashish_Sunil_Zope_Senior_Data_Engineer
+---------------------------------------------------
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter annual interest rate (%): "))
+time = int(input("Enter time in years: "))
+n = int(input("Enter number of times interest applied per year: "))
+amount = principal * (1 + rate/(100*n))**(n*time)
+print(f"Compound Interest Amount: {amount:.2f}")
+Enter principal amount: 100000
+Enter annual interest rate (%): 13.74
+Enter time in years: 10
+Enter number of times interest applied per year: 12
+Compound Interest Amount: 392039.88
+---------------------------------------------------
