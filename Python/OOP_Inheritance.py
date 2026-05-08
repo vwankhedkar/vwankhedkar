@@ -1,3 +1,46 @@
+Amadeus(intv):
+class Employee:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+
+class RoleManager(Employee):
+
+    next_role_id = 101
+
+    def __init__(self, first_name, last_name, role_name):
+        super().__init__(first_name, last_name)
+
+        self.role_name = role_name
+
+        # Auto assign role id
+        self.role_id = RoleManager.next_role_id
+        RoleManager.next_role_id += 1
+
+    def display_employee(self):
+        print("Employee Details")
+        print(f"Name      : {self.first_name} {self.last_name}")
+        print(f"Role Name : {self.role_name}")
+        print(f"Role ID   : {self.role_id}")
+        print()
+
+# Input outside class
+# first_name = input("Enter First Name: ")
+# last_name = input("Enter Last Name: ")
+# role_name = input("Enter Role Name: ")
+
+
+# Object creation
+# emp = RoleManager(first_name, last_name, role_name)
+emp = RoleManager("Vais", "Wank", "QA")
+emp1 = RoleManager("Vaishali", "Wankhedkar", "Automation")
+
+# Display
+emp.display_employee()
+emp1.display_employee()
+--------------------------------------------------------------------
+
 Single inheritance
 class A:
     def feature1(self):
