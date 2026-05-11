@@ -1136,5 +1136,47 @@ for i in range(len(arr)):
         elif sum > num:
                 break
 print(main_list)
+***********************************************************************************
+evotix
+def calculate_packages(total_space, large_size, small_size):
+    # Calculate max possible large packages
+    num_large = total_space // large_size
+    remaining_space = total_space % large_size
+    # Calculate how many small packages fit in remaining space
+    num_small = remaining_space // small_size
+    # Calculate unused space
+    unused = remaining_space % small_size
+    return num_large, num_small, unused
+
+# Input values
+totalspace = 13
+largepackage = 10
+smallpackage = 3
+
+# Calculate
+large_count, small_count, leftover = calculate_packages(totalspace, largepackage, smallpackage)
+
+# Output Results
+print(f"Total Space: {totalspace}")
+print(f"Large Packages (Size {largepackage}): {large_count}")
+print(f"Small Packages (Size {smallpackage}): {small_count}")
+print(f"Unused Space: {leftover}")
+print(f"Total Occupied Space: {(large_count * largepackage) + (small_count * smallpackage)}")
+
+Total Space: 13
+Large Packages (Size 10): 1
+Small Packages (Size 3): 1
+Unused Space: 0
+Total Occupied Space: 13
+*****************************************************************************************************
+
+*****************************************************************************************************
+
+*****************************************************************************************************
+
+*****************************************************************************************************
+
+*****************************************************************************************************
+
 [[3, 1, 2, 3, 4, 5, 6], [7, 8, 9]]
 ***********************************************************************
