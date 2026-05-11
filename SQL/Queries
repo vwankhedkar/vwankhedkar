@@ -1,0 +1,13 @@
+1.  find the total number of movies directed by each director 
+SELECT 
+    d.name AS director_name,
+    COUNT(m.director_id) AS total_movies
+FROM 
+    directors d
+JOIN 
+    movie m ON d.id = m.director_id
+GROUP BY 
+    d.id, d.name
+ORDER BY 
+    total_movies DESC;
+------------------------------------------------------
