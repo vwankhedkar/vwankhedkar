@@ -1,0 +1,2214 @@
+RestAPI sites -
+https://restful-booker.herokuapp.com/apidoc/index.html#api-Booking-GetBookings
+
+https://petstore.swagger.io/#/pet/findPetsByStatus
+
+https://gorest.co.in/
+
+https://jsonplaceholder.typicode.com/
+
+https://petstore.swagger.io/
+
+https://jsonplaceholder.typicode.com/
+
+https://httpbin.org/
+
+https://reqres.in/
+
+https://urllib3.readthedocs.io/
+
+https://docs.pytest.org/
+
+https://drive.google.com/drive/folders/1CnkhAG1XAqVndJ50DcvhGFEwF03fUZRH
+
+RestAPI sites -
+https://restful-booker.herokuapp.com/apidoc/index.html#api-Booking-GetBookings
+
+https://petstore.swagger.io/#/pet/findPetsByStatus
+
+https://gorest.co.in/
+
+https://jsonplaceholder.typicode.com/
+
+https://petstore.swagger.io/
+
+https://jsonplaceholder.typicode.com/
+
+https://httpbin.org/
+
+https://reqres.in/
+
+https://urllib3.readthedocs.io/
+
+https://docs.pytest.org/
+
+https://drive.google.com/drive/folders/1CnkhAG1XAqVndJ50DcvhGFEwF03fUZRH
+
+Brillius (Amazon)
+
+1. For Video Player which type of test, will you perform?
+2. Fixtures in Pytest and how it will be useful?
+3. Skip- Write syntax
+   Expect a Failure - Can you write the syntax for that?
+4. How to import data from an excel (Scenario: while you are writing some code in Python, but you need some date which was located in Excel)
+5. Working with Pandas Libraries?
+6. Difference between List and Tuple
+7. Question on Python:
+	A = (1, 2, 3)
+	B = (1, 2, 3)
+	C = A
+	Print (A==B) - True or False
+	Print (A is B) - True or False
+	Print (A is c) - True or False
+8. Python Code test:
+	# Create a function that takes two parameters; an array of integers and an integer
+	# Your function should print the pair numbers from the array that add up to the integer parameter.
+	# Input Array (1, 0, 3, 5, 2, 3, 6) | Input Number 5
+	
+
+
+SDET : Question 1. Finding missing number from an array 
+2. Find X-path from Amazon website 
+3. CICD Pipeline creation 
+4. How to load data into S3 Buckets 
+5. Selenium Element 
+6. JavaScript Executor
+7. Students table: finding highest marks in math's for particular student by writing Python code and Selenium element. 
+8. Test plan creation from end to end after getting requirements from the client 
+9. Types of login into Selenium? 
+10. Pytest concept 
+11.Selenium- Design page 
+12.How do you locate hidden elements in selenium 
+13. Json Mapper 
+14.Retrieving data from Json file 
+15.Weight Management in Selenium 
+16.Managing alerts (I frames) Code : 1.Anagram code test 2.Find the second largest number in the set of array 
+3.Find out the sum of two number is equal to 6, from an array of number (1, 2, 3, 2, 3, 4) 
+4.Order management Module 
+5.Finding a particular product with particular price range using Xpath 
+6.Finding a particular company located in particular location using Dynamic web elements using Xpath 
+1. Which XPath function can be used for removing unnecessary white spaces in a string? ----- normalized-space 
+2. What are the different kinds of operators provided by XPath? ---- Boolean ,Comparison , String , Number operators/functions ,Node operators/functions 
+3. How is the relationship among nodes defined? ----Parents,Children,Siblings,Ancestors,Descendants 
+4. How can you create an XPath to select the fourth child node when there are five child nodes with the same tag name? -----use the position() function. 
+5. What are the different types of selectors? ---- ID , Class ,Attribute ,Descendant 
+6. What are the different types of XPath in Selenium? ---- Absolute , Relative Final Interview : 1.counter concepts 2.bubble sort, and sorting 3.And prepare test cases on Add item on to the cart 
+4.And x-path identification in amazon website,
+
+Python programming
+1. find out maximum sum of numbers in a list/array also find out maximum difference.
+2. Validate Email address w/o using regex.
+3. Count number os each words in file using dictioary
+4. print half file reverse way
+5. Print triangle 
+6. reverse digits of numbers w/o using string.
+7. Java program to validate authentication in a page.
+8. print only process id's column in linux
+9. What is ZIP, Duck typing, decorators
+10.Difference between range and xrange
+11. How to keep application running on same time on both python2 & python3.
+
+progrMMING INTERVIEW QUESTIONS
+
+32. You’re given an IP address as input as a string. How would you find out if it is a valid IP address or not?
+
+35. Given a list of n-1 integers, these integers are in the range of 1 to n. There are no duplicates in the list. One of the integers is missing in the list. Can you write an efficient code to find the missing integer?
+
+Consider the string input "a2b3c3" write a program to that should print "aabbbccc"
+Write a program that counts the occurance of each character in string
+Write a program that reverse a string
+Diff. between getWindowHandles and getWindowHandle 
+drag and drop in selenium
+usage of javascript executer in selenium
+selenium waits
+database connection string
+take the input from excel file and store in some variables
+Dff b/w close and quite
+OOP concepts
+Super keyword
+access modifiers
+Interface in java
+Lambda expression
+foreach loop in java
+
+Interview 1:
+- Explain on Day to day work
+- If i want to create automation framework, what are the things you need to include for a framework creation
+- You are testing website, one day ur test started failing with msg, page is not loading and no element find. How do you troubleshoot.
+- Tell me some common errors that u will get at the time of automation development
+- Pooling mechanism for retry count.
+- Write a small function to call one method with retry until u get answer or some particular count.
+
+ 
+Most of the questions were related to Pytest, Python Automation. Scenario based questions .. not theoretical
+pyTest framework experience
+lambda expressions
+List comprehensions.
+How to define destructor
+addStudent api endpoint-> add new entry..
+if we perform test for above endpoint a lot of data will get created. how we do the deletion of all the added bulk entries
+serialization and deserialization?
+Copy constructor
+Questions around UI automation, and finding the tags
+Exception handling
+Find index number of given integer where it is going to add in sorted array
+waits, windows
+Binary search
+How to handle framework, defects, api errors, etc.
+Couple of scenario based questions
+Move all the zeros in an integer array to end of the array Input: {8, 4, 0, 2, 5, 0, 1, 0, 7, 0} - 
+Write a Python program to check if a string contains a specific substring
+text = "This is a string"
+substring = "is"
+
+Testing: (General)
+1. Unix, integration and smoke testing
+2. Tst cases scenarios to test functionality of laptop, bluetooth
+3. Requirements of webgui testing
+4. Difference between test plan and test strategy and wht r it's contents?
+2. Auth Token for Api Testing- Used Bearer Token (Explained), which tool used (SOAP ui and Ready API)
+3. Any tool used for UI Automation -  (Robot Automation and Cyprus Automation)
+3. OOPS concept (interface) - 
+4. Types of exception - null pointer exception etc.  for UI testing
+5. Try catch exception
+6. few question from selenium - Not Answered
+
+
+2nd round
+
+snapshot to take when any scenario failed for assert
+get browser in runtime in memory
+waits
+sequential waits
+listeners
+10000 tc's ran not sequentially which failed how to find which testcase failed - pytest --lf to rerun failed testcases
+wait for pages to be loaded
+login credentials for cleaning login data after testcase
+cross browser
+************************************************************************
+Hi Vaishali,
+
+Thanks for taking the call earlier.  Here is some information about the hiring process to take note, followed by the prep materials below.
+
+Please could you:
+1. Confirm receipt of this email.
+2. Read through all documents listed
+3. Let me know the names of any Engineers you know at Google, as we place a lot of value on Internal References.
+
+4. Your mobile number to be contacted at (if necessary): 
+Please let me know your estimated preparation timeline before next Monday. 
+Thanks, and as always feel free to approach me if you have any questions!
+Cheers,
+Hazel
+_________
+I am Vaishali
+Expected Result : i la siaVmaI
+About the recruitment process:
+Please see below for a preview of how the recruitment process would work:
+First On-site Interview (1 session) → 4 On-site Interviews (1 week to receive feedback after interviews are completed)→ Interview feedback Review → Offer Review → Offer Delivery (Yippee!)
+Scheduling your First On-site Interview: 
+I'm waiting for your estimated timeline for preparation and interview date. After that, I will put in the request for our Scheduling Team to get in touch with you to ask for your available time slots and arrange for the interview.
+The first round of On-site Interview will be a 45 mins virtual interview conducted while sharing a Google Document, it will be a test on your Coding skill set + Testing. You will be required to type out lines of codes, without any IDEs or compilers.
+
+__________
+Preparation:
+●  ●  ●  ●
+ For Test Engineer Opportunities, you'll be evaluated for:
+
+Computer Science Fundamentals (Coding/Code Quality/Algorithms & Data Structures) 
+
+Testing Knowledge (Test Planning/Automation/Enthusiasm)
+Suggestions on reading material include:
+Algorithms & Data Structure:
+
+Algorithm Complexity: You need to know Big-O. If you struggle with basic big-O complexity analysis, then you are almost guaranteed not to get hired.
+
+There is a great BigO cheat sheet <http://bigocheatsheet.com/> that may also help you!
+
+Prepare for Your Google Interview: Coding  (Youtube Video) 
+
+Data structure: Arrays, linked lists, stacks, queues, sets maps 
+
+Data algorithms
+
+sorting, searching and binary search 
+
+Divide-and-conquer 
+
+dynamic programming and memorization
+
+Greedy algorithms 
+
+recursion 
+
+
+Graph traversal, breadth- and depth-first
+
+https://www.hackerrank.com/ - this is great for algorithms
+
+Algorithm tutorials and other refresher tools here: http://www.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
+
+Algorithm / Data Structure Theory books
+
+Google Style Guides (C++, Python, Java; Android, Javascript)
+
+Besides, this is a gitHub link on Computer Science (CS) fundamentals which does a good job as a checklist on what you should master in order to prepare for coding at Google. 
+
+
+Moving onto the practice after theory:
+
+When you practice, do not use an IDE. You need to be able to write legible, compilable code without help with regards to layout, or spelling of standard library class/method names. I suggest solving similar style algorithmic /DS problems on a google document or on paper to simulate a real interview. 
+
+
+Several site that provide similar problems to those typically asked in the interview are (medium-hard questions):
+
+HackerRank (highly encouraged)
+
+Topcoder
+
+Codeforces
+
+Geeksforgeeks (highly encouraged)
+
+Leetcode (highly encouraged)
+
+InterviewBit (highly encouraged)
+
+Kattis
+
+www.careercup.com - see specific Google & Software Test Engineer practice questions
+
+Problems from Cracking the Coding Interview Book
+
+This will help get you into the problem-solving mindset. 
+
+
+Coding/Code Quality:
+
+Practice writing clean, concise, simple code.
+
+For the 4 sample questions below, you should be able to complete each of them in 10 minutes without IDE (40 mins in total). Easy to medium difficulty:
+
+https://www.codewars.com/kata/52774a314c2333f0a7000688
+
+https://www.codewars.com/kata/52f787eb172a8b4ae1000a34
+
+https://www.codewars.com/kata/52bef5e3588c56132c0003bc
+
+https://www.codewars.com/kata/duplicate-encoder/python
+
+Always look for what can potentially go wrong in your code (debug/review code as needed) and feel free to tell the interviewer what you're doing/looking for to show problem solving skills. Don’t forget to explain your test strategy, ensuring test coverage while coding!
+
+https://www.youtube.com/user/tusharroy2525/playlists
+
+https://www.youtube.com/watch?v=efU_3Da3DV0
+
+Test Skills/Automation
+
+Review the fundamentals of automation- be able to explain when and why you could potentially automate versus manual testing.
+
+Dive deeper into Automated Testing - https://dzone.com/guides/automated-testing
+
+Review best practices fundamentals for testing classifications & know best practice fundamentals of testing classifications: regression testing, feature testing, stress testing, performance testing, environments, etc.)
+
+Also, go over your testing knowledge (testing domain knowledge, test = planning/test case generation, unit testing, debugging/root cause analysis, refactoring)
+
+Software Testing Types & Fundamentals - https://www.guru99.com/software-testing.html 
+
+Test Automation Frameworks - https://smartbear.com/learn/automated-testing/test-automation-frameworks/
+
+9 top open-source testing automation frameworks: How to choose - https://techbeacon.com/app-dev-testing/9-top-open-source-testing-automation-frameworks-how-choose
+
+(black-box testing youtube video to have an overview about automation testing but Google test engineers conduct white box testing mostly - https://www.youtube.com/watch?v=DO8KVe00kcU&t=1110s)
+Example Test Planning/ Test Automation questions: 
+Tell me about your work with your previous employer.
+Write a test plan for ___________.
+Write test code for your plan
+Tell me about the testing you do now.  
+What is your role - writing tests, automating, evaluating, analyzing results? 
+Do you create any test strategy docs, test plans, test cases, test code?
+What languages do you prefer to write tests in? 
+What are your favorite automation tools?
+In your experience, when is test automation a good idea? When is it bad?
+
+If you had to test a new __________ how would you approach the problem?
+For test plan question: 
+Please write test cases for it as well.
+What different categories of testing would you consider?
+What is the difference between integration & regression testing?
+Do you have any experience with stress testing?
+What is the difference between stress & performance testing?
+
+Tell me about a test automation project you have worked on, specifically what were your contributions
+Test Planning/ Leadership
+Think through and review both successful & unsuccessful test plans & strategies you’ve seen in the past, be able to identify the most/least important parts of a test strategy. 
+If asked to create a test strategy/plan during the interview, be able to explain step-by-step of how you would go about executing it by explaining strategy/thought process in detail
+
+Additional Resources:
+Google Testing Blog
+Meet Test Engineers in Google (Youtube video)
+How to: Work at Google — Example Coding/Engineering Interview (Youtube video)
+Google Test and Dev Environment: Part 1, Part 2, Part 3
+Writing testable code
+Example of a test plan at Google
+https://www.stickyminds.com/ - Interactive Testing Community
+See yourself at Google Taiwan!
+_________________________________
+During the interview:
+●  ●  ●  ●
+1) Be enthusiastic and show interest/passion for testing. [Don't just say you want to be a Test Engineer because it's Google, relate your answer back to the role.] The interviewer(s) will be interested in the specifics of your past projects, implementations and how you arrived at your conclusions. The name of this game is Interaction!
+2) Write very clean and structured code. We put a lot of emphasis on the quality of the code.
+Start with the first solution that comes to mind; even if it’s slow at first - as long as the code solves the problem it will be good. [Start simple, you can build on it after]
+You can implement a non-optimal solution and then work on it from there but the more optimal off the bat, the better.
+Run a few examples to check the code and make sure you don’t assume that your code works. Make sure that your code works!
+Check for edge cases.
+Check for corner cases.
+Try to implement null checks
+Make sure there's no code repeatability, if so refactor it!
+Make sure recursion terminates, no off by one errors, don’t plague your code.
+Do not write pseudo code!
+Try to use reasonable variable names to clean up the code (can use x or i).
+Before you refine the code, ask if the interviewer if he has any questions about code
+Try to be as efficient as possible with your implementation! [Don't over complicate your code]
+
+3) Try to identify any bugs in your code and fix them along the way. [Assume someone else wrote the code and step it through line by line to look for bugs.]
+4) Share your thought process with the interviewer! Think out loud so that they can follow you. [Talk to the interviewer to show you know how to approach the problem and find the constraints of the questions; shows you understand how to solve the problem]
+
+Consider all the alternative solutions, and talk about the different ways you can do it.
+Outline all possible approaches and weigh the different options.
+5) Write as many test cases as possible. [Don't just give one or two, give as many as you can. Give test cases you expect to fail]
+6) Ask clarifying questions.
+
+Interview questions are underspecified to see what questions you will ask to clarify, so be sure to clarify the problem first. The reason you have to clarify is that you may think you are solving A but really the interviewer wants you to solve B.
+Be sure to state and clarify key assumptions before diving into the code.
+Also clarify the function signature; understand what’s coming in and what’s going out.
+7) Take advantage of any hints they give you [Do not give up on a problem. Take the hints they give you no matter what.]
+
+Amazon interview - https://www.askpython.com/python/producer-consumer-problem
+
+**********************************************************************]
+Dell Interview
+https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+
+https://www.hackerrank.com/challenges/list-comprehensions/problem?isFullScreen=true
+
+Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
+Input Format
+The first line contains . The second line contains an array   of  integers each separated by a space. Constraints
+Output Format
+Print the runner-up score.
+Sample Input 0
+5
+2 3 6 6 5
+
+"""
+Let's learn about list comprehensions! You are given three integers  and  representing the dimensions of a cuboid along with an integer . Print a list of all possible coordinates given by  on a 3D grid where the sum of  is not equal to . Here, . Please use list comprehensions rather than multiple loops, as a learning exercise.
+
+Example
+
+All permutations of  are:
+Print an array of the elements that do not sum to .
+
+Input Format
+Four integers  and , each on a separate line.
+Constraints
+Print the list in lexicographic increasing order.
+Sample Input 0
+
+1
+1
+1
+2
+Sample Output 0
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
+Explanation 0
+
+Each variable  and  will have values of  or . All permutations of lists in the form .
+Remove all arrays that sum to  to leave only the valid permutations.
+
+Sample Input 1
+
+2
+2
+2
+2
+Sample Output 1
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 2], [0, 2, 1], [0, 2, 2], [1, 0, 0], [1, 0, 2], [1, 1, 1], [1, 1, 2], [1, 2, 0], [1, 2, 1], [1, 2, 2], [2, 0, 1], [2, 0, 2], [2, 1, 0], [2, 1, 1], [2, 1, 2], [2, 2, 0], [2, 2, 1], [2, 2, 2]]
+
+"""
+*************************************************************************************************
+Github links :
+https://github.com/ChenglongChen/LeetCode-3/tree/master/Python
+https://github.com/tecladocode/rest-apis-flask-python/tree/master/section5
+https://github.com/tecladocode/rest-apis-flask-python/tree/master/section4
+https://github.com/ChenglongChen/LeetCode-3/tree/master/Python
+https://github.com/reshmaladi/Python/blob/master/searching/Binary_seach_recursive.py
+https://github.com/tecladocode/python-refresher
+https://github.com/vwankhedkar/vwankhedkar/blob/main/String/reverse_string.py
+https://github.com/vwankhedkar/vwankhedkar/blob/main/isPalindrome.py
+https://github.com/liuhongjiang/leetcode-solutions-python/blob/master/3-Longest-Substring-Without-Repeating-Characters.py
+https://gist.github.com/dmuneras
+https://github.com/codebasics/data-structures-algorithms-python/tree/master/data_structures
+
+Leetcode solutions Java - https://www.youtube.com/playlist?list=PLU_sdQYzUj2keVENTP0a5rdykRSgg9Wp-
+https://www.youtube.com/watch?v=U6-X_QOwPcs&list=PLU_sdQYzUj2keVENTP0a5rdykRSgg9Wp-
+
+Algorithms : https://www.youtube.com/watch?v=ZFjhkohHdAA&list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&index=6
+DSA - https://www.youtube.com/watch?v=5iSZ7mh_RAk&list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12&index=37
+https://www.youtube.com/watch?v=xtfj4-r_Ahs&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p
+
+https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k-using-stack-in-on-time/?ref=rp
+https://www.geeksforgeeks.org/split-array-into-k-subarrays-such-that-sum-of-maximum-of-all-subarrays-is-maximized/?ref=rp
+https://www.geeksforgeeks.org/python-program-for-dynamic-programming-set-10-0-1-knapsack-problem/
+https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
+
+https://ao.ms/sort-binary-tree-by-levels-using-python/
+All selenium examples : https://www.programcreek.com/python/example/100025/selenium.webdriver.ChromeOptions
+
+***********************************************************************************************
+agile 12 principals and 4 values
+wht is agile  and scrum
+one of the principle very close to you
+agile framework - scrum 4 values 3 pillars
+
+not worked in scaling framework
+slicing / splitting techniques - vertical / horizontal
+
+in jira how to create dashboard, gadgets, burndown chats
+ALM tool
+
+how you maintain 4 code quality
+CI/CD pipeline
+
+wht are matrix you used - burn down char I show daily to the team
+to show team progress to the team
+what is velocity
+delivery matric
+velocity/burn down / ci/cd pipelines/ sonar cube
+code coverage
+facilitation techniques
+as a scrum master what are challanges you faced
+
+what is servert leader
+ 
+
+as a scrum master how you plan ceremony
+
+sprint planning
+- planning poker 
+highest . lowest story point
+
+what is velocity
+sprint refinement
+sprint retrospective / review
+
+coach them on values
+conflict resolution / challanges
+
+facilitation - brainstorming
+
+Balanced parenthesis
+
+string = "[(])[(])"
+True
+
+
+
+Info : This is information line
+Error : This is error line
+Warning : This is Warnings line
+Message : This is Message line
+
+
+**************************************************
+L&T interview questions
+git pull and git fetch difference
+Java program to Merge 2 sorted arrays arr1 = {1, 3, 7} and  arr2 = {7, 2, 5, 9} 
+wht is latest LLM in AI
+How To Create Upstream And Downstream Jobs In Jenkins 
+
+saltmine
+1. How to handle flaky tests
+2. Explain featues of playwright and features of BDD
+3. How to run testcases in parallel in pytest, BDD, testng, playwright
+4. Sort list lst = ["1 member", "5 members", "No members", "2 members", "5 members", "30 members", "NA members"]5. Why custom exceptions used
+6. What other devops tools
+7. why custom exceptions are needed
+
+
+vmware Harman interview questions
+
+difference function overloading and overriding
+what is static function in python
+Deep & Shallow copy
+list comprehension
+serialization deserialization
+how to declare destructor in python
+how to fetch the coloros in selenium
+how to upload file in selenium
+how to create framework in pytest
+framework architecture - 1. config(config/env), 2.Extention method(tc's to be reusable), 3. data layer 4. reporting layer 5. log layer
+
+if u have class A, B C inherited in D with same function name how it will execute 
+
+Find index number of given integer where it is going to add in sorted array
+
+String='Automation' output should be 'amot'
+
+
+2nd round
+
+snapshot to take when any scenario failed for assert
+get browser in runtime in memory
+waits
+sequential waits
+listeners
+10000 tc's ran not sequentially which failed how to find which testcase failed - pytest --lf to rerun failed testcases
+wait for pages to be loaded
+login credentials for cleaning login data after testcase
+cross browser
+
+
+
+https://www.geeksforgeeks.org/data-engineer-interview-questions/
+
+1. What is data engineering? 
+2. What are the main responsibilities of a data engineer? 
+3. What is the difference between a data engineer and a data scientist? 
+4. What is a data pipeline? 
+5. What are some common challenges in data engineering? 
+
+Data Engineer Interview Questions on Database Systems and SQL
+6. What is a relational database? 
+7. What are the main differences between SQL and NoSQL databases?
+8. What is normalization in database design? 
+9. Explain the concept of database indexing.
+10. What is a stored procedure? 
+
+Database Testing (SQL)
+1. What is the significance of referential integrity check ?
+2. Can you write a SQL query to find records present in the source but missing in the target?
+3. Write the Query to find out max salary in their department
+4. 
+
+11. What is Hadoop?
+12. Explain the concept of MapReduce. 
+13. What is Apache Spark? 
+14. How does Spark differ from Hadoop MapReduce? 
+19. What is the slowly changing dimension (SCD)? 
+20. What is data mart? 
+
+
+PySpark: Enables distributed data processing, which is useful for handling large-scale data.
+Storage
+1)	Differnenc bet SAN/NAS, SAS & SATA.
+2)	Adv & disadv of iscsi.
+3)	Can NAS configured in SAN Env, how?
+4)	What is cache
+5)	What is zoning, Lun masking
+6)	How to take snapshot of vm
+7)	Iscsi & scsi commands
+8)	Diff bet native and vmfilesystem
+9)	Differnence bet NFS & CIFS
+10) 	Differnece bet CIFS and Samba
+11) 	How to troubleshoot issues on remote server
+12)	Bubble sort / binary sort program
+13) 	What is filesystem, why it is needed
+14) 	how to create native volume
+15) 	What is paging/semaphor
+16)	RTO vs RPO
+17) 	difference bet replication and snapshot
+18) 	What is deduplication
+19) 	Memory usage commands
+20) 	what is Single user mode in linux and how to switch.
+21) 	How to assign date time to a file
+22) 	How memory assigned to virtual machines.
+
+
+_________
+I am Vaishali
+Expected Result : i la siaVmaI
+About the recruitment process:
+Please see below for a preview of how the recruitment process would work:
+First On-site Interview (1 session) → 4 On-site Interviews (1 week to receive feedback after interviews are completed)→ Interview feedback Review → Offer Review → Offer Delivery (Yippee!)
+Scheduling your First On-site Interview: 
+I'm waiting for your estimated timeline for preparation and interview date. After that, I will put in the request for our Scheduling Team to get in touch with you to ask for your available time slots and arrange for the interview.
+The first round of On-site Interview will be a 45 mins virtual interview conducted while sharing a Google Document, it will be a test on your Coding skill set + Testing. You will be required to type out lines of codes, without any IDEs or compilers.
+
+__________
+Preparation:
+●  ●  ●  ●
+ For Test Engineer Opportunities, you'll be evaluated for:
+
+Computer Science Fundamentals (Coding/Code Quality/Algorithms & Data Structures) 
+
+Testing Knowledge (Test Planning/Automation/Enthusiasm)
+Suggestions on reading material include:
+Algorithms & Data Structure:
+
+Algorithm Complexity: You need to know Big-O. If you struggle with basic big-O complexity analysis, then you are almost guaranteed not to get hired.
+
+There is a great BigO cheat sheet <http://bigocheatsheet.com/> that may also help you!
+
+Prepare for Your Google Interview: Coding  (Youtube Video) 
+
+Data structure: Arrays, linked lists, stacks, queues, sets maps 
+
+Data algorithms
+
+sorting, searching and binary search 
+
+Divide-and-conquer 
+
+dynamic programming and memorization
+
+Greedy algorithms 
+
+recursion 
+
+
+Graph traversal, breadth- and depth-first
+
+https://www.hackerrank.com/ - this is great for algorithms
+
+Algorithm tutorials and other refresher tools here: http://www.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
+
+Algorithm / Data Structure Theory books
+
+Google Style Guides (C++, Python, Java; Android, Javascript)
+
+Besides, this is a gitHub link on Computer Science (CS) fundamentals which does a good job as a checklist on what you should master in order to prepare for coding at Google. 
+
+
+Moving onto the practice after theory:
+
+When you practice, do not use an IDE. You need to be able to write legible, compilable code without help with regards to layout, or spelling of standard library class/method names. I suggest solving similar style algorithmic /DS problems on a google document or on paper to simulate a real interview. 
+
+
+Several site that provide similar problems to those typically asked in the interview are (medium-hard questions):
+
+HackerRank (highly encouraged)
+
+Topcoder
+
+Codeforces
+
+Geeksforgeeks (highly encouraged)
+
+Leetcode (highly encouraged)
+
+InterviewBit (highly encouraged)
+
+Kattis
+
+www.careercup.com - see specific Google & Software Test Engineer practice questions
+
+Problems from Cracking the Coding Interview Book
+
+This will help get you into the problem-solving mindset. 
+
+
+Coding/Code Quality:
+
+Practice writing clean, concise, simple code.
+
+For the 4 sample questions below, you should be able to complete each of them in 10 minutes without IDE (40 mins in total). Easy to medium difficulty:
+
+https://www.codewars.com/kata/52774a314c2333f0a7000688
+
+https://www.codewars.com/kata/52f787eb172a8b4ae1000a34
+
+https://www.codewars.com/kata/52bef5e3588c56132c0003bc
+
+https://www.codewars.com/kata/duplicate-encoder/python
+
+Always look for what can potentially go wrong in your code (debug/review code as needed) and feel free to tell the interviewer what you're doing/looking for to show problem solving skills. Don’t forget to explain your test strategy, ensuring test coverage while coding!
+
+https://www.youtube.com/user/tusharroy2525/playlists
+
+https://www.youtube.com/watch?v=efU_3Da3DV0
+
+Test Skills/Automation
+
+Review the fundamentals of automation- be able to explain when and why you could potentially automate versus manual testing.
+
+Dive deeper into Automated Testing - https://dzone.com/guides/automated-testing
+
+Review best practices fundamentals for testing classifications & know best practice fundamentals of testing classifications: regression testing, feature testing, stress testing, performance testing, environments, etc.)
+
+Also, go over your testing knowledge (testing domain knowledge, test = planning/test case generation, unit testing, debugging/root cause analysis, refactoring)
+
+Software Testing Types & Fundamentals - https://www.guru99.com/software-testing.html 
+
+Test Automation Frameworks - https://smartbear.com/learn/automated-testing/test-automation-frameworks/
+
+9 top open-source testing automation frameworks: How to choose - https://techbeacon.com/app-dev-testing/9-top-open-source-testing-automation-frameworks-how-choose
+
+(black-box testing youtube video to have an overview about automation testing but Google test engineers conduct white box testing mostly - https://www.youtube.com/watch?v=DO8KVe00kcU&t=1110s)
+Example Test Planning/ Test Automation questions: 
+Tell me about your work with your previous employer.
+Write a test plan for ___________.
+Write test code for your plan
+Tell me about the testing you do now.  
+What is your role - writing tests, automating, evaluating, analyzing results? 
+Do you create any test strategy docs, test plans, test cases, test code?
+What languages do you prefer to write tests in? 
+What are your favorite automation tools?
+In your experience, when is test automation a good idea? When is it bad?
+
+If you had to test a new __________ how would you approach the problem?
+For test plan question: 
+Please write test cases for it as well.
+What different categories of testing would you consider?
+What is the difference between integration & regression testing?
+Do you have any experience with stress testing?
+What is the difference between stress & performance testing?
+
+Tell me about a test automation project you have worked on, specifically what were your contributions
+Test Planning/ Leadership
+Think through and review both successful & unsuccessful test plans & strategies you’ve seen in the past, be able to identify the most/least important parts of a test strategy. 
+If asked to create a test strategy/plan during the interview, be able to explain step-by-step of how you would go about executing it by explaining strategy/thought process in detail
+
+Additional Resources:
+Google Testing Blog
+Meet Test Engineers in Google (Youtube video)
+How to: Work at Google — Example Coding/Engineering Interview (Youtube video)
+Google Test and Dev Environment: Part 1, Part 2, Part 3
+Writing testable code
+Example of a test plan at Google
+https://www.stickyminds.com/ - Interactive Testing Community
+See yourself at Google Taiwan!
+_________________________________
+During the interview:
+●  ●  ●  ●
+1) Be enthusiastic and show interest/passion for testing. [Don't just say you want to be a Test Engineer because it's Google, relate your answer back to the role.] The interviewer(s) will be interested in the specifics of your past projects, implementations and how you arrived at your conclusions. The name of this game is Interaction!
+2) Write very clean and structured code. We put a lot of emphasis on the quality of the code.
+Start with the first solution that comes to mind; even if it’s slow at first - as long as the code solves the problem it will be good. [Start simple, you can build on it after]
+You can implement a non-optimal solution and then work on it from there but the more optimal off the bat, the better.
+Run a few examples to check the code and make sure you don’t assume that your code works. Make sure that your code works!
+Check for edge cases.
+Check for corner cases.
+Try to implement null checks
+Make sure there's no code repeatability, if so refactor it!
+Make sure recursion terminates, no off by one errors, don’t plague your code.
+Do not write pseudo code!
+Try to use reasonable variable names to clean up the code (can use x or i).
+Before you refine the code, ask if the interviewer if he has any questions about code
+Try to be as efficient as possible with your implementation! [Don't over complicate your code]
+
+3) Try to identify any bugs in your code and fix them along the way. [Assume someone else wrote the code and step it through line by line to look for bugs.]
+4) Share your thought process with the interviewer! Think out loud so that they can follow you. [Talk to the interviewer to show you know how to approach the problem and find the constraints of the questions; shows you understand how to solve the problem]
+
+Consider all the alternative solutions, and talk about the different ways you can do it.
+Outline all possible approaches and weigh the different options.
+5) Write as many test cases as possible. [Don't just give one or two, give as many as you can. Give test cases you expect to fail]
+6) Ask clarifying questions.
+
+Interview questions are underspecified to see what questions you will ask to clarify, so be sure to clarify the problem first. The reason you have to clarify is that you may think you are solving A but really the interviewer wants you to solve B.
+Be sure to state and clarify key assumptions before diving into the code.
+Also clarify the function signature; understand what’s coming in and what’s going out.
+7) Take advantage of any hints they give you [Do not give up on a problem. Take the hints they give you no matter what.]
+
+Amazon interview - https://www.askpython.com/python/producer-consumer-problem
+
+**********************************************************************]
+Ascendtion Interview
+https://jqueryui.com/progressbar/#download
+Select India from dropdown list on page - https://www.globalsqa.com/demo-site/select-dropdown-menu/
+How to choose tool, IDE framework while while designing automation
+
+
+Dell Interview
+https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+
+https://www.hackerrank.com/challenges/list-comprehensions/problem?isFullScreen=true
+
+Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
+Input Format
+The first line contains . The second line contains an array   of  integers each separated by a space. Constraints
+Output Format
+Print the runner-up score.
+Sample Input 0
+5
+2 3 6 6 5
+
+"""
+Let's learn about list comprehensions! You are given three integers  and  representing the dimensions of a cuboid along with an integer . Print a list of all possible coordinates given by  on a 3D grid where the sum of  is not equal to . Here, . Please use list comprehensions rather than multiple loops, as a learning exercise.
+
+Example
+
+All permutations of  are:
+Print an array of the elements that do not sum to .
+
+Input Format
+Four integers  and , each on a separate line.
+Constraints
+Print the list in lexicographic increasing order.
+Sample Input 0
+
+1
+1
+1
+2
+Sample Output 0
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
+Explanation 0
+
+Each variable  and  will have values of  or . All permutations of lists in the form .
+Remove all arrays that sum to  to leave only the valid permutations.
+
+Sample Input 1
+
+2
+2
+2
+2
+Sample Output 1
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 2], [0, 2, 1], [0, 2, 2], [1, 0, 0], [1, 0, 2], [1, 1, 1], [1, 1, 2], [1, 2, 0], [1, 2, 1], [1, 2, 2], [2, 0, 1], [2, 0, 2], [2, 1, 0], [2, 1, 1], [2, 1, 2], [2, 2, 0], [2, 2, 1], [2, 2, 2]]
+
+"""
+*************************************************************************************************
+*************************************************************************
+agile 12 principals and 4 values
+wht is agile  and scrum
+one of the principle very close to you
+agile framework - scrum 4 values 3 pillars
+
+not worked in scaling framework
+slicing / splitting techniques - vertical / horizontal
+
+in jira how to create dashboard, gadgets, burndown chats
+ALM tool
+
+how you maintain 4 code quality
+CI/CD pipeline
+
+wht are matrix you used - burn down char I show daily to the team
+to show team progress to the team
+what is velocity
+delivery matric
+velocity/burn down / ci/cd pipelines/ sonar cube
+code coverage
+facilitation techniques
+as a scrum master what are challanges you faced
+
+what is servert leader
+ 
+
+as a scrum master how you plan ceremony
+
+sprint planning
+- planning poker 
+highest . lowest story point
+
+what is velocity
+sprint refinement
+sprint retrospective / review
+
+coach them on values
+conflict resolution / challanges
+
+facilitation - brainstorming
+
+*********************************************************************************************
+Intel interview questions
+
+#Return the number of times that the string "code"
+#appears anywhere in the given string, except we'll
+#accept any letter for the 'd', so "cope" and "cooe"
+#count.
+#count_code('aaacodebbb') → 1
+#count_code('codexxcode') → 2
+#count_code('cozexxcope') → 2
+
+# import re
+# str = 'cozexxcope'
+# count = 0
+# pattern = re.compile('co[a-z]{1}e')
+# result = pattern.finditer(str)
+# print(result)
+# for ch in result:
+#     count += 1
+# print("substring occured {} times:".format(count))
+
+#Return the sum of the numbers in the array,
+#except ignore sections of numbers starting with a 6
+#and extending to the next 7
+#(every 6 will be followed by at least one 7).
+#Return 0 for no numbers.
+#sum67([1, 2, 2]) → 5
+#sum67([1, 2, 2, 6, 99, 99, 7]) → 5
+#sum67([1, 1, 6, 7, 2]) → 4
+
+import functools
+lst = [1, 1, 6, 5, 7, 2, 1, 1]
+sum = 0
+count = True
+for i in range(len(lst)):
+    if lst[i] == 6:
+        count = False
+    elif count == False and lst[i] == 7:
+        count = True
+    elif count == True:
+        sum = sum + lst[i]
+print(sum)
+
+***********************************************************************************************
+Github links :
+https://github.com/ChenglongChen/LeetCode-3/tree/master/Python
+https://github.com/tecladocode/rest-apis-flask-python/tree/master/section5
+https://github.com/tecladocode/rest-apis-flask-python/tree/master/section4
+https://github.com/ChenglongChen/LeetCode-3/tree/master/Python
+https://github.com/reshmaladi/Python/blob/master/searching/Binary_seach_recursive.py
+https://github.com/tecladocode/python-refresher
+https://github.com/vwankhedkar/vwankhedkar/blob/main/String/reverse_string.py
+https://github.com/vwankhedkar/vwankhedkar/blob/main/isPalindrome.py
+https://github.com/liuhongjiang/leetcode-solutions-python/blob/master/3-Longest-Substring-Without-Repeating-Characters.py
+https://gist.github.com/dmuneras
+https://github.com/codebasics/data-structures-algorithms-python/tree/master/data_structures
+
+Leetcode solutions Java - https://www.youtube.com/playlist?list=PLU_sdQYzUj2keVENTP0a5rdykRSgg9Wp-
+https://www.youtube.com/watch?v=U6-X_QOwPcs&list=PLU_sdQYzUj2keVENTP0a5rdykRSgg9Wp-
+
+Algorithms : https://www.youtube.com/watch?v=ZFjhkohHdAA&list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&index=6
+DSA - https://www.youtube.com/watch?v=5iSZ7mh_RAk&list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12&index=37
+https://www.youtube.com/watch?v=xtfj4-r_Ahs&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p
+
+https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k-using-stack-in-on-time/?ref=rp
+https://www.geeksforgeeks.org/split-array-into-k-subarrays-such-that-sum-of-maximum-of-all-subarrays-is-maximized/?ref=rp
+https://www.geeksforgeeks.org/python-program-for-dynamic-programming-set-10-0-1-knapsack-problem/
+https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
+
+https://ao.ms/sort-binary-tree-by-levels-using-python/
+All selenium examples : https://www.programcreek.com/python/example/100025/selenium.webdriver.ChromeOptions
+
+*************************************************************************
+*************************************************************************
+
+
+
+Python : Low to Average, 
+1.5 yrs of experience in Python Not much confident and proficient in Python and related concepts.
+API development:Low to Average, No exposure in API.
+Cloud : Average, Aware about only basic concepts in cloud technology.
+
+
+SDET : Question 1. Finding missing number from an array 
+2. Find X-path from Amazon website 
+3. CICD Pipeline creation 
+4. How to load data into S3 Buckets 
+5. Selenium Element 
+6. JavaScript Executor
+7. Students table: finding highest marks in math's for particular student by writing Python code and Selenium element. 
+8. Test plan creation from end to end after getting requirements from the client 
+9. Types of login into Selenium? 
+10. Pytest concept 
+11.Selenium- Design page 
+12.How do you locate hidden elements in selenium 
+13. Json Mapper 
+14.Retrieving data from Json file 
+15.Weight Management in Selenium 
+16.Managing alerts (I frames) Code : 1.Anagram code test 2.Find the second largest number in the set of array 
+3.Find out the sum of two number is equal to 6, from an array of number (1, 2, 3, 2, 3, 4) 
+4.Order management Module 
+5.Finding a particular product with particular price range using Xpath 6.Finding a particular company located in particular location using Dynamic web elements using Xpath 1. Which XPath function can be used for removing unnecessary white spaces in a string? ----- normalized-space 2. What are the different kinds of operators provided by XPath? ---- Boolean ,Comparison , String , Number operators/functions ,Node operators/functions 3. How is the relationship among nodes defined? ----Parents,Children,Siblings,Ancestors,Descendants 4. How can you create an XPath to select the fourth child node when there are five child nodes with the same tag name? -----use the position() function. 5. What are the different types of selectors? ---- ID , Class ,Attribute ,Descendant 6. What are the different types of XPath in Selenium? ---- Absolute , Relative Final Interview : 1.counter concepts 2.bubble sort, and sorting 3.And prepare test cases on Add item on to the cart 4.And x-path identification in amazon website,
+
+Python programming
+1. find out maximum sum of numbers in a list/array also find out maximum difference.
+2. Validate Email address w/o using regex.
+3. Count number os each words in file using dictioary
+4. print half file reverse way
+5. Print triangle 
+6. reverse digits of numbers w/o using string.
+7. Java program to validate authentication in a page.
+8. print only process id's column in linux
+9. What is ZIP, Duck typing, decorators
+10.Difference between range and xrange
+11. How to keep application running on same time on both python2 & python3.
+
+https://www.geeksforgeeks.org/data-engineer-interview-questions/
+
+1. What is data engineering? 
+2. What are the main responsibilities of a data engineer? 
+3. What is the difference between a data engineer and a data scientist? 
+4. What is a data pipeline? 
+5. What are some common challenges in data engineering? 
+
+Data Engineer Interview Questions on Database Systems and SQL
+6. What is a relational database? 
+7. What are the main differences between SQL and NoSQL databases?
+8. What is normalization in database design? 
+9. Explain the concept of database indexing.
+10. What is a stored procedure? 
+
+11. What is Hadoop?
+12. Explain the concept of MapReduce. 
+13. What is Apache Spark? 
+14. How does Spark differ from Hadoop MapReduce? 
+19. What is the slowly changing dimension (SCD)? 
+20. What is data mart? 
+
+
+PySpark: Enables distributed data processing, which is useful for handling large-scale data.
+
+progrMMING INTERVIEW QUESTIONS
+
+32. You’re given an IP address as input as a string. How would you find out if it is a valid IP address or not?
+
+35. Given a list of n-1 integers, these integers are in the range of 1 to n. There are no duplicates in the list. One of the integers is missing in the list. Can you write an efficient code to find the missing integer?
+
+Storage
+1)	Differnenc bet SAN/NAS, SAS & SATA.
+2)	Adv & disadv of iscsi.
+3)	Can NAS configured in SAN Env, how?
+4)	What is cache
+5)	What is zoning, Lun masking
+6)	How to take snapshot of vm
+7)	Iscsi & scsi commands
+8)	Diff bet native and vmfilesystem
+9)	Differnence bet NFS & CIFS
+10) 	Differnece bet CIFS and Samba
+11) 	How to troubleshoot issues on remote server
+12)	Bubble sort / binary sort program
+13) 	What is filesystem, why it is needed
+14) 	how to create native volume
+15) 	What is paging/semaphor
+16)	RTO vs RPO
+17) 	difference bet replication and snapshot
+18) 	What is deduplication
+19) 	Memory usage commands
+20) 	what is Single user mode in linux and how to switch.
+21) 	How to assign date time to a file
+22) 	How memory assigned to virtual machines.
+
+Testing:
+1. Unix, integration and smoke testing
+2. Tst cases scenarios to test functionality of laptop, bluetooth
+3. Requirements of webgui testing
+4. Difference between test plan and test strategy and wht r it's contents?
+write a code to print the distinct numbers = {-5, -3, 0, 3, 2, 1, 0, -3, 0, 5}; 
+ 
+2. Auth Token for Api Testing- Used Bearer Token (Explained), which tool used (SOAP ui and Ready API)
+3. Any tool used for UI Automation -  (Robot Automation and Cyprus Automation)
+3. OOPS concept (interface) - 
+4. Types of exception - null pointer exception etc.  for UI testing
+5. Try catch exception
+6. few question from selenium - Not Answered
+
+Consider the string input "a2b3c3" write a program to that should print "aabbbccc"
+Write a program that counts the occurance of each character in string
+Write a program that reverse a string
+Diff. between getWindowHandles and getWindowHandle 
+drag and drop in selenium
+usage of javascript executer in selenium
+selenium waits
+database connection string
+take the input from excel file and store in some variables
+Dff b/w close and quite
+OOP concepts
+Super keyword
+access modifiers
+Interface in java
+Lambda expression
+foreach loop in java
+
+Interview 1:
+- Explain on Day to day work
+- If i want to create automation framework, what are the things you need to include for a framework creation
+- You are testing website, one day ur test started failing with msg, page is not loading and no element find. How do you troubleshoot.
+- Tell me some common errors that u will get at the time of automation development
+- Pooling mechanism for retry count.
+- Write a small function to call one method with retry until u get answer or some particular count.
+
+ 
+Most of the questions were related to Pytest, Python Automation. Scenario based questions .. not theoretical
+pyTest framework experience
+lambda expressions
+List comprehensions.
+How to define destructor
+addStudent api endpoint-> add new entry..
+if we perform test for above endpoint a lot of data will get created. how we do the deletion of all the added bulk entries
+serialization and deserialization?
+Copy constructor
+Questions around UI automation, and finding the tags
+Exception handling
+Find index number of given integer where it is going to add in sorted array
+waits, windows
+Binary search
+How to handle framework, defects, api errors, etc.
+Couple of scenario based questions
+Move all the zeros in an integer array to end of the array Input: {8, 4, 0, 2, 5, 0, 1, 0, 7, 0} - 
+Write a Python program to check if a string contains a specific substring
+text = "This is a string"
+substring = "is"
+
+
+def compute_file_hash(file_path, algorithm='sha256'):
+    """Compute the hash of a file using the specified algorithm."""
+    hash_func = hashlib.new(algorithm)
+    with open(file_path, 'rb') as file:
+        # Read the file in chunks of 8192 bytes
+        while chunk := file.read(8192):
+            hash_func.update(chunk)
+    return hash_func.hexdigest()
+	
+	
+package com.Locators;
+ 
+	
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+	
+	public class LocatorDemo2 {
+	
+		public static void main(String[] args)
+		{
+	
+			WebDriver driver=new EdgeDriver();
+			driver.get("https://automationplayground.com/crm/login.html");
+			driver.findElement(By.name("email-name")).sendKeys("vikasloud@gmail.com");
+			driver.findElement(By.id("password")).sendKeys("test123");
+			driver.findElement(By.id("remember")).click();
+			driver.findElement(By.id("submit-id")).click();
+ 
+	
+		}
+		
+**************************************************
+vmware Harman interview questions
+
+difference function overloading and overriding
+what is static function in python
+Deep & Shallow copy
+list comprehension
+serialization deserialization
+how to declare destructor in python
+how to fetch the coloros in selenium
+how to upload file in selenium
+how to create framework in pytest
+framework architecture - 1. config(config/env), 2.Extention method(tc's to be reusable), 3. data layer 4. reporting layer 5. log layer
+
+if u have class A, B C inherited in D with same function name how it will execute 
+
+Find index number of given integer where it is going to add in sorted array
+
+String='Automation' output should be 'amot'
+ 
+Remove 2 in list list=[1,1,2,2,2,2,3,3,4,5,6,7,8,2]
+ 
+
+# Sorted array
+arr = [1, 3, 4, 5, 7, 8]
+
+# Number to insert
+num = 6
+
+# Find index manually
+index = 0
+for i, val in enumerate(arr):
+    if val >= num:
+        break
+    index = i + 1
+
+
+print(f"The number {num} should be inserted at index {index} to maintain sorted order.")
+
+2nd round
+
+snapshot to take when any scenario failed for assert
+get browser in runtime in memory
+waits
+sequential waits
+listeners
+10000 tc's ran not sequentially which failed how to find which testcase failed - pytest --lf to rerun failed testcases
+wait for pages to be loaded
+login credentials for cleaning login data after testcase
+cross browser
+
+
+# Recursive function to generate combinations
+def generate_combinations(elements, current, index):
+    # Print the current combination if it's not empty
+    if current:
+        print(''.join(current))
+    
+    # Recursively generate combinations
+    for i in range(index, len(elements)):
+        current.append(elements[i])  # Include the current element
+        generate_combinations(elements, current, i + 1)  # Move to the next index
+        current.pop()  # Backtrack to explore other combinations
+
+# Input list
+str_list = ["a", "b", "c"]
+
+# Generate all combinations
+generate_combinations(str_list, [], 0)
+
+
+from itertools import combinations
+
+# List of strings
+str_list = ["a", "b", "c"]
+
+# Generate and print all combinations
+for r in range(1, len(str_list) + 1):
+    for combo in combinations(str_list, r):
+        print(''.join(combo))
+
+**********************************************************************************
+unified Endpoint management
+
+workspace one UEM
+
+uasge of api how to do coding
+oops concepts
+code to inherit and encapsulate
+scenario based lik oops concepts
+storage questions coding, snapshot
+how to do cleanup
+deplying
+test plan as a QA wht u do, API, deseriazation
+basics
+how to convert dictionary to tuple
+product knowledge, ip setting, gateway, netmask, masking, setpip how to do, netway netmask, ip configuration, basic ip commands
+platforms mac, windows & os's, ios and android version wht in market
+workspace product - intelligenthub will be installed on all platforms
+Selenium
+
+Sql - basic questions queries
+API - response , reuest how we get
+put, post, delete
+serialix=zation and delete
+wht we do if erro
+while testing code what all errors u face 
+oops abstract
+abstract class basic code
+if class A, B given how u derive class C
+inheritance concepts and logic
+lambda, single piece cdode, list comprehencsion, regular express asked coding
+conversion dict to tuple and vice versa
+list and dictionary comprehenstion
+
+most on python get how to install on windows and linux
+
+which ios and android verion currently available in market
+
+coding
+1. Validate datetime with python code
+2. Remove 2 in list list=[1,1,2,2,2,2,3,3,4,5,6,7,8,2]
+3. In each 2 second interval until 30 seconds check if until time reached to further time 
+4. Write decorators program.
+
+Therotical
+
+Decorators concept used in realtime scenario
+serialization and de-serialization real time example
+explain waits in Selenium
+if page is taking differnet time while loading eachtime what action you will take?
+What is list, dictionary and tuple realtime example where it is used
+OOPs concepts
+what is fixtures
+
+SQL query to return first 3 employees with maximum salary.
+Explain snowflake database how you will execute query to retrieve data in it
+suppose you are not retrieving data from database through automation what action you will take
+if testcases are failing how u will rerun failed testcases and what all actions you will take?
+which are challanges you faced in forming the framework
+
+*******************************************************************************************************
+
+What is Test Automation Framework
+- an essential supporting structure of a building, vehicle or object
+
+A test automation framework is a supporting structure and set of guidelines used for creating and designing testcases.
+Test automation is a combination of tools and practices which help testers to test more efficiently.
+
+Some of the practices could be :
+. Coding standardh
+. Handling test data
+. Object repositories
+. Storing test results
+. Unsing external libraries
+
+Some benifits of test automation framework :
+. Saves time
+. Ensure best practices are followed
+. low cost to maintain
+. code reusability
+
+Automation framework structure (Hybrid Framework with page object model)
+Base
+Pages
+Utilities
+Testcases
+Config Files
+TestData
+Screenshots
+Reports
+
+sbi.10473@sbi.co.in
+
+***************************************************************************************************************
+*************************************************************************
+agile 12 principals and 4 values
+wht is agile  and scrum
+one of the principle very close to you
+agile framework - scrum 4 values 3 pillars
+
+not worked in scaling framework
+slicing / splitting techniques - vertical / horizontal
+
+in jira how to create dashboard, gadgets, burndown chats
+ALM tool
+
+how you maintain 4 code quality
+CI/CD pipeline
+
+wht are matrix you used - burn down char I show daily to the team
+to show team progress to the team
+what is velocity
+delivery matric
+velocity/burn down / ci/cd pipelines/ sonar cube
+code coverage
+facilitation techniques
+as a scrum master what are challanges you faced
+
+what is servert leader
+ 
+
+as a scrum master how you plan ceremony
+
+sprint planning
+- planning poker 
+highest . lowest story point
+
+what is velocity
+sprint refinement
+sprint retrospective / review
+
+coach them on values
+conflict resolution / challanges
+
+facilitation - brainstorming
+
+************************************************************************
+status codes 503, 204,
+what is data frames in python
+what is interface and why it is important
+write code to find if string "Hello1234" is alphanumeric
+write code to check chk if string is palindrome
+which all exceptions in selenium
+git fetch and pull differnence
+try with multiple catch in python
+
+snapshot to take when any scenario failed for assert
+get browser in runtime in memory
+waits
+sequential waits
+listeners
+10000 tc's ran not sequentially which failed how to find which testcase failed
+wait for pages to be loaded
+login credentials for cleaning login data after testcase
+cross browser
+
+Selenium Ques
+1. In Selenium which web locators are supported? 
+2. How synchronization achieved in Selenium? 
+3. How mouse and windows events are handled in selenium? 
+4. What are ways to select items in dropdown list.
+5. Write Selenium code to print all links on page - www.Naukri.com
+6. Find xpath to print team names in - https://www.iplt20.com/points-table/men/2024
+
+1. How can you upload a image file in a website by using "file upload" button ?
+What is the purpose of using contextClick() and defaultcontent() functions ?
+2. Write the selenium script for below scenarios:Launch the browser and navigate to the healthcare portal homepage.Wait for the “Departments” menu to appear dynamically.Use Action Class to hover over the “Departments” menu.Wait for the submenu to load.Click on the “Pediatrics” submenu option.
+3. How can you implement this scenario where you need to take the screenshot of the webpage if any test case that is related to that page fails.
+4. How do you handle alert authentication pop up ?
+5. Write a selenium code to perform below task:On a Kanban board application (like Trello or Jira):There are multiple tasks/cards in the “To Do” column.You need to find the card with text “Fix Login Bug”.Then use the Action class to drag and drop this card into the “In Progress” column.
+6. Write a selenium code to drag and drop an element from the top right corner location to the bottom left corner location.
+7. Write a selenium code to perform below scenarios:1) Locate a button whose ID is dynamic but text is stable (e.g., 'Click Me').2) Perform a right-click on that button using the Selenium Actions class.
+8. Between fluent and explicit waits, which type of waits you would like to use and why ?
+9. Write a selenium code to check if a given text exits or not in a dynamic table where you need to count the number of columns and rows of that table.
+10. What is the purpose of using contextClick() and defaultcontent() functions ?
+
+Automation
+1. Explain Framework architecture and how to Design framework it's flow and features.
+2. How to execute testcases in parallel?
+3. How to re-execute failed testcases?
+4. What is page object model and Maven?
+5. What is POJO
+
+Robot
+1. Explain Test Case Design, Keyword Driven.  
+2. How do you create a custom keyword in Robot Framework? What is the use of a resource file in Robot Framework? 
+3. How do you execute test cases in parallel in Robot Framework?     
+4. How can you upload a file using Selenium webdriver ?
+
+RESTAPI 
+1. What is an API? Explain types of APIs postman?
+2. What are HTTP methods supported by REST?
+3. What is Authentication and Authorization in API and it's techniques?
+4. What is an endpoint in API?
+5. What is rate limiting in APIs?
+6. What is a mock API?
+7. What is the difference between synchronous and asynchronous API
+8. How do you secure an API?
+9. Write code to validate status code in GET request in - https://reqres.in/
+
+1. What is an API? Explain types of APIs
+2. What are HTTP methods supported by REST?
+3. What is Authentication and Authorization in API and it's techniques?
+4. What is rate limiting in APIs?
+5. Write code to validate status code in GET request in - https://reqres.in/
+
+2. During a POST call you hare getting 403 error code. What are the steps you would like to follow to debug that issue ? What is the importance of request payload ?
+3. During API testing if you encounter 403 error code, then how can you identify the root cause through log analysis?
+4. How do you implement pagination concept in Rest API ?
+5. How do you validate the content of a GET response in case of a large file ?
+6. How to you pass authentication parameter during a PUT call ?
+7. What are the differences between env variable and global variables in Postman? What is the role of Request specification and preemptive authentication in Rest Assured framework ?
+8. What is the role of Request Specification in Rest Assured framework?
+9. Write a PUT call in Rest Assured framework, where you need to pass the usename, password as basic auth, userid as query parameter and then validate the status code of the PUT call.
+1. Write a code in Rest Assured framework to perform a GET request then validate its response code and response contents.
+
+
+1. What is an API? Explain types of APIs postman?
+2. What are HTTP methods supported by REST?
+3. What is an endpoint in API?
+4. What is Authentication and Authorization in API and it's techniques?
+5. What is rate limiting in APIs?
+6. What is a mock API?
+7. What is the difference between synchronous and asynchronous API
+8. How do you secure an API?
+9. Write code to validate status code in GET request in - https://reqres.in/
+
+1. What is an API? Explain types of APIs
+2. What are HTTP methods supported by REST?
+3. What is Authentication and Authorization in API and it's techniques?
+4. What is rate limiting in APIs?
+5. Write code to validate status code in GET request in - https://reqres.in/
+
+Python Questions
+1. What data types are supported in Python? 
+2. Explain Decorators. 
+3. What is Serialization-Deserialization?
+4. Explain OOPS concepts
+
+
+JavaScript
+1. Explain data types supported in Java and what is ES6+. 
+2. What is NaN property in JavaScript?
+3. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+4. Explain call(), apply() and, bind() methods. Explain this keyword
+5. What is hoisting? 
+
+Defect Lifecycle
+1. Explain Defect life cycle, 
+2. Explain Functional Test scenarios and how you troubleshoot in case any bugs are found?
+3. Which fields are used to file defects?
+4. Explain difference between seviority and priority.
+
+Payments Domain
+1. Explain test scenarios in Payments domain and for UPI.
+2. What is SWIFT? SEPA?
+3. What is reconciliation
+4. What is ISO 8583?
+
+BDD
+1. How can you pass multiple input data in a test scenario?
+2. How do you implement tags (@Smoke, @Regression, @Critical) in Cucumber to control test execution in CI/CD pipelines effectively?
+3. Write the step definition file for following feature files :    Given I am on the product page    When I add the product "Laptop" to the cart    Then the cart should show 1 item    And the cart total should be updated
+4. Write the step definition file for following feature files :    Given I am on the product page    When I add the product "Laptop" to the cart    Then the cart should show 1 item    And the cart total should be updated
+5. Tell me one feature that you would like to put inside @afterhook.
+6. What is the purpose of test runner class in cucumber ?
+7. Write a step definition file for the corresponding feature file in a Healthcare Portal Login with the given log scenario.Scenario: Successful login for a patientGiven the user is on the healthcare login pageWhen the user enters valid username and passwordAnd clicks on the login buttonThen the user should see the patient dashboard
+8. Write the step definition file for the below feature file:Feature: Shopping Cart  Scenario: Add item to cart    Given I am on the product page for "Mobile Phone"    When I add the product to the cart    Then the shopping cart should contain "Mobile Phone"
+9. Write the step definition file, for the following feature file: Scenario: Logout    Given the user is logged into the application    When the user clicks the logout button    Then the user should be redirected to the login page    And a logout confirmation message should be displayed
+10. Write the step definition file, for the following feature file::    Given the user is on the airline homepage    When the user enters "New York" as departure city    And the user enters "London" as destination city
+11. How do you design a Cucumber framework for a large project? (Folder structure, utilities, step definitions, test data).
+12. Write a step definition file for the corresponding feature file with the given log scenario.
+13. Write the step definition file for following feature files:Feature: Image Upload  Scenario: Successful image upload    Given I am on the profile page    When I upload "profile.jpg"    Then I should see "Image uploaded successfully"
+14. You have 500 scenarios, but only want to run Smoke tests in Jenkins.
+
+
+How can you pass multiple input data in a test scenario?
+
+ETL
+1. what are the differences between a Full Load and an Incremental Load in ETL testing?
+2. You are testing an ETL process that extracts customer order data from an operational OLTP system and loads it into a data warehouse. After the first full load, the number of records in the target Fact_Orders table is significantly lower than the record count in the source Orders table. What are the first three steps you would take to investigate this discrepancy, and what potential issues would you look for?
+3. What is ETL and explain the term extract, transform, and load.What do you mean by data purging?What are tools used in ETL?Explain incremental load, initial load and full load?
+1. What are the names of the layers in the three-tier system of ETL and how does it function? 2. What is the difference between PowerCenter and PowerMart? which are the key healthcare data elements.  3. Explain the data cleaning process.  4. What is data source view?4. What is a dimension table and how is it different from the fact table?
+1. What is ETL and explain the term extract, transform, and load.What do you mean by data purging?What are tools used in ETL?
+
+1. When your ETL job finishes loading data into a reporting portal, how do you use Selenium to verify that the numbers in the UI match the database values?
+2. How do you make your Selenium script wait until the ETL job completes before it starts validating the dashboard?
+3. Let’s say the business wants a daily automated check to make sure yesterday’s sales numbers are correct in the dashboard. How would you automate this end-to-end?
+
+1. what are the differences between a Full Load and an Incremental Load in ETL testing?
+2. You are testing an ETL process that extracts customer order data from an operational OLTP system and loads it into a data warehouse. After the first full load, the number of records in the target Fact_Orders table is significantly lower than the record count in the source Orders table. What are the first three steps you would take to investigate this discrepancy, and what potential issues would you look for?
+3. Can you walk me through the ETL testing process you follow in your current project?
+
+
+
+Healthcare
+1. What are Demographics - Encounters - Claims data models. 2. which are the key healthcare data elements.
+2. You’re testing a Healthcare Management Web App.When you hover over the “Doctor” menu on the navigation bar, a dropdown appears dynamically with options such as:Add DoctorSearch DoctorManage AvailabilityThe dropdown is not visible in the DOM until the hover action happens
+3. 
+
+Agile 
+1. What is Agile and how it is differnece from waterfall.
+2. Explain scrum, velocity
+3. What is burn down and burn up process 
+
+
+SQL
+1. Explain function of Select , where, group by statements in SQL.
+2. Write SQL queries to create, add and modify values then delete table.
+3. Write query to inner join Employee and Department tables.
+
+TestNG
+1. Explain features of TestNG
+2. Explain annotations, listeners in TestNG
+3. What is POM, explain contents of pom.xml?
+
+Cypress
+1. How to handle reusability in the Cypress framework?
+2. How to execute tests in order in Cypress?
+3. What are hooks in Cypress?
+4. How to interact with DOM elements in Cypress?
+
+Playwright 
+1. What are the features of Playwright?
+2. What are Locators in Playwright?
+3. What are hard assertions and soft assertions in Playwright
+6. How to open url and upload, download file using playwright.
+
+Git
+1. Explain steps to do code checkin in GIT repository.
+2. What action required in case of conflict happens.
+3. how you go back to earlier checkin in Git?
+
+1. Lets say that during pushing your test script to the new branch you encountered some conflicts.  How do you that resolve GIT conflict ?
+
+CI/CD Jenkins
+1. How do you integrate Cucumber with Jenkins pipeline for CI/CD? (tags, reports, environment config
+2. You have 500 scenarios, but only want to run Smoke tests in Jenkins.
+
+
+1. What is Continuous Integration (CI) and Continuous Deployment (CD)? 
+2. How to deploy and execute code on Jenkins?
+
+Banking/Payments Domain knowledge
+1. Explain Banking domain testcases
+2. What are the differences between SWIFT and SEPA?
+3. What are the message types that you know? 
+4. What does MT stand for?What is an MT103?
+5. What is the difference between serial and cover methods? 
+6. What is RMA and accounting relationship?
+
+UI path
+When you create a new project in UiPath Studio, which folder is created with your custom name?
+1. What is publishing an automation project means in UiPath?
+2. What is project debugging in UiPath?
+3. What are the types of projects in UiPath?
+4. What is a single block activity in UiPath?
+5. Define UiPath in DetailWhat are values and data types in UiPath?
+6. Explain the flowchart activities in UiPath
+7. What is flow switch in UiPath?
+
+1. What is UI path and publishing an automation project means in UiPath?
+2. What is project debugging in UiPath?
+3. What are the types of projects in UiPath?
+4. What is a single block activity in UiPath?
+5. Explain the flowchart and low switch in UiPath
+
+C#
+What is C#? What are the types of classes in C#?
+What is the difference between an abstract class and an interface?
+What is a managed and unmanaged code?
+What is garbage collection in C#?
+What is Common Language Runtime (CLR)?
+Write a program in C Sharp to reverse the order of the given words - can use your name?
+Write a program in C# Sharp to reverse a string?
+
+
+CI/CD and DevOps Tools
+1. Explain Jenkins, Gitlab, 
+2. What are Docker and containers and explain frequently used commands 
+3. Explain contents of YAML configuration
+
+Test management system
+1. Explain Test Planning and Strategy
+2. Explain Responsibilities Of The Test Manager
+3. What is Requirement Traceability Matrix?
+4. What Are Some Key Challenges in a Testing Project?
+
+
+QA Leadership
+1. Explain how to resolve conflicts in team between resources?
+2. Which tools are used to track statusof the team?
+3. Explain difference between test plan and test strategy.
+
+What inspired you to pursue a career in software testing?
+What is your experience in managing and leading testing teams?
+Can you discuss your experience in creating and executing test plans?
+Can you discuss your experience with test automation? What tools have you used?
+How do you prioritize test cases and defects?
+Can you describe a time when you managed a high-risk project?
+What experience do you have in managing a software testing team? Can you describe your previous roles and responsibilities as a test lead?
+What is your experience with test planning and test case management?
+How do you ensure testing activities align with project goals and timelines?
+What is your experience with testing methodologies such as Agile, Waterfall, and DevOps?
+
+
+What is Trade life cycle 
+What are the advantages and disadvantages of an IPO?
+What are the advantages and disadvantages of the acceptance rule?
+What is venture capital?
+What is a credit rating?
+What is capital budgeting?
+What are the challenges you think you may face in the job?
+Who decides the rate of interest for debentures?
+Can you tell me about yourself?
+Why did you choose to work in this field?
+What attracted you to our company?
+Are you OK with working irregular hours?
+Where do you see yourself professionally in five years and in 10 years?
+How do you stay motivated when working?
+What are you looking for in terms of salary and benefits?
+
+
+Test Case Development
+1. Explain STLC life cycle and Test Design Techniques.
+2. Explain Boundary Value Analysis and Equivalence Partitioning
+3. Differnce between test plan and test strategy
+
+Visual & Snapshot Testing
+Percy,Applitools,BackstopJS
+
+GitLab and CI/CD pipelines
+GitLab CI,Jenkins,Docker
+
+QA Principles and Methodologies
+1. Explain Agile Testing,
+2. Explain difference between Test-Driven Development and Behavior-Driven Development
+
+Data Quality Framework
+1. which Designs scalable data quality suites you used. 2. How do you define data quality? What strategies do you use to make sure the data you’re collecting meets quality standards?3. What methods do you use to identify and address data anomalies?
+
+
+**********************************************************************]
+Dell Interview
+https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+
+https://www.hackerrank.com/challenges/list-comprehensions/problem?isFullScreen=true
+
+Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
+Input Format
+The first line contains . The second line contains an array   of  integers each separated by a space. Constraints
+Output Format
+Print the runner-up score.
+Sample Input 0
+5
+2 3 6 6 5
+
+"""
+Let's learn about list comprehensions! You are given three integers  and  representing the dimensions of a cuboid along with an integer . Print a list of all possible coordinates given by  on a 3D grid where the sum of  is not equal to . Here, . Please use list comprehensions rather than multiple loops, as a learning exercise.
+
+Example
+
+All permutations of  are:
+Print an array of the elements that do not sum to .
+
+Input Format
+Four integers  and , each on a separate line.
+Constraints
+Print the list in lexicographic increasing order.
+Sample Input 0
+
+1
+1
+1
+2
+Sample Output 0
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
+Explanation 0
+
+Each variable  and  will have values of  or . All permutations of lists in the form .
+Remove all arrays that sum to  to leave only the valid permutations.
+
+Sample Input 1
+
+2
+2
+2
+2
+Sample Output 1
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 2], [0, 2, 1], [0, 2, 2], [1, 0, 0], [1, 0, 2], [1, 1, 1], [1, 1, 2], [1, 2, 0], [1, 2, 1], [1, 2, 2], [2, 0, 1], [2, 0, 2], [2, 1, 0], [2, 1, 1], [2, 1, 2], [2, 2, 0], [2, 2, 1], [2, 2, 2]]
+
+"""
+**********************************************************************************
+***************************************************************************************************************
+
+status codes 503, 204,
+what is data frames in python
+what is interface and why it is important
+write code to find if string "Hello1234" is alphanumeric
+write code to check chk if string is palindrome
+which all exceptions in selenium
+git fetch and pull differnence
+try with multiple catch in python
+
+snapshot to take when any scenario failed for assert
+get browser in runtime in memory
+waits
+sequential waits
+listeners
+10000 tc's ran not sequentially which failed how to find which testcase failed
+wait for pages to be loaded
+login credentials for cleaning login data after testcase
+cross browser
+
+
+https://www.iplt20.com/points-table/men/2024
+//div[@class='ih-pt-ic ']/div//following-sibling::h2
+//table[@class="ih-td-tab"]/tbody/tr//following-sibling::h2
+
+**********************************************************************************
+unified Endpoint management
+
+workspace one UEM
+oops concepts
+code to inherit and encapsulate
+scenario based lik oops concepts
+storage questions coding, snapshot
+how to do cleanup
+deplying
+test plan as a QA wht u do, deseriazation
+basics
+how to convert dictionary to tuple
+product knowledge, ip setting, gateway, netmask, masking, setpip how to do, netway netmask, ip configuration, basic ip commands
+platforms mac, windows & os's, ios and android version wht in market
+workspace product - intelligenthub will be installed on all platforms
+Selenium
+
+Sql - basic questions queries
+put, post, delete
+serialix=zation and delete
+wht we do if erro
+while testing code what all errors u face 
+oops abstract
+abstract class basic code
+if class A, B given how u derive class C
+inheritance concepts and logic
+lambda, single piece cdode, list comprehencsion, regular express asked coding
+conversion dict to tuple and vice versa
+list and dictionary comprehenstion
+
+most on python get how to install on windows and linux
+
+which ios and android verion currently available in market
+
+coding
+1. Validate datetime with python code
+2. Remove 2 in list list=[1,1,2,2,2,2,3,3,4,5,6,7,8,2]
+3. In each 2 second interval until 30 seconds check if until time reached to further time 
+4. Write decorators program.
+
+Therotical
+
+Decorators concept used in realtime scenario
+serialization and de-serialization real time example
+explain waits in Selenium
+if page is taking differnet time while loading eachtime what action you will take?
+What is list, dictionary and tuple realtime example where it is used
+OOPs concepts
+what is fixtures
+
+SQL query to return first 3 employees with maximum salary.
+Explain snowflake database how you will execute query to retrieve data in it
+suppose you are not retrieving data from database through automation what action you will take
+if testcases are failing how u will rerun failed testcases and what all actions you will take?
+which are challanges you faced in forming the framework
+
+*******************************************************************************************************
+
+What is Test Automation Framework
+- an essential supporting structure of a building, vehicle or object
+
+A test automation framework is a supporting structure and set of guidelines used for creating and designing testcases.
+Test automation is a combination of tools and practices which help testers to test more efficiently.
+
+Some of the practices could be :
+. Coding standardh
+. Handling test data
+. Object repositories
+. Storing test results
+. Unsing external libraries
+
+Some benifits of test automation framework :
+. Saves time
+. Ensure best practices are followed
+. low cost to maintain
+. code reusability
+
+Automation framework structure (Hybrid Framework with page object model)
+Base
+Pages
+Utilities
+Testcases
+Config Files
+TestData
+Screenshots
+Reports
+
+sbi.10473@sbi.co.in
+
+
+Java
+1. Explain data types supported in Java.
+2. How exceptions handled in Java?
+3. What is collection framework?
+4. Explain OOPs concepts with summary of each concepts.
+5. Write Java code for below :
+   Input String Str = “aabbcccdd”                  
+   Output: a2b2c3d2
+OR
+I/p -> ArrayList = ["apple", "apple", "banana", "apple", "orange", "banana", "papaya"]
+O/P ->
+apple : 3
+banana : 2
+
+1. Explain data types supported in Java. 2. How exceptions handled in Java? 3. What is collection framework? 4. Explain OOPs concepts with summary of each concepts.
+How can we handle exception in Java by using throws keyword ?
+How can you add substring in  stringbuilder object ?
+How do you read a CSV file line by line in Java?
+What are the uses of wrapper class and generics in Java ? How do you achieve 100% abstraction through interface ?
+How would you design a reusable test data loader for a large automation framework using Java ?
+How do you create a custom exception called InvalidAgeException that is thrown when someone tries to register with an age below 18.
+How do you create custom exception class in Java?
+What are the uses of wrapper class and generics in Java ? How do you achieve 100% abstraction through interface ?
+How would you sort the employees by their salaries in Java?
+Tell me one scenario where you have used the concept of constructor overloading ?
+Tell me one scenario where you would like to use static variable instead of non-static variable.
+How would you remove duplicate elements from a List in Java?
+Tell me one scenario where you would like to use static variable instead of non-static variable.
+5. Input String Str = “aabbcccdd”                     Output: a2b2c3d25. 
+Write Java code for below :I/p -> ArrayList = ["apple", "apple", "banana", "apple", "orange", "banana", "papaya"]O/P ->apple : 3 banana 2
+Print your Name in Reverse Direction and count no of repetitive words in your name>
+How would you sort the employees by their salaries in Java?
+
+
+Selenium
+1. In Selenium which web locators are supported? 
+2. How synchronization achieved in Selenium? 
+3. How mouse and windows events are handled in selenium? 
+4. What are ways to select items in dropdown list.
+5. Write code to print all links on page - www.Naukri.com
+6. Find xpath to print team names in - https://www.iplt20.com/points-table/men/2024
+
+1. In Selenium whar are webLocators. 2. How to Capture Screenshots,• 3. How to Handle Frames/Iframes  and Robot class for keyboard/mouse actions • 4. How to File upload automation • 5. How to handle mouse actions with Action class (drag & drop, hover) • CSS selectors
+
+1. Write the selenium script for below scenarios:Launch the browser and navigate to the healthcare portal homepage.Wait for the “Departments” menu to appear dynamically.Use Action Class to hover over the “Departments” menu.Wait for the submenu to load.Click on the “Pediatrics” submenu option.
+2. How can you implement this scenario where you need to take the screenshot of the webpage if any test case that is related to that page fails.
+3. How do you handle alert authentication pop up ?
+4. How can you upload a image file in a website by using "file upload" button ?
+What is the purpose of using contextClick() and defaultcontent() functions ?
+5. Write a selenium code to perform below task:On a Kanban board application (like Trello or Jira):There are multiple tasks/cards in the “To Do” column.You need to find the card with text “Fix Login Bug”.Then use the Action class to drag and drop this card into the “In Progress” column.
+6. Write a selenium code to drag and drop an element from the top right corner location to the bottom left corner location.
+7. Write a selenium code to perform below scenarios:1) Locate a button whose ID is dynamic but text is stable (e.g., 'Click Me').2) Perform a right-click on that button using the Selenium Actions class.
+
+1. You are testing a web application that displays a dynamic employee table.The table has the following columns:Employee NameDepartmentCountryAction (with a "Select" checkbox or link)The requirements are:Write a Selenium script to print all the rows and columns of the table dynamically (without hardcoding row/column count).Search for the employee with name "John Smith".
+2. You are testing a flight booking web page where the “Departure City” dropdown is loaded dynamically after the user selects a country from another dropdown. Write a selenium code  to select a country (e.g., India) from the Country dropdown.  , select “Mumbai” from the city list.
+3. Write the selenium script for below scenarios:Launch the browser and navigate to the registration form page.Wait until all radio buttons for gender (Male, Female, Other) are loaded dynamically.Identify and select the radio button labeled “Female”.Use Action Class to hover over the Submit button.Verify that the hover changes the button’s color or tooltip appears.
+
+
+
+
+Automation Framework
+1. Explain Framework architecture and how to Design framework it's flow and features.
+2. How to execute testcases in parallel?
+3. How to re-execute failed testcases?
+4. What is page object model and Maven?
+5. What is POJO
+6. How you will manage test data in your automation framework
+7. how do you implement retry mechanism in your test framework ?
+8. Lets say that during pushing your test script to the new branch you encountered some conflicts.  How do you that resolve GIT conflict ?
+9. How can you pass multiple input data in a test scenario?
+10. How do you implement tags (@Smoke, @Regression, @Critical) in Cucumber to control test execution in CI/CD pipelines effectively?
+11.Tell me one feature that you would like to put inside @afterhook.
+12. What is the purpose of test runner class in cucumber ?
+13.Write the step definition file for following feature files :    Given I am on the product page    When I add the product "Laptop" to the cart    Then the cart should show 1 item    And the cart total should be updated
+14. Write a step definition file for the corresponding feature file in a Healthcare Portal Login with the given log scenario.Scenario: Successful login for a patientGiven the user is on the healthcare login pageWhen the user enters valid username and passwordAnd clicks on the login buttonThen the user should see the patient dashboard
+
+
+JavaScript
+1. Explain data types supported in Java and what is ES6+. 
+2. What is NaN property in JavaScript?
+3. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+4. Explain call(), apply() and, bind() methods. Explain this keyword
+
+Defect Lifecycle
+1. Explain Defect life cycle, 
+2. Explain Functional Test scenarios and how you troubleshoot in case any bugs are found?
+3. Which fields are used to file defects?
+4. Explain difference between seviority and priority.
+
+JSON, HTML
+1. How do DOM elements interact?  
+2. How JSON, HTML data parsing are done  
+3. What is API 
+4? What payload structures do you pass?
+
+Payments Domain
+1. Explain test scenarios in Payments domain and for UPI.
+2. What is SWIFT? SEPA?
+3. What is reconciliation
+4. What is ISO 8583?
+
+SQL
+1. Explain function of Select , where, group by statements in SQL.
+2. Write SQL queries to create, add and modify values then delete table.
+3. Write query to inner join Employee and Department tables.
+
+TestNG
+1. Explain features of TestNG
+2. Explain annotations, listeners in TestNG
+3. What is POM, explain contents of pom.xml?
+
+
+Java
+1. Explain data types supported in Java.
+2. How exceptions handled in Java?
+3. What is collection framework?
+4. Explain OOPs concepts with summary of each concepts.
+5. Input String Str = “aabbcccdd”                  
+   Output: a2b2c3d2
+5. Write Java code for below :
+I/p -> ArrayList = ["apple", "apple", "banana", "apple", "orange", "banana", "papaya"]
+O/P ->
+apple : 3
+banana : 2
+
+Cypress
+1. How to handle reusability in the Cypress framework?
+2. How to execute tests in order in Cypress?
+3. What are hooks in Cypress?
+4. How to interact with DOM elements in Cypress?
+
+1. Explain architecture and flow, features of cypress.
+2. How to handle reusability in the Cypress framework?
+3. How to execute tests in order in Cypress?
+
+Playwright 
+1. What are the features of Playwright?
+2. What are Locators in Playwright?
+3. What are hard assertions and soft assertions in Playwright
+6. How to open url and upload, download file using playwright.
+
+Git
+1. Explain steps to do code checkin in GIT repository.
+2. What action required in case of conflict happens.
+3. how you go back to earlier checkin in Git?
+
+CI/CD
+1. What is Continuous Integration (CI) and Continuous Deployment (CD)? 
+2. How to deploy and execute code on Jenkins?
+
+Banking/Payments Domain knowledge
+1. Explain Banking domain testcases
+2. What are the differences between SWIFT and SEPA?
+3. What are the message types that you know? 
+4. What does MT stand for?What is an MT103?
+5. What is the difference between serial and cover methods? 
+6. What is RMA and accounting relationship?
+
+UI path
+When you create a new project in UiPath Studio, which folder is created with your custom name?
+1. What is publishing an automation project means in UiPath?
+2. What is project debugging in UiPath?
+3. What are the types of projects in UiPath?
+4. What is a single block activity in UiPath?
+5. Define UiPath in DetailWhat are values and data types in UiPath?
+6. Explain the flowchart activities in UiPath
+7. What is flow switch in UiPath?
+
+1. What is UI path and publishing an automation project means in UiPath?
+2. What is project debugging in UiPath?
+3. What are the types of projects in UiPath?
+4. What is a single block activity in UiPath?
+5. Explain the flowchart and low switch in UiPath
+
+C#
+What is C#? What are the types of classes in C#?
+What is the difference between an abstract class and an interface?
+What is a managed and unmanaged code?
+What is garbage collection in C#?
+What is Common Language Runtime (CLR)?
+Write a program in C to 
+Sharp to reverse the order of the given words?
+Write a program in C# Sharp to reverse a string?
+
+
+CI/CD and DevOps Tools
+1. Explain Jenkins, Gitlab, 
+2. What are Docker and containers and explain frequently used commands 
+3. Explain contents of YAML configuration
+
+Test management system
+1. Explain Test Planning and Strategy
+2. Explain Responsibilities Of The Test Manager
+3. What is Requirement Traceability Matrix?
+4. What Are Some Key Challenges in a Testing Project?
+
+
+QA Leadership
+1. Explain how to resolve conflicts in team between resources?
+2. Which tools are used to track statusof the team?
+3. Explain difference between test plan and test strategy.
+
+What inspired you to pursue a career in software testing?
+What is your experience in managing and leading testing teams?
+Can you discuss your experience in creating and executing test plans?
+Can you discuss your experience with test automation? What tools have you used?
+How do you prioritize test cases and defects?
+Can you describe a time when you managed a high-risk project?
+What experience do you have in managing a software testing team? Can you describe your previous roles and responsibilities as a test lead?
+What is your experience with test planning and test case management?
+How do you ensure testing activities align with project goals and timelines?
+What is your experience with testing methodologies such as Agile, Waterfall, and DevOps?
+
+
+What is Trade life cycle 
+What are the advantages and disadvantages of an IPO?
+What are the advantages and disadvantages of the acceptance rule?
+What is venture capital?
+What is a credit rating?
+What is capital budgeting?
+What are the challenges you think you may face in the job?
+Who decides the rate of interest for debentures?
+Can you tell me about yourself?
+Why did you choose to work in this field?
+What attracted you to our company?
+Are you OK with working irregular hours?
+Where do you see yourself professionally in five years and in 10 years?
+How do you stay motivated when working?
+What are you looking for in terms of salary and benefits?
+
+
+Manual Test Case Development
+1. Explain STLC life cycle and Test Design Techniques.
+2. Explain Boundary Value Analysis and Equivalence Partitioning
+3. Differnce between test plan and test strategy
+
+Visual & Snapshot Testing
+Percy,Applitools,BackstopJS
+
+GitLab and CI/CD pipelines
+GitLab CI,Jenkins,Docker
+
+QA Principles and Methodologies
+1. Explain Agile Testing,
+2. Explain difference between Test-Driven Development and Behavior-Driven Development
+
+
+{
+  "order_id": "ORD-2024-0001",
+  "customer": {
+    "customer_id": 101,
+    "name": "Alice Johnson",
+    "email": "alice.j@example.com",
+    "addresses": [
+      {
+        "type": "billing",
+        "line1": "123 Maple Street",
+        "city": "New York",
+        "state": "NY",
+        "postal_code": "10001",
+        "country": "USA"
+      },
+      {
+        "type": "shipping",
+        "line1": "456 Oak Avenue",
+        "city": "Brooklyn",
+        "state": "NY",
+        "postal_code": "11201",
+        "country": "USA"
+      }
+    ]
+  },
+  "order_date": "2024-04-25T14:32:00Z",
+  "status": "shipped",
+  "payment": {
+    "method": "credit_card",
+    "transaction_id": "TXN-789654",
+    "amount": 329.75,
+    "currency": "USD",
+    "paid_at": "2024-04-25T14:35:00Z"
+  },
+  "items": [
+    {
+      "product_id": "P1001",
+      "name": "Wireless Headphones",
+      "quantity": 1,
+      "unit_price": 199.99,
+      "attributes": {
+        "color": "black",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "product_id": "P2045",
+      "name": "Phone Case",
+      "quantity": 2,
+      "unit_price": 24.88,
+      "attributes": {
+        "color": "blue",
+        "material": "leather"
+      }
+    }
+  ],
+  "delivery": {
+    "carrier": "UPS",
+    "tracking_number": "1Z999AA10123456784",
+    "estimated_delivery": "2024-04-29",
+    "delivered_at": null
+  },
+  "notes": null
+}
+
+https://www.globalsqa.com/demo-site/select-dropdown-menu/
+
+Arrays.asList("apple", "apple", "banana",
+	                    "apple", "orange", "banana", "papaya");
+						
+						
+Job Description
+Minimum 5-6 years of testing/dev experience
+A Python SDET (Software Development Engineer in Test) with exp in software development with quality assurance, requiring strong Python coding skills to build test automation frameworks.
+Responsible for designing automated test scripts, integrating tests into CI/CD pipelines, and ensuring product stability, utilizing tools like Playwright and PyTest.
+The resource should have minimum 5 years testing experience with min 3 years creating test automation using python
+Experience working in Banking and finance project.
+Must Have: Python + Pytest + Playwright
+Nice to Have: Behave BDD
+Nice to Have: API testing and good understanding of tools like Postman
+Familiarity with Agile frameworks and regression testing
+Ability to document and troubleshoot errors
+Working knowledge of test and defect management software (e.g. JIRA, Xray, qTest)
+Excellent communication skills
+Attention to detail and strong listening skills
+Analytical mind and problem-solving aptitude
+Strong organizational skills
+Ability to Plan and Run regression and End to End tests
+Raising bugs with all relevant details and following up through the defect life cycle.
+Have worked in cross functional agile teams and participated in agile ceremonies.
+Work closely with test manager, product owners, architects and development teams.
+Test ISQTB certified.
+ 
