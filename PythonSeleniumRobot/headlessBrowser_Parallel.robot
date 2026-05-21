@@ -55,3 +55,23 @@ PabotLib process stopped
 Total testing: 1 minute 9.59 seconds
 Elapsed time:  47.72 seconds
 (.venv) PS C:\Users\vwank\PycharmProjects\PythonProject4\TestCases\Pabot> 
+***************************************************************************************
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+${BROWSER}     headlessfirefox
+${SITEURL}     https://demo.guru99.com/test/newtours/
+${USER}        tutorial
+${PWD}         tutorial
+
+*** Test Cases ***
+LoginTest
+    Open Browser    ${SITEURL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    name:userName    ${USER}
+    Input Password    name:password    ${PWD}
+    Click Button    name:submit
+    Sleep    3s
+    Page Should Contain    Login Successfully
+    Close Browser
