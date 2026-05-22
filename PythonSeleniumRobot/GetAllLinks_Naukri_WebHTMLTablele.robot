@@ -73,3 +73,26 @@ MyTestCase
         Log To Console    ${i}. ${linkText}
     END
     Close Browser
+****************************************************************************
+*** Settings ***
+Library    SeleniumLibrary
+Library     String
+*** Test Cases ***
+Get Non Empty Links
+    Open Browser    https://naukri.com    firefox
+    Maximize Browser Window
+    ${AllLinks}=    Get Element Count    xpath=//a
+    Log To Console    Total Links : ${AllLinks}
+    FOR    ${i}    IN RANGE    1    ${AllLinks + 1}
+        ${text}=    Get Text    xpath=(//a)[${i}]
+        ${href}=    Get Element Attribute    xpath=(//a)[${i}]    href
+        # Remove extra spaces
+        ${text}=    Strip String    ${text}
+        # Skip empty links
+        IF    '${text}' != '' and '${href}' != 'None'
+            Log To Console    Link ${i}: ${text}
+            Log To Console    URL : ${href}
+            Log To Console    -------------------
+        END
+    END
+    Close Browser
