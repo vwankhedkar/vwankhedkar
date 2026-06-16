@@ -1169,7 +1169,24 @@ Small Packages (Size 3): 1
 Unused Space: 0
 Total Occupied Space: 13
 *****************************************************************************************************
-
+def reverse_preserve_spaces(s):
+    result = [''] * len(s) 
+    for i in range(len(s)):
+        if s[i] == ' ':
+            result[i] = ' '
+    j = len(s) - 1
+    for i in range(len(s)):
+        if s[i] != ' ':
+            while result[j] == ' ':
+                j -= 1
+            result[j] = s[i]
+            j -= 1
+    return ''.join(result)
+text = "I Love Java"
+print("Original :", text)
+print("Reversed :", reverse_preserve_spaces(text))
+Original : I Love Java
+Reversed : a vaJe voLI
 *****************************************************************************************************
 
 *****************************************************************************************************
