@@ -31,3 +31,32 @@ Maximum Large Packages (10 units): 1
 Small Packages (3 units): 1
 Wasted Space: 0
 --------------------------------------------------------------------------------------------------------------
+public class ReverseStringPreserveSpaces {
+    public static String reversePreserveSpaces(String str) {
+        char[] input = str.toCharArray();
+        char[] result = new char[input.length];
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] == ' ') {
+                result[i] = ' ';
+            }
+        }
+        int j = input.length - 1;
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] != ' ') {
+                while (result[j] == ' ') {
+                    j--;
+                }
+                result[j] = input[i];
+                j--;
+            }
+        }
+        return new String(result);
+    }
+    public static void main(String[] args) {
+        String str = "I Love Java";
+        System.out.println("Original : " + str);
+        System.out.println("Reversed : " + reversePreserveSpaces(str));
+    }
+}
+Original : I Love Java
+Reversed : a avaJevo LI
