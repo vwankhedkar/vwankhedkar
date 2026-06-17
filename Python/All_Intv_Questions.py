@@ -4,8 +4,71 @@ Find XPATH ->  https://www.iplt20.com/points-table/men/2024
 Find index number of given integer where it is going to add in sorted array
 
 String='Automation' output should be 'amot'
-****************************************************************************
+*************************************************************************
+InnoPhase, Inc.
+--------------------
+def filter_tuples(lst):
+    sub_lst = []
+    exp_lst = []
+    for item in lst:
+        sub_lst.append(item[0])
+    for item in lst:
+        if sub_lst.count(item[0]) > 1:
+            exp_lst.append(item)
+    return exp_lst  
+input_list1 = [(1,2),(2,5),(5,6),(1,5),(1,7),(2,9),(4,0),(1,2)]
+print(filter_tuples(input_list1))
 
+input_list2 = [(4,2),(2,5),(5,6),(1,5),(1,7),(3,9),(4,0),(5,2)]
+print(filter_tuples(input_list2))
+-----------------------------------------------------------------
+from collections import Counter
+def filter_tuples(lst):
+    counts = Counter(item[0] for item in lst)
+    return [item for item in lst if counts[item[0]] > 1]
+
+input_list1 = [(1,2),(2,5),(5,6),(1,5),(1,7),(2,9),(4,0),(1,2)]
+print(filter_tuples(input_list1))
+
+input_list2 = [(4,2),(2,5),(5,6),(1,5),(1,7),(3,9),(4,0),(5,2)]
+print(filter_tuples(input_list2))
+-----------------------------------------------------------------
+[(1, 2), (2, 5), (1, 5), (1, 7), (2, 9), (1, 2)]
+[(4, 2), (5, 6), (1, 5), (1, 7), (4, 0), (5, 2)]
+****************************************************************************************************
+Amadeus(intv):
+class Employee:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+class RoleManager(Employee):
+    next_role_id = 101
+    def __init__(self, first_name, last_name, role_name):
+        super().__init__(first_name, last_name)
+        self.role_name = role_name
+        # Auto assign role id
+        self.role_id = RoleManager.next_role_id
+        RoleManager.next_role_id += 1
+
+    def display_employee(self):
+        print("Employee Details")
+        print(f"Name      : {self.first_name} {self.last_name}")
+        print(f"Role Name : {self.role_name}")
+        print(f"Role ID   : {self.role_id}")
+        print()
+# Input outside class
+# first_name = input("Enter First Name: ")
+# last_name = input("Enter Last Name: ")
+# role_name = input("Enter Role Name: ")
+# Object creation
+# emp = RoleManager(first_name, last_name, role_name)
+emp = RoleManager("Vais", "Wank", "QA")
+emp1 = RoleManager("Vaishali", "Wankhedkar", "Automation")
+# Display
+emp.display_employee()
+emp1.display_employee()
+****************************************************************************
+vmware Harman interview questions
 Remove 2 in list list=[1,1,2,2,2,2,3,3,4,5,6,7,8,2]
 list=[1,1,2,2,2,2,3,3,4,5,6,7,8,2]
 lst = [x for x in list if x!=2]
@@ -1187,38 +1250,7 @@ print("Original :", text)
 print("Reversed :", reverse_preserve_spaces(text))
 Original : I Love Java
 Reversed : a vaJe voLI
-*************************************************************************
-InnoPhase, Inc.
---------------------
-def filter_tuples(lst):
-    sub_lst = []
-    exp_lst = []
-    for item in lst:
-        sub_lst.append(item[0])
-    for item in lst:
-        if sub_lst.count(item[0]) > 1:
-            exp_lst.append(item)
-    return exp_lst  
-input_list1 = [(1,2),(2,5),(5,6),(1,5),(1,7),(2,9),(4,0),(1,2)]
-print(filter_tuples(input_list1))
 
-input_list2 = [(4,2),(2,5),(5,6),(1,5),(1,7),(3,9),(4,0),(5,2)]
-print(filter_tuples(input_list2))
------------------------------------------------------------------
-from collections import Counter
-def filter_tuples(lst):
-    counts = Counter(item[0] for item in lst)
-    return [item for item in lst if counts[item[0]] > 1]
-
-input_list1 = [(1,2),(2,5),(5,6),(1,5),(1,7),(2,9),(4,0),(1,2)]
-print(filter_tuples(input_list1))
-
-input_list2 = [(4,2),(2,5),(5,6),(1,5),(1,7),(3,9),(4,0),(5,2)]
-print(filter_tuples(input_list2))
------------------------------------------------------------------
-[(1, 2), (2, 5), (1, 5), (1, 7), (2, 9), (1, 2)]
-[(4, 2), (5, 6), (1, 5), (1, 7), (4, 0), (5, 2)]
-*************************************************************************
 *****************************************************************************************************
 
 *****************************************************************************************************
