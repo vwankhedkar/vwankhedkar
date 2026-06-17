@@ -1187,6 +1187,38 @@ print("Original :", text)
 print("Reversed :", reverse_preserve_spaces(text))
 Original : I Love Java
 Reversed : a vaJe voLI
+*************************************************************************
+InnoPhase, Inc.
+--------------------
+def filter_tuples(lst):
+    sub_lst = []
+    exp_lst = []
+    for item in lst:
+        sub_lst.append(item[0])
+    for item in lst:
+        if sub_lst.count(item[0]) > 1:
+            exp_lst.append(item)
+    return exp_lst  
+input_list1 = [(1,2),(2,5),(5,6),(1,5),(1,7),(2,9),(4,0),(1,2)]
+print(filter_tuples(input_list1))
+
+input_list2 = [(4,2),(2,5),(5,6),(1,5),(1,7),(3,9),(4,0),(5,2)]
+print(filter_tuples(input_list2))
+-----------------------------------------------------------------
+from collections import Counter
+def filter_tuples(lst):
+    counts = Counter(item[0] for item in lst)
+    return [item for item in lst if counts[item[0]] > 1]
+
+input_list1 = [(1,2),(2,5),(5,6),(1,5),(1,7),(2,9),(4,0),(1,2)]
+print(filter_tuples(input_list1))
+
+input_list2 = [(4,2),(2,5),(5,6),(1,5),(1,7),(3,9),(4,0),(5,2)]
+print(filter_tuples(input_list2))
+-----------------------------------------------------------------
+[(1, 2), (2, 5), (1, 5), (1, 7), (2, 9), (1, 2)]
+[(4, 2), (5, 6), (1, 5), (1, 7), (4, 0), (5, 2)]
+*************************************************************************
 *****************************************************************************************************
 
 *****************************************************************************************************
